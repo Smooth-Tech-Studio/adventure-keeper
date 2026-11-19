@@ -29,7 +29,7 @@ name: Release Serveur (desktop app)
 #
 # The build runs in the GitHub environment of its channel (staging or
 # production); the staging variant reads the staging Firebase project's ID
-# from that environment's VITE_FIREBASE_PROJECT_ID, as the site's deployment.
+# from that environment's FIREBASE_PROJECT_ID secret, as the site's deployment.
 
 on:
   workflow_call:
@@ -164,10 +164,10 @@ jobs:
       - name: Staging settings
         if: ${{ needs.channel.outputs.channel == 'staging' }}
         env:
-          PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "adv-keeper" ]; then
-            echo "::error::The staging environment has no VITE_FIREBASE_PROJECT_ID of its own (or it is the production project)"
+            echo "::error::The staging environment has no FIREBASE_PROJECT_ID secret of its own (or it is the production project)"
             exit 1
           fi
           echo "AK_FIREBASE_PROJECT_ID=$PROJECT_ID" >> "$GITHUB_ENV"

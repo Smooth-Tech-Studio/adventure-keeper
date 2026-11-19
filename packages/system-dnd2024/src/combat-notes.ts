@@ -14,7 +14,7 @@ function rageDamage(level: number): number {
 /**
  * Reminders about **automatic base-class features** that change attack or damage
  * numbers — free text shown on the sheet. Choice-driven modifiers (fighting
- * styles, feats, subclasses) are out of scope; see `INCOMING_UPDATES.md`.
+ * styles, feats, subclasses) carry their own notes (`combatNote`, mechanics).
  */
 export function combatNotes(classId: string, level = 1): string[] {
   const lvl = Math.max(1, Math.round(level));

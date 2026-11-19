@@ -32,14 +32,14 @@ jobs:
       - name: Build web app
         run: pnpm run build
         env:
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
-          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
-          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
-          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
-          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
-          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           # Optional: without it, the Dropbox image import does not show.
-          VITE_DROPBOX_APP_KEY: ${{ secrets.VITE_DROPBOX_APP_KEY }}
+          VITE_DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           # The staging site offers the staging server app (pre-release `serveur-staging`).
           VITE_DESKTOP_RELEASE_TAG: ${{ inputs.environment == 'staging' && 'serveur-staging' || '' }}
 
@@ -49,20 +49,20 @@ jobs:
       - name: Refuse staging on the production project
         if: ${{ inputs.environment == 'staging' }}
         env:
-          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          PID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           if [ -z "$PID" ] || [ "$PID" = "adv-keeper" ]; then
-            echo "::error::The staging environment has no VITE_FIREBASE_PROJECT_ID of its own (or it is the production project)"
+            echo "::error::The staging environment has no FIREBASE_PROJECT_ID secret of its own (or it is the production project)"
             exit 1
           fi
 
       - name: Check deploy secrets
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          PID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           echo "FIREBASE_SERVICE_ACCOUNT length: ${#SA}"
-          echo "VITE_FIREBASE_PROJECT_ID length: ${#PID}"
+          echo "FIREBASE_PROJECT_ID length: ${#PID}"
           if [ -z "$SA" ]; then
             echo "::error::FIREBASE_SERVICE_ACCOUNT secret is empty or missing (check name / Repository-Actions scope)"
             exit 1
@@ -80,5 +80,5 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
           channelId: live

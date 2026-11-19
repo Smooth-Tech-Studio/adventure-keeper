@@ -163,36 +163,33 @@ Project ID / site réel, puis committez.
 ## 5. Pipeline CI/CD (GitHub Actions)
 
 Les branches suivent ce chemin : une branche de travail → PR vers `staging` →
-PR `staging` → `main`. Un push sur `main` déploie la **production**, et
-seulement si la CI **et** les tests de bout en bout passent sur ce même commit.
-
-> **En pause** : rien ne tourne plus automatiquement sur `staging` (ni au push,
-> ni sur les PR qui la visent), et les PR vers `main` ne lancent plus les tests
-> de bout en bout. Les fichiers restent : `staging.yml` se lance à la main
-> (onglet **Actions**), et chaque fichier indique, en commentaire, les lignes à
-> rétablir pour réactiver son déclencheur.
+PR `staging` → `main`. Toute PR vers l'une ou l'autre passe la CI et les tests
+de bout en bout, exigés par les rulesets avec une branche à jour. Un push sur
+`staging` déploie le projet de **staging**, un push sur `main` la
+**production** : si le commit vient d'une PR ainsi testée, le déploiement part
+aussitôt ; sinon, CI et tests de bout en bout tournent d'abord.
 
 ### Les workflows (`.github/workflows/`)
 
-| Fichier                         | Déclencheur                          | Rôle                                                                            |
-| ------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------- |
-| `ci-reusable.yml`               | appelé par les autres                | la CI elle-même : install, `format:check`, `lint`, `typecheck`, `test`, `build` |
-| `pull-request.yml`              | PR vers `main`                       | CI                                                                              |
-| `staging.yml`                   | manuel (en pause sur `staging`)      | CI, puis déploiement des règles et du Hosting du projet de **staging**          |
-| `main.yml`                      | push sur `main`                      | CI et tests de bout en bout, puis les déploiements **s'ils passent**            |
-| `e2e-reusable.yml`              | appelé par `main.yml`, ou manuel     | tests Playwright contre les émulateurs (§3), rapport en artefact si échec       |
-| `deploy-hosting-reusable.yml`   | appelé par `main.yml`, `staging.yml` | build + déploiement du canal **live** de l'environnement reçu en paramètre      |
-| `deploy-firestore-reusable.yml` | appelé par `main.yml`                | `firebase deploy --only firestore:rules,firestore:indexes`                      |
-| `release-serveur-reusable.yml`  | appelé par `main.yml`, `staging.yml` | installeurs de l'app serveur, publiés en release (voir `REALTIME_SERVER.md`)    |
-| `deploy-hosting-manual.yml`     | manuel (onglet **Actions**)          | redéploie le Hosting, depuis `main` uniquement                                  |
-| `deploy-firestore-manual.yml`   | manuel (onglet **Actions**)          | redéploie règles et index, depuis `main` uniquement                             |
+| Fichier                         | Déclencheur                          | Rôle                                                                                                           |
+| ------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `ci-reusable.yml`               | appelé par les autres                | la CI elle-même : install, `format:check`, `lint`, `typecheck`, `test`, `build`                                |
+| `pull-request.yml`              | PR vers `main` ou `staging`          | CI et tests de bout en bout                                                                                    |
+| `staging.yml`                   | push sur `staging`, ou manuel        | vérifie que la PR était testée (sinon CI et e2e), puis règles, Hosting et app serveur du projet de **staging** |
+| `main.yml`                      | push sur `main`                      | CI et tests de bout en bout, puis les déploiements **s'ils passent**                                           |
+| `e2e-reusable.yml`              | appelé par `main.yml`, ou manuel     | tests Playwright contre les émulateurs (§3), rapport en artefact si échec                                      |
+| `deploy-hosting-reusable.yml`   | appelé par `main.yml`, `staging.yml` | build + déploiement du canal **live** de l'environnement reçu en paramètre                                     |
+| `deploy-firestore-reusable.yml` | appelé par `main.yml`                | `firebase deploy --only firestore:rules,firestore:indexes`                                                     |
+| `release-serveur-reusable.yml`  | appelé par `main.yml`, `staging.yml` | installeurs de l'app serveur, publiés en release (voir `REALTIME_SERVER.md`)                                   |
+| `deploy-hosting-manual.yml`     | manuel (onglet **Actions**)          | redéploie le Hosting, depuis `main` uniquement                                                                 |
+| `deploy-firestore-manual.yml`   | manuel (onglet **Actions**)          | redéploie règles et index, depuis `main` uniquement                                                            |
 
 Dans `main.yml` :
 
 - **`ci`** rejoue la CI sur le commit poussé ; un nouveau push annule celle en cours.
 - **`e2e`** lance les tests de bout en bout en parallèle (quelques
-  minutes, sans aucun secret : l'app de test parle aux émulateurs). Ils ne
-  tournent pas sur les PR, pour ne pas les ralentir.
+  minutes, sans aucun secret : l'app de test parle aux émulateurs). Ils
+  tournent aussi sur chaque PR.
 - **`deploy-hosting`** attend `ci` et `e2e`, et ne part que si les deux ont réussi.
 - **`deploy-firestore`** attend `ci` et `e2e`, et ne part que si le push modifie
   `firestore.rules`, `firestore.indexes.json` ou `firebase.json` (job
@@ -213,12 +210,13 @@ l'instant.
 Les deux workflows de déploiement reçoivent un paramètre `environment`
 (`production` par défaut, `staging` depuis `staging.yml`). Chaque
 environnement GitHub (**Settings → Environments**) porte ses propres secrets :
-`FIREBASE_SERVICE_ACCOUNT` et les six `VITE_FIREBASE_*` (plus, au besoin,
-`VITE_DROPBOX_APP_KEY`), avec les valeurs du projet Firebase correspondant.
+`FIREBASE_SERVICE_ACCOUNT` et les six `FIREBASE_*` de la configuration (plus,
+au besoin, `DROPBOX_APP_KEY`), avec les valeurs du projet Firebase
+correspondant. Les workflows les passent à Vite sous leur nom `VITE_*`.
 
 > ⚠️ Un environnement auquel il manque un secret retombe sur le secret du même
 > nom au niveau du dépôt, c'est-à-dire la production. Le déploiement de staging
-> refuse donc de partir si `VITE_FIREBASE_PROJECT_ID` est vide ou vaut
+> refuse donc de partir si `FIREBASE_PROJECT_ID` est vide ou vaut
 > `adv-keeper`. Le plus sûr : déplacer aussi les secrets de production dans
 > l'environnement `production` et vider ceux du dépôt.
 
@@ -288,16 +286,19 @@ PR is merged?` → **N**), les fichiers de ce repo sont déjà configurés.
 
 Dépôt → **Settings → Secrets and variables → Actions**.
 
-| Secret                              | Valeur                                                      |
-| ----------------------------------- | ----------------------------------------------------------- |
-| `FIREBASE_SERVICE_ACCOUNT`          | JSON complet du compte de service (§5.1)                    |
-| `VITE_FIREBASE_API_KEY`             | cf. tableau §2                                              |
-| `VITE_FIREBASE_AUTH_DOMAIN`         | ”                                                           |
-| `VITE_FIREBASE_PROJECT_ID`          | ” (sert aussi de `projectId` à l'action de déploiement)     |
-| `VITE_FIREBASE_STORAGE_BUCKET`      | ”                                                           |
-| `VITE_FIREBASE_MESSAGING_SENDER_ID` | ”                                                           |
-| `VITE_FIREBASE_APP_ID`              | ”                                                           |
-| `VITE_DROPBOX_APP_KEY` (facultatif) | Clé de l'app Dropbox ([IMAGE_STORAGE.md](IMAGE_STORAGE.md)) |
+| Secret                         | Valeur                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------- |
+| `FIREBASE_SERVICE_ACCOUNT`     | JSON complet du compte de service (§5.1)                                   |
+| `FIREBASE_API_KEY`             | la valeur de `VITE_FIREBASE_API_KEY` (tableau §2)                          |
+| `FIREBASE_AUTH_DOMAIN`         | celle de `VITE_FIREBASE_AUTH_DOMAIN`                                       |
+| `FIREBASE_PROJECT_ID`          | celle de `VITE_FIREBASE_PROJECT_ID` (sert aussi à l'action de déploiement) |
+| `FIREBASE_STORAGE_BUCKET`      | celle de `VITE_FIREBASE_STORAGE_BUCKET`                                    |
+| `FIREBASE_MESSAGING_SENDER_ID` | celle de `VITE_FIREBASE_MESSAGING_SENDER_ID`                               |
+| `FIREBASE_APP_ID`              | celle de `VITE_FIREBASE_APP_ID`                                            |
+| `DROPBOX_APP_KEY` (facultatif) | Clé de l'app Dropbox ([IMAGE_STORAGE.md](IMAGE_STORAGE.md))                |
+
+Les secrets n'ont pas le préfixe `VITE_` : ce sont les workflows qui les
+donnent à Vite sous ce nom, au moment de la construction.
 
 `GITHUB_TOKEN` est fourni automatiquement par GitHub Actions — rien à faire.
 
@@ -357,7 +358,7 @@ désactivez-la dans Google Cloud) ; elle ne sert qu'à ça.
 **automatiquement** par `main.yml` quand un push sur `main` les modifie, une
 fois la CI et les tests de bout en bout passés (§5). Prérequis : les rôles rules/index sur le compte de
 service (§5.1) + les secrets `FIREBASE_SERVICE_ACCOUNT` et
-`VITE_FIREBASE_PROJECT_ID`.
+`FIREBASE_PROJECT_ID`.
 
 Déploiement **manuel** (local ou premier essai), équivalent :
 
@@ -387,10 +388,10 @@ domaine dans **Authentication → Settings → Authorized domains**.
 
 ## Récapitulatif des informations à récupérer
 
-| Où                                                                      | Quoi                            | Utilisé pour                                                      |
-| ----------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------- |
-| Console Firebase → création projet                                      | **Project ID**                  | `.firebaserc`, `firebase.json`, secret `VITE_FIREBASE_PROJECT_ID` |
-| Project settings → General → Your apps → Config                         | **6 valeurs `VITE_FIREBASE_*`** | `apps/web/.env.local` + secrets GitHub                            |
-| `firebase init hosting:github` **ou** GCP → Service Accounts → clé JSON | **JSON du compte de service**   | secret GitHub `FIREBASE_SERVICE_ACCOUNT`                          |
-| Authentication → Sign-in method                                         | activer **Email/Password**      | connexion / création de compte                                    |
-| Firestore → Create database                                             | base créée + emplacement        | stockage des données                                              |
+| Où                                                                      | Quoi                            | Utilisé pour                                                 |
+| ----------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ |
+| Console Firebase → création projet                                      | **Project ID**                  | `.firebaserc`, `firebase.json`, secret `FIREBASE_PROJECT_ID` |
+| Project settings → General → Your apps → Config                         | **6 valeurs `VITE_FIREBASE_*`** | `apps/web/.env.local` + secrets GitHub (sans `VITE_`)        |
+| `firebase init hosting:github` **ou** GCP → Service Accounts → clé JSON | **JSON du compte de service**   | secret GitHub `FIREBASE_SERVICE_ACCOUNT`                     |
+| Authentication → Sign-in method                                         | activer **Email/Password**      | connexion / création de compte                               |
+| Firestore → Create database                                             | base créée + emplacement        | stockage des données                                         |

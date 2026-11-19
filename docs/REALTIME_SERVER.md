@@ -134,8 +134,8 @@ ses variables ; l'app lui passe en plus `HOST`, `CLOUDFLARED_PATH` et
 - **La variante de staging** : l'app sert un seul projet Firebase, fixé à la
   compilation (`AK_FIREBASE_PROJECT_ID`, lu par `main.rs` ; `adv-keeper` par
   défaut). Origines autorisées et site ouvert par le bouton en découlent
-  (`<projet>.web.app`, `<projet>.firebaseapp.com`). Quand `staging.yml` est
-  lancé (à la main, tant que le staging est en pause), il appelle le même
+  (`<projet>.web.app`, `<projet>.firebaseapp.com`). À chaque push sur
+  `staging` qui touche l'app, le serveur ou les schémas, `staging.yml` appelle le même
   workflow après la CI :
   il construit une variante « Adventure Keeper Serveur Staging » (autre nom et
   autre identifiant : elle s'installe à côté de la vraie) et la publie dans la
@@ -144,7 +144,7 @@ ses variables ; l'app lui passe en plus `HOST`, `CLOUDFLARED_PATH` et
   jamais. Le site de staging pointe vers elle (`VITE_DESKTOP_RELEASE_TAG`,
   posé par `deploy-hosting-reusable.yml`). Le build tourne dans
   l'environnement GitHub du canal et lit l'ID du projet de staging dans son
-  `VITE_FIREBASE_PROJECT_ID`, comme le déploiement du site.
+  secret `FIREBASE_PROJECT_ID`, comme le déploiement du site.
   Les deux apps écoutent sur le port 8787 : une seule à la fois.
   Si un build échoue (un runner macOS jamais attribué, par exemple), la
   publication part quand même avec les autres installeurs ; le run reste rouge.

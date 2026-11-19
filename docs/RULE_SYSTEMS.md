@@ -434,17 +434,17 @@ format qui bouge encore.
 
 ## Risques
 
-| Risque                                           | Réponse                                                                                                                        |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| Le format devient trop complexe pour un MJ       | L'éditeur cache ce qui ne sert pas ; un système simple reste court. Le lot 2 (« standard ») sert de garde-fou.                 |
-| Régressions sur 5e                               | Les deux moteurs tournent côte à côte jusqu'à égalité des résultats (lot 3).                                                   |
-| Rendu 5e moins soigné une fois générique         | On enrichit les blocs jusqu'à retrouver le rendu, vérifié par capture.                                                         |
-| Lenteur du calcul                                | Graphe de dépendances, calcul partiel, mesure sur une fiche de niveau 20.                                                      |
-| Système malveillant ou cassé                     | Formules interprétées et bornées, tailles limitées, textes échappés.                                                           |
-| Taille des documents Firestore                   | Catalogues dans les packs, définition du système à part.                                                                       |
-| Contenu sous droits partagé par des utilisateurs | Partage privé d'abord ; l'ouverture publique suit [Packs publics](../INCOMING_UPDATES.md#maj-packs-publics), avec signalement. |
-| Migration des fiches existantes                  | Script de migration, lecture des deux formes pendant la transition, essai sur le staging.                                      |
-| Chantier long                                    | Chaque lot est livrable ; les lots 1 à 4 ont déjà une valeur seuls.                                                            |
+| Risque                                           | Réponse                                                                                                                                               |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Le format devient trop complexe pour un MJ       | L'éditeur cache ce qui ne sert pas ; un système simple reste court. Le lot 2 (« standard ») sert de garde-fou.                                        |
+| Régressions sur 5e                               | Les deux moteurs tournent côte à côte jusqu'à égalité des résultats (lot 3).                                                                          |
+| Rendu 5e moins soigné une fois générique         | On enrichit les blocs jusqu'à retrouver le rendu, vérifié par capture.                                                                                |
+| Lenteur du calcul                                | Graphe de dépendances, calcul partiel, mesure sur une fiche de niveau 20.                                                                             |
+| Système malveillant ou cassé                     | Formules interprétées et bornées, tailles limitées, textes échappés.                                                                                  |
+| Taille des documents Firestore                   | Catalogues dans les packs, définition du système à part.                                                                                              |
+| Contenu sous droits partagé par des utilisateurs | Partage privé d'abord ; l'ouverture publique suit [Packs publics](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues/2), avec signalement. |
+| Migration des fiches existantes                  | Script de migration, lecture des deux formes pendant la transition, essai sur le staging.                                                             |
+| Chantier long                                    | Chaque lot est livrable ; les lots 1 à 4 ont déjà une valeur seuls.                                                                                   |
 
 ## Points à trancher
 

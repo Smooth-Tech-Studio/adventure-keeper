@@ -1,7 +1,7 @@
 # Règles et contenu — plan
 
 Plan établi le 11 novembre 2026, **terminé le 19 novembre 2026** (lots 1 à 4,
-branche `chore/depot-public`). Le suivi se fait dans [`INCOMING_UPDATES.md`](../INCOMING_UPDATES.md#maj-regles-et-contenu).
+branche `chore/depot-public`). Les suites (packs publics, systèmes de règles des MJ) sont dans les [tickets](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues).
 
 ## Objectif
 
