@@ -55,7 +55,7 @@ le code est rangé derrière un type `StorageProvider`
    - Laisser « Allow public clients (Implicit Grant & PKCE) » sur **Allow**.
 4. Copier l'**App key** :
    - en local : `VITE_DROPBOX_APP_KEY=…` dans `apps/web/.env.local` ;
-   - au déploiement : secret GitHub `VITE_DROPBOX_APP_KEY` (lu par
+   - au déploiement : secret GitHub `DROPBOX_APP_KEY` (lu par
      `deploy-hosting-reusable.yml`, voir [DEPLOYMENT.md](DEPLOYMENT.md)).
 5. Une app Dropbox en développement accepte **50 comptes**. Au-delà, demander
    le passage en production (**Apply for production**, onglet Settings).

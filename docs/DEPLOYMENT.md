@@ -213,12 +213,13 @@ l'instant.
 Les deux workflows de déploiement reçoivent un paramètre `environment`
 (`production` par défaut, `staging` depuis `staging.yml`). Chaque
 environnement GitHub (**Settings → Environments**) porte ses propres secrets :
-`FIREBASE_SERVICE_ACCOUNT` et les six `VITE_FIREBASE_*` (plus, au besoin,
-`VITE_DROPBOX_APP_KEY`), avec les valeurs du projet Firebase correspondant.
+`FIREBASE_SERVICE_ACCOUNT` et les six `FIREBASE_*` de la configuration (plus,
+au besoin, `DROPBOX_APP_KEY`), avec les valeurs du projet Firebase
+correspondant. Les workflows les passent à Vite sous leur nom `VITE_*`.
 
 > ⚠️ Un environnement auquel il manque un secret retombe sur le secret du même
 > nom au niveau du dépôt, c'est-à-dire la production. Le déploiement de staging
-> refuse donc de partir si `VITE_FIREBASE_PROJECT_ID` est vide ou vaut
+> refuse donc de partir si `FIREBASE_PROJECT_ID` est vide ou vaut
 > `adv-keeper`. Le plus sûr : déplacer aussi les secrets de production dans
 > l'environnement `production` et vider ceux du dépôt.
 
@@ -288,16 +289,19 @@ PR is merged?` → **N**), les fichiers de ce repo sont déjà configurés.
 
 Dépôt → **Settings → Secrets and variables → Actions**.
 
-| Secret                              | Valeur                                                      |
-| ----------------------------------- | ----------------------------------------------------------- |
-| `FIREBASE_SERVICE_ACCOUNT`          | JSON complet du compte de service (§5.1)                    |
-| `VITE_FIREBASE_API_KEY`             | cf. tableau §2                                              |
-| `VITE_FIREBASE_AUTH_DOMAIN`         | ”                                                           |
-| `VITE_FIREBASE_PROJECT_ID`          | ” (sert aussi de `projectId` à l'action de déploiement)     |
-| `VITE_FIREBASE_STORAGE_BUCKET`      | ”                                                           |
-| `VITE_FIREBASE_MESSAGING_SENDER_ID` | ”                                                           |
-| `VITE_FIREBASE_APP_ID`              | ”                                                           |
-| `VITE_DROPBOX_APP_KEY` (facultatif) | Clé de l'app Dropbox ([IMAGE_STORAGE.md](IMAGE_STORAGE.md)) |
+| Secret                         | Valeur                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------- |
+| `FIREBASE_SERVICE_ACCOUNT`     | JSON complet du compte de service (§5.1)                                   |
+| `FIREBASE_API_KEY`             | la valeur de `VITE_FIREBASE_API_KEY` (tableau §2)                          |
+| `FIREBASE_AUTH_DOMAIN`         | celle de `VITE_FIREBASE_AUTH_DOMAIN`                                       |
+| `FIREBASE_PROJECT_ID`          | celle de `VITE_FIREBASE_PROJECT_ID` (sert aussi à l'action de déploiement) |
+| `FIREBASE_STORAGE_BUCKET`      | celle de `VITE_FIREBASE_STORAGE_BUCKET`                                    |
+| `FIREBASE_MESSAGING_SENDER_ID` | celle de `VITE_FIREBASE_MESSAGING_SENDER_ID`                               |
+| `FIREBASE_APP_ID`              | celle de `VITE_FIREBASE_APP_ID`                                            |
+| `DROPBOX_APP_KEY` (facultatif) | Clé de l'app Dropbox ([IMAGE_STORAGE.md](IMAGE_STORAGE.md))                |
+
+Les secrets n'ont pas le préfixe `VITE_` : ce sont les workflows qui les
+donnent à Vite sous ce nom, au moment de la construction.
 
 `GITHUB_TOKEN` est fourni automatiquement par GitHub Actions — rien à faire.
 
@@ -357,7 +361,7 @@ désactivez-la dans Google Cloud) ; elle ne sert qu'à ça.
 **automatiquement** par `main.yml` quand un push sur `main` les modifie, une
 fois la CI et les tests de bout en bout passés (§5). Prérequis : les rôles rules/index sur le compte de
 service (§5.1) + les secrets `FIREBASE_SERVICE_ACCOUNT` et
-`VITE_FIREBASE_PROJECT_ID`.
+`FIREBASE_PROJECT_ID`.
 
 Déploiement **manuel** (local ou premier essai), équivalent :
 
@@ -387,10 +391,10 @@ domaine dans **Authentication → Settings → Authorized domains**.
 
 ## Récapitulatif des informations à récupérer
 
-| Où                                                                      | Quoi                            | Utilisé pour                                                      |
-| ----------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------- |
-| Console Firebase → création projet                                      | **Project ID**                  | `.firebaserc`, `firebase.json`, secret `VITE_FIREBASE_PROJECT_ID` |
-| Project settings → General → Your apps → Config                         | **6 valeurs `VITE_FIREBASE_*`** | `apps/web/.env.local` + secrets GitHub                            |
-| `firebase init hosting:github` **ou** GCP → Service Accounts → clé JSON | **JSON du compte de service**   | secret GitHub `FIREBASE_SERVICE_ACCOUNT`                          |
-| Authentication → Sign-in method                                         | activer **Email/Password**      | connexion / création de compte                                    |
-| Firestore → Create database                                             | base créée + emplacement        | stockage des données                                              |
+| Où                                                                      | Quoi                            | Utilisé pour                                                 |
+| ----------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------ |
+| Console Firebase → création projet                                      | **Project ID**                  | `.firebaserc`, `firebase.json`, secret `FIREBASE_PROJECT_ID` |
+| Project settings → General → Your apps → Config                         | **6 valeurs `VITE_FIREBASE_*`** | `apps/web/.env.local` + secrets GitHub (sans `VITE_`)        |
+| `firebase init hosting:github` **ou** GCP → Service Accounts → clé JSON | **JSON du compte de service**   | secret GitHub `FIREBASE_SERVICE_ACCOUNT`                     |
+| Authentication → Sign-in method                                         | activer **Email/Password**      | connexion / création de compte                               |
+| Firestore → Create database                                             | base créée + emplacement        | stockage des données                                         |

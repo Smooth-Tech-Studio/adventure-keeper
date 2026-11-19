@@ -23,20 +23,20 @@ jobs:
       - name: Refuse staging on the production project
         if: ${{ inputs.environment == 'staging' }}
         env:
-          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          PID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           if [ -z "$PID" ] || [ "$PID" = "adv-keeper" ]; then
-            echo "::error::The staging environment has no VITE_FIREBASE_PROJECT_ID of its own (or it is the production project)"
+            echo "::error::The staging environment has no FIREBASE_PROJECT_ID secret of its own (or it is the production project)"
             exit 1
           fi
 
       - name: Check deploy secrets
         env:
           SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          PID: ${{ secrets.FIREBASE_PROJECT_ID }}
         run: |
           echo "FIREBASE_SERVICE_ACCOUNT length: ${#SA}"
-          echo "VITE_FIREBASE_PROJECT_ID length: ${#PID}"
+          echo "FIREBASE_PROJECT_ID length: ${#PID}"
           if [ -z "$SA" ]; then
             echo "::error::FIREBASE_SERVICE_ACCOUNT secret is empty or missing (check name / Repository-Actions scope)"
             exit 1
@@ -65,7 +65,7 @@ jobs:
           --force
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
-          FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
 
       - name: Clean up key
         if: always()
