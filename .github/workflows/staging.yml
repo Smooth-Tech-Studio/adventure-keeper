@@ -110,8 +110,12 @@ jobs:
       environment: staging
     secrets: inherit
 
+  # An explicit condition: the implicit `success()` would look at the whole
+  # chain of needs, and `ci` and `e2e` are skipped when the pull request was
+  # already tested.
   deploy-hosting:
     needs: [deploy-firestore]
+    if: ${{ !cancelled() && needs.deploy-firestore.result == 'success' }}
     concurrency:
       group: firebase-hosting-staging
       cancel-in-progress: false
