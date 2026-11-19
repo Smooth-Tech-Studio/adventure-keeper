@@ -134,8 +134,8 @@ ses variables ; l'app lui passe en plus `HOST`, `CLOUDFLARED_PATH` et
 - **La variante de staging** : l'app sert un seul projet Firebase, fixé à la
   compilation (`AK_FIREBASE_PROJECT_ID`, lu par `main.rs` ; `adv-keeper` par
   défaut). Origines autorisées et site ouvert par le bouton en découlent
-  (`<projet>.web.app`, `<projet>.firebaseapp.com`). Quand `staging.yml` est
-  lancé (à la main, tant que le staging est en pause), il appelle le même
+  (`<projet>.web.app`, `<projet>.firebaseapp.com`). À chaque push sur
+  `staging` qui touche l'app, le serveur ou les schémas, `staging.yml` appelle le même
   workflow après la CI :
   il construit une variante « Adventure Keeper Serveur Staging » (autre nom et
   autre identifiant : elle s'installe à côté de la vraie) et la publie dans la

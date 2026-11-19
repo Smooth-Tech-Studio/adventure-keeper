@@ -163,36 +163,33 @@ Project ID / site réel, puis committez.
 ## 5. Pipeline CI/CD (GitHub Actions)
 
 Les branches suivent ce chemin : une branche de travail → PR vers `staging` →
-PR `staging` → `main`. Un push sur `main` déploie la **production**, et
-seulement si la CI **et** les tests de bout en bout passent sur ce même commit.
-
-> **En pause** : rien ne tourne plus automatiquement sur `staging` (ni au push,
-> ni sur les PR qui la visent), et les PR vers `main` ne lancent plus les tests
-> de bout en bout. Les fichiers restent : `staging.yml` se lance à la main
-> (onglet **Actions**), et chaque fichier indique, en commentaire, les lignes à
-> rétablir pour réactiver son déclencheur.
+PR `staging` → `main`. Toute PR vers l'une ou l'autre passe la CI et les tests
+de bout en bout, exigés par les rulesets avec une branche à jour. Un push sur
+`staging` déploie le projet de **staging**, un push sur `main` la
+**production** : si le commit vient d'une PR ainsi testée, le déploiement part
+aussitôt ; sinon, CI et tests de bout en bout tournent d'abord.
 
 ### Les workflows (`.github/workflows/`)
 
-| Fichier                         | Déclencheur                          | Rôle                                                                            |
-| ------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------- |
-| `ci-reusable.yml`               | appelé par les autres                | la CI elle-même : install, `format:check`, `lint`, `typecheck`, `test`, `build` |
-| `pull-request.yml`              | PR vers `main`                       | CI                                                                              |
-| `staging.yml`                   | manuel (en pause sur `staging`)      | CI, puis déploiement des règles et du Hosting du projet de **staging**          |
-| `main.yml`                      | push sur `main`                      | CI et tests de bout en bout, puis les déploiements **s'ils passent**            |
-| `e2e-reusable.yml`              | appelé par `main.yml`, ou manuel     | tests Playwright contre les émulateurs (§3), rapport en artefact si échec       |
-| `deploy-hosting-reusable.yml`   | appelé par `main.yml`, `staging.yml` | build + déploiement du canal **live** de l'environnement reçu en paramètre      |
-| `deploy-firestore-reusable.yml` | appelé par `main.yml`                | `firebase deploy --only firestore:rules,firestore:indexes`                      |
-| `release-serveur-reusable.yml`  | appelé par `main.yml`, `staging.yml` | installeurs de l'app serveur, publiés en release (voir `REALTIME_SERVER.md`)    |
-| `deploy-hosting-manual.yml`     | manuel (onglet **Actions**)          | redéploie le Hosting, depuis `main` uniquement                                  |
-| `deploy-firestore-manual.yml`   | manuel (onglet **Actions**)          | redéploie règles et index, depuis `main` uniquement                             |
+| Fichier                         | Déclencheur                          | Rôle                                                                                                           |
+| ------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| `ci-reusable.yml`               | appelé par les autres                | la CI elle-même : install, `format:check`, `lint`, `typecheck`, `test`, `build`                                |
+| `pull-request.yml`              | PR vers `main` ou `staging`          | CI et tests de bout en bout                                                                                    |
+| `staging.yml`                   | push sur `staging`, ou manuel        | vérifie que la PR était testée (sinon CI et e2e), puis règles, Hosting et app serveur du projet de **staging** |
+| `main.yml`                      | push sur `main`                      | CI et tests de bout en bout, puis les déploiements **s'ils passent**                                           |
+| `e2e-reusable.yml`              | appelé par `main.yml`, ou manuel     | tests Playwright contre les émulateurs (§3), rapport en artefact si échec                                      |
+| `deploy-hosting-reusable.yml`   | appelé par `main.yml`, `staging.yml` | build + déploiement du canal **live** de l'environnement reçu en paramètre                                     |
+| `deploy-firestore-reusable.yml` | appelé par `main.yml`                | `firebase deploy --only firestore:rules,firestore:indexes`                                                     |
+| `release-serveur-reusable.yml`  | appelé par `main.yml`, `staging.yml` | installeurs de l'app serveur, publiés en release (voir `REALTIME_SERVER.md`)                                   |
+| `deploy-hosting-manual.yml`     | manuel (onglet **Actions**)          | redéploie le Hosting, depuis `main` uniquement                                                                 |
+| `deploy-firestore-manual.yml`   | manuel (onglet **Actions**)          | redéploie règles et index, depuis `main` uniquement                                                            |
 
 Dans `main.yml` :
 
 - **`ci`** rejoue la CI sur le commit poussé ; un nouveau push annule celle en cours.
 - **`e2e`** lance les tests de bout en bout en parallèle (quelques
-  minutes, sans aucun secret : l'app de test parle aux émulateurs). Ils ne
-  tournent pas sur les PR, pour ne pas les ralentir.
+  minutes, sans aucun secret : l'app de test parle aux émulateurs). Ils
+  tournent aussi sur chaque PR.
 - **`deploy-hosting`** attend `ci` et `e2e`, et ne part que si les deux ont réussi.
 - **`deploy-firestore`** attend `ci` et `e2e`, et ne part que si le push modifie
   `firestore.rules`, `firestore.indexes.json` ou `firebase.json` (job
