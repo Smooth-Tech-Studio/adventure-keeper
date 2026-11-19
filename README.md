@@ -1,135 +1,149 @@
 # Adventure Keeper
 
-[![CI et déploiement](https://github.com/Smooth-Tech-Studio/adventure-keeper/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Smooth-Tech-Studio/adventure-keeper/actions/workflows/main.yml?query=branch%3Amain)
-[![Licence : PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/licence-PolyForm%20Noncommercial%201.0.0-blue)](LICENSE)
+**English** · [Français](README.fr.md)
 
-Une plateforme web pour les tables de jeu de rôle : campagnes, personnages,
-aventures et sessions en direct, au même endroit pour le MJ et ses joueurs.
-Compatible avec la cinquième édition (SRD 5.2.1), avec aussi une fiche libre
-pour les autres jeux.
+[![CI and deployment](https://github.com/Smooth-Tech-Studio/adventure-keeper/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Smooth-Tech-Studio/adventure-keeper/actions/workflows/main.yml?query=branch%3Amain)
+[![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-blue)](LICENSE)
 
-**Site : <https://adv-keeper.smthstd.fr>**
+A web platform for tabletop role-playing groups: campaigns, characters,
+adventures and live sessions, in one place for the GM and their players.
+Compatible with the fifth edition (SRD 5.2.1), with a free-form sheet for
+other games too.
 
-## Fonctionnalités
+**Site: <https://adv-keeper.smthstd.fr>**
 
-- **Création de personnage guidée** (5e 2024) : classe, espèce, historique,
-  caractéristiques, sorts, équipement, avec les valeurs de la fiche calculées
-  en direct. Essayable sans compte.
-- **Fiche de personnage** calculée (CA, PV, attaques, sauvegardes, capacités),
-  modifiable bloc par bloc, avec montée de niveau guidée. Une fiche libre
-  existe pour les autres systèmes.
-- **Campagnes et aventures** : membres, lieux, PNJ, ennemis tirés du bestiaire,
-  quêtes, codex et chronique, import et export en fichier.
-- **Sessions en direct** : carte et jetons partagés, combat et initiative,
-  brume de guerre, dés, onglets détachés pour un second écran ou la TV de la
-  table. Le serveur de session peut tourner sur l'ordinateur du MJ (app
-  **Adventure Keeper Serveur**, Windows, macOS, Linux).
-- **Packs de contenu** : une table ajoute ses propres classes, espèces, sorts,
-  monstres, objets… au format `ak-pack/1`, par-dessus le SRD, qui est lui-même
-  écrit dans ce format.
-- **Français et anglais.**
+## Features
 
-## Démarrage rapide
+- **Guided character creation** (5e 2024): class, species, background,
+  ability scores, spells, equipment, with the sheet's values computed live.
+  Try it without an account.
+- **Character sheet**, fully computed (AC, HP, attacks, saves, features),
+  editable block by block, with guided level-up. A free-form sheet covers
+  other systems.
+- **Campaigns and adventures**: members, places, NPCs, enemies from the
+  bestiary, quests, codex and chronicle, file import and export.
+- **Live sessions**: shared map and tokens, combat and initiative, fog of war,
+  dice, detachable tabs for a second screen or the table's TV. The session
+  server can run on the GM's computer (the **Adventure Keeper Serveur** app,
+  Windows, macOS, Linux).
+- **Content packs**: a table adds its own classes, species, spells, monsters,
+  items… in the `ak-pack/1` format, on top of the SRD, which is itself written
+  in that format.
+- **English and French.**
 
-Prérequis : **Node 26** (voir `.nvmrc`), **pnpm 11** (`corepack enable`) et
-**Java** pour l'émulateur Firestore.
+## Quick start
+
+Requirements: **Node 26** (see `.nvmrc`), **pnpm 11** (`corepack enable`) and
+**Java** for the Firestore emulator.
 
 ```bash
 pnpm install
-pnpm dev              # émulateurs Firebase + application → http://localhost:5173
-pnpm emulators:seed   # dans un autre terminal : comptes, personnages et campagnes de test
+pnpm dev              # Firebase emulators + app → http://localhost:5173
+pnpm emulators:seed   # in another terminal: test accounts, characters and campaigns
 ```
 
-`pnpm dev` démarre les émulateurs Firebase (Auth et Firestore) et l'application,
-qui s'y connecte d'elle-même : aucun projet Firebase n'est nécessaire.
-L'interface des émulateurs est sur <http://127.0.0.1:4000>.
+`pnpm dev` starts the Firebase emulators (Auth and Firestore) and the app,
+which connects to them on its own: no Firebase project is needed. The
+emulator UI is at <http://127.0.0.1:4000>.
 
-Le seed crée trois comptes, `alice@test.dev`, `bob@test.dev` et
-`carol@test.dev` (mot de passe `test1234`), avec leurs personnages et deux
-campagnes. Le parcours de test est décrit dans
+The seed creates three accounts, `alice@test.dev`, `bob@test.dev` and
+`carol@test.dev` (password `test1234`), with their characters and two
+campaigns. The test walkthrough is in
 [`docs/SEED_SCENARIO.md`](docs/SEED_SCENARIO.md).
 
-Pour développer contre un vrai projet Firebase, copier `apps/web/.env.example`
-vers `apps/web/.env.local`, le remplir, puis lancer `pnpm dev:app`. Le détail,
-et la mise en place du déploiement, sont dans
-[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+To develop against a real Firebase project, copy `apps/web/.env.example` to
+`apps/web/.env.local`, fill it in, then run `pnpm dev:app`. The details, and
+how to set up deployment, are in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
-## Commandes
+## Commands
 
-| Commande              | Effet                                                                 |
-| --------------------- | --------------------------------------------------------------------- |
-| `pnpm dev`            | Émulateurs + application, en rechargement à chaud                     |
-| `pnpm dev:app`        | Application seule, contre le projet de `apps/web/.env.local`          |
-| `pnpm dev:https`      | Comme `pnpm dev`, servi en HTTPS (certificat auto-signé)              |
-| `pnpm dev:expose`     | Comme `pnpm dev`, ouvert au réseau local (pour essayer sur un mobile) |
-| `pnpm emulators:seed` | Remplit les émulateurs de données de test (relançable)                |
-| `pnpm build`          | Construit tous les paquets (Turborepo)                                |
-| `pnpm typecheck`      | Vérifie les types de tout le dépôt                                    |
-| `pnpm lint`           | ESLint                                                                |
-| `pnpm format`         | Prettier                                                              |
-| `pnpm test`           | Tests unitaires (Vitest)                                              |
-| `pnpm test:e2e`       | Tests de bout en bout (Playwright, avec leurs propres émulateurs)     |
+| Command               | What it does                                                   |
+| --------------------- | -------------------------------------------------------------- |
+| `pnpm dev`            | Emulators + app, with hot reload                               |
+| `pnpm dev:app`        | App only, against the project in `apps/web/.env.local`         |
+| `pnpm dev:https`      | Like `pnpm dev`, served over HTTPS (self-signed certificate)   |
+| `pnpm dev:expose`     | Like `pnpm dev`, open to the local network (to try on a phone) |
+| `pnpm emulators:seed` | Fills the emulators with test data (can be re-run)             |
+| `pnpm build`          | Builds every package (Turborepo)                               |
+| `pnpm typecheck`      | Type-checks the whole repository                               |
+| `pnpm lint`           | ESLint                                                         |
+| `pnpm format`         | Prettier                                                       |
+| `pnpm test`           | Unit tests (Vitest)                                            |
+| `pnpm test:e2e`       | End-to-end tests (Playwright, with their own emulators)        |
 
-## Structure du dépôt
+## Repository layout
 
-Monorepo pnpm + Turborepo.
+pnpm + Turborepo monorepo.
 
 ```
 apps/
-  web/                React + Vite + Tailwind + shadcn/ui, hébergé sur Firebase Hosting
-  realtime-server/    Serveur de session en direct (Node + WebSocket)
-  realtime-desktop/   Adventure Keeper Serveur : ce serveur dans une app de bureau (Tauri)
+  web/                React + Vite + Tailwind + shadcn/ui, hosted on Firebase Hosting
+  realtime-server/    Live session server (Node + WebSocket)
+  realtime-desktop/   Adventure Keeper Serveur: that server in a desktop app (Tauri)
 packages/
-  system-dnd2024/     Moteur de règles 5e 2024, format des packs et pack de base du SRD (src/srd)
-  schemas/            Schémas Zod et types du modèle de données Firestore
-  locale/             Langue courante et outils de traduction partagés
-e2e/                  Scénarios de bout en bout (Playwright)
-scripts/              Seed des émulateurs, export des catalogues
-docs/                 Documentation technique
-firestore.rules       Règles de sécurité Firestore
+  system-dnd2024/     5e 2024 rules engine, pack format and the SRD base pack (src/srd)
+  schemas/            Zod schemas and types of the Firestore data model
+  locale/             Current language and shared translation helpers
+e2e/                  End-to-end scenarios (Playwright)
+scripts/              Emulator seed, catalogue export
+docs/                 Technical documentation
+firestore.rules       Firestore security rules
 ```
 
-Pile : React 19, React Router 7, Vite 8, Tailwind CSS 4, shadcn/ui, Zod 4,
+Stack: React 19, React Router 7, Vite 8, Tailwind CSS 4, shadcn/ui, Zod 4,
 i18next, Firebase (Authentication, Firestore, Hosting), Tauri, GitHub Actions.
 
 ## Documentation
 
-| Document                                            | Sujet                                                   |
-| --------------------------------------------------- | ------------------------------------------------------- |
-| [`DEPLOYMENT.md`](docs/DEPLOYMENT.md)               | Projets Firebase, environnements et déploiement continu |
-| [`FIRESTORE.md`](docs/FIRESTORE.md)                 | Modèle de données                                       |
-| [`CONTENT_PACKS.md`](docs/CONTENT_PACKS.md)         | Format des packs de contenu et pack de base du SRD      |
-| [`FEATURE_EFFECTS.md`](docs/FEATURE_EFFECTS.md)     | Ce que chaque capacité du SRD applique sur la fiche     |
-| [`RULES_AND_CONTENT.md`](docs/RULES_AND_CONTENT.md) | Séparation entre l'application, le moteur et le contenu |
-| [`REALTIME_SERVER.md`](docs/REALTIME_SERVER.md)     | Serveur de session en direct et app de bureau           |
-| [`I18N.md`](docs/I18N.md)                           | Traductions                                             |
-| [`IMAGE_STORAGE.md`](docs/IMAGE_STORAGE.md)         | Import des images vers le Dropbox du joueur             |
-| [`SEED_SCENARIO.md`](docs/SEED_SCENARIO.md)         | Parcours de test avec les données du seed               |
+The technical documentation is written in French.
 
-## Contribuer
+| Document                                            | Topic                                                     |
+| --------------------------------------------------- | --------------------------------------------------------- |
+| [`DEPLOYMENT.md`](docs/DEPLOYMENT.md)               | Firebase projects, environments and continuous deployment |
+| [`FIRESTORE.md`](docs/FIRESTORE.md)                 | Data model                                                |
+| [`CONTENT_PACKS.md`](docs/CONTENT_PACKS.md)         | Content pack format and the SRD base pack                 |
+| [`FEATURE_EFFECTS.md`](docs/FEATURE_EFFECTS.md)     | What each SRD feature applies to the sheet                |
+| [`RULES_AND_CONTENT.md`](docs/RULES_AND_CONTENT.md) | How the app, the engine and the content are split         |
+| [`REALTIME_SERVER.md`](docs/REALTIME_SERVER.md)     | Live session server and desktop app                       |
+| [`I18N.md`](docs/I18N.md)                           | Translations                                              |
+| [`IMAGE_STORAGE.md`](docs/IMAGE_STORAGE.md)         | Uploading images to the player's Dropbox                  |
+| [`SEED_SCENARIO.md`](docs/SEED_SCENARIO.md)         | Test walkthrough with the seed data                       |
 
-Les évolutions et les retours se suivent dans les
-[tickets](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues).
+## Contributing
 
-`main` (production) et `staging` ne reçoivent que des pull requests : une PR
-vers `main` doit passer la CI (`ci / build` : format, lint, types, tests,
-build) et être approuvée par un mainteneur (voir `.github/CODEOWNERS`). Avant
-d'ouvrir une PR, lancer `pnpm format`, `pnpm lint`, `pnpm typecheck` et
-`pnpm test`. La CI d'un premier contributeur attend l'accord d'un mainteneur
-avant de tourner.
+Changes and feedback are tracked in the
+[issues](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues).
 
-## Licence
+`main` (production) and `staging` only accept pull requests. Pull requests
+target `staging`; `staging` then goes to `main` through its own pull request.
+To be merged, a pull request must:
 
-Le code est publié sous la licence
-[PolyForm Noncommercial 1.0.0](LICENSE) : libre de le lire, de le modifier et
-de l'utiliser à des fins non commerciales ; tout usage commercial est exclu.
+- pass the CI (`ci / build`: format, lint, types, tests, build) and the
+  end-to-end tests (`e2e / e2e`);
+- be up to date with its target branch;
+- be approved by a maintainer (see `.github/CODEOWNERS`), with its
+  conversations resolved.
 
-## Crédits
+Before opening a pull request, run `pnpm format`, `pnpm lint`,
+`pnpm typecheck` and `pnpm test`. A first-time contributor's CI waits for a
+maintainer's approval before it runs.
 
-Compatible avec la cinquième édition. Cette œuvre inclut du matériel issu du
-System Reference Document 5.2.1 (« SRD 5.2.1 ») de Wizards of the Coast LLC,
-disponible à l’adresse https://www.dndbeyond.com/srd. Le SRD 5.2.1 est régi
-par la Licence Creative Commons Attribution 4.0 International, disponible à
-l’adresse https://creativecommons.org/licenses/by/4.0/legalcode.
+Please do not report a security issue in a public issue: see
+[`SECURITY.md`](SECURITY.md).
 
-La même mention est affichée dans l'application, page `/credits`.
+## License
+
+The code is released under the
+[PolyForm Noncommercial 1.0.0](LICENSE) license: you are free to read it,
+modify it and use it for noncommercial purposes; any commercial use is
+excluded.
+
+## Credits
+
+Compatible with the fifth edition. This work includes material from the
+System Reference Document 5.2.1 ("SRD 5.2.1") by Wizards of the Coast LLC,
+available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under
+the Creative Commons Attribution 4.0 International License, available at
+https://creativecommons.org/licenses/by/4.0/legalcode.
+
+The same notice is shown in the app, on the `/credits` page.
