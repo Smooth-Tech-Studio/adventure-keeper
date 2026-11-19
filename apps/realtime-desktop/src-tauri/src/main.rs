@@ -23,14 +23,32 @@ const FIREBASE_PROJECT_ID: &str = match option_env!("AK_FIREBASE_PROJECT_ID") {
     _ => "adv-keeper",
 };
 
-/// The site, which Firebase Hosting serves at `<project>.web.app`.
+/// Production's own domain. Firebase Hosting serves the same site at
+/// `<project>.web.app` and `<project>.firebaseapp.com` too.
+const PRODUCTION_SITE: &str = "https://adv-keeper.smthstd.fr";
+
+/// The site the app opens: production's domain, or the staging project's
+/// Firebase address.
 fn site_url() -> String {
-    format!("https://{FIREBASE_PROJECT_ID}.web.app")
+    if FIREBASE_PROJECT_ID == "adv-keeper" {
+        PRODUCTION_SITE.to_string()
+    } else {
+        format!("https://{FIREBASE_PROJECT_ID}.web.app")
+    }
 }
 
-/// The site's addresses, the only pages allowed to open a socket.
+/// The site's addresses, the only pages allowed to find the server and open
+/// a socket: its domain and both Firebase addresses.
 fn allowed_origins() -> String {
-    format!("{},https://{FIREBASE_PROJECT_ID}.firebaseapp.com", site_url())
+    let firebase = format!(
+        "https://{FIREBASE_PROJECT_ID}.web.app,https://{FIREBASE_PROJECT_ID}.firebaseapp.com"
+    );
+    let site = site_url();
+    if firebase.split(',').any(|origin| origin == site) {
+        firebase
+    } else {
+        format!("{site},{firebase}")
+    }
 }
 /// Fixed, so the site can find a server running on this computer.
 const PORT: &str = "8787";

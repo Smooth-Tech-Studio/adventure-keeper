@@ -8,7 +8,7 @@ aventures et sessions en direct, au même endroit pour le MJ et ses joueurs.
 Compatible avec la cinquième édition (SRD 5.2.1), avec aussi une fiche libre
 pour les autres jeux.
 
-**Site : <https://adv-keeper.web.app>**
+**Site : <https://adv-keeper.smthstd.fr>**
 
 ## Fonctionnalités
 

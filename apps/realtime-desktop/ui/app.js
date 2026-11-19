@@ -1,7 +1,7 @@
 // The window of Adventure Keeper Serveur: shows what the server reports
 // (`server-status` events, the last one through `last_status` on load).
 // The site it opens is the build's (`open_site`): production or staging.
-const SITE = "https://adv-keeper.web.app";
+const SITE = "https://adv-keeper.smthstd.fr";
 
 const STRINGS = {
   fr: {

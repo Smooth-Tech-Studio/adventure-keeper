@@ -266,7 +266,7 @@ jobs:
         run: |
           (cd out && sha256sum * > SHA256SUMS.txt)
           tag="serveur-v${VERSION}"
-          notes="Le serveur de session en direct d'Adventure Keeper, sur l'ordinateur du MJ. Téléchargement et première ouverture : https://adv-keeper.web.app/serveur"
+          notes="Le serveur de session en direct d'Adventure Keeper, sur l'ordinateur du MJ. Téléchargement et première ouverture : https://adv-keeper.smthstd.fr/serveur"
           notes="$notes"$'\n\n'"Construit depuis ${GITHUB_SHA::7}."
           publish() {
             gh release create "$tag" out/* --target "$1" \
