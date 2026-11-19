@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "dev",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    },
+    {
       "name": "web",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["--filter", "@adventure-keeper/web", "dev"],
@@ -14,57 +20,16 @@
       "port": 9099
     },
     {
-      "name": "emulators-alt",
-      "runtimeExecutable": "pnpm",
-      "runtimeArgs": [
-        "exec",
-        "firebase",
-        "emulators:start",
-        "--only",
-        "auth,firestore",
-        "--config",
-        "firebase.e2e.json",
-        "--project",
-        "adv-keeper"
-      ],
-      "port": 9399
-    },
-    {
-      "name": "web-alt",
-      "runtimeExecutable": "env",
-      "runtimeArgs": [
-        "VITE_FIREBASE_AUTH_EMULATOR_PORT=9399",
-        "VITE_FIREBASE_FIRESTORE_EMULATOR_PORT=8380",
-        "pnpm",
-        "--filter",
-        "@adventure-keeper/web",
-        "exec",
-        "vite",
-        "--port",
-        "5193",
-        "--strictPort"
-      ],
-      "port": 5193
-    },
-    {
       "name": "dev-expose",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["run", "dev:expose"],
       "port": 5173
     },
     {
-      "name": "mockups",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "8765",
-        "--bind",
-        "127.0.0.1",
-        "--directory",
-        "docs/mockups"
-      ],
-      "port": 8765
+      "name": "e2e-ui",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "test:e2e:ui", "--", "--ui-port", "9323"],
+      "port": 9323
     }
   ]
 }

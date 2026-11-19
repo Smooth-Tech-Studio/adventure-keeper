@@ -4,8 +4,7 @@ A collaborative web platform for tabletop role-playing games, helping groups
 manage campaigns, characters, sessions, notes, and shared game resources in one
 place.
 
-> **Backlog / retours à trier :** [INCOMING_UPDATES.md](INCOMING_UPDATES.md)
-> (notes brutes, non priorisées).
+> **Évolutions et retours :** les [tickets GitHub](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues).
 
 ## État de la CI
 
@@ -48,7 +47,6 @@ adventure-keeper/
 │   ├── IMAGE_STORAGE.md     # Import des images vers le Dropbox du joueur (mise en place)
 │   ├── DEPLOYMENT.md        # Mise en place Firebase + pipeline, pas à pas
 │   └── FIRESTORE.md         # Modèle de données
-├── INCOMING_UPDATES.md      # Backlog : idées / retours à trier (notes brutes)
 └── turbo.json
 ```
 
