@@ -23,17 +23,13 @@ const FIREBASE_PROJECT_ID: &str = match option_env!("AK_FIREBASE_PROJECT_ID") {
     _ => "adv-keeper",
 };
 
-/// Production's own domain. Firebase Hosting serves the same site at
-/// `<project>.web.app` and `<project>.firebaseapp.com` too.
-const PRODUCTION_SITE: &str = "https://adv-keeper.smthstd.fr";
-
-/// The site the app opens: production's domain, or the staging project's
-/// Firebase address.
+/// The site the app opens: the address the build was given (`AK_SITE_URL`,
+/// the `SITE_URL` variable of the GitHub environment — production's domain,
+/// staging's), else the Firebase project's own `<project>.web.app`.
 fn site_url() -> String {
-    if FIREBASE_PROJECT_ID == "adv-keeper" {
-        PRODUCTION_SITE.to_string()
-    } else {
-        format!("https://{FIREBASE_PROJECT_ID}.web.app")
+    match option_env!("AK_SITE_URL") {
+        Some(url) if !url.trim().is_empty() => url.trim().trim_end_matches('/').to_string(),
+        _ => format!("https://{FIREBASE_PROJECT_ID}.web.app"),
     }
 }
 

@@ -300,6 +300,13 @@ Dépôt → **Settings → Secrets and variables → Actions**.
 Les secrets n'ont pas le préfixe `VITE_` : ce sont les workflows qui les
 donnent à Vite sous ce nom, au moment de la construction.
 
+Chaque environnement porte aussi une **variable** (onglet _Variables_, pas
+_Secrets_) :
+
+| Variable   | Valeur                                                                                                                      |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `SITE_URL` | l'adresse du site de cet environnement (`https://adv-keeper.smthstd.fr` en production) ; l'app Serveur l'ouvre et l'accepte |
+
 `GITHUB_TOKEN` est fourni automatiquement par GitHub Actions — rien à faire.
 
 ### 5.3 Activer et tester

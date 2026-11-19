@@ -1,7 +1,6 @@
 // The window of Adventure Keeper Serveur: shows what the server reports
 // (`server-status` events, the last one through `last_status` on load).
 // The site it opens is the build's (`open_site`): production or staging.
-const SITE = "https://adv-keeper.smthstd.fr";
 
 const STRINGS = {
   fr: {
@@ -111,8 +110,8 @@ $("copy").addEventListener("click", async () => {
 });
 
 $("open-site").addEventListener("click", () => {
+  // Outside the app (a preview of the window in a browser) there is no site to open.
   if (tauri) void tauri.core.invoke("open_site");
-  else window.open(SITE, "_blank");
 });
 
 render(null);
