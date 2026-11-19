@@ -181,9 +181,12 @@ jobs:
 
       # The computed version overrides tauri.conf.json's (Tauri merges the
       # inline JSON last): it is what the installers and the app report.
+      # The site's address (the `SITE_URL` variable of the channel's
+      # environment): what the app opens and accepts, beside the Firebase ones.
       - name: Build the app
         env:
           VERSION: ${{ needs.channel.outputs.version }}
+          AK_SITE_URL: ${{ vars.SITE_URL }}
         run: |
           pnpm --filter @adventure-keeper/realtime-desktop tauri build \
             --bundles ${{ matrix.bundles }} ${TAURI_CONFIG_ARGS:-} \
@@ -219,6 +222,8 @@ jobs:
     # release checks below that the installers it cannot do without are there.
     # The run stays red either way.
     if: ${{ !cancelled() && needs.channel.outputs.publish == 'true' }}
+    # The channel's environment, for its `SITE_URL` in the release notes.
+    environment: ${{ needs.channel.outputs.channel }}
     runs-on: ubuntu-latest
     permissions:
       # `contents: write` for the releases and their tags; `actions: read`
@@ -263,10 +268,11 @@ jobs:
         if: ${{ needs.channel.outputs.channel == 'production' }}
         env:
           VERSION: ${{ needs.channel.outputs.version }}
+          SITE_URL: ${{ vars.SITE_URL }}
         run: |
           (cd out && sha256sum * > SHA256SUMS.txt)
           tag="serveur-v${VERSION}"
-          notes="Le serveur de session en direct d'Adventure Keeper, sur l'ordinateur du MJ. Téléchargement et première ouverture : https://adv-keeper.web.app/serveur"
+          notes="Le serveur de session en direct d'Adventure Keeper, sur l'ordinateur du MJ. Téléchargement et première ouverture : ${SITE_URL%/}/serveur"
           notes="$notes"$'\n\n'"Construit depuis ${GITHUB_SHA::7}."
           publish() {
             gh release create "$tag" out/* --target "$1" \

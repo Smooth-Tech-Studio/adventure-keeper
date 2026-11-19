@@ -23,14 +23,28 @@ const FIREBASE_PROJECT_ID: &str = match option_env!("AK_FIREBASE_PROJECT_ID") {
     _ => "adv-keeper",
 };
 
-/// The site, which Firebase Hosting serves at `<project>.web.app`.
+/// The site the app opens: the address the build was given (`AK_SITE_URL`,
+/// the `SITE_URL` variable of the GitHub environment — production's domain,
+/// staging's), else the Firebase project's own `<project>.web.app`.
 fn site_url() -> String {
-    format!("https://{FIREBASE_PROJECT_ID}.web.app")
+    match option_env!("AK_SITE_URL") {
+        Some(url) if !url.trim().is_empty() => url.trim().trim_end_matches('/').to_string(),
+        _ => format!("https://{FIREBASE_PROJECT_ID}.web.app"),
+    }
 }
 
-/// The site's addresses, the only pages allowed to open a socket.
+/// The site's addresses, the only pages allowed to find the server and open
+/// a socket: its domain and both Firebase addresses.
 fn allowed_origins() -> String {
-    format!("{},https://{FIREBASE_PROJECT_ID}.firebaseapp.com", site_url())
+    let firebase = format!(
+        "https://{FIREBASE_PROJECT_ID}.web.app,https://{FIREBASE_PROJECT_ID}.firebaseapp.com"
+    );
+    let site = site_url();
+    if firebase.split(',').any(|origin| origin == site) {
+        firebase
+    } else {
+        format!("{site},{firebase}")
+    }
 }
 /// Fixed, so the site can find a server running on this computer.
 const PORT: &str = "8787";
