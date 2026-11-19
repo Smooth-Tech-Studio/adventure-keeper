@@ -12,11 +12,11 @@ jobs:
     uses: ./.github/workflows/ci-reusable.yml
     secrets: inherit
 
-  # Paused: the end-to-end tests no longer run on pull requests. They still
-  # run on a push to `main` before the deployment (main.yml), and by hand
-  # (Actions → End-to-end tests). Uncomment to run them before the merge again.
-  # e2e:
-  #   uses: ./.github/workflows/e2e-reusable.yml
-  #   concurrency:
-  #     group: e2e-pr-${{ github.event.pull_request.number }}
-  #     cancel-in-progress: true
+  # The whole app end to end before the merge: `e2e / e2e` is a required check
+  # on `main`. Own Firebase emulators, no secret, so it runs on a fork's PR too
+  # (once a maintainer approves its first run).
+  e2e:
+    uses: ./.github/workflows/e2e-reusable.yml
+    concurrency:
+      group: e2e-pr-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
