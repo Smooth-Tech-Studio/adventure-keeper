@@ -111,12 +111,22 @@ i18next, Firebase (Authentication, Firestore, Hosting), Tauri, GitHub Actions.
 Les évolutions et les retours se suivent dans les
 [tickets](https://github.com/Smooth-Tech-Studio/adventure-keeper/issues).
 
-`main` (production) et `staging` ne reçoivent que des pull requests : une PR
-vers `main` doit passer la CI (`ci / build` : format, lint, types, tests,
-build) et être approuvée par un mainteneur (voir `.github/CODEOWNERS`). Avant
-d'ouvrir une PR, lancer `pnpm format`, `pnpm lint`, `pnpm typecheck` et
+`main` (production) et `staging` ne reçoivent que des pull requests. Les PR
+se font vers `staging` ; `staging` passe ensuite sur `main` par sa propre PR.
+Pour être fusionnée, une PR doit :
+
+- passer la CI (`ci / build` : format, lint, types, tests, build) et les tests
+  de bout en bout (`e2e / e2e`) ;
+- être à jour avec sa branche cible ;
+- être approuvée par un mainteneur (voir `.github/CODEOWNERS`), ses
+  discussions résolues.
+
+Avant d'ouvrir une PR, lancer `pnpm format`, `pnpm lint`, `pnpm typecheck` et
 `pnpm test`. La CI d'un premier contributeur attend l'accord d'un mainteneur
 avant de tourner.
+
+Une faille de sécurité ne se signale pas dans un ticket public : voir
+[`SECURITY.md`](SECURITY.md).
 
 ## Licence
 
