@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventure Keeper — Serveur</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="brand">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" />
+          <g fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="9" />
+            <path d="M20.5 11.5 18 18l-6.5 2.5L14 14z" class="needle" />
+          </g>
+        </svg>
+        <div>
+          <h1>Adventure Keeper</h1>
+          <p class="muted" data-i18n="subtitle"></p>
+        </div>
+      </header>
+
+      <section class="card" aria-live="polite">
+        <div class="status">
+          <span class="dot" id="dot" data-tone="busy"></span>
+          <span id="status-label"></span>
+        </div>
+        <p class="muted small" id="status-detail" hidden></p>
+
+        <label class="label" for="address" data-i18n="address"></label>
+        <div class="row">
+          <input id="address" class="input" readonly spellcheck="false" />
+          <button id="copy" class="button" type="button" disabled data-i18n="copy"></button>
+        </div>
+        <p class="muted small" id="players"></p>
+      </section>
+
+      <section class="steps">
+        <h2 data-i18n="howTitle"></h2>
+        <ol>
+          <li data-i18n="step1"></li>
+          <li data-i18n="step2"></li>
+          <li data-i18n="step3"></li>
+        </ol>
+      </section>
+
+      <footer class="footer">
+        <p class="muted small" data-i18n="keepOpen"></p>
+        <button id="open-site" class="button outline" type="button" data-i18n="openSite"></button>
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

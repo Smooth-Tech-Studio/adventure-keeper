@@ -1,0 +1,72 @@
+name: Deploy Firestore rules and indexes
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: GitHub environment holding the Firebase secrets (production or staging)
+        type: string
+        default: production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+
+      - name: Refuse staging on the production project
+        if: ${{ inputs.environment == 'staging' }}
+        env:
+          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+        run: |
+          if [ -z "$PID" ] || [ "$PID" = "adv-keeper" ]; then
+            echo "::error::The staging environment has no VITE_FIREBASE_PROJECT_ID of its own (or it is the production project)"
+            exit 1
+          fi
+
+      - name: Check deploy secrets
+        env:
+          SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+        run: |
+          echo "FIREBASE_SERVICE_ACCOUNT length: ${#SA}"
+          echo "VITE_FIREBASE_PROJECT_ID length: ${#PID}"
+          if [ -z "$SA" ]; then
+            echo "::error::FIREBASE_SERVICE_ACCOUNT secret is empty or missing (check name / Repository-Actions scope)"
+            exit 1
+          fi
+          case "$SA" in
+            \{*) echo "service account value looks like JSON (starts with '{'): OK" ;;
+            *) echo "::warning::service account value does NOT start with '{' — likely truncated or wrong content" ;;
+          esac
+          printf '%s' "$SA" | grep -q '"private_key"' \
+            && echo 'service account contains a "private_key" field: OK' \
+            || echo '::warning::no "private_key" field found in the secret'
+
+      - name: Write service account key
+        run: |
+          printf '%s' "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/gcp-key.json"
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      # The version of the project's dev dependency, without installing the workspace.
+      - name: Deploy rules and indexes
+        run: >-
+          npx --yes "firebase-tools@$(node -p "require('./package.json').devDependencies['firebase-tools']")" deploy
+          --only firestore:rules,firestore:indexes
+          --project "$FIREBASE_PROJECT_ID"
+          --non-interactive
+          --force
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gcp-key.json
+          FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+
+      - name: Clean up key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/gcp-key.json"

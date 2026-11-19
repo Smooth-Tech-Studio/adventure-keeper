@@ -1,0 +1,57 @@
+{
+  "title": "Quests",
+  "intro": "The rumours the party heard, its quests, and your own: add a personal goal, kept for you and the GM or shared with the party.",
+  "introGm": "Rumours, quests under way, accomplished or failed. Players only see revealed quests; they can write their own too, which you always see.",
+  "new": "New quest",
+  "empty": "No quest yet.",
+  "emptyGm": "No quest. Note a rumour, a mission, an oath…",
+  "hidden": "Hidden",
+  "statuses": {
+    "rumor": "Rumour",
+    "active": "Under way",
+    "done": "Accomplished",
+    "failed": "Failed"
+  },
+  "statusesPlural": {
+    "rumor": "Rumours",
+    "active": "Under way",
+    "done": "Accomplished",
+    "failed": "Failed"
+  },
+  "statusOf": "Status of “{{title}}”",
+  "revealWhat": "Reveal “{{title}}”",
+  "hideWhat": "Hide “{{title}}”",
+  "deleteTitle": "Delete “{{title}}”?",
+  "deleteText": "The quest will be deleted.",
+  "sessionSummary_one": "{{count}} open",
+  "sessionSummary_other": "{{count}} open",
+  "form": {
+    "newTitle": "New quest",
+    "editTitle": "Edit the quest",
+    "title": "Title",
+    "titleRequired": "The title is required.",
+    "summary": "What the party knows",
+    "summaryPlaceholder": "They say a dragon sleeps under [[Ashmoor]]…",
+    "status": "Status",
+    "revealed": "Visible to players",
+    "shared": "Share with the party",
+    "sharedHint": "Personal, only you and the GM see it. Shared, the whole party does."
+  },
+  "milestones": {
+    "revealed": "Revealed",
+    "rumor": "Back to rumour",
+    "active": "Taken on",
+    "done": "Accomplished",
+    "failed": "Failed",
+    "inSession": "in session {{number}}",
+    "inASession": "during a session",
+    "line": "{{title}}: {{kinds}}"
+  },
+  "ownedBy": "{{name}}'s quest",
+  "personal": "Personal",
+  "shared": "Shared",
+  "editWhat": "Edit “{{title}}”",
+  "deleteWhat": "Delete “{{title}}”",
+  "openCount_one": "{{count}} open",
+  "openCount_other": "{{count}} open"
+}

@@ -1,0 +1,527 @@
+rules_version = "2";
+
+// Adventure Keeper — Firestore security rules.
+// Data model documented in docs/FIRESTORE.md and typed in packages/schemas.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // A shared chapter / journal entry: `party` for the members of its
+    // campaign, `gm` for its owner. Read live, so a newcomer sees past entries.
+    function storyCampaign(data) {
+      return get(/databases/$(database)/documents/campaigns/$(data.campaignId)).data;
+    }
+    function storyReadable(data) {
+      return isSignedIn()
+        && ((data.visibility == "party" && uid() in storyCampaign(data).memberIds)
+          || (data.visibility == "gm" && storyCampaign(data).ownerId == uid()));
+    }
+
+    function uid() {
+      return request.auth.uid;
+    }
+
+    // --- Users -------------------------------------------------------------
+    // A user profile mirrors the Firebase Auth account. Anyone signed in can
+    // read basic profiles (needed to display co-players); only the owner writes.
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && uid() == userId
+        && request.resource.data.uid == userId;
+      allow update: if isSignedIn() && uid() == userId
+        && request.resource.data.uid == resource.data.uid;
+      allow delete: if isSignedIn() && uid() == userId;
+
+      // What only its owner sees: the link to their image store (tokens).
+      match /private/{docId} {
+        allow read, write: if isSignedIn() && uid() == userId;
+      }
+    }
+
+    // --- Characters ------------------------------------------------------------
+    // Top-level, owned by a player, reusable across campaigns. Read by its
+    // owner, and by the GM and members of the campaigns it was brought into
+    // (`campaignIds`, written by the owner along with the campaign roster).
+    match /characters/{characterId} {
+      // Rules cannot loop: the first ten campaigns of the list are checked. A
+      // campaign since deleted errors out, and the next one is checked.
+      function inCampaignOf(ids, i) {
+        return ids.size() > i
+          && uid() in get(/databases/$(database)/documents/campaigns/$(ids[i])).data.memberIds;
+      }
+      function readsAsCampaignMember() {
+        let ids = resource.data.get("campaignIds", []);
+        return inCampaignOf(ids, 0)
+          || inCampaignOf(ids, 1)
+          || inCampaignOf(ids, 2)
+          || inCampaignOf(ids, 3)
+          || inCampaignOf(ids, 4)
+          || inCampaignOf(ids, 5)
+          || inCampaignOf(ids, 6)
+          || inCampaignOf(ids, 7)
+          || inCampaignOf(ids, 8)
+          || inCampaignOf(ids, 9);
+      }
+
+      allow read: if isSignedIn()
+        && (resource.data.ownerId == uid() || readsAsCampaignMember());
+      allow create: if isSignedIn() && request.resource.data.ownerId == uid();
+      allow update, delete: if isSignedIn() && resource.data.ownerId == uid();
+
+      function ownsCharacter() {
+        return isSignedIn()
+          && get(/databases/$(database)/documents/characters/$(characterId)).data.ownerId == uid();
+      }
+      // The sheet as it stands once the write is done: a batch that creates
+      // the sheet and its belongings together already sees the sheet.
+      function ownsCharacterAfter() {
+        let after = getAfter(/databases/$(database)/documents/characters/$(characterId));
+        return isSignedIn() && after != null && after.data.ownerId == uid();
+      }
+      // The GM of one of the sheet's campaigns. Nine at most: with the sheet
+      // itself, ten reads — the most one rule may make.
+      function gmOfCampaign(ids, i) {
+        return ids.size() > i
+          && get(/databases/$(database)/documents/campaigns/$(ids[i])).data.ownerId == uid();
+      }
+      function gmOfCharacter() {
+        let ids = get(/databases/$(database)/documents/characters/$(characterId))
+          .data.get("campaignIds", []);
+        return isSignedIn()
+          && (gmOfCampaign(ids, 0)
+            || gmOfCampaign(ids, 1)
+            || gmOfCampaign(ids, 2)
+            || gmOfCampaign(ids, 3)
+            || gmOfCampaign(ids, 4)
+            || gmOfCampaign(ids, 5)
+            || gmOfCampaign(ids, 6)
+            || gmOfCampaign(ids, 7)
+            || gmOfCampaign(ids, 8));
+      }
+
+      // Inventory, purse, XP and notes (`private/belongings`): the owner and
+      // the GMs of the sheet's campaigns — never its other members.
+      match /private/{docId} {
+        allow read: if ownsCharacter() || gmOfCharacter();
+        allow create, update: if ownsCharacterAfter();
+        allow delete: if ownsCharacter();
+      }
+      // A chapter / journal entry written by the character's owner, filed
+      // under that character, and shared only within a campaign it names.
+      function validStoryWrite() {
+        let data = request.resource.data;
+        return ownsCharacter()
+          && data.ownerId == uid()
+          && data.characterId == characterId
+          && data.visibility in ["private", "gm", "party"]
+          && (data.visibility == "private" || data.get("campaignId", null) is string);
+      }
+
+      // The character's past, chapter by chapter. Others read what is shared
+      // with them (see `storyReadable`); queries must filter on `campaignId`
+      // and `visibility` so every listed doc passes.
+      match /chapters/{chapterId} {
+        allow read: if ownsCharacter() || storyReadable(resource.data);
+        allow create, update: if validStoryWrite();
+        allow delete: if ownsCharacter();
+      }
+
+      // The character's journal. Also read across characters by the chronicle
+      // (collection-group query, see the `journal` match at the root).
+      match /journal/{entryId} {
+        allow read: if ownsCharacter() || storyReadable(resource.data);
+        allow create, update: if validStoryWrite();
+        allow delete: if ownsCharacter();
+      }
+    }
+
+    // The chronicle reads journal entries of every character of a session.
+    match /{path=**}/journal/{entryId} {
+      allow read: if isSignedIn()
+        && (resource.data.ownerId == uid() || storyReadable(resource.data));
+    }
+
+    // --- Content packs (a player's library) -------------------------------------
+    // Readable by the owner and the accounts it is shared with; fetchable by id
+    // by anyone signed in while link sharing is on (the id is the secret in the
+    // URL), never listed that way. Only the owner edits. Anyone may add
+    // themselves through the link, and a sharee may remove themselves.
+    match /contentPacks/{packDocId} {
+      function pack() {
+        return resource.data;
+      }
+      function isPackOwner() {
+        return isSignedIn() && pack().ownerId == uid();
+      }
+      function isSharee() {
+        return isSignedIn() && uid() in pack().get("sharedWith", []);
+      }
+      function onlySharedWithChanges() {
+        return request.resource.data.diff(pack()).affectedKeys().hasOnly(["sharedWith"]);
+      }
+
+      allow get: if isPackOwner() || isSharee()
+        || (isSignedIn() && pack().get("linkSharing", false) == true);
+      allow list: if isPackOwner() || isSharee();
+      allow create: if isSignedIn() && request.resource.data.ownerId == uid();
+      allow update: if (isPackOwner() && request.resource.data.ownerId == uid())
+        || (isSignedIn() && !isSharee() && pack().get("linkSharing", false) == true
+            && onlySharedWithChanges()
+            && request.resource.data.sharedWith == pack().get("sharedWith", []).concat([uid()]))
+        || (isSharee() && onlySharedWithChanges()
+            && request.resource.data.sharedWith == pack().sharedWith.removeAll([uid()]));
+      allow delete: if isPackOwner();
+    }
+
+    // --- Campaign invites ------------------------------------------------------
+    // Top-level so a future member can read one. A link invite can be fetched
+    // by id by anyone signed in (the id is the secret in the URL) but never
+    // listed; an email invite only by its GM and the invited account. The GM
+    // creates / revokes; the invited account accepts or declines.
+    match /invites/{inviteId} {
+      function invite() {
+        return resource.data;
+      }
+      function isInviteGm() {
+        return isSignedIn() && invite().gmUid == uid();
+      }
+      function isInvitee() {
+        return isSignedIn() && invite().get("invitedUid", null) == uid();
+      }
+      function ownsInvitedCampaign() {
+        return get(/databases/$(database)/documents/campaigns/$(request.resource.data.campaignId))
+          .data.ownerId == uid();
+      }
+      function changes(keys) {
+        return request.resource.data.diff(invite()).affectedKeys().hasOnly(keys);
+      }
+
+      allow get: if isSignedIn() && (invite().kind == "link" || isInviteGm() || isInvitee());
+      allow list: if isInviteGm() || isInvitee();
+      allow create: if isSignedIn()
+        && request.resource.data.gmUid == uid()
+        && request.resource.data.status == "pending"
+        && (request.resource.data.kind == "link"
+            || (request.resource.data.kind == "email" && request.resource.data.invitedUid is string))
+        && ownsInvitedCampaign();
+      allow update: if (isInviteGm()
+          && changes(["status", "updatedAt"])
+          && request.resource.data.status == "revoked")
+        || (isInvitee()
+          && invite().kind == "email"
+          && invite().status == "pending"
+          && changes(["status", "respondedAt", "updatedAt"])
+          && request.resource.data.status in ["accepted", "declined"]);
+      allow delete: if isInviteGm();
+    }
+
+    // --- Campaigns -------------------------------------------------------------
+    match /campaigns/{campaignId} {
+      function campaign() {
+        return resource.data;
+      }
+      function isOwner() {
+        return isSignedIn() && campaign().ownerId == uid();
+      }
+      function isMember() {
+        return isSignedIn() && uid() in campaign().memberIds;
+      }
+
+      allow read: if isOwner() || isMember();
+      allow create: if isSignedIn()
+        && request.resource.data.ownerId == uid()
+        && uid() in request.resource.data.memberIds;
+      // A player joining through an invite adds only themselves to
+      // `memberIds`, in the same batch as their member doc — whose create
+      // rule is what checks the invite.
+      function joiningSelf() {
+        return isSignedIn() && !(uid() in campaign().memberIds)
+          && request.resource.data.diff(campaign()).affectedKeys().hasOnly(["memberIds", "updatedAt"])
+          && request.resource.data.memberIds == campaign().memberIds.concat([uid()])
+          && existsAfter(/databases/$(database)/documents/campaigns/$(campaignId)/members/$(uid()));
+      }
+
+      allow update: if isOwner()
+        || (isMember() && request.resource.data.ownerId == campaign().ownerId)
+        || joiningSelf();
+      allow delete: if isOwner();
+
+      // Helpers for subcollections (re-fetch the parent campaign document).
+      function parent() {
+        return get(/databases/$(database)/documents/campaigns/$(campaignId)).data;
+      }
+      function inCampaign() {
+        return isSignedIn() && uid() in parent().memberIds;
+      }
+      function ownsCampaign() {
+        return isSignedIn() && parent().ownerId == uid();
+      }
+
+      match /members/{memberId} {
+        allow read: if inCampaign() || ownsCampaign();
+        // The GM removes anyone; a player may leave (their own doc, never the
+        // GM's) — e.g. when deleting their account.
+        allow delete: if ownsCampaign()
+          || (isSignedIn() && memberId == uid() && resource.data.role == "player");
+
+        // The character a member picks must be built for a system the campaign
+        // accepts (`dnd2024` ⊇ `standard`). Defaults cover legacy docs.
+        function campaignCharacterSystem() {
+          return parent().get("characterSystem", "dnd2024");
+        }
+        function pickedCharacter() {
+          return get(/databases/$(database)/documents/characters/$(request.resource.data.characterId))
+            .data;
+        }
+        function pickedCharacterSystem() {
+          return pickedCharacter().get("system", "dnd2024");
+        }
+        // A draft carries no hit points, AC or modifiers, so it cannot be
+        // played. The UI hides them; this is what actually enforces it.
+        function pickedCharacterReady() {
+          return pickedCharacter().get("status", "ready") == "ready";
+        }
+        function pickedCharacterAllowed() {
+          return pickedCharacter().ownerId == uid()
+            && pickedCharacterReady()
+            && (pickedCharacterSystem() == campaignCharacterSystem()
+              || (campaignCharacterSystem() == "standard" && pickedCharacterSystem() == "dnd2024"));
+        }
+
+        // An open invite for this campaign: a link anyone may use, or an
+        // email invite addressed to this account.
+        function joinInviteValid() {
+          let invite = get(/databases/$(database)/documents/invites/$(request.resource.data.inviteId)).data;
+          return invite.campaignId == campaignId
+            && invite.status == "pending"
+            && (invite.kind == "link" || invite.get("invitedUid", null) == uid());
+        }
+
+        // The GM may add anyone; a player adds themselves through an invite,
+        // and only with a character already picked.
+        allow create: if ownsCampaign()
+          || (isSignedIn() && memberId == uid()
+              && request.resource.data.uid == uid()
+              && request.resource.data.role == "player"
+              && request.resource.data.status == "active"
+              && request.resource.data.inviteId is string
+              && joinInviteValid()
+              && pickedCharacterAllowed());
+
+        // A player's roster (`characterIds`) only grows by the character they
+        // make active — which `pickedCharacterAllowed` checks is theirs and
+        // playable. Removing from it is free (the UI waits for adventures in
+        // progress). Legacy docs hold the active one in `characterId` only.
+        function rosterAdditionsAllowed() {
+          let before = resource.data.get("characterIds", []).toSet()
+            .union([resource.data.get("characterId", "")].toSet());
+          return request.resource.data.get("characterIds", []).toSet()
+            .difference(before)
+            .hasOnly([request.resource.data.get("characterId", "")]);
+        }
+
+        // The GM manages membership; a player may only manage the characters
+        // they bring (their own member doc: active character and roster).
+        allow update: if ownsCampaign()
+          || (isSignedIn() && memberId == uid()
+              && request.resource.data.diff(resource.data)
+                   .affectedKeys().hasOnly(["characterId", "characterIds", "updatedAt"])
+              && (!("characterId" in request.resource.data) || pickedCharacterAllowed())
+              && rosterAdditionsAllowed());
+      }
+
+      // --- Adventures (GM-authored) ------------------------------------------
+      match /adventures/{adventureId} {
+        // The GM sees every adventure; a player only sees those they take part
+        // in (denormalised `playerIds`). Player list queries MUST filter on
+        // `playerIds array-contains uid` or the listen fails on the first
+        // forbidden doc. Drafts (`status == "draft"`) are hidden from players
+        // client-side only — `array-contains` cannot be combined with a
+        // `status` inequality in a single query.
+        allow read: if ownsCampaign()
+          || (inCampaign() && uid() in resource.data.playerIds);
+        allow write: if ownsCampaign();
+
+        // Players may open the adventure's *content* only once it is completed
+        // or while a live session is running.
+        function adventure() {
+          return get(/databases/$(database)/documents/campaigns/$(campaignId)/adventures/$(adventureId)).data;
+        }
+        function playerCanReadContent() {
+          return inCampaign()
+            && (adventure().status == "completed" || adventure().liveSessionId != null);
+        }
+
+        // Players read a location's public half only: name, order, hidden
+        // flag, and the map URL while the location is not hidden. The
+        // description and a hidden location's map live in `locationSecrets`.
+        match /locations/{locationId} {
+          allow read: if ownsCampaign() || playerCanReadContent();
+          allow write: if ownsCampaign();
+        }
+
+        match /locationSecrets/{locationId} {
+          allow read, write: if ownsCampaign();
+        }
+
+        match /enemies/{enemyId} {
+          allow read: if ownsCampaign() || playerCanReadContent();
+          allow write: if ownsCampaign();
+        }
+
+        match /npcs/{npcId} {
+          allow read: if ownsCampaign() || playerCanReadContent();
+          allow write: if ownsCampaign();
+        }
+
+        match /events/{eventId} {
+          allow read: if ownsCampaign() || playerCanReadContent();
+          allow write: if ownsCampaign();
+        }
+
+        // The GM adds/removes participants; a player edits their own
+        // participant doc (play state only: HP / notes / pending XP —
+        // equipment and inventory live on the character sheet).
+        match /participants/{characterId} {
+          allow read: if inCampaign() || ownsCampaign();
+          allow create, delete: if ownsCampaign();
+          allow update: if ownsCampaign()
+            || (inCampaign() && resource.data.playerId == uid());
+        }
+
+        // Live play sessions. The GM starts / drives / ends them; campaign
+        // members can update (to join, i.e. add themselves to connectedUids),
+        // but never the story the GM publishes on it.
+        match /liveSessions/{sessionId} {
+          allow read: if inCampaign() || ownsCampaign();
+          allow create, delete: if ownsCampaign();
+          allow update: if ownsCampaign()
+            || (inCampaign()
+                && !request.resource.data.diff(resource.data).affectedKeys()
+                     .hasAny(["recap", "title", "recapPublishedAt", "revealedEvents", "number",
+                             "hiddenEntryIds", "shownDocument", "shownDocuments",
+                             "loot", "gameDate", "gameDay", "defeated", "realtime"]));
+
+          // Lines the table wants to remember: anyone pins one, under their
+          // own name; the author or the GM removes it.
+          match /quotes/{quoteId} {
+            allow read: if inCampaign() || ownsCampaign();
+            allow create: if (inCampaign() || ownsCampaign())
+              && request.resource.data.authorUid == uid();
+            allow delete: if ownsCampaign() || resource.data.authorUid == uid();
+          }
+
+          // What the GM gives one player: the GM writes it; the player it is
+          // for reads it and answers once (accepted or declined). Player
+          // queries MUST filter on `toUid == uid`.
+          match /lootOffers/{offerId} {
+            allow read: if ownsCampaign()
+              || (inCampaign() && resource.data.toUid == uid());
+            allow create, delete: if ownsCampaign();
+            allow update: if ownsCampaign()
+              || (inCampaign()
+                  && resource.data.toUid == uid()
+                  && resource.data.status == "pending"
+                  && request.resource.data.status in ["accepted", "declined"]
+                  && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(["status", "updatedAt"]));
+          }
+
+          // GM-only companion: the recap draft and the GM's private notes.
+          match /private/{docId} {
+            allow read, write: if ownsCampaign();
+          }
+
+          // Fight roster + map tokens. The GM manages the roster; members may
+          // update (move their token, adjust HP during the session).
+          // A player brings their own familiar in, and takes it out.
+          match /combatants/{combatantId} {
+            allow read: if inCampaign() || ownsCampaign();
+            allow create: if ownsCampaign()
+              || (inCampaign()
+                  && request.resource.data.kind == "companion"
+                  && request.resource.data.playerId == uid());
+            allow delete: if ownsCampaign()
+              || (inCampaign()
+                  && resource.data.kind == "companion"
+                  && resource.data.playerId == uid());
+            allow update: if ownsCampaign() || inCampaign();
+          }
+
+          // Fog-of-war reveal state for hidden locations. The GM erases the
+          // veil; every campaign member reads it (live + past-session history).
+          match /mapReveals/{locationId} {
+            allow read: if inCampaign() || ownsCampaign();
+            allow write: if ownsCampaign();
+          }
+        }
+      }
+
+      // Content packs the GM allowed in this campaign, copied from a library
+      // pack (the GM must be able to read it to copy it). The doc id is the
+      // pack's namespace, so two packs with the same id cannot coexist here.
+      match /packs/{packId} {
+        allow read: if inCampaign() || ownsCampaign();
+        allow create, update: if ownsCampaign()
+          && request.resource.data.packId == packId
+          && request.resource.data.activatedBy == uid();
+        allow delete: if ownsCampaign();
+      }
+
+      // The GM's notebook: notes and resources are GM-only. Player-written
+      // notes from before stay readable by the GM.
+      match /notes/{noteId} {
+        allow read, write: if ownsCampaign();
+      }
+
+      match /resources/{resourceId} {
+        allow read, write: if ownsCampaign();
+      }
+
+      // The quest board: players read the revealed quests (query with
+      // `where("revealed", "==", true)`) and their own (`ownerUid`), which they
+      // write themselves: personal, or shared with the party (`revealed`).
+      match /quests/{questId} {
+        function ownsQuest(data) {
+          return data.get("ownerUid", null) == uid();
+        }
+        allow read: if ownsCampaign()
+          || (inCampaign() && (resource.data.revealed == true || ownsQuest(resource.data)));
+        allow create: if ownsCampaign()
+          || (inCampaign()
+            && ownsQuest(request.resource.data)
+            && request.resource.data.campaignId == campaignId
+            && request.resource.data.get("milestones", []).size() == 0
+            && request.resource.data.keys().hasOnly(["campaignId", "title", "summary",
+              "status", "revealed", "order", "ownerUid", "ownerName", "createdAt",
+              "updatedAt"]));
+        allow update: if ownsCampaign()
+          || (inCampaign()
+            && ownsQuest(resource.data)
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(["title", "summary", "status", "revealed", "ownerName", "updatedAt"]));
+        allow delete: if ownsCampaign() || (inCampaign() && ownsQuest(resource.data));
+      }
+
+      // The codex: what the party may learn about the world. Players read the
+      // revealed entries only (query with `where("revealed", "==", true)`);
+      // the GM's secrets sit in the GM-only `private/gm` doc.
+      match /codex/{entryId} {
+        allow read: if ownsCampaign() || (inCampaign() && resource.data.revealed == true);
+        allow write: if ownsCampaign();
+
+        match /private/{docId} {
+          allow read, write: if ownsCampaign();
+        }
+      }
+    }
+
+    // Deny everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

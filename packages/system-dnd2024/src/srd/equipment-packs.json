@@ -1,0 +1,334 @@
+{
+  "entries": [
+    {
+      "id": "entertainer-pack",
+      "name": "Paquetage d'artiste",
+      "priceCp": 4000,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "bell",
+          "qty": 1
+        },
+        {
+          "gearId": "costume",
+          "qty": 3
+        },
+        {
+          "gearId": "oil",
+          "qty": 8
+        },
+        {
+          "gearId": "rations",
+          "qty": 9
+        },
+        {
+          "gearId": "bullseye-lantern",
+          "qty": 1
+        },
+        {
+          "gearId": "mirror",
+          "qty": 1
+        },
+        {
+          "gearId": "waterskin",
+          "qty": 1
+        },
+        {
+          "gearId": "bedroll",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "burglar-pack",
+      "name": "Paquetage de cambrioleur",
+      "priceCp": 1600,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "ball-bearings",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "candle",
+          "qty": 10
+        },
+        {
+          "gearId": "bell",
+          "qty": 1
+        },
+        {
+          "gearId": "rope",
+          "qty": 1
+        },
+        {
+          "gearId": "oil",
+          "qty": 7
+        },
+        {
+          "gearId": "hooded-lantern",
+          "qty": 1
+        },
+        {
+          "gearId": "waterskin",
+          "qty": 1
+        },
+        {
+          "gearId": "crowbar",
+          "qty": 1
+        },
+        {
+          "gearId": "rations",
+          "qty": 5
+        }
+      ]
+    },
+    {
+      "id": "diplomat-pack",
+      "name": "Paquetage de diplomate",
+      "priceCp": 3900,
+      "contents": [
+        {
+          "gearId": "fine-clothes",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "chest",
+          "qty": 1
+        },
+        {
+          "gearId": "ink",
+          "qty": 1
+        },
+        {
+          "gearId": "map-case",
+          "qty": 2
+        },
+        {
+          "gearId": "paper",
+          "qty": 5
+        },
+        {
+          "gearId": "parchment",
+          "qty": 5
+        },
+        {
+          "gearId": "oil",
+          "qty": 4
+        },
+        {
+          "gearId": "lamp",
+          "qty": 1
+        },
+        {
+          "gearId": "quill",
+          "qty": 5
+        },
+        {
+          "gearId": "perfume",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "priest-pack",
+      "name": "Paquetage d'ecclésiastique",
+      "priceCp": 3300,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "blanket",
+          "qty": 1
+        },
+        {
+          "gearId": "holy-water",
+          "qty": 1
+        },
+        {
+          "gearId": "lamp",
+          "qty": 1
+        },
+        {
+          "gearId": "rations",
+          "qty": 7
+        },
+        {
+          "gearId": "robe",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "scholar-pack",
+      "name": "Paquetage d'érudit",
+      "priceCp": 4000,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "ink",
+          "qty": 1
+        },
+        {
+          "gearId": "lamp",
+          "qty": 1
+        },
+        {
+          "gearId": "book",
+          "qty": 1
+        },
+        {
+          "gearId": "quill",
+          "qty": 1
+        },
+        {
+          "gearId": "oil",
+          "qty": 10
+        },
+        {
+          "gearId": "parchment",
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "id": "explorer-pack",
+      "name": "Paquetage d'explorateur",
+      "priceCp": 1000,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "bedroll",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "rope",
+          "qty": 1
+        },
+        {
+          "gearId": "oil",
+          "qty": 2
+        },
+        {
+          "gearId": "rations",
+          "qty": 10
+        },
+        {
+          "gearId": "waterskin",
+          "qty": 1
+        },
+        {
+          "gearId": "torch",
+          "qty": 10
+        }
+      ]
+    },
+    {
+      "id": "dungeoneer-pack",
+      "name": "Paquetage d'exploration souterraine",
+      "priceCp": 1200,
+      "contents": [
+        {
+          "gearId": "backpack",
+          "qty": 1
+        },
+        {
+          "gearId": "tinderbox",
+          "qty": 1
+        },
+        {
+          "gearId": "caltrops",
+          "qty": 1
+        },
+        {
+          "gearId": "rope",
+          "qty": 1
+        },
+        {
+          "gearId": "oil",
+          "qty": 2
+        },
+        {
+          "gearId": "rations",
+          "qty": 10
+        },
+        {
+          "gearId": "waterskin",
+          "qty": 1
+        },
+        {
+          "gearId": "crowbar",
+          "qty": 1
+        },
+        {
+          "gearId": "torch",
+          "qty": 10
+        }
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "entertainer-pack": {
+        "name": "Entertainer's Pack"
+      },
+      "burglar-pack": {
+        "name": "Burglar's Pack"
+      },
+      "diplomat-pack": {
+        "name": "Diplomat's Pack"
+      },
+      "priest-pack": {
+        "name": "Priest's Pack"
+      },
+      "scholar-pack": {
+        "name": "Scholar's Pack"
+      },
+      "explorer-pack": {
+        "name": "Explorer's Pack"
+      },
+      "dungeoneer-pack": {
+        "name": "Dungeoneer's Pack"
+      }
+    }
+  }
+}

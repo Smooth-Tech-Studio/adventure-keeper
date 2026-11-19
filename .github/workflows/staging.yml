@@ -1,0 +1,87 @@
+name: "staging: CI, CD (staging)"
+
+# Paused: a push on `staging` no longer runs anything. The workflow stays, to
+# be run by hand (Actions → Run workflow) or switched back on by restoring the
+# `push` trigger below.
+on:
+  workflow_dispatch: {}
+  # push:
+  #   branches: [staging]
+  #   paths-ignore:
+  #     - "**.md"
+  #     - "docs/**"
+  #     - "LICENSE"
+
+jobs:
+  # A new push cancels the CI in progress; the deployments it would have fed
+  # are then skipped, and the deployments of the new push run after theirs.
+  ci:
+    uses: ./.github/workflows/ci-reusable.yml
+    secrets: inherit
+    concurrency:
+      group: ci-staging-${{ github.ref }}
+      cancel-in-progress: true
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      serveur: ${{ steps.filter.outputs.serveur }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect server app changes
+        id: filter
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        shell: bash
+        run: |
+          # No `before` on a manual run, all zeros on a new branch: build it.
+          if [[ -z "$BEFORE" || "$BEFORE" =~ ^0+$ ]]; then
+            echo "serveur=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if git diff --name-only "$BEFORE" "$AFTER" | grep -Eq '^(apps/realtime-desktop/|apps/realtime-server/|packages/schemas/|\.github/workflows/release-serveur-reusable\.yml$)'; then
+            echo "serveur=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "serveur=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy-firestore:
+    needs: [ci]
+    concurrency:
+      group: firebase-firestore-rules-staging
+      cancel-in-progress: false
+    uses: ./.github/workflows/deploy-firestore-reusable.yml
+    with:
+      environment: staging
+    secrets: inherit
+
+  deploy-hosting:
+    needs: [ci, deploy-firestore]
+    concurrency:
+      group: firebase-hosting-staging
+      cancel-in-progress: false
+    uses: ./.github/workflows/deploy-hosting-reusable.yml
+    with:
+      environment: staging
+    secrets: inherit
+
+  # The staging variant of the desktop server app, published to the `staging`
+  # pre-release (see release-serveur-reusable.yml).
+  serveur:
+    needs: [ci, changes]
+    if: ${{ needs.ci.result == 'success' && needs.changes.outputs.serveur == 'true' }}
+    concurrency:
+      group: serveur-staging
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: read
+    uses: ./.github/workflows/release-serveur-reusable.yml
+    with:
+      channel: staging
+    secrets: inherit

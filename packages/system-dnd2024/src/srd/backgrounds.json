@@ -1,0 +1,211 @@
+{
+  "entries": [
+    {
+      "id": "acolyte",
+      "name": "Acolyte",
+      "blurb": "Élevé au service d'un temple, vous connaissez les rites et un peu de magie divine.",
+      "abilityOptions": ["int", "wis", "cha"],
+      "skillProficiencies": ["insight", "religion"],
+      "toolProficiency": {
+        "label": "Matériel de calligraphie",
+        "toolId": "calligrapher-supplies"
+      },
+      "originFeatId": "magic-initiate-cleric",
+      "startingKit": {
+        "items": [
+          {
+            "kind": "tool",
+            "id": "calligrapher-supplies",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "book",
+            "qty": 1
+          },
+          {
+            "kind": "weapon",
+            "id": "holy-symbol-amulet",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "parchment",
+            "qty": 10
+          },
+          {
+            "kind": "gear",
+            "id": "robe",
+            "qty": 1
+          }
+        ],
+        "gold": 8
+      }
+    },
+    {
+      "id": "criminal",
+      "name": "Criminel",
+      "blurb": "Vous avez grandi dans la rue, entre vols à la tire et serrures forcées, toujours sur vos gardes.",
+      "abilityOptions": ["dex", "con", "int"],
+      "skillProficiencies": ["sleightOfHand", "stealth"],
+      "toolProficiency": {
+        "label": "Outils de voleur",
+        "toolId": "thieves-tools"
+      },
+      "originFeatId": "alert",
+      "startingKit": {
+        "items": [
+          {
+            "kind": "weapon",
+            "id": "dagger",
+            "qty": 2
+          },
+          {
+            "kind": "tool",
+            "id": "thieves-tools",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "crowbar",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "pouch",
+            "qty": 2
+          },
+          {
+            "kind": "gear",
+            "id": "travelers-clothes",
+            "qty": 1
+          }
+        ],
+        "gold": 16
+      }
+    },
+    {
+      "id": "sage",
+      "name": "Sage",
+      "blurb": "Vous avez passé des années à étudier dans les bibliothèques et les archives du monde.",
+      "abilityOptions": ["con", "int", "wis"],
+      "skillProficiencies": ["arcana", "history"],
+      "toolProficiency": {
+        "label": "Matériel de calligraphie",
+        "toolId": "calligrapher-supplies"
+      },
+      "originFeatId": "magic-initiate-wizard",
+      "startingKit": {
+        "items": [
+          {
+            "kind": "weapon",
+            "id": "quarterstaff",
+            "qty": 1
+          },
+          {
+            "kind": "tool",
+            "id": "calligrapher-supplies",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "book",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "parchment",
+            "qty": 8
+          },
+          {
+            "kind": "gear",
+            "id": "robe",
+            "qty": 1
+          }
+        ],
+        "gold": 8
+      }
+    },
+    {
+      "id": "soldier",
+      "name": "Soldat",
+      "blurb": "Formé aux armes dès votre jeunesse, vous savez tenir une ligne et frapper sans hésiter.",
+      "abilityOptions": ["str", "dex", "con"],
+      "skillProficiencies": ["athletics", "intimidation"],
+      "toolProficiency": {
+        "label": "Jeu (au choix)",
+        "choice": "gaming"
+      },
+      "originFeatId": "savage-attacker",
+      "startingKit": {
+        "items": [
+          {
+            "kind": "weapon",
+            "id": "spear",
+            "qty": 1
+          },
+          {
+            "kind": "weapon",
+            "id": "shortbow",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "arrows",
+            "qty": 1
+          },
+          {
+            "kind": "tool",
+            "fromChoice": "tool"
+          },
+          {
+            "kind": "gear",
+            "id": "healers-kit",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "quiver",
+            "qty": 1
+          },
+          {
+            "kind": "gear",
+            "id": "travelers-clothes",
+            "qty": 1
+          }
+        ],
+        "gold": 14
+      }
+    }
+  ],
+  "translations": {
+    "en": {
+      "acolyte": {
+        "blurb": "Raised in the service of a temple, you know its rites and a little divine magic.",
+        "toolProficiency": {
+          "label": "Calligrapher's supplies"
+        }
+      },
+      "criminal": {
+        "name": "Criminal",
+        "blurb": "You grew up on the streets, between picked pockets and forced locks, always on your guard.",
+        "toolProficiency": {
+          "label": "Thieves' tools"
+        }
+      },
+      "sage": {
+        "blurb": "You spent years studying in the libraries and archives of the world.",
+        "toolProficiency": {
+          "label": "Calligrapher's supplies"
+        }
+      },
+      "soldier": {
+        "name": "Soldier",
+        "blurb": "Trained in arms from a young age, you know how to hold a line and strike without hesitation.",
+        "toolProficiency": {
+          "label": "Gaming set (your choice)"
+        }
+      }
+    }
+  }
+}

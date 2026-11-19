@@ -1,0 +1,3894 @@
+{
+  "entries": [
+    {
+      "id": "goblin",
+      "name": "Combattant gobelin",
+      "type": "fey",
+      "size": "small",
+      "cr": "1/4",
+      "armorClass": 15,
+      "hitPoints": 10,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Cimeterre",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "+2 (1d4) dégâts tranchants si le jet d’attaque avait l’Avantage"
+        },
+        {
+          "name": "Arc court",
+          "toHit": 4,
+          "reach": "24/96 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "+2 (1d4) dégâts perforants si le jet d’attaque avait l’Avantage"
+        }
+      ]
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Combattant hobgobelin",
+      "type": "fey",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 18,
+      "hitPoints": 11,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée longue",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d10"
+          },
+          "damageBonus": 1,
+          "damageKind": "slashing"
+        },
+        {
+          "name": "Arc long",
+          "toHit": 3,
+          "reach": "45/180 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing",
+          "note": "+7 (3d4) dégâts de poison"
+        }
+      ]
+    },
+    {
+      "id": "bugbear",
+      "name": "Combattant gobelours",
+      "type": "fey",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 14,
+      "hitPoints": 33,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Empoignade",
+          "toHit": 4,
+          "reach": "3 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état Agrippé (évasion DD 12)"
+        }
+      ]
+    },
+    {
+      "id": "kobold",
+      "name": "Combattant kobold",
+      "type": "dragon",
+      "size": "small",
+      "cr": "1/8",
+      "armorClass": 14,
+      "hitPoints": 7,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Dague",
+          "toHit": 4,
+          "reach": "1,50 m / 6/18 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "gnoll",
+      "name": "Combattant gnoll",
+      "type": "fiend",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 15,
+      "hitPoints": 27,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing"
+        },
+        {
+          "name": "Arc en os",
+          "toHit": 3,
+          "reach": "45/180 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "bandit",
+      "name": "Bandit",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/8",
+      "armorClass": 12,
+      "hitPoints": 11,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Cimeterre",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 1,
+          "damageKind": "slashing"
+        },
+        {
+          "name": "Arbalète légère",
+          "toHit": 3,
+          "reach": "24/96 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "bandit-captain",
+      "name": "Chef de bande",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 15,
+      "hitPoints": 52,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Cimeterre",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : Le bandit effectue deux attaques, réparties à sa guise entre Cimeterre et Pistolet"
+        },
+        {
+          "name": "Pistolet",
+          "toHit": 5,
+          "reach": "9/27 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "cultist",
+      "name": "Sectateur",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/8",
+      "armorClass": 12,
+      "hitPoints": 9,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Serpe rituelle",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 1,
+          "damageKind": "slashing",
+          "note": "+1 dégât nécrotique"
+        }
+      ]
+    },
+    {
+      "id": "cult-fanatic",
+      "name": "Fanatique de secte",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 13,
+      "hitPoints": 44,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Lame de pacte",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "+7 (2d6) dégâts nécrotiques"
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "name": "Garde",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/8",
+      "armorClass": 16,
+      "hitPoints": 11,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Lance",
+          "toHit": 3,
+          "reach": "1,50 m / 6/18 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "knight",
+      "name": "Chevalier",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "3",
+      "armorClass": 18,
+      "hitPoints": 52,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée à deux mains",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "+4 (1d8) dégâts radiants ; Attaques multiples : Le chevalier effectue deux attaques, réparties à sa guise entre Épée à deux mains et Arbalète lourde"
+        },
+        {
+          "name": "Arbalète lourde",
+          "toHit": 2,
+          "reach": "30/120 m",
+          "damage": {
+            "count": 2,
+            "die": "d10"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing",
+          "note": "+4 (1d8) dégâts radiants"
+        }
+      ]
+    },
+    {
+      "id": "veteran",
+      "name": "Vétéran",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "3",
+      "armorClass": 17,
+      "hitPoints": 65,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée à deux mains",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : Le soldat effectue deux attaques d’Épée à deux mains ou d’Arbalète lourde"
+        },
+        {
+          "name": "Arbalète lourde",
+          "toHit": 3,
+          "reach": "30/120 m",
+          "damage": {
+            "count": 2,
+            "die": "d10"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "berserker",
+      "name": "Berserker",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 13,
+      "hitPoints": 67,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Hache à deux mains",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d12"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing"
+        }
+      ]
+    },
+    {
+      "id": "scout",
+      "name": "Éclaireur",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 13,
+      "hitPoints": 16,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée courte",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "Attaques multiples : L’éclaireur effectue deux attaques, réparties à sa guise entre Épée courte et Arc long"
+        },
+        {
+          "name": "Arc long",
+          "toHit": 4,
+          "reach": "45/180 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "spy",
+      "name": "Espion",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 12,
+      "hitPoints": 27,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée courte",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "+7 (2d6) dégâts de poison"
+        },
+        {
+          "name": "Arbalète de poing",
+          "toHit": 4,
+          "reach": "9/36 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "+7 (2d6) dégâts de poison"
+        }
+      ]
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "8",
+      "armorClass": 16,
+      "hitPoints": 97,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée courte",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing",
+          "note": "+17 (5d6) dégâts de poison, et la cible subit l’état Empoisonné jusqu’au début du tour suivant de l’assassin ; Attaques multiples : L’assassin effectue trois attaques, réparties à sa guise entre Épée courte et Arbalète légère"
+        },
+        {
+          "name": "Arbalète légère",
+          "toHit": 7,
+          "reach": "24/96 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing",
+          "note": "+21 (6d6) dégâts de poison"
+        }
+      ]
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "6",
+      "armorClass": 15,
+      "hitPoints": 81,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Jaillissement arcanique",
+          "toHit": 6,
+          "reach": "1,50 m / 36 m",
+          "damage": {
+            "count": 3,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "force",
+          "note": "Attaques multiples : Le mage effectue trois attaques de Jaillissement arcanique"
+        }
+      ]
+    },
+    {
+      "id": "priest",
+      "name": "Prêtre",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 13,
+      "hitPoints": 38,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Masse d’armes",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "bludgeoning",
+          "note": "+5 (2d4) dégâts radiants ; Attaques multiples : Le prêtre effectue deux attaques, réparties à sa guise entre Masse d’armes et Flamme radiante"
+        },
+        {
+          "name": "Flamme radiante",
+          "toHit": 5,
+          "reach": "18 m",
+          "damage": {
+            "count": 2,
+            "die": "d10"
+          },
+          "damageBonus": 0,
+          "damageKind": "radiant"
+        }
+      ]
+    },
+    {
+      "id": "acolyte",
+      "name": "Acolyte",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 13,
+      "hitPoints": 11,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Masse d’armes",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "bludgeoning",
+          "note": "+2 (1d4) dégâts radiants"
+        },
+        {
+          "name": "Flamme radiante",
+          "toHit": 4,
+          "reach": "18 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 0,
+          "damageKind": "radiant"
+        }
+      ]
+    },
+    {
+      "id": "thug",
+      "name": "Gros-bras",
+      "type": "humanoid",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 12,
+      "hitPoints": 32,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Masse d’armes",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "bludgeoning"
+        },
+        {
+          "name": "Arbalète lourde",
+          "toHit": 3,
+          "reach": "30/120 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "skeleton",
+      "name": "Squelette",
+      "type": "undead",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 14,
+      "hitPoints": 13,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée courte",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        },
+        {
+          "name": "Arc court",
+          "toHit": 5,
+          "reach": "24/96 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "zombie",
+      "name": "Zombi",
+      "type": "undead",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 8,
+      "hitPoints": 15,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Coup",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 1,
+          "damageKind": "bludgeoning"
+        }
+      ]
+    },
+    {
+      "id": "ghoul",
+      "name": "Goule",
+      "type": "undead",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 12,
+      "hitPoints": 22,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "Si la cible est une créature qui n’est ni un Mort-vivant ni un elfe, elle est soumise à l’effet suivant. JS Constitution : DD 10. Échec : la cible subit l’état Paralysé jusqu’à la fin de son tour suivant ; Attaques multiples : La goule effectue deux attaques de Morsure"
+        },
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "+3 (1d6) dégâts nécrotiques"
+        }
+      ]
+    },
+    {
+      "id": "ghast",
+      "name": "Blême",
+      "type": "undead",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 13,
+      "hitPoints": 36,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Si la cible est une créature autre qu’un Mort-vivant, elle est soumise à l’effet suivant. JS Constitution : DD 10. Échec : la cible subit l’état Paralysé jusqu’à la fin de son tour suivant"
+        },
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+9 (2d8) dégâts nécrotiques"
+        }
+      ]
+    },
+    {
+      "id": "shadow",
+      "name": "Ombre",
+      "type": "undead",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 12,
+      "hitPoints": 27,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Caresse dévitalisante",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "necrotic",
+          "note": "s, et la valeur de Force de la cible est réduite de 1d4. La cible meurt si l’effet fait tomber cette valeur à 0. Si un Humanoïde est tué par cette attaque, une ombre émerge de son cadavre 1d4 heures plus tard"
+        }
+      ]
+    },
+    {
+      "id": "specter",
+      "name": "Spectre",
+      "type": "undead",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 12,
+      "hitPoints": 22,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Absorption de vie",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 0,
+          "damageKind": "necrotic",
+          "note": "s. Si la cible est une créature, son maximum de points de vie est réduit d’un montant égal aux dégâts subis"
+        }
+      ]
+    },
+    {
+      "id": "wraith",
+      "name": "Âme-en-peine",
+      "type": "undead",
+      "size": "medium",
+      "cr": "5",
+      "armorClass": 13,
+      "hitPoints": 67,
+      "speed": 60,
+      "attacks": [
+        {
+          "name": "Absorption de vie",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 4,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "necrotic",
+          "note": "s. Si la cible est une créature, son maximum de points de vie est réduit d’un montant égal aux dégâts subis"
+        }
+      ]
+    },
+    {
+      "id": "wight",
+      "name": "Nécronte",
+      "type": "undead",
+      "size": "medium",
+      "cr": "3",
+      "armorClass": 14,
+      "hitPoints": 82,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Épée nécrotique",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "+4 (1d8) dégâts nécrotiques ; Attaques multiples : Le nécronte effectue deux attaques, réparties à sa guise entre Épée nécrotique et Arc nécrotique. Il peut remplacer l’une de ces attaques par une utilisation d’Absorption de vie ; Autres actions : Absorption de vie"
+        },
+        {
+          "name": "Arc nécrotique",
+          "toHit": 4,
+          "reach": "45/180 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "+4 (1d8) dégâts nécrotiques"
+        }
+      ]
+    },
+    {
+      "id": "vampire-spawn",
+      "name": "Vampirien",
+      "type": "undead",
+      "size": "medium",
+      "cr": "5",
+      "armorClass": 16,
+      "hitPoints": 90,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état Agrippé (évasion DD 13) par l’une des deux griffes ; Attaques multiples : Le vampire effectue deux attaques de Griffe et recourt à Morsure ; Autres actions : Morsure"
+        }
+      ]
+    },
+    {
+      "id": "will-o-wisp",
+      "name": "Feu follet",
+      "type": "undead",
+      "size": "tiny",
+      "cr": "2",
+      "armorClass": 19,
+      "hitPoints": 27,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Décharge",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "lightning"
+        }
+      ]
+    },
+    {
+      "id": "wolf",
+      "name": "Loup",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 12,
+      "hitPoints": 11,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 14,
+        "dex": 15,
+        "con": 12
+      }
+    },
+    {
+      "id": "dire-wolf",
+      "name": "Loup sanguinaire",
+      "type": "beast",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 14,
+      "hitPoints": 22,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 17,
+        "dex": 15,
+        "con": 15
+      }
+    },
+    {
+      "id": "brown-bear",
+      "name": "Ours brun",
+      "type": "beast",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 11,
+      "hitPoints": 22,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état À terre ; Attaques multiples : L’ours effectue une attaque de Griffe et une de Morsure"
+        },
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 17,
+        "dex": 12,
+        "con": 15,
+        "climb": 30
+      }
+    },
+    {
+      "id": "boar",
+      "name": "Sanglier",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 11,
+      "hitPoints": 13,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Coup de défense",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature de taille M ou inférieure et si le sanglier s’est déplacé en ligne droite d’un minimum de 6 m juste avant de la toucher, la cible subit 3 (1d6) dégâts perforants supplémentaires, ainsi que l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 13,
+        "dex": 11,
+        "con": 12
+      }
+    },
+    {
+      "id": "giant-spider",
+      "name": "Araignée géante",
+      "type": "beast",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 14,
+      "hitPoints": 26,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+7 (2d6) dégâts de poison ; Autres actions : Toile d’araignée"
+        }
+      ],
+      "beast": {
+        "str": 14,
+        "dex": 16,
+        "con": 12,
+        "climb": 30
+      }
+    },
+    {
+      "id": "giant-rat",
+      "name": "Rat géant",
+      "type": "beast",
+      "size": "small",
+      "cr": "1/8",
+      "armorClass": 13,
+      "hitPoints": 7,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 7,
+        "dex": 15,
+        "con": 11
+      }
+    },
+    {
+      "id": "giant-centipede",
+      "name": "Mille-pattes géant",
+      "type": "beast",
+      "size": "small",
+      "cr": "1/4",
+      "armorClass": 14,
+      "hitPoints": 9,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "la cible subit l’état Empoisonné jusqu’au début du tour suivant du mille-pattes"
+        }
+      ],
+      "beast": {
+        "str": 5,
+        "dex": 14,
+        "con": 12,
+        "climb": 30
+      }
+    },
+    {
+      "id": "swarm-of-rats",
+      "name": "Nuée de rats",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 10,
+      "hitPoints": 14,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsures",
+          "toHit": 2,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing",
+          "note": "ou 2 (1d4) dégâts perforants si la nuée est En péril"
+        }
+      ]
+    },
+    {
+      "id": "swarm-of-bats",
+      "name": "Nuée de chauves-souris",
+      "type": "beast",
+      "size": "large",
+      "cr": "1/4",
+      "armorClass": 12,
+      "hitPoints": 11,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsures",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing",
+          "note": "ou 2 (1d4) dégâts perforants si la nuée est En péril"
+        }
+      ]
+    },
+    {
+      "id": "giant-scorpion",
+      "name": "Scorpion géant",
+      "type": "beast",
+      "size": "large",
+      "cr": "3",
+      "armorClass": 15,
+      "hitPoints": 52,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Dard",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+11 (2d10) dégâts de poison ; Attaques multiples : Le scorpion effectue une attaque de Dard et deux de Pince"
+        },
+        {
+          "name": "Griffe",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état Agrippé (évasion DD 13) par l’une des deux pinces"
+        }
+      ]
+    },
+    {
+      "id": "bat",
+      "name": "Chauve-souris",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 12,
+      "hitPoints": 1,
+      "speed": 5,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 2,
+        "dex": 15,
+        "con": 8,
+        "fly": 30
+      }
+    },
+    {
+      "id": "cat",
+      "name": "Chat",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 12,
+      "hitPoints": 2,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Griffure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "slashing"
+        }
+      ],
+      "beast": {
+        "str": 3,
+        "dex": 15,
+        "con": 10,
+        "climb": 40
+      }
+    },
+    {
+      "id": "crab",
+      "name": "Crabe",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 11,
+      "hitPoints": 3,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Pince",
+          "toHit": 2,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "bludgeoning"
+        }
+      ],
+      "beast": {
+        "str": 6,
+        "dex": 11,
+        "con": 12,
+        "swim": 20
+      }
+    },
+    {
+      "id": "frog",
+      "name": "Grenouille",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 11,
+      "hitPoints": 1,
+      "speed": 20,
+      "beast": {
+        "str": 1,
+        "dex": 13,
+        "con": 8,
+        "swim": 20
+      }
+    },
+    {
+      "id": "hawk",
+      "name": "Faucon",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 13,
+      "hitPoints": 1,
+      "speed": 10,
+      "attacks": [
+        {
+          "name": "Serres",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "slashing"
+        }
+      ],
+      "beast": {
+        "str": 5,
+        "dex": 16,
+        "con": 8,
+        "fly": 60
+      }
+    },
+    {
+      "id": "lizard",
+      "name": "Lézard",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 10,
+      "hitPoints": 2,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 2,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 2,
+        "dex": 11,
+        "con": 10,
+        "climb": 20
+      }
+    },
+    {
+      "id": "octopus",
+      "name": "Pieuvre",
+      "type": "beast",
+      "size": "small",
+      "cr": "0",
+      "armorClass": 12,
+      "hitPoints": 3,
+      "speed": 5,
+      "attacks": [
+        {
+          "name": "Tentacules",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "bludgeoning"
+        }
+      ],
+      "beast": {
+        "str": 4,
+        "dex": 15,
+        "con": 11,
+        "swim": 30
+      }
+    },
+    {
+      "id": "owl",
+      "name": "Chouette",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 11,
+      "hitPoints": 1,
+      "speed": 5,
+      "attacks": [
+        {
+          "name": "Serres",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "slashing"
+        }
+      ],
+      "beast": {
+        "str": 3,
+        "dex": 13,
+        "con": 8,
+        "fly": 60
+      }
+    },
+    {
+      "id": "rat",
+      "name": "Rat",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 10,
+      "hitPoints": 1,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 2,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 2,
+        "dex": 11,
+        "con": 9,
+        "climb": 20
+      }
+    },
+    {
+      "id": "raven",
+      "name": "Corbeau",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 12,
+      "hitPoints": 2,
+      "speed": 10,
+      "attacks": [
+        {
+          "name": "Bec",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 2,
+        "dex": 14,
+        "con": 8,
+        "fly": 50
+      }
+    },
+    {
+      "id": "spider",
+      "name": "Araignée",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 12,
+      "hitPoints": 1,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing",
+          "note": "+2 (1d4) dégâts de poison"
+        }
+      ],
+      "beast": {
+        "str": 2,
+        "dex": 14,
+        "con": 8,
+        "climb": 20
+      }
+    },
+    {
+      "id": "weasel",
+      "name": "Belette",
+      "type": "beast",
+      "size": "tiny",
+      "cr": "0",
+      "armorClass": 13,
+      "hitPoints": 1,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d1"
+          },
+          "damageBonus": 0,
+          "damageKind": "piercing"
+        }
+      ],
+      "beast": {
+        "str": 3,
+        "dex": 16,
+        "con": 8,
+        "climb": 30
+      }
+    },
+    {
+      "id": "mastiff",
+      "name": "Molosse",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/8",
+      "armorClass": 12,
+      "hitPoints": 5,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 13,
+        "dex": 14,
+        "con": 12
+      }
+    },
+    {
+      "id": "panther",
+      "name": "Panthère",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/4",
+      "armorClass": 13,
+      "hitPoints": 13,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Lacération",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Bond : après 6 m en ligne droite, la cible de taille G ou inférieure subit l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 14,
+        "dex": 16,
+        "con": 10,
+        "climb": 40
+      }
+    },
+    {
+      "id": "riding-horse",
+      "name": "Cheval de selle",
+      "type": "beast",
+      "size": "large",
+      "cr": "1/4",
+      "armorClass": 11,
+      "hitPoints": 13,
+      "speed": 60,
+      "attacks": [
+        {
+          "name": "Sabots",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "bludgeoning"
+        }
+      ],
+      "beast": {
+        "str": 16,
+        "dex": 13,
+        "con": 12
+      }
+    },
+    {
+      "id": "constrictor-snake",
+      "name": "Serpent constricteur",
+      "type": "beast",
+      "size": "large",
+      "cr": "1/4",
+      "armorClass": 13,
+      "hitPoints": 13,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing"
+        },
+        {
+          "name": "Constriction",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "bludgeoning",
+          "note": "Sauvegarde de Force DD 12, sinon Agrippée (évasion DD 12)"
+        }
+      ],
+      "beast": {
+        "str": 15,
+        "dex": 14,
+        "con": 12,
+        "swim": 30
+      }
+    },
+    {
+      "id": "ape",
+      "name": "Singe",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 12,
+      "hitPoints": 19,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Poing",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "bludgeoning",
+          "note": "Attaques multiples : deux attaques de Poing"
+        }
+      ],
+      "beast": {
+        "str": 16,
+        "dex": 14,
+        "con": 14,
+        "climb": 30
+      }
+    },
+    {
+      "id": "black-bear",
+      "name": "Ours noir",
+      "type": "beast",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 11,
+      "hitPoints": 19,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Lacération",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : deux attaques de Lacération"
+        }
+      ],
+      "beast": {
+        "str": 15,
+        "dex": 12,
+        "con": 14,
+        "climb": 30,
+        "swim": 30
+      }
+    },
+    {
+      "id": "crocodile",
+      "name": "Crocodile",
+      "type": "beast",
+      "size": "large",
+      "cr": "1/2",
+      "armorClass": 12,
+      "hitPoints": 13,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "La cible subit l’état Agrippé (évasion DD 12)"
+        }
+      ],
+      "beast": {
+        "str": 15,
+        "dex": 10,
+        "con": 13,
+        "swim": 30
+      }
+    },
+    {
+      "id": "warhorse",
+      "name": "Cheval de guerre",
+      "type": "beast",
+      "size": "large",
+      "cr": "1/2",
+      "armorClass": 11,
+      "hitPoints": 19,
+      "speed": 60,
+      "attacks": [
+        {
+          "name": "Sabots",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 4,
+          "damageKind": "bludgeoning",
+          "note": "Si le cheval s’est déplacé de 6 m en ligne droite, la cible de taille G ou inférieure subit l’état À terre"
+        }
+      ],
+      "beast": {
+        "str": 18,
+        "dex": 12,
+        "con": 13
+      }
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "type": "beast",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 12,
+      "hitPoints": 22,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Lacération",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : deux attaques de Lacération ; Bond"
+        }
+      ],
+      "beast": {
+        "str": 17,
+        "dex": 15,
+        "con": 13
+      }
+    },
+    {
+      "id": "tiger",
+      "name": "Tigre",
+      "type": "beast",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 13,
+      "hitPoints": 30,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Lacération",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : deux attaques de Lacération ; Bond"
+        }
+      ],
+      "beast": {
+        "str": 17,
+        "dex": 16,
+        "con": 14
+      }
+    },
+    {
+      "id": "giant-eagle",
+      "name": "Aigle géant",
+      "type": "celestial",
+      "size": "large",
+      "cr": "1",
+      "armorClass": 13,
+      "hitPoints": 26,
+      "speed": 10,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "+3 (1d6) dégâts radiants ; Attaques multiples : L’aigle effectue deux attaques de Saignée"
+        }
+      ]
+    },
+    {
+      "id": "ogre",
+      "name": "Ogre",
+      "type": "giant",
+      "size": "large",
+      "cr": "2",
+      "armorClass": 11,
+      "hitPoints": 68,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Massue",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 4,
+          "damageKind": "bludgeoning"
+        },
+        {
+          "name": "Javeline",
+          "toHit": 6,
+          "reach": "1,50 m / 9/36 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "troll",
+      "name": "Troll",
+      "type": "giant",
+      "size": "large",
+      "cr": "5",
+      "armorClass": 15,
+      "hitPoints": 94,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 7,
+          "reach": "3 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : Le troll effectue trois attaques de Saignée"
+        }
+      ]
+    },
+    {
+      "id": "ettin",
+      "name": "Ettin",
+      "type": "giant",
+      "size": "large",
+      "cr": "4",
+      "armorClass": 12,
+      "hitPoints": 85,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Hache d’armes",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "slashing",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état À terre ; Attaques multiples : L’ettin effectue une attaque de Hache d’armes et une de Morgenstern"
+        },
+        {
+          "name": "Morgenstern",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "piercing",
+          "note": "la cible subit le Désavantage à son prochain jet d’attaque intervenant avant la fin de son tour suivant"
+        }
+      ]
+    },
+    {
+      "id": "hill-giant",
+      "name": "Géant des collines",
+      "type": "giant",
+      "size": "huge",
+      "cr": "5",
+      "armorClass": 13,
+      "hitPoints": 105,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Arbre-massue",
+          "toHit": 8,
+          "reach": "3 m",
+          "damage": {
+            "count": 3,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état À terre ; Attaques multiples : Le géant effectue deux attaques, réparties à sa guise entre Arbre-massue et Lancer de détritus"
+        },
+        {
+          "name": "Lancer de détritus",
+          "toHit": 8,
+          "reach": "18/72 m",
+          "damage": {
+            "count": 2,
+            "die": "d10"
+          },
+          "damageBonus": 5,
+          "damageKind": "bludgeoning",
+          "note": "la cible subit l’état Empoisonné jusqu’à la fin de son tour suivant"
+        }
+      ]
+    },
+    {
+      "id": "owlbear",
+      "name": "Hibours",
+      "type": "monstrosity",
+      "size": "large",
+      "cr": "3",
+      "armorClass": 13,
+      "hitPoints": 59,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : Le hibours effectue deux attaques de Saignée"
+        }
+      ]
+    },
+    {
+      "id": "harpy",
+      "name": "Harpie",
+      "type": "monstrosity",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 11,
+      "hitPoints": 38,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 1,
+          "damageKind": "slashing"
+        }
+      ]
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaure de Baphomet",
+      "type": "monstrosity",
+      "size": "large",
+      "cr": "3",
+      "armorClass": 14,
+      "hitPoints": 85,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Coup de corne (recharge 5–6)",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 4,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature de taille G ou inférieure et si le minotaure s’est déplacé en ligne droite d’un minimum de 3 m juste avant de la toucher, la cible subit 10 (3d6) dégâts perforants supplémentaires, ainsi que l’état À terre"
+        },
+        {
+          "name": "Coutille abyssale",
+          "toHit": 6,
+          "reach": "3 m",
+          "damage": {
+            "count": 1,
+            "die": "d12"
+          },
+          "damageBonus": 4,
+          "damageKind": "slashing",
+          "note": "+10 (3d6) dégâts nécrotiques"
+        }
+      ]
+    },
+    {
+      "id": "basilisk",
+      "name": "Basilic",
+      "type": "monstrosity",
+      "size": "medium",
+      "cr": "3",
+      "armorClass": 15,
+      "hitPoints": 52,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+7 (2d6) dégâts de poison"
+        }
+      ]
+    },
+    {
+      "id": "cockatrice",
+      "name": "Cockatrice",
+      "type": "monstrosity",
+      "size": "small",
+      "cr": "1/2",
+      "armorClass": 11,
+      "hitPoints": 22,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Morsure pétrifiante",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing",
+          "note": "Si la cible est une créature, elle est soumise à l’effet suivant. JS Constitution : DD 11. Premier échec : la cible subit l’état Entravé. Elle réitère le JS à la fin de son tour suivant si elle est toujours Entravée, et met un terme à l’effet sur elle-même en cas de réussite. 280 Deuxième échec : la cible subit l’état Pétrifié, qui remplace l’état Entravé, pendant 24 heures"
+        }
+      ]
+    },
+    {
+      "id": "manticore",
+      "name": "Manticore",
+      "type": "monstrosity",
+      "size": "large",
+      "cr": "3",
+      "armorClass": 14,
+      "hitPoints": 68,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : La manticore effectue trois attaques, réparties à sa guise entre Saignée et Piquant caudal"
+        },
+        {
+          "name": "Piquant caudal",
+          "toHit": 5,
+          "reach": "30/60 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "worg",
+      "name": "Worg",
+      "type": "fey",
+      "size": "large",
+      "cr": "1/2",
+      "armorClass": 13,
+      "hitPoints": 26,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "le prochain jet d’attaque effectué contre la cible avant le début du tour suivant du worg a l’Avantage"
+        }
+      ]
+    },
+    {
+      "id": "chimera",
+      "name": "Chimère",
+      "type": "monstrosity",
+      "size": "large",
+      "cr": "6",
+      "armorClass": 14,
+      "hitPoints": 114,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Coup de bélier",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d12"
+          },
+          "damageBonus": 4,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état À terre ; Attaques multiples : La chimère effectue trois attaques : une de Coup de bélier, une de Griffe et une de Morsure. Elle peut remplacer l’attaque de Griffe par une utilisation de son Souffle de feu si disponible ; Autres actions : Souffle de feu"
+        },
+        {
+          "name": "Griffe",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "slashing"
+        },
+        {
+          "name": "Morsure",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing",
+          "note": "ou 18 (4d6 + 4) dégâts perforants si la chimère avait l’Avantage au jet d’attaque"
+        }
+      ]
+    },
+    {
+      "id": "medusa",
+      "name": "Méduse",
+      "type": "monstrosity",
+      "size": "medium",
+      "cr": "6",
+      "armorClass": 15,
+      "hitPoints": 127,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Chevelure de serpents",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+14 (4d6) dégâts de poison ; Attaques multiples : La méduse effectue une attaque de Chevelure de serpents et deux de Griffe, ou bien elle effectue trois attaques de Rayon toxique"
+        },
+        {
+          "name": "Griffe",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing"
+        },
+        {
+          "name": "Rayon toxique",
+          "toHit": 5,
+          "reach": "45 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "poison"
+        }
+      ]
+    },
+    {
+      "id": "animated-armor",
+      "name": "Armure animée",
+      "type": "construct",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 18,
+      "hitPoints": 33,
+      "speed": 25,
+      "attacks": [
+        {
+          "name": "Coup",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "bludgeoning",
+          "note": "Attaques multiples : L’armure effectue deux attaques de Coup"
+        }
+      ]
+    },
+    {
+      "id": "flying-sword",
+      "name": "Épée volante",
+      "type": "construct",
+      "size": "small",
+      "cr": "1/4",
+      "armorClass": 17,
+      "hitPoints": 14,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Taillade",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing"
+        }
+      ]
+    },
+    {
+      "id": "flesh-golem",
+      "name": "Golem de chair",
+      "type": "construct",
+      "size": "medium",
+      "cr": "5",
+      "armorClass": 9,
+      "hitPoints": 127,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Coup",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 4,
+          "damageKind": "bludgeoning",
+          "note": "+4 (1d8) dégâts de foudre ; Attaques multiples : Le golem effectue deux attaques de Coup"
+        }
+      ]
+    },
+    {
+      "id": "gelatinous-cube",
+      "name": "Cube gélatineux",
+      "type": "ooze",
+      "size": "large",
+      "cr": "2",
+      "armorClass": 6,
+      "hitPoints": 63,
+      "speed": 15,
+      "attacks": [
+        {
+          "name": "Pseudopode",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 3,
+            "die": "d6"
+          },
+          "damageBonus": 2,
+          "damageKind": "acid"
+        }
+      ]
+    },
+    {
+      "id": "gray-ooze",
+      "name": "Vase grise",
+      "type": "ooze",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 9,
+      "hitPoints": 22,
+      "speed": 10,
+      "attacks": [
+        {
+          "name": "Pseudopode",
+          "toHit": 3,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 1,
+          "damageKind": "acid",
+          "note": "Toute armure non magique portée par la cible subit un malus cumulatif de –1 à la CA qu’elle confère. L’armure est détruite si ce malus réduit sa CA à 10. On peut annuler ce malus en lançant le sort réparation sur l’armure"
+        }
+      ]
+    },
+    {
+      "id": "black-pudding",
+      "name": "Pouding noir",
+      "type": "ooze",
+      "size": "large",
+      "cr": "4",
+      "armorClass": 7,
+      "hitPoints": 68,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Pseudopode caustique",
+          "toHit": 5,
+          "reach": "3 m",
+          "damage": {
+            "count": 4,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "acid",
+          "note": "Toute armure non magique portée par la cible subit un malus cumulatif de –1 à la CA qu’elle confère. L’armure est détruite si ce malus réduit sa CA à 10. On peut annuler ce malus en lançant le sort réparation sur l’armure"
+        }
+      ]
+    },
+    {
+      "id": "imp",
+      "name": "Diablotin",
+      "type": "fiend",
+      "size": "tiny",
+      "cr": "1",
+      "armorClass": 13,
+      "hitPoints": 21,
+      "speed": 20,
+      "attacks": [
+        {
+          "name": "Dard",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+7 (2d6) dégâts de poison"
+        }
+      ]
+    },
+    {
+      "id": "quasit",
+      "name": "Quasit",
+      "type": "fiend",
+      "size": "tiny",
+      "cr": "1",
+      "armorClass": 13,
+      "hitPoints": 25,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "slashing",
+          "note": "la cible subit l’état Empoisonné jusqu’au début du tour suivant du quasit ; Autres actions : Frayeur (1/jour)"
+        }
+      ]
+    },
+    {
+      "id": "hell-hound",
+      "name": "Molosse infernal",
+      "type": "fiend",
+      "size": "medium",
+      "cr": "3",
+      "armorClass": 15,
+      "hitPoints": 58,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 3,
+          "damageKind": "piercing",
+          "note": "+3 (1d6) dégâts de feu ; Attaques multiples : Le molosse effectue deux attaques de Morsure ; Autres actions : Souffle de feu"
+        }
+      ]
+    },
+    {
+      "id": "sprite",
+      "name": "Esprit follet",
+      "type": "fey",
+      "size": "tiny",
+      "cr": "1/4",
+      "armorClass": 15,
+      "hitPoints": 10,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Épée-épingle",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing",
+          "note": "Autres actions : Perception du for intérieur"
+        },
+        {
+          "name": "Arc enchanté",
+          "toHit": 6,
+          "reach": "12/48 m",
+          "damage": {
+            "count": 0,
+            "die": "d4"
+          },
+          "damageBonus": 1,
+          "damageKind": "piercing",
+          "note": "la cible subit l’état Charmé jusqu’au début du tour suivant de l’esprit follet"
+        }
+      ]
+    },
+    {
+      "id": "dryad",
+      "name": "Dryade",
+      "type": "fey",
+      "size": "medium",
+      "cr": "1",
+      "armorClass": 16,
+      "hitPoints": 22,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Vrille cinglante",
+          "toHit": 6,
+          "reach": "3 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 4,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : La dryade effectue une attaque de Vrille cinglante ou de Décharge d’épines, et peut recourir à Incantation pour lancer charme-monstre"
+        },
+        {
+          "name": "Décharge d’épines",
+          "toHit": 6,
+          "reach": "18 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 4,
+          "damageKind": "piercing"
+        }
+      ]
+    },
+    {
+      "id": "satyr",
+      "name": "Satyre",
+      "type": "fey",
+      "size": "medium",
+      "cr": "1/2",
+      "armorClass": 13,
+      "hitPoints": 31,
+      "speed": 40,
+      "attacks": [
+        {
+          "name": "Sabots",
+          "toHit": 5,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 3,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille M ou inférieure, le satyre la repousse en ligne droite d’un maximum de 3 m ; Autres actions : Moquerie"
+        }
+      ]
+    },
+    {
+      "id": "pseudodragon",
+      "name": "Pseudodragon",
+      "type": "dragon",
+      "size": "tiny",
+      "cr": "1/4",
+      "armorClass": 14,
+      "hitPoints": 10,
+      "speed": 15,
+      "attacks": [
+        {
+          "name": "Morsure",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d4"
+          },
+          "damageBonus": 2,
+          "damageKind": "piercing",
+          "note": "Attaques multiples : Le pseudodragon effectue deux attaques de Morsure ; Autres actions : Dard"
+        }
+      ]
+    },
+    {
+      "id": "gargoyle",
+      "name": "Gargouille",
+      "type": "elemental",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 15,
+      "hitPoints": 67,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Griffe",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d4"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "Attaques multiples : La gargouille effectue deux attaques de Griffe"
+        }
+      ]
+    },
+    {
+      "id": "fire-elemental",
+      "name": "Élémentaire du feu",
+      "type": "elemental",
+      "size": "large",
+      "cr": "5",
+      "armorClass": 13,
+      "hitPoints": 93,
+      "speed": 50,
+      "attacks": [
+        {
+          "name": "Brûlure",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d6"
+          },
+          "damageBonus": 3,
+          "damageKind": "fire",
+          "note": "Si la cible est une créature ou un objet inflammable, elle s’embrase ; Attaques multiples : L’élémentaire effectue deux attaques de Brûlure"
+        }
+      ]
+    },
+    {
+      "id": "earth-elemental",
+      "name": "Élémentaire de la terre",
+      "type": "elemental",
+      "size": "large",
+      "cr": "5",
+      "armorClass": 17,
+      "hitPoints": 147,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Coup",
+          "toHit": 8,
+          "reach": "3 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "bludgeoning",
+          "note": "Attaques multiples : L’élémentaire effectue deux attaques, réparties à sa guise entre Coup et Projection de rocher"
+        },
+        {
+          "name": "Projection de rocher",
+          "toHit": 8,
+          "reach": "18 m",
+          "damage": {
+            "count": 1,
+            "die": "d6"
+          },
+          "damageBonus": 5,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille G ou inférieure, elle subit l’état À terre"
+        }
+      ]
+    },
+    {
+      "id": "air-elemental",
+      "name": "Élémentaire de l'air",
+      "type": "elemental",
+      "size": "large",
+      "cr": "5",
+      "armorClass": 15,
+      "hitPoints": 90,
+      "speed": 90,
+      "attacks": [
+        {
+          "name": "Coup tonitruant",
+          "toHit": 8,
+          "reach": "3 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 5,
+          "damageKind": "thunder",
+          "note": "Attaques multiples : L’élémentaire effectue deux attaques de Coup tonitruant ; Autres actions : Tourbillon"
+        }
+      ]
+    },
+    {
+      "id": "water-elemental",
+      "name": "Élémentaire de l'eau",
+      "type": "elemental",
+      "size": "large",
+      "cr": "5",
+      "armorClass": 14,
+      "hitPoints": 114,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Coup",
+          "toHit": 7,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 2,
+            "die": "d8"
+          },
+          "damageBonus": 4,
+          "damageKind": "bludgeoning",
+          "note": "Si la cible est une créature de taille M ou inférieure, elle subit l’état À terre ; Attaques multiples : L’élémentaire effectue deux attaques de Coup ; Autres actions : Déluge"
+        }
+      ]
+    },
+    {
+      "id": "white-dragon-wyrmling",
+      "name": "Dragonnet blanc",
+      "type": "dragon",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 16,
+      "hitPoints": 32,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d8"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "+2 (1d4) dégâts de froid ; Attaques multiples : Le dragon effectue deux attaques de Saignée ; Autres actions : Souffle glacial"
+        }
+      ]
+    },
+    {
+      "id": "green-dragon-wyrmling",
+      "name": "Dragonnet vert",
+      "type": "dragon",
+      "size": "medium",
+      "cr": "2",
+      "armorClass": 17,
+      "hitPoints": 38,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 4,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 2,
+          "damageKind": "slashing",
+          "note": "+3 (1d6) dégâts de poison ; Attaques multiples : Le dragon effectue deux attaques de Saignée ; Autres actions : Souffle empoisonné"
+        }
+      ]
+    },
+    {
+      "id": "red-dragon-wyrmling",
+      "name": "Dragonnet rouge",
+      "type": "dragon",
+      "size": "medium",
+      "cr": "4",
+      "armorClass": 17,
+      "hitPoints": 75,
+      "speed": 30,
+      "attacks": [
+        {
+          "name": "Saignée",
+          "toHit": 6,
+          "reach": "1,50 m",
+          "damage": {
+            "count": 1,
+            "die": "d10"
+          },
+          "damageBonus": 4,
+          "damageKind": "slashing",
+          "note": "+3 (1d6) dégâts de feu ; Attaques multiples : Le dragon effectue deux attaques de Saignée ; Autres actions : Souffle de feu"
+        }
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "goblin": {
+        "name": "Goblin Warrior",
+        "attacks": [
+          {
+            "name": "Scimitar",
+            "reach": "5 ft",
+            "note": "+2 (1d4) Slashing damage if the attack roll had Advantage"
+          },
+          {
+            "name": "Shortbow",
+            "reach": "80/320 ft",
+            "note": "+2 (1d4) Piercing damage if the attack roll had Advantage"
+          }
+        ]
+      },
+      "hobgoblin": {
+        "name": "Hobgoblin Warrior",
+        "attacks": [
+          {
+            "name": "Longsword",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Longbow",
+            "reach": "150/600 ft",
+            "note": "+7 (3d4) Poison damage"
+          }
+        ]
+      },
+      "bugbear": {
+        "name": "Bugbear Warrior",
+        "attacks": [
+          {
+            "name": "Grab",
+            "reach": "10 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 12)"
+          }
+        ]
+      },
+      "kobold": {
+        "name": "Kobold Warrior",
+        "attacks": [
+          {
+            "name": "Dagger",
+            "reach": "5 / 20/60 ft"
+          }
+        ]
+      },
+      "gnoll": {
+        "name": "Gnoll Warrior",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Bone Bow",
+            "reach": "150/600 ft"
+          }
+        ]
+      },
+      "bandit": {
+        "attacks": [
+          {
+            "name": "Scimitar",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Light Crossbow",
+            "reach": "80/320 ft"
+          }
+        ]
+      },
+      "bandit-captain": {
+        "name": "Bandit Captain",
+        "attacks": [
+          {
+            "name": "Scimitar",
+            "reach": "5 ft",
+            "note": "Multiattack: The bandit makes two attacks, using Scimitar and Pistol in any combination"
+          },
+          {
+            "name": "Pistol",
+            "reach": "30/90 ft"
+          }
+        ]
+      },
+      "cultist": {
+        "name": "Cultist",
+        "attacks": [
+          {
+            "name": "Ritual Sickle",
+            "reach": "5 ft",
+            "note": "+1 Necrotic damage"
+          }
+        ]
+      },
+      "cult-fanatic": {
+        "name": "Cultist Fanatic",
+        "attacks": [
+          {
+            "name": "Pact Blade",
+            "reach": "5 ft",
+            "note": "+7 (2d6) Necrotic damage"
+          }
+        ]
+      },
+      "guard": {
+        "name": "Guard",
+        "attacks": [
+          {
+            "name": "Spear",
+            "reach": "5 / 20/60 ft"
+          }
+        ]
+      },
+      "knight": {
+        "name": "Knight",
+        "attacks": [
+          {
+            "name": "Greatsword",
+            "reach": "5 ft",
+            "note": "+4 (1d8) Radiant damage; Multiattack: The knight makes two attacks, using Greatsword or Heavy Crossbow in any combination"
+          },
+          {
+            "name": "Heavy Crossbow",
+            "reach": "100/400 ft",
+            "note": "+4 (1d8) Radiant damage"
+          }
+        ]
+      },
+      "veteran": {
+        "name": "Warrior Veteran",
+        "attacks": [
+          {
+            "name": "Greatsword",
+            "reach": "5 ft",
+            "note": "Multiattack: The warrior makes two Greatsword or Heavy Crossbow attacks"
+          },
+          {
+            "name": "Heavy Crossbow",
+            "reach": "100/400 ft"
+          }
+        ]
+      },
+      "berserker": {
+        "attacks": [
+          {
+            "name": "Greataxe",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "scout": {
+        "name": "Scout",
+        "attacks": [
+          {
+            "name": "Shortsword",
+            "reach": "5 ft",
+            "note": "Multiattack: The scout makes two attacks, using Shortsword and Longbow in any combination"
+          },
+          {
+            "name": "Longbow",
+            "reach": "150/600 ft"
+          }
+        ]
+      },
+      "spy": {
+        "name": "Spy",
+        "attacks": [
+          {
+            "name": "Shortsword",
+            "reach": "5 ft",
+            "note": "+7 (2d6) Poison damage"
+          },
+          {
+            "name": "Hand Crossbow",
+            "reach": "30/120 ft",
+            "note": "+7 (2d6) Poison damage"
+          }
+        ]
+      },
+      "assassin": {
+        "attacks": [
+          {
+            "name": "Shortsword",
+            "reach": "5 ft",
+            "note": "+17 (5d6) Poison damage, and the target has the Poisoned condition until the start of the assassin’s next turn; Multiattack: The assassin makes three attacks, using Shortsword or Light Crossbow in any combination"
+          },
+          {
+            "name": "Light Crossbow",
+            "reach": "80/320 ft",
+            "note": "+21 (6d6) Poison damage"
+          }
+        ]
+      },
+      "mage": {
+        "attacks": [
+          {
+            "name": "Arcane Burst",
+            "reach": "5 / 120 ft",
+            "note": "Multiattack: The mage makes three Arcane Burst attacks"
+          }
+        ]
+      },
+      "priest": {
+        "name": "Priest",
+        "attacks": [
+          {
+            "name": "Mace",
+            "reach": "5 ft",
+            "note": "+5 (2d4) Radiant damage; Multiattack: The priest makes two attacks, using Mace or Radiant Flame in any combination"
+          },
+          {
+            "name": "Radiant Flame",
+            "reach": "60 ft"
+          }
+        ]
+      },
+      "acolyte": {
+        "name": "Priest Acolyte",
+        "attacks": [
+          {
+            "name": "Mace",
+            "reach": "5 ft",
+            "note": "+2 (1d4) Radiant damage"
+          },
+          {
+            "name": "Radiant Flame",
+            "reach": "60 ft"
+          }
+        ]
+      },
+      "thug": {
+        "name": "Tough",
+        "attacks": [
+          {
+            "name": "Mace",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Heavy Crossbow",
+            "reach": "100/400 ft"
+          }
+        ]
+      },
+      "skeleton": {
+        "name": "Skeleton",
+        "attacks": [
+          {
+            "name": "Shortsword",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Shortbow",
+            "reach": "80/320 ft"
+          }
+        ]
+      },
+      "zombie": {
+        "name": "Zombie",
+        "attacks": [
+          {
+            "name": "Slam",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "ghoul": {
+        "name": "Ghoul",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "If the target is a creature that isn’t an Undead or elf, it is subjected to the following effect. Constitution Saving Throw: DC 10. Failure: The target has the Paralyzed condition until the end of its next turn; Multiattack: The ghoul makes two Bite attacks"
+          },
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "+3 (1d6) Necrotic damage"
+          }
+        ]
+      },
+      "ghast": {
+        "name": "Ghast",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "If the target is a non-Undead creature, it is subjected to the following effect. Constitution Saving Throw: DC 10. Failure: The target has the Paralyzed condition until the end of its next turn"
+          },
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "+9 (2d8) Necrotic damage"
+          }
+        ]
+      },
+      "shadow": {
+        "name": "Shadow",
+        "attacks": [
+          {
+            "name": "Draining Swipe",
+            "reach": "5 ft",
+            "note": "the target’s Strength score decreases by 1d4. The target dies if this reduces that score to 0. If a Humanoid is slain by this attack, a Shadow rises from the corpse 1d4 hours later"
+          }
+        ]
+      },
+      "specter": {
+        "name": "Specter",
+        "attacks": [
+          {
+            "name": "Life Drain",
+            "reach": "5 ft",
+            "note": "If the target is a creature, its Hit Point maximum decreases by an amount equal to the damage taken"
+          }
+        ]
+      },
+      "wraith": {
+        "name": "Wraith",
+        "attacks": [
+          {
+            "name": "Life Drain",
+            "reach": "5 ft",
+            "note": "If the target is a creature, its Hit Point maximum decreases by an amount equal to the damage taken"
+          }
+        ]
+      },
+      "wight": {
+        "name": "Wight",
+        "attacks": [
+          {
+            "name": "Necrotic Sword",
+            "reach": "5 ft",
+            "note": "+4 (1d8) Necrotic damage; Multiattack: The wight makes two attacks, using Necrotic Sword or Necrotic Bow in any combination. It can replace one attack with a use of Life Drain; Other actions: Life Drain"
+          },
+          {
+            "name": "Necrotic Bow",
+            "reach": "150/600 ft",
+            "note": "+4 (1d8) Necrotic damage"
+          }
+        ]
+      },
+      "vampire-spawn": {
+        "name": "Vampire Spawn",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 13) from one of two claws; Multiattack: The vampire makes two Claw attacks and uses Bite; Other actions: Bite"
+          }
+        ]
+      },
+      "will-o-wisp": {
+        "name": "Will-o'-Wisp",
+        "attacks": [
+          {
+            "name": "Shock",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "wolf": {
+        "name": "Wolf",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Prone condition"
+          }
+        ]
+      },
+      "dire-wolf": {
+        "name": "Dire Wolf",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "If the target is a Large or smaller creature, it has the Prone condition"
+          }
+        ]
+      },
+      "brown-bear": {
+        "name": "Brown Bear",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "If the target is a Large or smaller creature, it has the Prone condition; Multiattack: The bear makes one Bite attack and one Claw attack"
+          },
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "boar": {
+        "name": "Boar",
+        "attacks": [
+          {
+            "name": "Gore",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature and the boar moved 20+ feet straight toward it immediately before the hit, the target takes an extra 3 (1d6) Piercing damage and has the Prone condition"
+          }
+        ]
+      },
+      "giant-spider": {
+        "name": "Giant Spider",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "+7 (2d6) Poison damage; Other actions: Web"
+          }
+        ]
+      },
+      "giant-rat": {
+        "name": "Giant Rat",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "giant-centipede": {
+        "name": "Giant Centipede",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "the target has the Poisoned condition until the start of the centipede’s next turn"
+          }
+        ]
+      },
+      "swarm-of-rats": {
+        "name": "Swarm of Rats",
+        "attacks": [
+          {
+            "name": "Bites",
+            "reach": "5 ft",
+            "note": "or 2 (1d4) Piercing damage if the swarm is Bloodied"
+          }
+        ]
+      },
+      "swarm-of-bats": {
+        "name": "Swarm of Bats",
+        "attacks": [
+          {
+            "name": "Bites",
+            "reach": "5 ft",
+            "note": "or 2 (1d4) Piercing damage if the swarm is Bloodied"
+          }
+        ]
+      },
+      "giant-scorpion": {
+        "name": "Giant Scorpion",
+        "attacks": [
+          {
+            "name": "Sting",
+            "reach": "5 ft",
+            "note": "+11 (2d10) Poison damage; Multiattack: The scorpion makes two Claw attacks and one Sting attack"
+          },
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "If the target is a Large or smaller creature, it has the Grappled condition (escape DC 13) from one of two claws"
+          }
+        ]
+      },
+      "bat": {
+        "name": "Bat",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "cat": {
+        "name": "Cat",
+        "attacks": [
+          {
+            "name": "Scratch",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "crab": {
+        "name": "Crab",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "frog": {
+        "name": "Frog"
+      },
+      "hawk": {
+        "name": "Hawk",
+        "attacks": [
+          {
+            "name": "Talons",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "lizard": {
+        "name": "Lizard",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "octopus": {
+        "name": "Octopus",
+        "attacks": [
+          {
+            "name": "Tentacles",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "owl": {
+        "name": "Owl",
+        "attacks": [
+          {
+            "name": "Talons",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "rat": {
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "raven": {
+        "name": "Raven",
+        "attacks": [
+          {
+            "name": "Beak",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "spider": {
+        "name": "Spider",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "plus 2 (1d4) Poison damage"
+          }
+        ]
+      },
+      "weasel": {
+        "name": "Weasel",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "mastiff": {
+        "name": "Mastiff",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Prone condition"
+          }
+        ]
+      },
+      "panther": {
+        "name": "Panther",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Pounce: after moving 20+ feet straight, a Large or smaller target has the Prone condition"
+          }
+        ]
+      },
+      "riding-horse": {
+        "name": "Riding Horse",
+        "attacks": [
+          {
+            "name": "Hooves",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "constrictor-snake": {
+        "name": "Constrictor Snake",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Constrict",
+            "reach": "5 ft",
+            "note": "Strength save DC 12 or Grappled (escape DC 12)"
+          }
+        ]
+      },
+      "ape": {
+        "name": "Ape",
+        "attacks": [
+          {
+            "name": "Fist",
+            "reach": "5 ft",
+            "note": "Multiattack: two Fist attacks"
+          }
+        ]
+      },
+      "black-bear": {
+        "name": "Black Bear",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Multiattack: two Rend attacks"
+          }
+        ]
+      },
+      "crocodile": {
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "The target has the Grappled condition (escape DC 12)"
+          }
+        ]
+      },
+      "warhorse": {
+        "name": "Warhorse",
+        "attacks": [
+          {
+            "name": "Hooves",
+            "reach": "5 ft",
+            "note": "After a 20-foot straight move, a Large or smaller target has the Prone condition"
+          }
+        ]
+      },
+      "lion": {
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Multiattack: two Rend attacks; Pounce"
+          }
+        ]
+      },
+      "tiger": {
+        "name": "Tiger",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Multiattack: two Rend attacks; Pounce"
+          }
+        ]
+      },
+      "giant-eagle": {
+        "name": "Giant Eagle",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "+3 (1d6) Radiant damage; Multiattack: The eagle makes two Rend attacks. 351 Rend. Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage plus 3 (1d6) Radiant damage"
+          }
+        ]
+      },
+      "ogre": {
+        "attacks": [
+          {
+            "name": "Greatclub",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Javelin",
+            "reach": "5 / 30/120 ft"
+          }
+        ]
+      },
+      "troll": {
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "10 ft",
+            "note": "Multiattack: The troll makes three Rend attacks"
+          }
+        ]
+      },
+      "ettin": {
+        "attacks": [
+          {
+            "name": "Battleaxe",
+            "reach": "5 ft",
+            "note": "If the target is a Large or smaller creature, it has the Prone condition; Multiattack: The ettin makes one Battleaxe attack and one Morningstar attack"
+          },
+          {
+            "name": "Morningstar",
+            "reach": "5 ft",
+            "note": "the target has Disadvantage on the next attack roll it makes before the end of its next turn"
+          }
+        ]
+      },
+      "hill-giant": {
+        "name": "Hill Giant",
+        "attacks": [
+          {
+            "name": "Tree Club",
+            "reach": "10 ft",
+            "note": "If the target is a Large or smaller creature, it has the Prone condition; Multiattack: The giant makes two attacks, using Tree Club or Trash Lob in any combination"
+          },
+          {
+            "name": "Trash Lob",
+            "reach": "60/240 ft",
+            "note": "the target has the Poisoned condition until the end of its next turn"
+          }
+        ]
+      },
+      "owlbear": {
+        "name": "Owlbear",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Multiattack: The owlbear makes two Rend attacks"
+          }
+        ]
+      },
+      "harpy": {
+        "name": "Harpy",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "minotaur": {
+        "name": "Minotaur of Baphomet",
+        "attacks": [
+          {
+            "name": "Gore (Recharge 5–6)",
+            "reach": "5 ft",
+            "note": "If the target is a Large or smaller creature and the minotaur moved 10+ feet straight toward it immediately before the hit, the target takes an extra 10 (3d6) Piercing damage and has the Prone condition"
+          },
+          {
+            "name": "Abyssal Glaive",
+            "reach": "10 ft",
+            "note": "+10 (3d6) Necrotic damage"
+          }
+        ]
+      },
+      "basilisk": {
+        "name": "Basilisk",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "+7 (2d6) Poison damage"
+          }
+        ]
+      },
+      "cockatrice": {
+        "attacks": [
+          {
+            "name": "Petrifying Bite",
+            "reach": "5 ft",
+            "note": "If the target is a creature, it is subjected to the following effect. Constitution Saving Throw: DC 11. First Failure: The target has the Restrained condition. The target repeats the save at the end of its next turn if it is still Restrained, ending the effect on itself on a success. Second Failure: The target has the Petrified condition, instead of the Restrained condition, for 24 hours"
+          }
+        ]
+      },
+      "manticore": {
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "Multiattack: The manticore makes three attacks, using Rend or Tail Spike in any combination"
+          },
+          {
+            "name": "Tail Spike",
+            "reach": "100/200 ft"
+          }
+        ]
+      },
+      "worg": {
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "the next attack roll made against the target before the start of the worg’s next turn has Advantage"
+          }
+        ]
+      },
+      "chimera": {
+        "name": "Chimera",
+        "attacks": [
+          {
+            "name": "Ram",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Prone condition; Multiattack: The chimera makes one Ram attack, one Bite attack, and one Claw attack. It can replace the Claw attack with a use of Fire Breath if available; Other actions: Fire Breath"
+          },
+          {
+            "name": "Claw",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "or 18 (4d6 + 4) Piercing damage if the chimera had Advantage on the attack roll"
+          }
+        ]
+      },
+      "medusa": {
+        "name": "Medusa",
+        "attacks": [
+          {
+            "name": "Snake Hair",
+            "reach": "5 ft",
+            "note": "+14 (4d6) Poison damage; Multiattack: The medusa makes two Claw attacks and one Snake Hair attack, or it makes three Poison Ray attacks"
+          },
+          {
+            "name": "Claw",
+            "reach": "5 ft"
+          },
+          {
+            "name": "Poison Ray",
+            "reach": "150 ft"
+          }
+        ]
+      },
+      "animated-armor": {
+        "name": "Animated Armor",
+        "attacks": [
+          {
+            "name": "Slam",
+            "reach": "5 ft",
+            "note": "Multiattack: The armor makes two Slam attacks"
+          }
+        ]
+      },
+      "flying-sword": {
+        "name": "Animated Flying Sword",
+        "attacks": [
+          {
+            "name": "Slash",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "flesh-golem": {
+        "name": "Flesh Golem",
+        "attacks": [
+          {
+            "name": "Slam",
+            "reach": "5 ft",
+            "note": "+4 (1d8) Lightning damage; Multiattack: The golem makes two Slam attacks"
+          }
+        ]
+      },
+      "gelatinous-cube": {
+        "name": "Gelatinous Cube",
+        "attacks": [
+          {
+            "name": "Pseudopod",
+            "reach": "5 ft"
+          }
+        ]
+      },
+      "gray-ooze": {
+        "name": "Gray Ooze",
+        "attacks": [
+          {
+            "name": "Pseudopod",
+            "reach": "5 ft",
+            "note": "Nonmagical armor worn by the target takes a −1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10. The penalty can be removed by casting the Mending spell on the armor"
+          }
+        ]
+      },
+      "black-pudding": {
+        "name": "Black Pudding",
+        "attacks": [
+          {
+            "name": "Dissolving Pseudopod",
+            "reach": "10 ft",
+            "note": "Nonmagical armor worn by the target takes a −1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10. The penalty can be removed by casting the Mending spell on the armor"
+          }
+        ]
+      },
+      "imp": {
+        "name": "Imp",
+        "attacks": [
+          {
+            "name": "Sting",
+            "reach": "5 ft",
+            "note": "+7 (2d6) Poison damage"
+          }
+        ]
+      },
+      "quasit": {
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "the target has the Poisoned condition until the start of the quasit’s next turn; Other actions: Scare (1/Day)"
+          }
+        ]
+      },
+      "hell-hound": {
+        "name": "Hell Hound",
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "+3 (1d6) Fire damage; Multiattack: The hound makes two Bite attacks; Other actions: Fire Breath"
+          }
+        ]
+      },
+      "sprite": {
+        "name": "Sprite",
+        "attacks": [
+          {
+            "name": "Needle Sword",
+            "reach": "5 ft",
+            "note": "Other actions: Heart Sight"
+          },
+          {
+            "name": "Enchanting Bow",
+            "reach": "40/160 ft",
+            "note": "the target has the Charmed condition until the start of the sprite’s next turn"
+          }
+        ]
+      },
+      "dryad": {
+        "name": "Dryad",
+        "attacks": [
+          {
+            "name": "Vine Lash",
+            "reach": "10 ft",
+            "note": "Multiattack: The dryad makes one Vine Lash or Thorn Burst attack, and it can use Spellcasting to cast Charm Monster"
+          },
+          {
+            "name": "Thorn Burst",
+            "reach": "60 ft"
+          }
+        ]
+      },
+      "satyr": {
+        "name": "Satyr",
+        "attacks": [
+          {
+            "name": "Hooves",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, the satyr pushes the target up to 10 feet straight away from itself; Other actions: Mockery"
+          }
+        ]
+      },
+      "pseudodragon": {
+        "attacks": [
+          {
+            "name": "Bite",
+            "reach": "5 ft",
+            "note": "Multiattack: The pseudodragon makes two Bite attacks; Other actions: Sting"
+          }
+        ]
+      },
+      "gargoyle": {
+        "name": "Gargoyle",
+        "attacks": [
+          {
+            "name": "Claw",
+            "reach": "5 ft",
+            "note": "Multiattack: The gargoyle makes two Claw attacks"
+          }
+        ]
+      },
+      "fire-elemental": {
+        "name": "Fire Elemental",
+        "attacks": [
+          {
+            "name": "Burn",
+            "reach": "5 ft",
+            "note": "If the target is a creature or a flammable object, it starts burning; Multiattack: The elemental makes two Burn attacks"
+          }
+        ]
+      },
+      "earth-elemental": {
+        "name": "Earth Elemental",
+        "attacks": [
+          {
+            "name": "Slam",
+            "reach": "10 ft",
+            "note": "Multiattack: The elemental makes two attacks, using Slam or Rock Launch in any combination"
+          },
+          {
+            "name": "Rock Launch",
+            "reach": "60 ft",
+            "note": "If the target is a Large or smaller creature, it has the Prone condition"
+          }
+        ]
+      },
+      "air-elemental": {
+        "name": "Air Elemental",
+        "attacks": [
+          {
+            "name": "Thunderous Slam",
+            "reach": "10 ft",
+            "note": "+259 Whirlwind (Recharge 4–6). Strength Saving Throw: DC 13, one Medium or smaller creature in the elemental’s space. Failure: 24 (4d10 + 2) Thunder damage, and the target is pushed up to 20 feet straight away from the elemental and has the Prone condition. Success: Half damage only; Multiattack: The elemental makes two Thunderous Slam attacks"
+          }
+        ]
+      },
+      "water-elemental": {
+        "name": "Water Elemental",
+        "attacks": [
+          {
+            "name": "Slam",
+            "reach": "5 ft",
+            "note": "If the target is a Medium or smaller creature, it has the Prone condition; Multiattack: The elemental makes two Slam attacks; Other actions: Whelm"
+          }
+        ]
+      },
+      "white-dragon-wyrmling": {
+        "name": "White Dragon Wyrmling",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "+2 (1d4) Cold damage; Multiattack: The dragon makes two Rend attacks; Other actions: Cold Breath"
+          }
+        ]
+      },
+      "green-dragon-wyrmling": {
+        "name": "Green Dragon Wyrmling",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "+3 (1d6) Poison damage; Multiattack: The dragon makes two Rend attacks; Other actions: Poison Breath"
+          }
+        ]
+      },
+      "red-dragon-wyrmling": {
+        "name": "Red Dragon Wyrmling",
+        "attacks": [
+          {
+            "name": "Rend",
+            "reach": "5 ft",
+            "note": "+3 (1d6) Fire damage; Multiattack: The dragon makes two Rend attacks; Other actions: Fire Breath"
+          }
+        ]
+      }
+    }
+  }
+}

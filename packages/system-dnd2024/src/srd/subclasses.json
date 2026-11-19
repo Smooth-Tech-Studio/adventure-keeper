@@ -1,0 +1,1161 @@
+{
+  "entries": [
+    {
+      "id": "voie-du-berserker",
+      "classId": "barbarian",
+      "name": "Voie du Berserker",
+      "blurb": "La rage brute, sans finesse : une attaque de plus, et de quoi terrifier ceux qui vous regardent.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Frénésie",
+          "summary": "Utiliser Témérité pendant votre Rage ajoute des dégâts à la première cible touchée dans le tour avec une attaque de Force : autant de d6 que votre bonus de dégâts de Rage, du type de l'arme."
+        },
+        {
+          "level": 6,
+          "name": "Rage aveugle",
+          "summary": "Immunité aux états Charmé et Effrayé tant que votre Rage est active ; ces états prennent fin si vous les subissez en entrant en Rage."
+        },
+        {
+          "level": 10,
+          "name": "Représailles",
+          "summary": "En réaction, quand une créature à 1,50 m vous blesse, vous l'attaquez au corps à corps avec une arme ou à mains nues."
+        },
+        {
+          "level": 14,
+          "name": "Présence intimidante",
+          "summary": "Action bonus : sauvegarde de Sagesse pour les créatures de votre choix dans une émanation de 9 m, sous peine d'être Effrayées 1 minute. Récupéré sur un repos long ou en dépensant une Rage.",
+          "uses": {
+            "max": 1,
+            "recharge": "long"
+          }
+        }
+      ]
+    },
+    {
+      "id": "college-du-savoir",
+      "classId": "bard",
+      "name": "Collège du Savoir",
+      "blurb": "Vous piochez chez le clerc, le druide et le magicien, et vos mots coupants sabotent les jets adverses.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Maîtrises supplémentaires",
+          "summary": "Vous maîtrisez trois compétences de votre choix."
+        },
+        {
+          "level": 3,
+          "name": "Mots cinglants",
+          "summary": "En réaction, quand une créature visible à 18 m lance des dégâts ou réussit un test ou une attaque : dépensez une Inspiration et soustrayez le dé de son jet, ce qui peut transformer sa réussite en échec."
+        },
+        {
+          "level": 6,
+          "name": "Découvertes magiques",
+          "summary": "Deux sorts au choix parmi les listes de clerc, druide ou magicien, toujours préparés, échangeables à chaque niveau de barde gagné."
+        },
+        {
+          "level": 14,
+          "name": "Compétence hors pair",
+          "summary": "Sur un test ou une attaque raté, dépensez une Inspiration et ajoutez le dé au d20. Si c'est encore raté, l'Inspiration n'est pas consommée."
+        }
+      ]
+    },
+    {
+      "id": "domaine-de-la-vie",
+      "classId": "cleric",
+      "name": "Domaine de la Vie",
+      "blurb": "Le soin poussé à son maximum : chaque sort de guérison rend davantage, et vous relevez les mourants.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Disciple de la Vie",
+          "summary": "Un sort de soin lancé avec un emplacement rend 2 points de vie de plus, plus le niveau de l'emplacement."
+        },
+        {
+          "level": 3,
+          "name": "Sorts du Domaine de la Vie",
+          "summary": "Des sorts de soin et de protection s'ajoutent à vos sorts toujours préparés, par paliers aux niveaux 3, 5, 7 et 9."
+        },
+        {
+          "level": 3,
+          "name": "Survivance",
+          "summary": "Action Magie, un Conduit divin : répartissez cinq fois votre niveau de clerc en points de vie entre les créatures En péril à 9 m, sans dépasser la moitié de leur maximum."
+        },
+        {
+          "level": 6,
+          "name": "Guérisseur béni",
+          "summary": "Soigner autrui avec un emplacement vous rend 2 points de vie plus le niveau de l'emplacement."
+        },
+        {
+          "level": 17,
+          "name": "Guérison suprême",
+          "summary": "Vos dés de soin, de sort comme de Conduit divin, ne sont plus lancés : ils donnent toujours leur valeur maximale."
+        }
+      ],
+      "spells": [
+        {
+          "spellId": "aid",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "bless",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "cure-wounds",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "lesser-restoration",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "mass-healing-word",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "revivify",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "aura-of-life",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "death-ward",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "greater-restoration",
+          "minLevel": 9,
+          "spellLevel": 5
+        },
+        {
+          "spellId": "mass-cure-wounds",
+          "minLevel": 9,
+          "spellLevel": 5
+        }
+      ]
+    },
+    {
+      "id": "cercle-de-la-terre",
+      "classId": "druid",
+      "name": "Cercle de la Terre",
+      "blurb": "Vos sorts changent avec le terrain — aride, polaire, tempéré ou tropical — et vous soignez en zone.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Sorts du Cercle de la Terre",
+          "summary": "À chaque repos long, choisissez un environnement — aride, polaire, tempéré ou tropical. Les sorts correspondants sont toujours préparés, par paliers."
+        },
+        {
+          "level": 3,
+          "name": "Aval de la terre",
+          "summary": "Action Magie, une Forme sauvage : dans une sphère de 3 m de rayon à 18 m, les créatures de votre choix subissent 2d6 dégâts nécrotiques (moitié si la sauvegarde de Constitution réussit) et l'une d'elles récupère 2d6 PV. +1d6 aux niveaux 10 et 14."
+        },
+        {
+          "level": 6,
+          "name": "Ressourcement",
+          "summary": "Une fois par repos long, lancez un sort de cercle de niveau 1+ sans emplacement. Après un repos court, récupérez des emplacements dont le total de niveaux ne dépasse pas la moitié de votre niveau de druide."
+        },
+        {
+          "level": 10,
+          "name": "Protégé de dame nature",
+          "summary": "Immunité à l'état Empoisonné, et résistance au type de dégâts de votre environnement : feu en aride, froid en polaire, foudre en tempéré, poison en tropical."
+        },
+        {
+          "level": 14,
+          "name": "Sanctuaire de dame Nature",
+          "summary": "Action Magie, une Forme sauvage : un cube de 4,50 m de végétation spectrale pendant 1 minute, à 36 m. Vous et vos alliés y avez un abri partiel et partagez votre résistance d'environnement. Déplaçable de 18 m en action bonus."
+        }
+      ],
+      "spellVariants": {
+        "label": "Environnement du cercle",
+        "hint": "Il change à chaque repos long ; vos sorts de cercle suivent.",
+        "options": [
+          {
+            "name": "Aride",
+            "summary": "Le feu : Flou, Mains brûlantes, Trait de feu ; Boule de feu au niveau 5, puis un sort de niveau 4 et un de niveau 5.",
+            "spells": [
+              {
+                "spellId": "blur",
+                "minLevel": 3,
+                "spellLevel": 2
+              },
+              {
+                "spellId": "burning-hands",
+                "minLevel": 3,
+                "spellLevel": 1
+              },
+              {
+                "spellId": "fire-bolt",
+                "minLevel": 3,
+                "spellLevel": 0
+              },
+              {
+                "spellId": "fireball",
+                "minLevel": 5,
+                "spellLevel": 3
+              },
+              {
+                "spellId": "blight",
+                "minLevel": 7,
+                "spellLevel": 4
+              },
+              {
+                "spellId": "wall-of-stone",
+                "minLevel": 9,
+                "spellLevel": 5
+              }
+            ]
+          },
+          {
+            "name": "Polaire",
+            "summary": "Le froid : Nappe de brouillard, Immobilisation de personne, Rayon de givre ; Tempête de neige au niveau 5, puis un sort de niveau 4 et un de niveau 5.",
+            "spells": [
+              {
+                "spellId": "fog-cloud",
+                "minLevel": 3,
+                "spellLevel": 1
+              },
+              {
+                "spellId": "hold-person",
+                "minLevel": 3,
+                "spellLevel": 2
+              },
+              {
+                "spellId": "ray-of-frost",
+                "minLevel": 3,
+                "spellLevel": 0
+              },
+              {
+                "spellId": "sleet-storm",
+                "minLevel": 5,
+                "spellLevel": 3
+              },
+              {
+                "spellId": "ice-storm",
+                "minLevel": 7,
+                "spellLevel": 4
+              },
+              {
+                "spellId": "cone-of-cold",
+                "minLevel": 9,
+                "spellLevel": 5
+              }
+            ]
+          },
+          {
+            "name": "Tempéré",
+            "summary": "La foudre : Foulée brumeuse, Poigne électrique, Sommeil ; Éclair au niveau 5, puis un sort de niveau 4 et un de niveau 5.",
+            "spells": [
+              {
+                "spellId": "misty-step",
+                "minLevel": 3,
+                "spellLevel": 2
+              },
+              {
+                "spellId": "shocking-grasp",
+                "minLevel": 3,
+                "spellLevel": 0
+              },
+              {
+                "spellId": "sleep",
+                "minLevel": 3,
+                "spellLevel": 1
+              },
+              {
+                "spellId": "lightning-bolt",
+                "minLevel": 5,
+                "spellLevel": 3
+              },
+              {
+                "spellId": "freedom-of-movement",
+                "minLevel": 7,
+                "spellLevel": 4
+              },
+              {
+                "spellId": "tree-stride",
+                "minLevel": 9,
+                "spellLevel": 5
+              }
+            ]
+          },
+          {
+            "name": "Tropical",
+            "summary": "Le poison : Aspersion acide, Rayon empoisonné, Toile d'araignée ; Nuage nauséabond au niveau 5, puis un sort de niveau 4 et un de niveau 5.",
+            "spells": [
+              {
+                "spellId": "acid-splash",
+                "minLevel": 3,
+                "spellLevel": 0
+              },
+              {
+                "spellId": "ray-of-sickness",
+                "minLevel": 3,
+                "spellLevel": 1
+              },
+              {
+                "spellId": "web",
+                "minLevel": 3,
+                "spellLevel": 2
+              },
+              {
+                "spellId": "stinking-cloud",
+                "minLevel": 5,
+                "spellLevel": 3
+              },
+              {
+                "spellId": "polymorph",
+                "minLevel": 7,
+                "spellLevel": 4
+              },
+              {
+                "spellId": "insect-plague",
+                "minLevel": 9,
+                "spellLevel": 5
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "champion",
+      "classId": "fighter",
+      "name": "Champion",
+      "blurb": "Le combattant pur : des critiques plus fréquents, un second style de combat, et une endurance hors norme.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Critique amélioré",
+          "summary": "Vos attaques avec une arme et à mains nues font un coup critique sur 19 comme sur 20.",
+          "mechanics": [
+            {
+              "type": "critRange",
+              "min": 19
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Athlète accompli",
+          "summary": "Avantage aux jets d'initiative et aux tests d'Athlétisme. Après un coup critique, déplacez-vous de la moitié de votre Vitesse sans provoquer d'attaque d'opportunité.",
+          "mechanics": [
+            {
+              "type": "initiative",
+              "advantage": true
+            },
+            {
+              "type": "advantage",
+              "on": "check",
+              "skills": ["athletics"]
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "name": "Style de combat supplémentaire",
+          "summary": "Vous gagnez un second don de style de combat, au choix."
+        },
+        {
+          "level": 10,
+          "name": "Héros du champ d'honneur",
+          "summary": "En combat, vous vous donnez l'Inspiration héroïque au début de chaque tour où vous n'en avez pas."
+        },
+        {
+          "level": 15,
+          "name": "Critique supérieur",
+          "summary": "Vos coups critiques tombent désormais sur 18, 19 ou 20.",
+          "mechanics": [
+            {
+              "type": "critRange",
+              "min": 18
+            }
+          ]
+        },
+        {
+          "level": 18,
+          "name": "Survivant",
+          "summary": "Avantage aux sauvegardes contre la mort, où un 18 ou 19 vaut un 20. Si vous êtes En péril avec au moins 1 PV, vous récupérez 5 + votre modificateur de Constitution au début de chaque tour.",
+          "mechanics": [
+            {
+              "type": "advantage",
+              "on": "deathSave"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "credo-de-la-paume",
+      "classId": "monk",
+      "name": "Credo de la Paume",
+      "blurb": "Le combat à mains nues poussé à bout : bousculer, renverser, se soigner, et la paume mortelle.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Technique de la Paume",
+          "summary": "Chaque coup de votre Déluge de coups peut en plus : empêcher les attaques d'opportunité de la cible, la repousser de 4,50 m (sauvegarde de Force), ou la mettre À terre (sauvegarde de Dextérité)."
+        },
+        {
+          "level": 6,
+          "name": "Plénitude physique",
+          "summary": "Action bonus : récupérez votre dé d'Arts martiaux + votre modificateur de Sagesse en points de vie. Autant de fois que ce modificateur, récupérées au repos long.",
+          "uses": {
+            "max": {
+              "ability": "wis",
+              "min": 1
+            },
+            "recharge": "long"
+          },
+          "roll": {
+            "dice": {
+              "martialArts": 1
+            },
+            "bonus": "wis",
+            "gives": "hp"
+          }
+        },
+        {
+          "level": 11,
+          "name": "Foulée preste",
+          "summary": "Toute action bonus autre que Porté par le vent vous laisse enchaîner immédiatement avec Porté par le vent."
+        },
+        {
+          "level": 17,
+          "name": "Paume vibratoire",
+          "summary": "Pour 4 points de Credo, un coup à mains nues implante des vibrations qui durent autant de jours que votre niveau. Y mettre fin inflige 10d12 dégâts de force (moitié si la sauvegarde de Constitution réussit). Une seule cible à la fois."
+        }
+      ]
+    },
+    {
+      "id": "serment-de-devotion",
+      "classId": "paladin",
+      "name": "Serment de Dévotion",
+      "blurb": "Le paladin de lumière : une arme sacrée, une aura qui protège des charmes, et un nimbe au bout du chemin.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Sorts du Serment de Dévotion",
+          "summary": "Des sorts de protection et de lumière s'ajoutent à vos sorts toujours préparés, par paliers."
+        },
+        {
+          "level": 3,
+          "name": "Arme sacrée",
+          "summary": "Avec l'action Attaque, un Conduit divin imprègne votre arme de corps à corps 10 minutes : ajoutez votre modificateur de Charisme aux attaques (minimum +1), choisissez entre dégâts normaux et radiants, et l'arme éclaire sur 6 m."
+        },
+        {
+          "level": 7,
+          "name": "Aura de dévotion",
+          "summary": "Vous et vos alliés êtes immunisés à l'état Charmé dans votre Aura de protection ; un allié charmé qui y entre en est libéré tant qu'il y reste."
+        },
+        {
+          "level": 15,
+          "name": "Châtiment de protection",
+          "summary": "Chaque Châtiment divin donne un abri partiel à vous et vos alliés dans l'aura, jusqu'au début de votre tour suivant."
+        },
+        {
+          "level": 20,
+          "name": "Nimbe sacré",
+          "summary": "Action bonus, 10 minutes : les ennemis qui commencent leur tour dans l'aura subissent Charisme + maîtrise en dégâts radiants, l'aura brille comme la lumière du soleil, et vous avez l'avantage aux sauvegardes imposées par un Fiélon ou un Mort-vivant. Une fois par repos long, ou via un emplacement de niveau 5."
+        }
+      ],
+      "spells": [
+        {
+          "spellId": "protection-from-evil-and-good",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "shield-of-faith",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "aid",
+          "minLevel": 5,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "zone-of-truth",
+          "minLevel": 5,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "beacon-of-hope",
+          "minLevel": 9,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "dispel-magic",
+          "minLevel": 9,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "freedom-of-movement",
+          "minLevel": 13,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "guardian-of-faith",
+          "minLevel": 13,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "commune",
+          "minLevel": 17,
+          "spellLevel": 5
+        },
+        {
+          "spellId": "flame-strike",
+          "minLevel": 17,
+          "spellLevel": 5
+        }
+      ]
+    },
+    {
+      "id": "chasseur",
+      "classId": "ranger",
+      "name": "Chasseur",
+      "blurb": "Le spécialiste du gibier : des dégâts choisis selon l'adversaire, et des tactiques défensives.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Savoir du chasseur",
+          "summary": "Une créature marquée par votre Marque du chasseur vous révèle ses immunités, résistances et vulnérabilités."
+        },
+        {
+          "level": 3,
+          "name": "Proie du chasseur",
+          "summary": "Au choix, échangeable à chaque repos : Goût du sang (+1d8 dégâts une fois par tour contre une créature blessée) ou Briseur de hordes (une attaque de plus par tour contre une seconde créature à 1,50 m de la première)."
+        },
+        {
+          "level": 7,
+          "name": "Tactiques défensives",
+          "summary": "Au choix, échangeable à chaque repos : Cauchemar de la horde (désavantage aux attaques d'opportunité contre vous) ou Défense contre les attaques multiples (qui vous touche a le désavantage sur ses autres attaques du tour)."
+        },
+        {
+          "level": 11,
+          "name": "Proie du chasseur supérieure",
+          "summary": "Une fois par tour, les dégâts supplémentaires de Marque du chasseur frappent aussi une seconde créature visible à 9 m de la première."
+        },
+        {
+          "level": 15,
+          "name": "Défense de chasseur supérieure",
+          "summary": "En réaction aux dégâts subis, gagnez la résistance aux autres dégâts du même type jusqu'à la fin du tour."
+        }
+      ]
+    },
+    {
+      "id": "voleur",
+      "classId": "rogue",
+      "name": "Voleur",
+      "blurb": "L'aventurier classique : mains lestes, escalade, objets magiques exploités à fond, et deux tours au premier round.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Mains lestes",
+          "summary": "Action bonus : un test d'Escamotage (crochetage, désamorçage, vol à la tire), ou l'action Utilisation ou Magie pour un objet magique qui l'exige."
+        },
+        {
+          "level": 3,
+          "name": "Monte-en-l'air",
+          "summary": "Vitesse d'escalade égale à votre Vitesse, et vos sauts se calculent sur la Dextérité plutôt que la Force.",
+          "mechanics": [
+            {
+              "type": "movement",
+              "mode": "climb"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "name": "Furtivité suprême",
+          "summary": "Nouvelle Frappe malicieuse — Attaque furtive (1d6) : Invisible grâce à Furtivité, attaquer ne vous révèle pas si vous finissez le tour derrière un abri important ou total."
+        },
+        {
+          "level": 13,
+          "name": "Utilisation d'objets magiques",
+          "summary": "Sur un 6 à 1d6, une propriété à charges ne consomme rien. Vous vous liez jusqu'à quatre objets. Vous utilisez tout parchemin de sort à l'Intelligence — automatiquement jusqu'au niveau 1, sinon test d'Arcanes DD 10 + niveau du sort, le parchemin se désintégrant en cas d'échec."
+        },
+        {
+          "level": 17,
+          "name": "Réflexes de voleur",
+          "summary": "Au premier round de chaque combat, vous jouez deux tours : à votre initiative, puis à votre initiative moins 10."
+        }
+      ]
+    },
+    {
+      "id": "sorcellerie-draconique",
+      "classId": "sorcerer",
+      "name": "Sorcellerie draconique",
+      "blurb": "Le sang de dragon : des PV en plus, une CA naturelle, et des dégâts élémentaires renforcés.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Résistance draconique",
+          "summary": "+3 points de vie maximum, puis +1 par niveau d'ensorceleur gagné. Sans armure, votre CA de base devient 10 + Dextérité + Charisme.",
+          "mechanics": [
+            {
+              "type": "unarmoredDefense",
+              "ability": "cha",
+              "shield": true
+            },
+            {
+              "type": "hitPointsPerLevel",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "name": "Sorts draconiques",
+          "summary": "Des sorts draconiques s'ajoutent à vos sorts toujours préparés, par paliers."
+        },
+        {
+          "level": 6,
+          "name": "Affinité élémentaire",
+          "summary": "Choisissez acide, froid, feu, foudre ou poison : vous y résistez, et vos sorts de ce type ajoutent votre modificateur de Charisme à un jet de dégâts."
+        },
+        {
+          "level": 14,
+          "name": "Ailes draconiques",
+          "summary": "Action bonus : des ailes vous donnent 18 m de vitesse de vol pendant 1 heure. Une fois par repos long, ou pour 3 points de Sorcellerie.",
+          "uses": {
+            "max": 1,
+            "recharge": "long"
+          }
+        },
+        {
+          "level": 18,
+          "name": "Compagnon draconique",
+          "summary": "Convocation de dragon se lance sans composante matérielle, une fois par repos long sans emplacement, et peut se passer de concentration en échange d'une durée ramenée à 1 minute."
+        }
+      ],
+      "spells": [
+        {
+          "spellId": "alter-self",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "chromatic-orb",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "command",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "dragons-breath",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "fear",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "fly",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "arcane-eye",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "charm-monster",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "legend-lore",
+          "minLevel": 9,
+          "spellLevel": 5
+        },
+        {
+          "spellId": "summon-dragon",
+          "minLevel": 9,
+          "spellLevel": 5
+        }
+      ]
+    },
+    {
+      "id": "protecteur-fielon",
+      "classId": "warlock",
+      "name": "Protecteur Fiélon",
+      "blurb": "Des PV temporaires à chaque ennemi abattu, de la chance à la demande, et un aller simple en enfer.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Bénédiction du Ténébreux",
+          "summary": "Réduire un ennemi à 0 PV — ou le voir tomber à 3 m de vous — vous donne votre modificateur de Charisme + votre niveau d'occultiste en points de vie temporaires."
+        },
+        {
+          "level": 3,
+          "name": "Sorts du Fiélon",
+          "summary": "Des sorts infernaux s'ajoutent à vos sorts toujours préparés, par paliers."
+        },
+        {
+          "level": 6,
+          "name": "Chance du Ténébreux",
+          "summary": "Ajoutez 1d10 à un test ou une sauvegarde, après avoir vu le dé mais avant d'en subir les effets. Autant de fois que votre modificateur de Charisme, récupérées au repos long.",
+          "uses": {
+            "max": {
+              "ability": "cha",
+              "min": 1
+            },
+            "recharge": "long"
+          }
+        },
+        {
+          "level": 10,
+          "name": "Résistance fiélonne",
+          "summary": "À chaque repos, choisissez un type de dégâts autre que Force : vous y résistez jusqu'au prochain choix."
+        },
+        {
+          "level": 14,
+          "name": "Traversée des enfers",
+          "summary": "Une fois par tour, un coup au but peut projeter la cible dans les Plans Inférieurs : sauvegarde de Charisme, sinon 8d10 psychiques (sauf Fiélon) et Incapable d'agir jusqu'à la fin de votre prochain tour. Une fois par repos long, ou via un emplacement de Magie de pacte."
+        }
+      ],
+      "spells": [
+        {
+          "spellId": "burning-hands",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "command",
+          "minLevel": 3,
+          "spellLevel": 1
+        },
+        {
+          "spellId": "scorching-ray",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "suggestion",
+          "minLevel": 3,
+          "spellLevel": 2
+        },
+        {
+          "spellId": "fireball",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "stinking-cloud",
+          "minLevel": 5,
+          "spellLevel": 3
+        },
+        {
+          "spellId": "fire-shield",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "wall-of-fire",
+          "minLevel": 7,
+          "spellLevel": 4
+        },
+        {
+          "spellId": "geas",
+          "minLevel": 9,
+          "spellLevel": 5
+        },
+        {
+          "spellId": "insect-plague",
+          "minLevel": 9,
+          "spellLevel": 5
+        }
+      ]
+    },
+    {
+      "id": "evocateur",
+      "classId": "wizard",
+      "name": "Évocateur",
+      "blurb": "Les dégâts bruts, maîtrisés : vos alliés sortent indemnes de vos boules de feu.",
+      "features": [
+        {
+          "level": 3,
+          "name": "Évocateur érudit",
+          "summary": "Deux sorts d'Évocation de niveau 2 maximum rejoignent gratuitement votre grimoire, puis un de plus à chaque nouveau niveau d'emplacements."
+        },
+        {
+          "level": 3,
+          "name": "Sort mineur appuyé",
+          "summary": "Vos sorts mineurs de dégâts infligent quand même la moitié des dégâts sur une attaque ratée ou une sauvegarde réussie, sans leurs effets annexes."
+        },
+        {
+          "level": 6,
+          "name": "Façonneur de sorts",
+          "summary": "Dans une Évocation, épargnez 1 + le niveau du sort en créatures visibles : elles réussissent automatiquement leur sauvegarde et ne subissent aucun dégât."
+        },
+        {
+          "level": 10,
+          "name": "Évocation améliorée",
+          "summary": "Vos sorts d'Évocation ajoutent votre modificateur d'Intelligence à un jet de dégâts.",
+          "mechanics": [
+            {
+              "type": "damageBonus",
+              "on": "spell",
+              "school": "evocation",
+              "bonus": {
+                "ability": "int"
+              }
+            }
+          ]
+        },
+        {
+          "level": 14,
+          "name": "Surcharge magique",
+          "summary": "Un sort de dégâts lancé avec un emplacement de niveau 1 à 5 inflige ses dégâts maximum. Gratuit la première fois ; ensuite, avant un repos long, vous subissez 2d12 dégâts nécrotiques par niveau d'emplacement, +1d12 à chaque récidive, sans résistance ni immunité possible."
+        }
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "voie-du-berserker": {
+        "name": "Path of the Berserker",
+        "blurb": "Raw rage, no finesse: an extra attack, and enough to terrify anyone watching you.",
+        "features": [
+          {
+            "name": "Frenzy",
+            "summary": "Using Reckless Attack while raging adds damage to the first target you hit that turn with a Strength attack: as many d6 as your Rage damage bonus, of the weapon's type."
+          },
+          {
+            "name": "Mindless Rage",
+            "summary": "Immunity to the Charmed and Frightened conditions while your Rage is active; those conditions end if you have them when you enter your Rage."
+          },
+          {
+            "name": "Retaliation",
+            "summary": "As a reaction, when a creature within 5 feet damages you, you attack it in melee with a weapon or an unarmed strike."
+          },
+          {
+            "name": "Intimidating Presence",
+            "summary": "Bonus action: creatures of your choice in a 30-foot emanation make a Wisdom save or are Frightened for 1 minute. Regained on a long rest or by spending a Rage."
+          }
+        ]
+      },
+      "college-du-savoir": {
+        "name": "College of Lore",
+        "blurb": "You borrow from clerics, druids and wizards, and your cutting words sabotage enemy rolls.",
+        "features": [
+          {
+            "name": "Bonus Proficiencies",
+            "summary": "You gain proficiency in three skills of your choice."
+          },
+          {
+            "name": "Cutting Words",
+            "summary": "As a reaction, when a creature you can see within 60 feet rolls damage or succeeds on a check or attack: spend an Inspiration and subtract the die from its roll, which can turn its success into a failure."
+          },
+          {
+            "name": "Magical Discoveries",
+            "summary": "Two spells of your choice from the cleric, druid or wizard lists, always prepared, swappable each time you gain a bard level."
+          },
+          {
+            "name": "Peerless Skill",
+            "summary": "When you fail a check or attack, spend an Inspiration and add the die to the d20. If it still fails, the Inspiration isn't spent."
+          }
+        ]
+      },
+      "domaine-de-la-vie": {
+        "name": "Life Domain",
+        "blurb": "Healing pushed to the limit: every healing spell restores more, and you bring back the dying.",
+        "features": [
+          {
+            "name": "Disciple of Life",
+            "summary": "A healing spell cast with a slot restores 2 more hit points, plus the slot's level."
+          },
+          {
+            "name": "Life Domain Spells",
+            "summary": "Healing and protection spells join your always-prepared spells, in tiers at levels 3, 5, 7 and 9."
+          },
+          {
+            "name": "Preserve Life",
+            "summary": "Magic action, one Channel Divinity: share out five times your cleric level in hit points among Bloodied creatures within 30 feet, up to half their maximum."
+          },
+          {
+            "name": "Blessed Healer",
+            "summary": "Healing someone else with a slot restores 2 hit points plus the slot's level to you."
+          },
+          {
+            "name": "Supreme Healing",
+            "summary": "Your healing dice, from spells and Channel Divinity alike, are no longer rolled: they always give their maximum value."
+          }
+        ]
+      },
+      "cercle-de-la-terre": {
+        "name": "Circle of the Land",
+        "blurb": "Your spells change with the terrain — arid, polar, temperate or tropical — and you heal over an area.",
+        "features": [
+          {
+            "name": "Circle of the Land Spells",
+            "summary": "On each long rest, choose a land — arid, polar, temperate or tropical. Its spells are always prepared, in tiers."
+          },
+          {
+            "name": "Land's Aid",
+            "summary": "Magic action, one Wild Shape: in a 10-foot-radius sphere within 60 feet, creatures of your choice take 2d6 necrotic damage (half on a successful Constitution save) and one of them regains 2d6 HP. +1d6 at levels 10 and 14."
+          },
+          {
+            "name": "Natural Recovery",
+            "summary": "Once per long rest, cast a level 1+ circle spell without a slot. After a short rest, recover spell slots whose combined levels are at most half your druid level."
+          },
+          {
+            "name": "Nature's Ward",
+            "summary": "Immunity to the Poisoned condition, and resistance to your land's damage type: fire for arid, cold for polar, lightning for temperate, poison for tropical."
+          },
+          {
+            "name": "Nature's Sanctuary",
+            "summary": "Magic action, one Wild Shape: a 15-foot cube of spectral plants for 1 minute, within 120 feet. You and your allies have half cover in it and share your land resistance. Movable 60 feet as a bonus action."
+          }
+        ],
+        "spellVariants": {
+          "label": "Circle land",
+          "hint": "It changes on each long rest; your circle spells follow.",
+          "options": [
+            {
+              "name": "Arid",
+              "summary": "Fire: Blur, Burning Hands, Fire Bolt; Fireball at level 5, then a level 4 and a level 5 spell."
+            },
+            {
+              "name": "Polar",
+              "summary": "Cold: Fog Cloud, Hold Person, Ray of Frost; Sleet Storm at level 5, then a level 4 and a level 5 spell."
+            },
+            {
+              "name": "Temperate",
+              "summary": "Lightning: Misty Step, Shocking Grasp, Sleep; Lightning Bolt at level 5, then a level 4 and a level 5 spell."
+            },
+            {
+              "summary": "Poison: Acid Splash, Ray of Sickness, Web; Stinking Cloud at level 5, then a level 4 and a level 5 spell."
+            }
+          ]
+        }
+      },
+      "champion": {
+        "blurb": "The pure fighter: more frequent critical hits, a second fighting style, and extraordinary stamina.",
+        "features": [
+          {
+            "name": "Improved Critical",
+            "summary": "Your weapon attacks and unarmed strikes score a critical hit on a 19 as well as a 20."
+          },
+          {
+            "name": "Remarkable Athlete",
+            "summary": "Advantage on initiative rolls and Athletics checks. After a critical hit, move up to half your Speed without provoking opportunity attacks."
+          },
+          {
+            "name": "Additional Fighting Style",
+            "summary": "You gain a second fighting style feat of your choice."
+          },
+          {
+            "name": "Heroic Warrior",
+            "summary": "In combat, you give yourself Heroic Inspiration at the start of each turn you don't have it."
+          },
+          {
+            "name": "Superior Critical",
+            "summary": "Your critical hits now land on an 18, 19 or 20."
+          },
+          {
+            "name": "Survivor",
+            "summary": "Advantage on death saving throws, where an 18 or 19 counts as a 20. While Bloodied with at least 1 HP, you regain 5 + your Constitution modifier at the start of each turn."
+          }
+        ]
+      },
+      "credo-de-la-paume": {
+        "name": "Warrior of the Open Hand",
+        "blurb": "Unarmed combat taken to the limit: shove, topple, heal yourself, and the deadly palm.",
+        "features": [
+          {
+            "name": "Open Hand Technique",
+            "summary": "Each hit of your Flurry of Blows can also: stop the target's opportunity attacks, push it 15 feet (Strength save), or knock it Prone (Dexterity save)."
+          },
+          {
+            "name": "Wholeness of Body",
+            "summary": "Bonus action: regain your Martial Arts die + your Wisdom modifier in hit points. As many times as that modifier, regained on a long rest."
+          },
+          {
+            "name": "Fleet Step",
+            "summary": "Any bonus action other than Step of the Wind lets you follow up immediately with Step of the Wind."
+          },
+          {
+            "name": "Quivering Palm",
+            "summary": "For 4 Focus Points, an unarmed strike sets up vibrations lasting as many days as your level. Ending them deals 10d12 force damage (half on a successful Constitution save). Only one target at a time."
+          }
+        ]
+      },
+      "serment-de-devotion": {
+        "name": "Oath of Devotion",
+        "blurb": "The paladin of light: a sacred weapon, an aura that wards off charms, and a nimbus at the end of the road.",
+        "features": [
+          {
+            "name": "Oath of Devotion Spells",
+            "summary": "Protection and light spells join your always-prepared spells, in tiers."
+          },
+          {
+            "name": "Sacred Weapon",
+            "summary": "With the Attack action, a Channel Divinity imbues your melee weapon for 10 minutes: add your Charisma modifier to attacks (minimum +1), choose normal or radiant damage, and the weapon sheds light for 20 feet."
+          },
+          {
+            "name": "Aura of Devotion",
+            "summary": "You and your allies are immune to the Charmed condition in your Aura of Protection; a charmed ally who enters it is freed while it stays there."
+          },
+          {
+            "name": "Smite of Protection",
+            "summary": "Each Divine Smite gives half cover to you and your allies in the aura, until the start of your next turn."
+          },
+          {
+            "name": "Holy Nimbus",
+            "summary": "Bonus action, 10 minutes: enemies starting their turn in the aura take Charisma + proficiency in radiant damage, the aura shines like sunlight, and you have advantage on saves forced by a Fiend or an Undead. Once per long rest, or with a level 5 slot."
+          }
+        ]
+      },
+      "chasseur": {
+        "name": "Hunter",
+        "blurb": "The game specialist: damage chosen to fit the foe, and defensive tactics.",
+        "features": [
+          {
+            "name": "Hunter's Lore",
+            "summary": "A creature marked by your Hunter's Mark reveals its immunities, resistances and vulnerabilities to you."
+          },
+          {
+            "name": "Hunter's Prey",
+            "summary": "Your choice, swappable on each rest: Colossus Slayer (+1d8 damage once per turn against a wounded creature) or Horde Breaker (one more attack per turn against a second creature within 5 feet of the first)."
+          },
+          {
+            "name": "Defensive Tactics",
+            "summary": "Your choice, swappable on each rest: Escape the Horde (disadvantage on opportunity attacks against you) or Multiattack Defense (whoever hits you has disadvantage on its other attacks that turn)."
+          },
+          {
+            "name": "Superior Hunter's Prey",
+            "summary": "Once per turn, the extra damage of Hunter's Mark also hits a second creature you can see within 30 feet of the first."
+          },
+          {
+            "name": "Superior Hunter's Defense",
+            "summary": "As a reaction to taking damage, gain resistance to further damage of the same type until the end of the turn."
+          }
+        ]
+      },
+      "voleur": {
+        "name": "Thief",
+        "blurb": "The classic adventurer: fast hands, climbing, magic items used to the full, and two turns in the first round.",
+        "features": [
+          {
+            "name": "Fast Hands",
+            "summary": "Bonus action: a Sleight of Hand check (picking a lock, disarming a trap, picking a pocket), or the Utilize or Magic action for a magic item that requires it."
+          },
+          {
+            "name": "Second-Story Work",
+            "summary": "Climb Speed equal to your Speed, and your jumps use Dexterity rather than Strength."
+          },
+          {
+            "name": "Supreme Sneak",
+            "summary": "New Cunning Strike — Stealth Attack (1d6): Invisible thanks to Hide, attacking doesn't reveal you if you end the turn behind three-quarters or total cover."
+          },
+          {
+            "name": "Use Magic Device",
+            "summary": "On a 6 on 1d6, a charged property spends nothing. You can attune to up to four items. You use any spell scroll with Intelligence — automatically up to level 1, otherwise an Arcana check DC 10 + the spell's level, the scroll crumbling on a failure."
+          },
+          {
+            "name": "Thief's Reflexes",
+            "summary": "In the first round of each combat, you take two turns: at your initiative, then at your initiative minus 10."
+          }
+        ]
+      },
+      "sorcellerie-draconique": {
+        "name": "Draconic Sorcery",
+        "blurb": "Dragon blood: extra HP, a natural AC, and empowered elemental damage.",
+        "features": [
+          {
+            "name": "Draconic Resilience",
+            "summary": "+3 maximum hit points, then +1 per sorcerer level gained. Without armor, your base AC becomes 10 + Dexterity + Charisma."
+          },
+          {
+            "name": "Draconic Spells",
+            "summary": "Draconic spells join your always-prepared spells, in tiers."
+          },
+          {
+            "name": "Elemental Affinity",
+            "summary": "Choose acid, cold, fire, lightning or poison: you resist it, and your spells of that type add your Charisma modifier to one damage roll."
+          },
+          {
+            "name": "Dragon Wings",
+            "summary": "Bonus action: wings give you a 60-foot fly speed for 1 hour. Once per long rest, or for 3 Sorcery Points."
+          },
+          {
+            "name": "Dragon Companion",
+            "summary": "Summon Dragon is cast without a material component, once per long rest without a slot, and can do without concentration in exchange for a duration cut to 1 minute."
+          }
+        ]
+      },
+      "protecteur-fielon": {
+        "name": "Fiend Patron",
+        "blurb": "Temporary HP for each enemy downed, luck on demand, and a one-way trip to hell.",
+        "features": [
+          {
+            "name": "Dark One's Blessing",
+            "summary": "Reducing an enemy to 0 HP — or seeing it fall within 10 feet of you — gives you your Charisma modifier + your warlock level in temporary hit points."
+          },
+          {
+            "name": "Fiend Spells",
+            "summary": "Infernal spells join your always-prepared spells, in tiers."
+          },
+          {
+            "name": "Dark One's Own Luck",
+            "summary": "Add 1d10 to a check or save, after seeing the roll but before its effects apply. As many times as your Charisma modifier, regained on a long rest."
+          },
+          {
+            "name": "Fiendish Resilience",
+            "summary": "On each rest, choose a damage type other than Force: you resist it until your next choice."
+          },
+          {
+            "name": "Hurl Through Hell",
+            "summary": "Once per turn, a hit can hurl the target through the Lower Planes: Charisma save, or 8d10 psychic damage (unless it is a Fiend) and Incapacitated until the end of your next turn. Once per long rest, or with a Pact Magic slot."
+          }
+        ]
+      },
+      "evocateur": {
+        "name": "Evoker",
+        "blurb": "Raw damage, under control: your allies walk out of your fireballs unharmed.",
+        "features": [
+          {
+            "name": "Evocation Savant",
+            "summary": "Two Evocation spells of level 2 or lower join your spellbook for free, then one more each time you gain a new level of spell slots."
+          },
+          {
+            "name": "Potent Cantrip",
+            "summary": "Your damaging cantrips still deal half damage on a missed attack or a successful save, without their side effects."
+          },
+          {
+            "name": "Sculpt Spells",
+            "summary": "In an Evocation spell, spare 1 + the spell's level visible creatures: they automatically succeed on their save and take no damage."
+          },
+          {
+            "name": "Empowered Evocation",
+            "summary": "Your Evocation spells add your Intelligence modifier to one damage roll."
+          },
+          {
+            "name": "Overchannel",
+            "summary": "A damage spell cast with a level 1–5 slot deals maximum damage. Free the first time; after that, before a long rest, you take 2d12 necrotic damage per slot level, +1d12 each further time, which no resistance or immunity can stop."
+          }
+        ]
+      }
+    }
+  }
+}

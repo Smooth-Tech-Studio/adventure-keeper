@@ -1,0 +1,422 @@
+{
+  "list": {
+    "title": "Mes campagnes",
+    "intro": "Les campagnes que vous dirigez ou auxquelles vous participez.",
+    "new": "Nouvelle campagne",
+    "loadFailed": "Impossible de charger vos campagnes. Vérifiez votre connexion.",
+    "emptyTitle": "Aucune campagne pour l'instant",
+    "emptyText": "Créez votre première campagne pour commencer à préparer vos aventures.",
+    "create": "Créer une campagne",
+    "gm": "Maître du jeu",
+    "player": "Joueur"
+  },
+  "create": {
+    "title": "Nouvelle campagne",
+    "name": "Nom de la campagne",
+    "namePlaceholder": "Les Brumes d'Ashmoor",
+    "nameRequired": "Nom requis",
+    "description": "Description",
+    "descriptionPlaceholder": "Le pitch, le ton, les attentes autour de la table…",
+    "system": "Système de jeu",
+    "characterSystem": "Système de personnage",
+    "systemLabel": "Nom du système",
+    "systemLabelPlaceholder": "Mon système maison",
+    "submit": "Créer la campagne",
+    "created": "Campagne créée — vous en êtes le Maître du jeu.",
+    "failed": "Impossible de créer la campagne. Réessayez.",
+    "eyebrow": "Nouvelle campagne",
+    "descriptionOptional": "Le pitch (facultatif)",
+    "steps": {
+      "start": "Départ",
+      "pitch": "Nom et pitch",
+      "system": "Système de jeu",
+      "packs": "Packs",
+      "review": "Récapitulatif",
+      "invite": "Invitations"
+    },
+    "pitchTitle": "Comment s'appelle votre campagne ?",
+    "pitchLead": "Un nom, et si vous voulez, quelques lignes pour donner envie à la table.",
+    "pitchWhy": "Les joueurs voient le nom et le pitch dans leur invitation et sur la page de la campagne. Vous pourrez les changer plus tard.",
+    "systemTitle": "À quoi allez-vous jouer ?",
+    "systemLead": "Le système de jeu de la campagne : il décide aussi des fiches de personnage.",
+    "systemWhy": "Avec « Compatible 5E (2024) », l'application calcule les fiches, propose les monstres du SRD et gère les combats. Pour un autre jeu, elle garde l'essentiel : séances, carte, chronique, codex et fiches libres.",
+    "dnd5eHint": "Fiches calculées, monstres du SRD, packs de contenu.",
+    "packsTitle": "Quels packs de contenu autoriser ?",
+    "packsLead": "Les espèces, historiques, dons ou monstres de vos packs, en plus du SRD.",
+    "packsWhy": "Un pack autorisé est copié dans la campagne : les joueurs créent leur personnage avec, et ses monstres rejoignent vos ennemis. Vous pourrez en ajouter ou en retirer depuis la page de la campagne.",
+    "noPack": "Aucun pack",
+    "reviewTitle": "On y va ?",
+    "reviewLead": "Un dernier coup d'œil avant de créer la campagne.",
+    "reviewWhy": "Vous en devenez le Maître du jeu. Tout se modifie ensuite depuis la page de la campagne, sauf le type de fiche.",
+    "inviteTitle": "Invitez vos joueurs",
+    "inviteLead": "Par e-mail, ou avec un lien à partager. Vous pourrez aussi le faire plus tard, depuis la carte Membres.",
+    "inviteWhy": "Un joueur invité par e-mail répond depuis sa cloche. Un lien sert à toute la table : envoyez-le sur votre messagerie de groupe.",
+    "openCampaign": "Ouvrir la campagne",
+    "packsPartial": "La campagne est créée, mais un pack n'a pas pu être ajouté. Réessayez depuis sa page.",
+    "startTitle": "Comment voulez-vous commencer ?",
+    "startLead": "Une campagne neuve, ou une campagne déjà préparée, dans un fichier.",
+    "startWhy": "Un fichier de campagne (.json) apporte les aventures avec leurs lieux, ennemis, PNJ et temps forts, le codex et les quêtes. Il vient de l'export d'une autre campagne, ou s'écrit à la main en suivant le guide. Vous relirez chaque réponse avant de créer.",
+    "blank": "Partir de zéro",
+    "blankHint": "Vous préparez les aventures ensuite, depuis la page de la campagne.",
+    "importFile": "Importer une campagne",
+    "importFileHint": "Depuis un fichier de campagne (.json) : exporté d'une autre campagne, ou écrit à la main.",
+    "importNeeded": "Choisissez un fichier de campagne valide, ou partez de zéro.",
+    "missingPack": "Ce fichier utilise le pack « {{name}} », absent de votre bibliothèque : ses monstres seront importés sans leur fiche de référence.",
+    "importedContent": "{{adventures}} aventure(s), {{locations}} lieu(x), {{enemies}} ennemi(s), {{npcs}} PNJ, {{codex}} fiche(s) du codex, {{quests}} quête(s)",
+    "imported": "Contenu importé",
+    "importPartial": "Campagne créée, mais {{count}} élément(s) du fichier n'ont pas pu être enregistrés.",
+    "freeSheetHint": "Fiches libres : quelques champs, des notes, un inventaire."
+  },
+  "detail": {
+    "notFound": "Introuvable",
+    "missing": "Campagne introuvable ou inaccessible.",
+    "renamed": "Campagne renommée.",
+    "renameFailed": "Impossible de renommer la campagne.",
+    "deleted": "Campagne supprimée.",
+    "deleteFailed": "Impossible de supprimer la campagne.",
+    "sheets": " · fiches {{system}}",
+    "youAreGm": " · vous êtes le Maître du jeu",
+    "adventures": "Aventures",
+    "adventuresIntro": "Les scénarios de la campagne.",
+    "newAdventure": "Nouvelle aventure",
+    "noAdventures": "Aucune aventure pour l'instant.",
+    "lockedAdventure": "Accessible une fois l'aventure terminée ou en direct",
+    "join": "Rejoindre",
+    "delete": "Supprimer la campagne",
+    "deleteDescription": "Retire définitivement cette campagne et tout son contenu.",
+    "deleteDisabled": "Terminez la session en cours avant de supprimer la campagne.",
+    "deleteConfirmTitle": "Supprimer « {{name}} »",
+    "deleteConfirm": "Cette action est irréversible : aventures, liste des membres, notes et ressources de la campagne seront perdues. Les fiches de personnage des joueurs ne sont pas supprimées.",
+    "newRecap": "Nouveau résumé",
+    "book": "Livre de la campagne",
+    "current": "Aventure en cours",
+    "readChronicle": "Lire la chronique",
+    "openAdventure": "Ouvrir l'aventure",
+    "liveNow": "Séance en cours",
+    "liveWhich": "{{title}}, séance {{number}}",
+    "resume": "Reprendre la séance",
+    "lastSession_one": "Dernière séance le {{date}} · {{count}} séance jouée",
+    "lastSession_other": "Dernière séance le {{date}} · {{count}} séances jouées",
+    "played_one": "{{count}} séance · dernière le {{date}}",
+    "played_other": "{{count}} séances · dernière le {{date}}",
+    "notPlayed": "Pas encore jouée",
+    "gmIs": " · MJ : {{name}}",
+    "menu": "Actions de la campagne",
+    "tabs": {
+      "quests": "Quêtes",
+      "codex": "Codex",
+      "party": "Groupe"
+    }
+  },
+  "join": {
+    "crumb": "Invitation",
+    "missingTitle": "Invitation introuvable",
+    "missing": "Ce lien n'existe pas ou ne vous est pas destiné. Demandez-en un nouveau au Maître du jeu.",
+    "memberTitle": "Vous faites déjà partie de cette campagne",
+    "open": "Ouvrir la campagne",
+    "expiredTitle": "Invitation expirée",
+    "declinedByYou": "Vous avez refusé cette invitation.",
+    "cancelled": "Le Maître du jeu a annulé cette invitation. Demandez-lui un nouveau lien.",
+    "welcome": "Bienvenue dans « {{campaign}} » !",
+    "joinFailed": "Impossible de rejoindre la campagne. L'invitation a peut-être été annulée.",
+    "declined": "Invitation refusée.",
+    "declineFailed": "Impossible de refuser l'invitation.",
+    "invites": "{{gm}} vous invite à rejoindre la campagne",
+    "sheets": "Fiches {{system}} · {{gm}} est le Maître du jeu",
+    "pickTitle": "Choisissez votre personnage",
+    "pickHint": "C'est lui que vous jouerez dans cette campagne. Vous pourrez en changer plus tard.",
+    "decline": "Refuser l'invitation",
+    "submit": "Rejoindre la campagne"
+  },
+  "packs": {
+    "activated": "Pack « {{name}} » autorisé.",
+    "updated": "Pack « {{name}} » mis à jour.",
+    "activateFailed": "Impossible d'autoriser ce pack.",
+    "withdrawn": "Pack « {{name}} » retiré de la campagne.",
+    "withdrawFailed": "Impossible de retirer ce pack.",
+    "title": "Packs autorisés",
+    "introGm": "Le contenu en plus du SRD que vos joueurs peuvent utiliser dans cette campagne.",
+    "introPlayer": "Le contenu en plus du SRD que le MJ autorise dans cette campagne.",
+    "none": "Aucun pack : seul le contenu de base (SRD) est utilisable.",
+    "byOwner": "de {{name}}",
+    "yours": "à vous",
+    "available": "v{{version}} disponible",
+    "update": "Mettre à jour",
+    "withdraw": "Retirer {{name}} de la campagne",
+    "createWith": "Créer un personnage avec ces packs",
+    "allowFromLibrary": "Autoriser un pack de ma bibliothèque",
+    "libraryEmpty": "Votre bibliothèque est vide. ",
+    "allAllowed": "Tous vos packs sont déjà autorisés. ",
+    "manage": "Gérer mes packs",
+    "clash": "Un autre pack « {{id}} » est déjà autorisé : retirez-le d'abord.",
+    "allow": "Autoriser"
+  },
+  "picker": {
+    "noneCompatible": "Vous n'avez pas encore de personnage compatible avec cette campagne ({{system}}).",
+    "createNew": "Créer un nouveau personnage",
+    "hiddenDrafts": "{{count}} brouillon(s) masqué(s) : à terminer avant de jouer",
+    "otherSystem": "{{count}} personnage(s) d'un autre système"
+  },
+  "rename": {
+    "button": "Renommer la campagne",
+    "title": "Renommer la campagne",
+    "intro": "Le nouveau nom est visible de tous les membres de la campagne.",
+    "name": "Nom de la campagne"
+  },
+  "members": {
+    "untitled": "Sans nom",
+    "title": "Membres",
+    "introGm": "Invitez vos joueurs et voyez qui est prêt à jouer.",
+    "introPlayer": "Les joueurs de la campagne et leurs personnages.",
+    "you": " (vous)",
+    "gm": "MJ",
+    "activeCharacter": "Personnage actif",
+    "pickedCharacter": "personnage choisi",
+    "packNotAllowed": "Pack non autorisé : {{name}}",
+    "noCharacter": "Pas encore de personnage",
+    "inviteSent": "Invitation envoyée",
+    "declined": "A refusé",
+    "actionFailed": "Action impossible.",
+    "remove": "Retirer",
+    "sentTo": "Invitation envoyée à {{name}}.",
+    "sendFailed": "Impossible d'envoyer l'invitation.",
+    "byEmail": "Inviter par e-mail",
+    "byEmailHint": "Le joueur doit déjà avoir un compte. Il reçoit une notification et accepte ou refuse.",
+    "emailPlaceholder": "joueur@exemple.com",
+    "invite": "Inviter",
+    "linkCopied": "Lien copié.",
+    "copyFailed": "Copie impossible — sélectionnez le lien à la main.",
+    "link": "Lien d'invitation",
+    "linkHint": "À envoyer où vous voulez (Discord, SMS…). Toute personne qui a le lien peut rejoindre, même sans compte : elle en crée un en chemin.",
+    "disable": "Désactiver",
+    "disableFailed": "Impossible de désactiver le lien.",
+    "createLink": "Créer un lien d'invitation",
+    "createLinkFailed": "Impossible de créer le lien.",
+    "titleGm": "Le groupe",
+    "titlePlayer": "Mes compagnons",
+    "noPlayersGm": "Aucun joueur pour l'instant : invitez-en.",
+    "noCompanions": "Pas encore de compagnons.",
+    "playedBy": "joué par {{name}}",
+    "alsoPlays": "Aussi :",
+    "maxHp": "Points de vie maximum",
+    "waiting": "À relancer",
+    "inviteTitle": "Inviter des joueurs"
+  },
+  "myCharacter": {
+    "saveFailed": "Impossible d'enregistrer ce choix.",
+    "chosen": "Personnage choisi pour la campagne.",
+    "added": "Personnage ajouté et actif.",
+    "titleMany": "Mes personnages",
+    "titleOne": "Mon personnage",
+    "introNone": "Choisissez le personnage que vous jouerez : sans lui, vous ne pouvez pas participer aux aventures.",
+    "introSome": "Le personnage actif est celui que le MJ voit en premier pour les prochaines aventures. Vous pouvez en ajouter un autre sans perdre celui-ci.",
+    "active": "Actif",
+    "viewSheet": "Voir la fiche",
+    "nowActive": "{{name}} est maintenant actif.",
+    "makeActive": "Rendre actif",
+    "removeLabel": "Retirer {{name}} de la campagne",
+    "left": "{{name}} a quitté la campagne.",
+    "remove": "Retirer",
+    "plays": "{{name}} joue « {{adventure}} », en cours",
+    "playsActiveEnd": ".",
+    "playsInactiveEnd": " : ce personnage la termine, même si un autre est actif.",
+    "lockedUntilEnd": " Ce personnage ne pourra quitter la campagne qu'une fois l'aventure finie.",
+    "add": "Ajouter un personnage",
+    "maxHp": "PV max",
+    "ac": "CA",
+    "initiative": "Init."
+  },
+  "notes": {
+    "titleRequired": "Le titre est requis.",
+    "saveFailed": "Impossible d'enregistrer la note.",
+    "titlePlaceholder": "Titre",
+    "bodyPlaceholder": "Contenu de la note…",
+    "title": "Carnet du MJ",
+    "intro": "Vos notes de préparation : intrigue, secrets, aide-mémoire. Les joueurs ne les voient pas.",
+    "new": "Nouvelle note",
+    "none": "Aucune note.",
+    "unpin": "Désépingler",
+    "pin": "Épingler",
+    "actionFailed": "Action impossible.",
+    "deleteFailed": "Suppression impossible."
+  },
+  "resources": {
+    "kinds": {
+      "link": "Lien",
+      "image": "Image",
+      "map": "Carte",
+      "handout": "Document"
+    },
+    "required": "Titre et URL requis.",
+    "invalidUrl": "URL invalide.",
+    "saveFailed": "Impossible d'enregistrer la ressource.",
+    "titlePlaceholder": "Titre",
+    "descriptionPlaceholder": "Description (optionnelle)",
+    "type": "Type",
+    "title": "Ressources du MJ",
+    "intro": "Liens, cartes et documents pour préparer vos parties. Réservés au MJ.",
+    "new": "Nouvelle ressource",
+    "none": "Aucune ressource.",
+    "open": "Ouvrir",
+    "deleteFailed": "Suppression impossible."
+  },
+  "export": {
+    "campaign": "Exporter la campagne",
+    "adventure": "Exporter l'aventure",
+    "failed": "Export impossible. Réessayez."
+  },
+  "format": {
+    "title": "Le format d'un fichier de campagne",
+    "intro": "Une campagne ou une aventure préparée tient dans un fichier JSON. L'export d'une campagne en produit un ; vous pouvez aussi l'écrire à la main, ou le faire écrire par un outil, en suivant cette page. À la création, « Importer » le lit, vérifie chaque champ et dit précisément ce qui ne va pas.",
+    "twoFiles": "Deux fichiers",
+    "twoFilesIntro": "Le champ « format » dit lequel c'est.",
+    "campaignFile": "une campagne entière : ses réglages, ses aventures, son codex et ses quêtes. Il crée une campagne neuve.",
+    "adventureFile": "une seule aventure, à ajouter à une campagne existante (« Nouvelle aventure » › Importer).",
+    "notIncluded": "Seule la préparation voyage : jamais les membres, les personnages, les séances jouées, les résumés, les journaux ni le carnet du MJ. Tout arrive caché : les fiches du codex et les quêtes se révèlent ensuite, en jeu.",
+    "strict": "Un champ inconnu est une erreur, pas un oubli silencieux. Les champs suivis de « ? » sont facultatifs. Les lieux se désignent par leur nom : un ennemi ou un PNJ cite le « name » d'un lieu de la même aventure.",
+    "downloadCampaign": "Télécharger l'exemple de campagne",
+    "downloadAdventure": "Télécharger l'exemple d'aventure",
+    "example": "L'exemple complet",
+    "exampleIntro": "« Les Brumes d'Ashmoor », une petite campagne inventée. Un fichier d'aventure contient « format », « packs » et une seule « adventure ».",
+    "objects": {
+      "campaign": {
+        "title": "campaign",
+        "intro": "Les réglages de la campagne (fichier de campagne seulement). Un fichier de campagne contient aussi « packs », « adventures », « codex » et « quests », des listes facultatives."
+      },
+      "adventure": {
+        "title": "adventures[]",
+        "intro": "Une aventure, dans l'ordre de la campagne."
+      },
+      "location": {
+        "title": "locations[]",
+        "intro": "Les lieux de l'aventure, dans l'ordre."
+      },
+      "enemy": {
+        "title": "enemies[]",
+        "intro": "Un type d'ennemi : les quantités se choisissent en combat."
+      },
+      "npc": {
+        "title": "npcs[]",
+        "intro": "Les personnages non joueurs de l'aventure."
+      },
+      "event": {
+        "title": "events[]",
+        "intro": "Les temps forts prévus, dans l'ordre. Ils arrivent non révélés."
+      },
+      "codex": {
+        "title": "codex[]",
+        "intro": "Les fiches du codex de la campagne. Elles arrivent cachées."
+      },
+      "quest": {
+        "title": "quests[]",
+        "intro": "Le tableau de quêtes. Les quêtes arrivent cachées."
+      },
+      "pack": {
+        "title": "packs[]",
+        "intro": "Les packs de contenu dont le fichier a besoin (ses monstres, surtout). À l'import, un pack absent est signalé, sans bloquer."
+      }
+    },
+    "fields": {
+      "campaign": {
+        "name": "Le nom de la campagne.",
+        "description": "Le pitch.",
+        "system": "Le système de jeu.",
+        "systemLabel": "Le nom du système, pour « custom » et « other ».",
+        "characterSystem": "Le type de fiche : « 5e » (fiche 5E calculée) ou « standard » (fiche libre)."
+      },
+      "adventure": {
+        "title": "Le titre.",
+        "summary": "Le résumé, aide-mémoire du MJ.",
+        "locations": "Ses lieux.",
+        "enemies": "Ses ennemis.",
+        "npcs": "Ses PNJ.",
+        "events": "Ses temps forts."
+      },
+      "location": {
+        "name": "Le nom, unique dans l'aventure.",
+        "description": "Des notes réservées au MJ.",
+        "imageUrl": "La carte ou l'illustration, en lien (https://…).",
+        "hidden": "true : le lieu apparaît sous la brume, à dévoiler au pinceau.",
+        "loot": "Le butin caché : { items?: [{ name, quantity? }], money?: { platinum?, gold?, electrum?, silver?, copper? } }."
+      },
+      "enemy": {
+        "name": "Le nom.",
+        "armorClass": "La classe d'armure (nombre entier).",
+        "maxHitPoints": "Les points de vie (nombre entier).",
+        "speed": "La vitesse en mètres (9 par défaut).",
+        "location": "Le nom d'un lieu de l'aventure.",
+        "sourceMonsterId": "L'identifiant d'un monstre du SRD ou d'un pack (« goblin »).",
+        "size": "La taille.",
+        "challengeRating": "Le facteur de puissance (« 1/4 », « 5 »).",
+        "abilityScores": "Les valeurs de caractéristique : { \"str\": 8, \"dex\": 15, … }.",
+        "attacks": "Les attaques : { name, toHit?, reach?, damage?: { count, die }, damageBonus?, damageKind?, notes? }.",
+        "color": "La couleur du pion (#rrggbb).",
+        "description": "Une description.",
+        "imageUrl": "Une illustration, en lien.",
+        "notes": "Des notes pour le MJ.",
+        "loot": "Le butin porté, à donner une fois vaincu : { items?: [{ name, quantity? }], money?: { platinum?, gold?, electrum?, silver?, copper? } }."
+      },
+      "npc": {
+        "name": "Le nom.",
+        "personality": "Le caractère en quelques mots.",
+        "lore": "Son histoire, son rôle, ses secrets.",
+        "location": "Le nom d'un lieu de l'aventure.",
+        "color": "La couleur du pion (#rrggbb)."
+      },
+      "event": {
+        "title": "Le titre.",
+        "description": "Ce qui se passe, tel que les joueurs le liront.",
+        "trigger": "Ce qui le déclenche (« quand ils entrent dans la crypte »).",
+        "dueDay": "Le jour du jeu où il est prévu (« Jour 3 » : 3).",
+        "dueTime": "L'heure du jeu où il est prévu (« 22:00 »). Avec ou sans jour : le panneau du MJ dit « c'est l'heure » quand l'horloge y arrive."
+      },
+      "codex": {
+        "kind": "Le type de fiche.",
+        "name": "Le nom.",
+        "summary": "Ce que les joueurs apprendront, une fois la fiche révélée (Markdown, mentions [[Nom]]).",
+        "secret": "Le volet du MJ, jamais montré.",
+        "imageUrl": "Une image, en lien.",
+        "url": "Un document hébergé ailleurs, en lien.",
+        "reputation": "Pour une faction : son attitude envers le groupe, de −3 à 3."
+      },
+      "quest": {
+        "title": "Le titre.",
+        "summary": "Ce que le groupe sait (Markdown).",
+        "status": "Le statut (« rumor » par défaut)."
+      },
+      "pack": {
+        "id": "L'identifiant du pack.",
+        "name": "Son nom, pour le message si le pack manque.",
+        "version": "Sa version."
+      }
+    }
+  },
+  "importGuide": {
+    "title": {
+      "campaign": "Créez une campagne unique avec une IA",
+      "adventure": "Créez une aventure unique avec une IA"
+    },
+    "ai": {
+      "campaign": "Téléchargez le fichier d'exemple et donnez-le à votre IA préférée, avec quelques lignes sur la campagne que vous voulez : elle vous rendra un fichier à importer ici.",
+      "adventure": "Téléchargez le fichier d'exemple et donnez-le à votre IA préférée, avec quelques lignes sur l'aventure que vous voulez : elle vous rendra un fichier à importer ici."
+    },
+    "pdf": {
+      "campaign": "Vous avez une campagne en PDF ? Donnez à l'IA le PDF et le fichier d'exemple, et demandez-lui un fichier au même format.",
+      "adventure": "Vous avez une aventure en PDF ? Donnez à l'IA le PDF et le fichier d'exemple, et demandez-lui un fichier au même format."
+    },
+    "rights": "N'importez que des aventures que vous avez le droit d'utiliser, à votre table.",
+    "download": "Télécharger le fichier d'exemple",
+    "copyPrompt": "Copier un prompt",
+    "copied": "Prompt copié : collez-le dans votre IA, avec le fichier d'exemple.",
+    "copyFailed": "Impossible de copier le prompt.",
+    "formatGuide": "Le guide du format",
+    "prompt": {
+      "campaign": "Tu vas m'aider à préparer une campagne de jeu de rôle pour l'application Adventure Keeper. Je te joins un fichier d'exemple au format « {{format}} ». Écris un fichier de campagne complet au même format, à partir de ma description ou du document que je te joins : réglages de la campagne, aventures (lieux, ennemis, PNJ, temps forts), codex et quêtes.\n\nRègles :\n- Réponds uniquement par le JSON, valide, sans commentaire ni texte autour.\n- Garde « format » à « {{format}} » et la même structure que l'exemple.\n- N'ajoute aucun champ absent de l'exemple : un champ inconnu fait échouer l'import.\n- Un ennemi ou un PNJ cite un lieu par son « name », qui doit exister dans la même aventure.\n\nMa campagne :",
+      "adventure": "Tu vas m'aider à préparer une aventure de jeu de rôle pour l'application Adventure Keeper. Je te joins un fichier d'exemple au format « {{format}} ». Écris un fichier d'aventure complet au même format, à partir de ma description ou du document que je te joins : titre, résumé, lieux, ennemis, PNJ et temps forts.\n\nRègles :\n- Réponds uniquement par le JSON, valide, sans commentaire ni texte autour.\n- Garde « format » à « {{format}} » et la même structure que l'exemple.\n- N'ajoute aucun champ absent de l'exemple : un champ inconnu fait échouer l'import.\n- Un ennemi ou un PNJ cite un lieu par son « name », qui doit exister dans l'aventure.\n\nMon aventure :"
+    }
+  },
+  "prep": {
+    "title": "Préparation",
+    "gmOnly": "MJ seulement"
+  }
+}

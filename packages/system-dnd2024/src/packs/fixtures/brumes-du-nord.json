@@ -1,0 +1,588 @@
+{
+  "format": "ak-pack/1",
+  "system": "5e",
+  "id": "brumes-du-nord",
+  "name": "Les Brumes du Nord",
+  "version": "1.0.0",
+  "description": "Petit pack d'exemple : tout ce qu'il contient est inventé pour tester le format.",
+  "author": "Adventure Keeper",
+  "language": "fr",
+  "translations": {
+    "en": {
+      "name": "The Northern Mists",
+      "description": "A small example pack: everything in it is made up to test the format.",
+      "content": {
+        "classes": {
+          "veilleur-des-brumes": {
+            "name": "Mist Warden",
+            "blurb": "Keeper of the passes: you read the mist and strike before you are seen.",
+            "subclassLabel": "Oath of the Passes",
+            "features": [
+              {
+                "name": "Soft Step",
+                "summary": "In mist or fog you move silently and gain 10 feet of speed."
+              },
+              {
+                "name": "Eye of the Passes",
+                "summary": "You add your proficiency bonus to initiative."
+              },
+              {
+                "name": "Extra Attack",
+                "summary": "You attack twice when you take the Attack action."
+              }
+            ],
+            "startingEquipment": {
+              "options": [
+                {
+                  "label": "Warden's pack"
+                }
+              ]
+            }
+          }
+        },
+        "species": {
+          "sylvain-des-brumes": {
+            "name": "Mist Sylvan",
+            "blurb": "A quiet people, born of fog-drowned forests.",
+            "choice": {
+              "label": "Mist lineage",
+              "options": ["Light Mist", "Dense Mist"]
+            },
+            "lineages": {
+              "Brume légère": {
+                "summary": "Speed increases to 35 feet."
+              },
+              "Brume dense": {
+                "summary": "Darkvision 120 feet, resistance to cold, Mist Veil at level 3."
+              }
+            },
+            "traits": [
+              {
+                "name": "Soft Step",
+                "summary": "You have advantage on Stealth checks in mist."
+              },
+              {
+                "name": "Icy Breath",
+                "summary": "Once per long rest, a breath of frost slows a nearby creature."
+              }
+            ]
+          }
+        },
+        "backgrounds": {
+          "passeur": {
+            "name": "Ferryman",
+            "blurb": "You guided travelers through the marshes.",
+            "toolProficiency": {
+              "label": "Navigator's Tools"
+            }
+          },
+          "veilleur": {
+            "name": "Watcher",
+            "blurb": "You kept the watchtowers at the edge of the fog.",
+            "toolProficiency": {
+              "label": "Mist Game"
+            },
+            "startingKit": {
+              "choices": [
+                {
+                  "label": "Game carried"
+                }
+              ]
+            }
+          }
+        },
+        "subclasses": {
+          "gardien-des-brumes": {
+            "name": "Mist Warden",
+            "blurb": "A warrior who melts into the fog to strike.",
+            "features": [
+              {
+                "name": "Mist Cloak",
+                "summary": "As a bonus action, you become hard to see until the end of the turn."
+              },
+              {
+                "name": "Fog Strike",
+                "summary": "Once per turn, +1d6 cold damage against a target that can't see you."
+              }
+            ]
+          }
+        },
+        "feats": {
+          "endurci-par-le-froid": {
+            "name": "Cold-Hardened",
+            "summary": "+1 hit point per level; you choose a survival skill.",
+            "choices": [
+              {
+                "label": "Cold skill"
+              }
+            ]
+          },
+          "tireur-des-brumes": {
+            "name": "Mist Archer",
+            "blurb": "Your arrows find their mark in the fog.",
+            "summary": "+1 to ranged attack rolls.",
+            "combatNote": "Mist Archer: +1 to ranged attacks (already applied).",
+            "bonusAction": "Aim through the mist (spot a hidden target)"
+          }
+        },
+        "spells": {
+          "voile-de-brume": {
+            "name": "Mist Veil",
+            "range": "Self",
+            "summary": "A mist surrounds you: attacks against you have disadvantage."
+          }
+        },
+        "monsters": {
+          "loup-des-brumes": {
+            "name": "Mist Wolf",
+            "attacks": [
+              {
+                "name": "Bite",
+                "reach": "5 ft",
+                "note": "The target is knocked prone if it fails a DC 11 Str save."
+              }
+            ]
+          }
+        },
+        "tools": {
+          "jeu-des-brumes": {
+            "name": "Mist Game",
+            "description": "Carved knucklebones you throw into the fog."
+          }
+        },
+        "invocations": {
+          "regard-des-brumes": {
+            "name": "Mist Sight",
+            "summary": "You see through mist and fog as on a clear day, and gain darkvision out to 60 feet."
+          }
+        },
+        "weapons": {
+          "harpon-des-brumes": {
+            "name": "Mist Harpoon"
+          }
+        },
+        "armors": {
+          "cape-de-givre": {
+            "name": "Frost Cloak",
+            "description": "A cloak lined with frozen wool, woven by the pass guides."
+          }
+        },
+        "gear": {
+          "lanterne-de-brume": {
+            "name": "Mist Lantern",
+            "description": "Its bluish light pierces the mist for 30 feet."
+          }
+        },
+        "equipmentPacks": {
+          "sac-du-passeur": {
+            "name": "Guide's Pack"
+          }
+        },
+        "languages": {
+          "parler-des-brumes": {
+            "name": "Mist Speech",
+            "summary": "The whispered tongue of the pass guides, made to carry through fog without waking the passes."
+          }
+        }
+      }
+    }
+  },
+  "content": {
+    "classes": [
+      {
+        "id": "veilleur-des-brumes",
+        "name": "Veilleur des brumes",
+        "blurb": "Gardien des cols, vous lisez la brume et frappez avant d'être vu.",
+        "hitDie": 10,
+        "complexity": "average",
+        "primaryAbility": ["dex", "wis"],
+        "savingThrows": ["dex", "wis"],
+        "suggestedScores": {
+          "str": 10,
+          "dex": 15,
+          "con": 14,
+          "int": 8,
+          "wis": 13,
+          "cha": 12
+        },
+        "skillChoices": {
+          "count": 2,
+          "from": ["athletics", "perception", "stealth", "survival"]
+        },
+        "armorTraining": ["light", "medium", "shield"],
+        "weaponProficiency": {
+          "simple": true,
+          "martial": true
+        },
+        "toolProficiencies": [],
+        "weaponMastery": [
+          {
+            "level": 1,
+            "count": 2
+          }
+        ],
+        "fightingStyleLevel": 2,
+        "languages": ["sylvan"],
+        "subclassLabel": "Serment des cols",
+        "startingEquipment": {
+          "options": [
+            {
+              "id": "a",
+              "label": "Paquetage du veilleur",
+              "items": [
+                {
+                  "kind": "weapon",
+                  "id": "longbow"
+                },
+                {
+                  "kind": "weapon",
+                  "id": "shortsword",
+                  "qty": 2
+                },
+                {
+                  "kind": "pack",
+                  "id": "explorer-pack"
+                }
+              ],
+              "gold": 12
+            },
+            {
+              "id": "b",
+              "gold": 150
+            }
+          ]
+        },
+        "features": [
+          {
+            "level": 1,
+            "name": "Pas feutré",
+            "summary": "Dans la brume ou le brouillard, vous vous déplacez sans bruit et gagnez 3 m de vitesse.",
+            "mechanics": [
+              {
+                "type": "speed",
+                "bonus": 10
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "name": "Œil des cols",
+            "summary": "Vous ajoutez votre bonus de maîtrise à l'initiative.",
+            "mechanics": [
+              {
+                "type": "initiative",
+                "bonus": "prof"
+              }
+            ]
+          },
+          {
+            "level": 5,
+            "name": "Attaque supplémentaire",
+            "summary": "Vous attaquez deux fois avec l'action Attaque."
+          }
+        ]
+      }
+    ],
+    "species": [
+      {
+        "id": "sylvain-des-brumes",
+        "name": "Sylvain des brumes",
+        "blurb": "Un peuple discret, né des forêts noyées de brouillard.",
+        "size": ["small", "medium"],
+        "speed": 30,
+        "darkvision": 60,
+        "choice": {
+          "label": "Lignée des brumes",
+          "options": ["Brume légère", "Brume dense"]
+        },
+        "lineages": {
+          "Brume légère": {
+            "speed": 35,
+            "summary": "Vitesse portée à 10,5 m."
+          },
+          "Brume dense": {
+            "darkvision": 120,
+            "resistances": ["cold"],
+            "spells": [
+              {
+                "spellId": "voile-de-brume",
+                "minLevel": 3,
+                "spellLevel": 1
+              }
+            ],
+            "summary": "Vision dans le noir à 36 m, résistance au froid, Voile de brume au niveau 3."
+          }
+        },
+        "spellsUseChosenAbility": true,
+        "traits": [
+          {
+            "name": "Pas feutré",
+            "summary": "Vous avez l'avantage aux tests de Discrétion dans la brume."
+          },
+          {
+            "name": "Souffle glacé",
+            "summary": "Une fois par repos long, un souffle de givre ralentit une créature proche.",
+            "uses": {
+              "max": 1,
+              "recharge": "long"
+            }
+          }
+        ],
+        "languages": ["sylvan", "parler-des-brumes"]
+      }
+    ],
+    "backgrounds": [
+      {
+        "id": "passeur",
+        "name": "Passeur",
+        "blurb": "Vous guidiez les voyageurs à travers les marais.",
+        "abilityOptions": ["con", "dex", "wis"],
+        "skillProficiencies": ["survival", "insight"],
+        "toolProficiency": {
+          "label": "Outils de navigateur",
+          "toolId": "navigators-tools"
+        },
+        "originFeatId": "endurci-par-le-froid",
+        "startingKit": {
+          "items": [
+            {
+              "kind": "tool",
+              "id": "navigator-tools"
+            },
+            {
+              "kind": "gear",
+              "id": "rope"
+            }
+          ],
+          "gold": 12
+        }
+      },
+      {
+        "id": "veilleur",
+        "name": "Veilleur",
+        "blurb": "Vous gardiez les tours de guet au bord du brouillard.",
+        "abilityOptions": ["str", "con", "wis"],
+        "skillProficiencies": ["perception", "athletics"],
+        "originFeatId": "alert",
+        "startingKit": {
+          "items": [
+            {
+              "kind": "weapon",
+              "id": "spear"
+            },
+            {
+              "kind": "tool",
+              "fromChoice": "jeu"
+            }
+          ],
+          "gold": 5,
+          "choices": [
+            {
+              "id": "jeu",
+              "kind": "tool",
+              "label": "Jeu emporté",
+              "count": 1,
+              "pool": {
+                "kind": "group",
+                "group": "gaming"
+              }
+            }
+          ]
+        },
+        "toolProficiency": {
+          "label": "Jeu des brumes",
+          "toolId": "jeu-des-brumes"
+        }
+      }
+    ],
+    "subclasses": [
+      {
+        "id": "gardien-des-brumes",
+        "classId": "fighter",
+        "name": "Gardien des brumes",
+        "blurb": "Un guerrier qui se fond dans le brouillard pour frapper.",
+        "features": [
+          {
+            "level": 3,
+            "name": "Manteau de brume",
+            "summary": "En action bonus, vous devenez difficile à voir jusqu'à la fin du tour."
+          },
+          {
+            "level": 7,
+            "name": "Frappe du brouillard",
+            "summary": "Une fois par tour, +1d6 dégâts de froid contre une cible qui ne vous voit pas."
+          }
+        ]
+      }
+    ],
+    "feats": [
+      {
+        "id": "endurci-par-le-froid",
+        "name": "Endurci par le froid",
+        "category": "origin",
+        "summary": "+1 point de vie par niveau ; vous choisissez une compétence de survie.",
+        "effects": {
+          "hitPointsPerLevel": 1
+        },
+        "choices": [
+          {
+            "id": "competence",
+            "kind": "skill",
+            "label": "Compétence du froid",
+            "count": 1,
+            "pool": {
+              "kind": "list",
+              "values": ["survival", "athletics"]
+            }
+          }
+        ]
+      },
+      {
+        "id": "tireur-des-brumes",
+        "name": "Tireur des brumes",
+        "category": "general",
+        "minLevel": 4,
+        "blurb": "Vos flèches trouvent leur cible dans le brouillard.",
+        "summary": "+1 aux jets d'attaque à distance.",
+        "effects": {
+          "rangedAttackBonus": 1
+        },
+        "combatNote": "Tireur des brumes : +1 aux attaques à distance (déjà appliqué).",
+        "bonusAction": "Visée dans la brume (repérer une cible cachée)"
+      }
+    ],
+    "spells": [
+      {
+        "id": "voile-de-brume",
+        "name": "Voile de brume",
+        "level": 1,
+        "school": "illusion",
+        "classes": ["wizard", "druid"],
+        "castingTime": "action",
+        "range": "Personnelle",
+        "components": {
+          "v": true,
+          "s": true,
+          "m": false
+        },
+        "duration": "1 minute",
+        "concentration": true,
+        "ritual": false,
+        "summary": "Une brume vous entoure : les attaques contre vous ont le désavantage."
+      }
+    ],
+    "monsters": [
+      {
+        "id": "loup-des-brumes",
+        "name": "Loup des brumes",
+        "type": "beast",
+        "size": "medium",
+        "cr": "1/2",
+        "armorClass": 13,
+        "hitPoints": 16,
+        "speed": 40,
+        "attacks": [
+          {
+            "name": "Morsure",
+            "toHit": 4,
+            "reach": "1,50 m",
+            "damage": {
+              "count": 2,
+              "die": "d4"
+            },
+            "damageBonus": 2,
+            "damageKind": "piercing",
+            "note": "Cible à terre si elle rate un JS de For DD 11."
+          }
+        ]
+      }
+    ],
+    "invocations": [
+      {
+        "id": "regard-des-brumes",
+        "name": "Regard des brumes",
+        "minLevel": 0,
+        "summary": "Vous voyez à travers la brume et le brouillard comme par temps clair, et gagnez la vision dans le noir sur 18 m.",
+        "darkvision": 60
+      }
+    ],
+    "languages": [
+      {
+        "id": "parler-des-brumes",
+        "name": "Parler des brumes",
+        "kind": "rare",
+        "summary": "La langue chuchotée des passeurs, faite pour porter dans le brouillard sans réveiller les cols."
+      }
+    ],
+    "tools": [
+      {
+        "id": "jeu-des-brumes",
+        "name": "Jeu des brumes",
+        "category": "gaming",
+        "ability": "wis",
+        "priceCp": 50,
+        "weightKg": 0.5,
+        "description": "Des osselets gravés qu'on lance dans le brouillard."
+      }
+    ],
+    "weapons": [
+      {
+        "id": "harpon-des-brumes",
+        "name": "Harpon des brumes",
+        "category": "martial-melee",
+        "priceCp": 1500,
+        "weightKg": 2,
+        "damageDice": {
+          "count": 1,
+          "die": "d8"
+        },
+        "damageType": "piercing",
+        "properties": ["thrown"],
+        "mastery": "vex",
+        "range": {
+          "normal": 6,
+          "max": 18
+        }
+      }
+    ],
+    "armors": [
+      {
+        "id": "cape-de-givre",
+        "name": "Cape de givre",
+        "category": "light",
+        "priceCp": 4000,
+        "weightKg": 4,
+        "baseAc": 11,
+        "addsDex": true,
+        "stealthDisadvantage": false,
+        "description": "Une cape doublée de laine glacée, tissée par les passeurs des cols."
+      }
+    ],
+    "gear": [
+      {
+        "id": "lanterne-de-brume",
+        "name": "Lanterne de brume",
+        "priceCp": 800,
+        "weightKg": 1,
+        "description": "Sa lumière bleutée perce la brume sur 9 m."
+      }
+    ],
+    "equipmentPacks": [
+      {
+        "id": "sac-du-passeur",
+        "name": "Sac du passeur",
+        "priceCp": 1200,
+        "contents": [
+          {
+            "gearId": "lanterne-de-brume",
+            "qty": 1
+          },
+          {
+            "gearId": "rope",
+            "qty": 1
+          }
+        ]
+      }
+    ]
+  }
+}

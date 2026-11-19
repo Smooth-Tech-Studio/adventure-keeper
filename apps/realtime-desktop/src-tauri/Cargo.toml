@@ -1,0 +1,22 @@
+[package]
+name = "adventure-keeper-serveur"
+version = "0.1.4"
+description = "Adventure Keeper Serveur: the live session server, on the GM's computer"
+edition = "2021"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2.7", features = [] }
+
+[dependencies]
+tauri = { version = "2.12", features = [] }
+tauri-plugin-shell = "2.6"
+tauri-plugin-opener = "2.7"
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

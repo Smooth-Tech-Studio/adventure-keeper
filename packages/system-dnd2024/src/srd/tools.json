@@ -1,0 +1,489 @@
+{
+  "entries": [
+    {
+      "id": "alchemist-supplies",
+      "name": "Matériel d'alchimiste",
+      "category": "artisan",
+      "ability": "int",
+      "priceCp": 5000,
+      "weightKg": 4,
+      "description": "Préparer des substances alchimiques (acides, antidotes…) et identifier des composés."
+    },
+    {
+      "id": "brewer-supplies",
+      "name": "Matériel de brasseur",
+      "category": "artisan",
+      "ability": "int",
+      "priceCp": 2000,
+      "weightKg": 4.5,
+      "description": "Brasser bières et boissons fermentées, et juger de leur qualité ou de leur pureté."
+    },
+    {
+      "id": "calligrapher-supplies",
+      "name": "Matériel de calligraphe",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 1000,
+      "weightKg": 2.5,
+      "description": "Écrire de belles calligraphies, enluminer, et repérer les faux ou les écritures maquillées."
+    },
+    {
+      "id": "painter-supplies",
+      "name": "Matériel de peintre",
+      "category": "artisan",
+      "ability": "wis",
+      "priceCp": 1000,
+      "weightKg": 2.5,
+      "description": "Peindre et dessiner : portraits, fresques, cartes, et repérer les contrefaçons."
+    },
+    {
+      "id": "tinker-tools",
+      "name": "Outils de bricoleur",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 5000,
+      "weightKg": 5,
+      "description": "Bricoler de petits mécanismes, réparer ou détourner des objets simples."
+    },
+    {
+      "id": "cartographer-tools",
+      "name": "Outils de cartographe",
+      "category": "artisan",
+      "ability": "wis",
+      "priceCp": 1500,
+      "weightKg": 3,
+      "description": "Dresser et lire des cartes précises, estimer des distances et des reliefs."
+    },
+    {
+      "id": "carpenter-tools",
+      "name": "Outils de charpentier",
+      "category": "artisan",
+      "ability": "str",
+      "priceCp": 800,
+      "weightKg": 3,
+      "description": "Construire et réparer des structures en bois : portes, échafaudages, charpentes."
+    },
+    {
+      "id": "cobbler-tools",
+      "name": "Outils de cordonnier",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 500,
+      "weightKg": 2.5,
+      "description": "Fabriquer et réparer chaussures et bottes, ou y dissimuler de petits objets."
+    },
+    {
+      "id": "smith-tools",
+      "name": "Outils de forgeron",
+      "category": "artisan",
+      "ability": "str",
+      "priceCp": 2000,
+      "weightKg": 4,
+      "description": "Forger et réparer armes, armures et objets en métal."
+    },
+    {
+      "id": "jeweler-tools",
+      "name": "Outils de joaillier",
+      "category": "artisan",
+      "ability": "int",
+      "priceCp": 2500,
+      "weightKg": 1,
+      "description": "Tailler et sertir pierres et métaux précieux, et juger de leur valeur."
+    },
+    {
+      "id": "mason-tools",
+      "name": "Outils de maçon",
+      "category": "artisan",
+      "ability": "str",
+      "priceCp": 1000,
+      "weightKg": 4,
+      "description": "Travailler la pierre : bâtir, réparer, repérer les points faibles d'une maçonnerie."
+    },
+    {
+      "id": "woodcarver-tools",
+      "name": "Outils de menuisier",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 100,
+      "weightKg": 2.5,
+      "description": "Sculpter le bois pour fabriquer des objets, des armes simples ou des figurines."
+    },
+    {
+      "id": "potter-tools",
+      "name": "Outils de potier",
+      "category": "artisan",
+      "ability": "int",
+      "priceCp": 1000,
+      "weightKg": 1.5,
+      "description": "Modeler et cuire de la poterie, et reconnaître l'origine d'une céramique."
+    },
+    {
+      "id": "glassblower-tools",
+      "name": "Outils de souffleur de verre",
+      "category": "artisan",
+      "ability": "int",
+      "priceCp": 3000,
+      "weightKg": 2.5,
+      "description": "Souffler le verre pour créer ou réparer fioles, bouteilles et objets en verre."
+    },
+    {
+      "id": "leatherworker-tools",
+      "name": "Outils de tanneur",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 500,
+      "weightKg": 2.5,
+      "description": "Travailler le cuir : sacs, harnais, armures légères et réparations."
+    },
+    {
+      "id": "weaver-tools",
+      "name": "Outils de tisserand",
+      "category": "artisan",
+      "ability": "dex",
+      "priceCp": 100,
+      "weightKg": 2.5,
+      "description": "Tisser et coudre des étoffes, et réparer les vêtements."
+    },
+    {
+      "id": "cook-utensils",
+      "name": "Ustensiles de cuisinier",
+      "category": "artisan",
+      "ability": "wis",
+      "priceCp": 100,
+      "weightKg": 4,
+      "description": "Préparer des repas soignés, rendre des rations plus appétissantes."
+    },
+    {
+      "id": "disguise-kit",
+      "name": "Accessoires de déguisement",
+      "category": "disguise",
+      "ability": "cha",
+      "priceCp": 2500,
+      "weightKg": 1.5,
+      "description": "Maquillage, perruques et postiches pour changer d'apparence de façon convaincante."
+    },
+    {
+      "id": "forgery-kit",
+      "name": "Matériel de contrefaçon",
+      "category": "forgery",
+      "ability": "dex",
+      "priceCp": 1500,
+      "weightKg": 2.5,
+      "description": "Fabriquer de faux documents, imiter des écritures, sceaux et signatures."
+    },
+    {
+      "id": "herbalism-kit",
+      "name": "Matériel d'herboriste",
+      "category": "herbalism",
+      "ability": "int",
+      "priceCp": 500,
+      "weightKg": 1.5,
+      "description": "Reconnaître et récolter des plantes, préparer des remèdes et des potions de soins."
+    },
+    {
+      "id": "poisoner-kit",
+      "name": "Matériel d'empoisonneur",
+      "category": "poisoner",
+      "ability": "int",
+      "priceCp": 5000,
+      "weightKg": 1,
+      "description": "Préparer, doser et appliquer des poisons, ou tenter d'en neutraliser."
+    },
+    {
+      "id": "navigator-tools",
+      "name": "Instruments de navigateur",
+      "category": "navigator",
+      "ability": "wis",
+      "priceCp": 2500,
+      "weightKg": 1,
+      "description": "Tracer un cap, faire le point en mer et se repérer sans repères visibles."
+    },
+    {
+      "id": "thieves-tools",
+      "name": "Outils de voleur",
+      "category": "thieves",
+      "ability": "dex",
+      "priceCp": 2500,
+      "weightKg": 0.5,
+      "description": "Crocheter des serrures et désamorcer des pièges mécaniques."
+    },
+    {
+      "id": "bagpipes",
+      "name": "Cornemuse",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 3000,
+      "weightKg": 2.5,
+      "description": "Instrument à vent : jouer des airs sonores et entraînants."
+    },
+    {
+      "id": "drum",
+      "name": "Tambour",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 600,
+      "weightKg": 1.5,
+      "description": "Instrument de percussion pour marquer le rythme ou soutenir un chant."
+    },
+    {
+      "id": "dulcimer",
+      "name": "Tympanon",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 2500,
+      "weightKg": 2.5,
+      "description": "Instrument à cordes frappées, au son cristallin."
+    },
+    {
+      "id": "flute",
+      "name": "Flûte",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 200,
+      "weightKg": 0.5,
+      "description": "Instrument à vent léger pour des mélodies douces."
+    },
+    {
+      "id": "lute",
+      "name": "Luth",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 3500,
+      "weightKg": 1,
+      "description": "Instrument à cordes pincées, classique des ménestrels et des bardes."
+    },
+    {
+      "id": "lyre",
+      "name": "Lyre",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 3000,
+      "weightKg": 1,
+      "description": "Instrument à cordes pincées, au timbre clair, pour accompagner un chant."
+    },
+    {
+      "id": "horn",
+      "name": "Cor",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 300,
+      "weightKg": 1,
+      "description": "Cuivre puissant : jouer, sonner l'alarme ou donner un signal de loin."
+    },
+    {
+      "id": "pan-flute",
+      "name": "Flûte de Pan",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 1200,
+      "weightKg": 0.5,
+      "description": "Assemblage de tuyaux de tailles différentes, joué en soufflant au-dessus."
+    },
+    {
+      "id": "shawm",
+      "name": "Chalemie",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 200,
+      "weightKg": 0.5,
+      "description": "Instrument à anche double, au son perçant, utilisé en fêtes et cérémonies."
+    },
+    {
+      "id": "viol",
+      "name": "Viole",
+      "category": "instrument",
+      "ability": "cha",
+      "priceCp": 3000,
+      "weightKg": 0.5,
+      "description": "Instrument à cordes frottées, cousin ancien du violon."
+    },
+    {
+      "id": "dice-set",
+      "name": "Dés",
+      "category": "gaming",
+      "ability": "wis",
+      "priceCp": 10,
+      "weightKg": 0,
+      "description": "Dés pour des jeux de hasard : jouer, parier, ou repérer un tricheur."
+    },
+    {
+      "id": "playing-card-set",
+      "name": "Cartes à jouer",
+      "category": "gaming",
+      "ability": "wis",
+      "priceCp": 50,
+      "weightKg": 0,
+      "description": "Jeu de cartes pour jouer, parier, ou repérer un tricheur."
+    },
+    {
+      "id": "dragonchess-set",
+      "name": "Échecs draconiques",
+      "category": "gaming",
+      "ability": "wis",
+      "priceCp": 100,
+      "weightKg": 0,
+      "description": "Jeu de stratégie sur plateau : jouer, ou jauger l'adversaire."
+    },
+    {
+      "id": "three-dragon-ante-set",
+      "name": "Jeu des dragons",
+      "category": "gaming",
+      "ability": "wis",
+      "priceCp": 100,
+      "weightKg": 0,
+      "description": "Jeu de cartes de bluff et de paris : jouer, ou repérer un tricheur."
+    }
+  ],
+  "translations": {
+    "en": {
+      "alchemist-supplies": {
+        "name": "Alchemist's Supplies",
+        "description": "Prepare alchemical substances (acids, antidotes…) and identify compounds."
+      },
+      "brewer-supplies": {
+        "name": "Brewer's Supplies",
+        "description": "Brew beers and fermented drinks, and judge their quality or purity."
+      },
+      "calligrapher-supplies": {
+        "name": "Calligrapher's Supplies",
+        "description": "Write fine calligraphy, illuminate, and spot forgeries or doctored writing."
+      },
+      "painter-supplies": {
+        "name": "Painter's Supplies",
+        "description": "Paint and draw: portraits, frescoes, maps, and spot forgeries."
+      },
+      "tinker-tools": {
+        "name": "Tinker's Tools",
+        "description": "Tinker with small mechanisms, repair or repurpose simple objects."
+      },
+      "cartographer-tools": {
+        "name": "Cartographer's Tools",
+        "description": "Draw and read accurate maps, estimate distances and terrain."
+      },
+      "carpenter-tools": {
+        "name": "Carpenter's Tools",
+        "description": "Build and repair wooden structures: doors, scaffolding, frames."
+      },
+      "cobbler-tools": {
+        "name": "Cobbler's Tools",
+        "description": "Make and mend shoes and boots, or hide small objects in them."
+      },
+      "smith-tools": {
+        "name": "Smith's Tools",
+        "description": "Forge and repair weapons, armor and metal objects."
+      },
+      "jeweler-tools": {
+        "name": "Jeweler's Tools",
+        "description": "Cut and set precious stones and metals, and judge their value."
+      },
+      "mason-tools": {
+        "name": "Mason's Tools",
+        "description": "Work stone: build, repair, spot the weak points of masonry."
+      },
+      "woodcarver-tools": {
+        "name": "Woodcarver's Tools",
+        "description": "Carve wood to make objects, simple weapons or figurines."
+      },
+      "potter-tools": {
+        "name": "Potter's Tools",
+        "description": "Shape and fire pottery, and tell where a piece of ceramic comes from."
+      },
+      "glassblower-tools": {
+        "name": "Glassblower's Tools",
+        "description": "Blow glass to make or repair vials, bottles and glass objects."
+      },
+      "leatherworker-tools": {
+        "name": "Leatherworker's Tools",
+        "description": "Work leather: bags, harnesses, light armor and repairs."
+      },
+      "weaver-tools": {
+        "name": "Weaver's Tools",
+        "description": "Weave and sew cloth, and mend clothes."
+      },
+      "cook-utensils": {
+        "name": "Cook's Utensils",
+        "description": "Prepare fine meals, make rations more appetising."
+      },
+      "disguise-kit": {
+        "name": "Disguise Kit",
+        "description": "Make-up, wigs and false hair to change your appearance convincingly."
+      },
+      "forgery-kit": {
+        "name": "Forgery Kit",
+        "description": "Make fake documents, imitate handwriting, seals and signatures."
+      },
+      "herbalism-kit": {
+        "name": "Herbalism Kit",
+        "description": "Recognise and gather plants, prepare remedies and potions of healing."
+      },
+      "poisoner-kit": {
+        "name": "Poisoner's Kit",
+        "description": "Prepare, dose and apply poisons, or try to neutralise them."
+      },
+      "navigator-tools": {
+        "name": "Navigator's Tools",
+        "description": "Plot a course, take a fix at sea and find your way without visible landmarks."
+      },
+      "thieves-tools": {
+        "name": "Thieves' Tools",
+        "description": "Pick locks and disarm mechanical traps."
+      },
+      "bagpipes": {
+        "name": "Bagpipes",
+        "description": "Wind instrument: play loud, rousing tunes."
+      },
+      "drum": {
+        "name": "Drum",
+        "description": "Percussion instrument to keep the beat or back a song."
+      },
+      "dulcimer": {
+        "name": "Dulcimer",
+        "description": "A struck-string instrument with a crystalline sound."
+      },
+      "flute": {
+        "name": "Flute",
+        "description": "A light wind instrument for gentle melodies."
+      },
+      "lute": {
+        "name": "Lute",
+        "description": "A plucked-string instrument, a classic of minstrels and bards."
+      },
+      "lyre": {
+        "name": "Lyre",
+        "description": "A plucked-string instrument with a clear tone, to accompany a song."
+      },
+      "horn": {
+        "name": "Horn",
+        "description": "A powerful brass: play, sound the alarm or signal from afar."
+      },
+      "pan-flute": {
+        "name": "Pan Flute",
+        "description": "A set of pipes of different lengths, played by blowing across the top."
+      },
+      "shawm": {
+        "name": "Shawm",
+        "description": "A double-reed instrument with a piercing sound, used at feasts and ceremonies."
+      },
+      "viol": {
+        "name": "Viol",
+        "description": "A bowed-string instrument, an ancient cousin of the violin."
+      },
+      "dice-set": {
+        "name": "Dice",
+        "description": "Dice for games of chance: play, bet, or spot a cheat."
+      },
+      "playing-card-set": {
+        "name": "Playing Cards",
+        "description": "A deck of cards to play, bet, or spot a cheat."
+      },
+      "dragonchess-set": {
+        "name": "Dragonchess",
+        "description": "A strategy board game: play, or size up your opponent."
+      },
+      "three-dragon-ante-set": {
+        "name": "Three-Dragon Ante",
+        "description": "A card game of bluffing and betting: play, or spot a cheater."
+      }
+    }
+  }
+}

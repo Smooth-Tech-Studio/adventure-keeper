@@ -1,0 +1,66 @@
+{
+  "title": "My profile",
+  "displayName": "Nickname",
+  "displayNameHint": "The name the members of your campaigns and the people you share a pack with see.",
+  "avatar": "Avatar (link to an image)",
+  "avatarPlaceholder": "https://example.com/my-avatar.png",
+  "bio": "About you",
+  "bioPlaceholder": "Your play style, your availability, what you enjoy at the table…",
+  "bioHint": "Optional. Visible to the members of your campaigns ({{length}}/500).",
+  "saved": "Profile saved.",
+  "saveFailed": "Could not save. Try again.",
+  "language": {
+    "title": "Language",
+    "description": "The language of the interface and of the built-in game content (spells, classes, feats…). What you and your table write stays as written.",
+    "saved": "Language saved."
+  },
+  "account": {
+    "title": "Account and security",
+    "description": "Every change asks for your current password.",
+    "wrongPassword": "Incorrect current password.",
+    "currentPassword": "Current password",
+    "password": {
+      "title": "Password",
+      "new": "New password",
+      "again": "Confirm it",
+      "tooShort": "The new password must be at least 8 characters long.",
+      "mismatch": "The two passwords do not match.",
+      "differ": "The two passwords differ.",
+      "changed": "Password changed.",
+      "submit": "Change password",
+      "submitting": "Changing…"
+    },
+    "email": {
+      "title": "Email address",
+      "current": "Current: <em>{{email}}</em>. A confirmation link goes to the new address; it only replaces the old one once the link is followed.",
+      "new": "New address",
+      "sent": "Link sent to <strong>{{email}}</strong>: open it to confirm the change.",
+      "submit": "Change address",
+      "submitting": "Sending…"
+    },
+    "delete": {
+      "title": "Delete my account",
+      "warning": "Your characters, your drafts and the packs you own are deleted, and you leave your campaigns. Packs a campaign has copied stay there. This cannot be undone.",
+      "stillGm_one": "You are the Game Master of this campaign: delete it first.",
+      "stillGm_other": "You are the Game Master of these campaigns: delete them first.",
+      "stillGmToast": "You are still the Game Master of a campaign.",
+      "confirmWord": "DELETE",
+      "typeToConfirm": "Type {{word}} to confirm",
+      "done": "Your account is deleted.",
+      "submit": "Delete permanently",
+      "submitting": "Deleting…"
+    }
+  },
+  "storage": {
+    "title": "Image storage",
+    "description": "Link your Dropbox: wherever the app asks for an image link (map, portrait, handout), you can import a file from your device. It goes into the app's folder in your Dropbox and is shared by link.",
+    "connect": "Connect Dropbox",
+    "connected": "Dropbox connected: {{account}}",
+    "disconnect": "Disconnect",
+    "disconnected": "Dropbox disconnected. Images already imported stay online.",
+    "failed": "Connecting to Dropbox failed.",
+    "connectedToast": "Dropbox connected.",
+    "finishing": "Connecting to Dropbox…",
+    "privacy": "Imported images are public to anyone with the link, like a Dropbox share link. The app only reaches its own folder."
+  }
+}

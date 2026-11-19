@@ -1,0 +1,116 @@
+{
+  "title": "Codex",
+  "intro": "What your party learned about the world: people, places, factions, objects, documents.",
+  "introGm": "Your campaign's world. Players only see revealed entries — never your secrets.",
+  "missing": "Campaign not found.",
+  "new": "New entry",
+  "search": "Search",
+  "all": "All",
+  "empty": "Nothing learned yet.",
+  "emptyGm": "The codex is empty. Create an entry, or show a location in a session: it adds itself.",
+  "noMatch": "No entry matches.",
+  "revealed": "Revealed",
+  "hidden": "Hidden",
+  "revealWhat": "Reveal “{{name}}”",
+  "hideWhat": "Hide “{{name}}”",
+  "back": "Back to {{campaign}}",
+  "kinds": {
+    "npc": "Character",
+    "place": "Place",
+    "faction": "Faction",
+    "item": "Object",
+    "deity": "Deity",
+    "document": "Document",
+    "other": "Other"
+  },
+  "kindsPlural": {
+    "npc": "Characters",
+    "place": "Places",
+    "faction": "Factions",
+    "item": "Objects",
+    "deity": "Deities",
+    "document": "Documents",
+    "other": "Others"
+  },
+  "filters": {
+    "kinds": "Entry types",
+    "visibility": "Visibility",
+    "shown": {
+      "all": "All entries",
+      "revealed": "Revealed",
+      "hidden": "Hidden"
+    }
+  },
+  "entry": {
+    "noSummary": "The party knows nothing more yet.",
+    "openDocument": "Open the document",
+    "secret": "GM secret",
+    "noSecret": "No secret.",
+    "appearances": "Appearances",
+    "noAppearance": "Mentioned in no published recap.",
+    "session": "Session {{number}} · {{adventure}}",
+    "sessionTitled": "Session {{number}}: {{title}} · {{adventure}}",
+    "mentionHint": "Write [[{{name}}]] in a recap, a journal or an entry to link here.",
+    "deleteTitle": "Delete “{{name}}”?",
+    "deleteText": "The entry and its secret will be deleted."
+  },
+  "form": {
+    "newTitle": "New entry",
+    "editTitle": "Edit the entry",
+    "name": "Name",
+    "kind": "Kind",
+    "nameRequired": "The name is required.",
+    "invalidUrl": "Invalid link.",
+    "summary": "What the players know",
+    "summaryPlaceholder": "The village smith, gruff but honest…",
+    "summaryHint": "Visible to players once the entry is revealed. Markdown and [[mentions]] work.",
+    "imageUrl": "Image (link)",
+    "url": "Document (link)",
+    "secret": "GM secret",
+    "secretPlaceholder": "He works for the Black Hand…",
+    "secretHint": "Never shown to players, even once revealed."
+  },
+  "session": {
+    "title": "Codex",
+    "summary": "{{revealed}}/{{count}} revealed",
+    "reveal": "Reveal",
+    "hide": "Hide",
+    "show": "Show",
+    "stopShowing": "Stop showing",
+    "showing": "On screen: {{name}}",
+    "open": "Open the codex",
+    "failed": "Action failed.",
+    "addNpc": "Add to the codex",
+    "npcAdded": "“{{name}}” added to the codex (hidden).",
+    "npcExists": "“{{name}}” is already in the codex."
+  },
+  "handout": {
+    "title": "Handout",
+    "open": "Open the document",
+    "close": "Close",
+    "chronicle": "Handouts",
+    "inCodex": "View in the codex",
+    "foundAt": "Found: {{place}}"
+  },
+  "card": {
+    "title": "Codex",
+    "intro": "The world as the party knows it.",
+    "count_one": "{{count}} entry",
+    "count_other": "{{count}} entries",
+    "open": "See all",
+    "recent": "Recently discovered"
+  },
+  "reputation": {
+    "label": "Attitude toward the party",
+    "none": "Not set",
+    "levels": {
+      "-3": "Hostile",
+      "-2": "Unfriendly",
+      "-1": "Wary",
+      "0": "Neutral",
+      "1": "Kindly",
+      "2": "Friendly",
+      "3": "Devoted"
+    }
+  }
+}

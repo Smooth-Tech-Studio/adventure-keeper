@@ -1,0 +1,66 @@
+{
+  "title": "Mon profil",
+  "displayName": "Pseudo",
+  "displayNameHint": "Le nom que voient les membres de vos campagnes et les personnes avec qui vous partagez un pack.",
+  "avatar": "Avatar (lien vers une image)",
+  "avatarPlaceholder": "https://exemple.com/mon-avatar.png",
+  "bio": "Présentation",
+  "bioPlaceholder": "Votre style de jeu, vos disponibilités, ce que vous aimez à la table…",
+  "bioHint": "Facultatif. Visible par les membres de vos campagnes ({{length}}/500).",
+  "saved": "Profil enregistré.",
+  "saveFailed": "Enregistrement impossible. Réessayez.",
+  "language": {
+    "title": "Langue",
+    "description": "La langue de l'interface et du contenu de jeu intégré (sorts, classes, dons…). Ce que vous et votre table écrivez reste tel quel.",
+    "saved": "Langue enregistrée."
+  },
+  "account": {
+    "title": "Compte et sécurité",
+    "description": "Chaque changement demande votre mot de passe actuel.",
+    "wrongPassword": "Mot de passe actuel incorrect.",
+    "currentPassword": "Mot de passe actuel",
+    "password": {
+      "title": "Mot de passe",
+      "new": "Nouveau mot de passe",
+      "again": "Confirmez-le",
+      "tooShort": "Le nouveau mot de passe doit faire au moins 8 caractères.",
+      "mismatch": "Les deux mots de passe ne correspondent pas.",
+      "differ": "Les deux mots de passe diffèrent.",
+      "changed": "Mot de passe changé.",
+      "submit": "Changer le mot de passe",
+      "submitting": "Changement…"
+    },
+    "email": {
+      "title": "Adresse e-mail",
+      "current": "Actuelle : <em>{{email}}</em>. Un lien de confirmation part à la nouvelle adresse ; elle ne remplace l'ancienne qu'une fois le lien suivi.",
+      "new": "Nouvelle adresse",
+      "sent": "Lien envoyé à <strong>{{email}}</strong> : ouvrez-le pour confirmer le changement.",
+      "submit": "Changer d'adresse",
+      "submitting": "Envoi…"
+    },
+    "delete": {
+      "title": "Supprimer mon compte",
+      "warning": "Vos personnages, vos brouillons et les packs que vous possédez sont supprimés, et vous quittez vos campagnes. Les packs qu'une campagne a copiés y restent. Cette action est définitive.",
+      "stillGm_one": "Vous êtes Maître du jeu de cette campagne : supprimez-la d'abord.",
+      "stillGm_other": "Vous êtes Maître du jeu de ces campagnes : supprimez-les d'abord.",
+      "stillGmToast": "Vous êtes encore Maître du jeu d'une campagne.",
+      "confirmWord": "SUPPRIMER",
+      "typeToConfirm": "Tapez {{word}} pour confirmer",
+      "done": "Votre compte est supprimé.",
+      "submit": "Supprimer définitivement",
+      "submitting": "Suppression…"
+    }
+  },
+  "storage": {
+    "title": "Stockage des images",
+    "description": "Reliez votre Dropbox : partout où l'app demande le lien d'une image (carte, portrait, document), vous pourrez importer un fichier de votre appareil. Il est déposé dans le dossier de l'app sur votre Dropbox et partagé par lien.",
+    "connect": "Connecter Dropbox",
+    "connected": "Dropbox connecté : {{account}}",
+    "disconnect": "Déconnecter",
+    "disconnected": "Dropbox déconnecté. Les images déjà importées restent en ligne.",
+    "failed": "La connexion à Dropbox a échoué.",
+    "connectedToast": "Dropbox connecté.",
+    "finishing": "Connexion à Dropbox…",
+    "privacy": "Les images importées sont publiques pour qui a le lien, comme un lien de partage Dropbox. L'app n'a accès qu'à son propre dossier."
+  }
+}

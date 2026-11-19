@@ -1,0 +1,96 @@
+name: "main: CI, CD (production)"
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "LICENSE"
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci-reusable.yml
+    secrets: inherit
+    concurrency:
+      group: ci-main-${{ github.ref }}
+      cancel-in-progress: true
+
+  # The PR passed the CI; once merged, the whole app is tested end to end
+  # before anything is deployed.
+  e2e:
+    uses: ./.github/workflows/e2e-reusable.yml
+    concurrency:
+      group: e2e-main-${{ github.ref }}
+      cancel-in-progress: true
+
+  # What the push touches, to skip the deployments it cannot affect.
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      firestore: ${{ steps.filter.outputs.firestore }}
+      serveur: ${{ steps.filter.outputs.serveur }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Detect what changed
+        id: filter
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        shell: bash
+        run: |
+          if [[ "$BEFORE" =~ ^0+$ ]]; then
+            echo "firestore=true" >> "$GITHUB_OUTPUT"
+            echo "serveur=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          files=$(git diff --name-only "$BEFORE" "$AFTER")
+          firestore=false
+          serveur=false
+          grep -Eq '^(firestore\.rules|firestore\.indexes\.json|firebase\.json|\.github/workflows/deploy-firestore-reusable\.yml)$' <<< "$files" && firestore=true
+          grep -Eq '^(apps/realtime-desktop/|apps/realtime-server/|packages/schemas/|\.github/workflows/release-serveur-reusable\.yml$)' <<< "$files" && serveur=true
+          echo "firestore=$firestore" >> "$GITHUB_OUTPUT"
+          echo "serveur=$serveur" >> "$GITHUB_OUTPUT"
+
+  deploy-firestore:
+    needs: [ci, e2e, changes]
+    if: ${{ needs.ci.result == 'success' && needs.e2e.result == 'success' && needs.changes.outputs.firestore == 'true' }}
+    concurrency:
+      group: firebase-firestore-rules
+      cancel-in-progress: false
+    uses: ./.github/workflows/deploy-firestore-reusable.yml
+    with:
+      environment: production
+    secrets: inherit
+
+  deploy-hosting:
+    needs: [ci, e2e]
+    if: ${{ needs.ci.result == 'success' && needs.e2e.result == 'success' }}
+    concurrency:
+      group: firebase-hosting-live
+      cancel-in-progress: false
+    uses: ./.github/workflows/deploy-hosting-reusable.yml
+    with:
+      environment: production
+    secrets: inherit
+
+  # The desktop server app: built on four systems and published as a release
+  # (see release-serveur-reusable.yml), only when the push touches it. One
+  # run at a time, never cancelled: each computes the next version.
+  serveur:
+    needs: [ci, e2e, changes]
+    if: ${{ needs.ci.result == 'success' && needs.e2e.result == 'success' && needs.changes.outputs.serveur == 'true' }}
+    concurrency:
+      group: serveur-production
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: read
+    uses: ./.github/workflows/release-serveur-reusable.yml
+    with:
+      channel: production
+    secrets: inherit

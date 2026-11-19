@@ -1,0 +1,782 @@
+{
+  "substeps": {
+    "feat": {
+      "nav": "Don : {{name}}",
+      "title": "Votre don {{name}} demande quelques choix",
+      "whyTitle": "D'où viennent ces choix ?",
+      "why": "Ces choix viennent d'un don que vous avez obtenu : ils font partie du même paquet, mais c'est à vous de les remplir."
+    },
+    "level": {
+      "nav": "Niveau {{level}}",
+      "epicWhyTitle": "Qu'est-ce qu'une faveur épique ?",
+      "epicWhy": "Au niveau 19, une faveur épique couronne votre progression.",
+      "asiWhyTitle": "Amélioration ou nouveau don ?",
+      "asiWhy": "À ce niveau, vous pouvez augmenter vos caractéristiques ou prendre un don. L'amélioration est le choix sûr ; un don apporte une capacité nouvelle."
+    },
+    "skills": {
+      "nav": "Compétences",
+      "title_one": "Quelle compétence maîtrisez-vous ?",
+      "title_other": "Quelles {{count}} compétences maîtrisez-vous ?",
+      "whyTitle": "À quoi sert une compétence ?",
+      "why": "Une compétence maîtrisée ajoute votre bonus de maîtrise à tous les tests qui s'y rapportent. Prenez celles qui collent à votre façon de jouer : parler, fouiller, survivre, se faufiler…"
+    },
+    "tool": {
+      "nav": "Outil",
+      "title_one": "Quel outil savez-vous manier ?",
+      "title_other": "Quels {{count}} outils savez-vous manier ?",
+      "whyTitle": "À quoi sert un outil ?",
+      "why": "La maîtrise d'un outil ajoute votre bonus de maîtrise quand vous vous en servez : jouer d'un instrument, forger, crocheter une serrure…"
+    },
+    "fighting-style": {
+      "nav": "Style de combat",
+      "title": "Quel est votre style de combat ?",
+      "whyTitle": "Quel style pour quelle arme ?",
+      "why": "Un bonus permanent qui oriente votre façon de vous battre. Archerie pour l'arc, Défense pour encaisser, Duel ou Armes à deux mains selon l'arme que vous comptez porter."
+    },
+    "subclass": {
+      "title": "{{label}} : à vous de choisir",
+      "whyTitle": "Qu'apporte une sous-classe ?",
+      "why": "Au niveau 3, votre classe se spécialise. La sous-classe ajoute ses propres aptitudes aux niveaux suivants."
+    },
+    "equipment": {
+      "nav": "Équipement",
+      "title": "Avec quel équipement partez-vous ?",
+      "whyTitle": "Paquetage ou pièces d'or ?",
+      "why": "Le paquetage vous équipe tout de suite et laisse un peu d'or. L'or seul vous laisse tout acheter vous-même à l'étape Équipement : plus de liberté, plus de temps."
+    },
+    "lineage": {
+      "title": "{{label}} : à vous de choisir",
+      "whyTitle": "Qu'est-ce que ça change ?",
+      "why": "Ce choix précise ce que votre espèce vous apporte : sorts, résistance, vitesse ou vision selon l'option."
+    },
+    "size": {
+      "nav": "Taille",
+      "title": "Quelle est votre taille ?",
+      "whyTitle": "Petite ou Moyenne, quelle différence ?",
+      "why": "Un choix surtout d'apparence : les règles traitent presque de la même façon une créature Petite et une Moyenne."
+    },
+    "skill": {
+      "title": "Quelle compétence en plus ?",
+      "whyTitle": "D'où vient cette compétence ?",
+      "why": "Un trait de votre espèce vous rend compétent dans une compétence supplémentaire."
+    },
+    "spell-ability": {
+      "nav": "Incantation",
+      "title": "Avec quelle caractéristique lancez-vous vos sorts d'espèce ?",
+      "whyTitle": "Laquelle choisir ?",
+      "why": "Elle fixe le bonus d'attaque et le DD de ces sorts. Prenez votre meilleure caractéristique mentale, en général celle de votre classe."
+    },
+    "origin-feat": {
+      "nav": "Don d'origine",
+      "title": "Quel don d'origine prenez-vous ?",
+      "whyTitle": "Qu'est-ce qu'un don d'origine ?",
+      "why": "Un don d'origine est un petit talent de départ. S'il demande des choix (compétences, sorts…), ils arrivent à la sous-étape suivante."
+    },
+    "spells": {
+      "nav": "Sorts",
+      "title": "Quels sorts emportez-vous ?",
+      "lead": "Remplissez vos deux mains : les sorts mineurs, puis les sorts préparés.",
+      "whyTitle": "Sorts mineurs ou sorts préparés ?",
+      "why": "Les sorts mineurs se lancent à volonté. Les sorts préparés consomment un emplacement : prenez-en de quoi soigner, protéger ou frapper selon votre rôle dans le groupe. Vous pourrez en changer plus tard depuis la fiche."
+    },
+    "masteries": {
+      "nav": "Bottes d'armes",
+      "title": "Quelles bottes d'armes connaissez-vous ?",
+      "lead": "Vous exploitez la botte de ces armes à chaque attaque.",
+      "whyTitle": "À quoi sert une botte d'arme ?",
+      "why": "La botte ajoute un effet à chaque attaque réussie avec l'arme : renverser, ralentir, repousser… Prenez celles que vous comptez porter : les armes de votre paquetage sont en tête de liste. Vous pourrez en changer depuis la fiche."
+    },
+    "expertise": {
+      "nav": "Expertise",
+      "title": "Dans quelles compétences excellez-vous ?",
+      "lead": "Votre bonus de maîtrise compte double pour ces compétences.",
+      "whyTitle": "Quelles compétences choisir ?",
+      "why": "Seules les compétences que vous maîtrisez déjà sont proposées : celles de votre classe, et celles de votre espèce et de votre historique une fois choisis. Prenez celles qui font votre réputation dans le groupe : se faufiler, convaincre, repérer…"
+    },
+    "hit-points": {
+      "nav": "Points de vie",
+      "title": "Combien de points de vie gagnez-vous à chaque niveau ?",
+      "lead": "Au-delà du niveau 1, chaque niveau ajoute un dé de vie : prenez la moyenne, ou lancez-le.",
+      "whyTitle": "Moyenne ou jet ?",
+      "why": "La moyenne est sûre. Le jet peut faire mieux… ou moins bien. Votre MJ a peut-être une préférence : certaines tables imposent l'un ou l'autre."
+    },
+    "impact": {
+      "nav": "Ce qui change",
+      "title": "Ce que ce changement retire et apporte",
+      "lead": "Rien n'est modifié sur la fiche tant que vous n'appliquez pas les changements.",
+      "whyTitle": "Que deviennent mes anciens choix ?",
+      "why": "Une nouvelle origine ou une nouvelle classe emporte ses traits, ses aptitudes et ce qu'elle avait fait choisir. Les écrans suivants posent seulement les nouvelles questions."
+    },
+    "pick": {
+      "class": {
+        "title": "Quelle classe voulez-vous jouer ?",
+        "noun": "la classe"
+      },
+      "species": {
+        "title": "De quelle espèce êtes-vous ?",
+        "noun": "l'espèce"
+      },
+      "background": {
+        "title": "Quelle vie meniez-vous avant l'aventure ?",
+        "noun": "l'historique"
+      },
+      "pending": "Options de {{noun}}"
+    },
+    "identity": {
+      "nav": "Nom et niveau",
+      "title": "Comment s'appelle votre personnage ?",
+      "lead": "Le niveau de départ décide des aptitudes et des choix qui vont suivre.",
+      "whyTitle": "À quel niveau commencer ?",
+      "why": "La plupart des campagnes commencent au niveau 1. Au-delà, la sous-classe (niveau 3) et les dons de niveau (4, 8…) s'ajoutent aux sous-étapes."
+    },
+    "features": {
+      "nav": "Vos aptitudes",
+      "title": "Ce que sait faire votre {{class}}",
+      "lead": "Rien à choisir ici : voici les aptitudes acquises jusqu'au niveau {{level}}.",
+      "whyTitle": "Où les retrouver ensuite ?",
+      "why": "Ces aptitudes apparaîtront sur la fiche, avec leurs utilisations par repos.",
+      "fallback": "personnage"
+    },
+    "traits": {
+      "nav": "Vos traits",
+      "title": "Ce que vous apporte votre espèce",
+      "lead": "Rien à choisir ici : vos traits s'appliquent tels quels.",
+      "whyTitle": "Ces traits évoluent-ils ?",
+      "why": "Les traits d'espèce ne dépendent pas du niveau, sauf les sorts de lignage qui arrivent aux niveaux 3 et 5."
+    },
+    "alignment": {
+      "nav": "Alignement",
+      "title": "Quelle est votre boussole morale ?",
+      "lead": "L'alignement résume en deux mots comment votre personnage agit d'habitude.",
+      "whyTitle": "À quoi sert l'alignement ?",
+      "why": "Il n'a aucun effet en jeu : c'est un repère pour vous et votre MJ. Un personnage peut évoluer en cours de campagne."
+    },
+    "languages": {
+      "nav": "Langues",
+      "title": "Quelles langues parlez-vous ?",
+      "lead": "Vous parlez déjà les langues acquises ; ajoutez-en {{count}}.",
+      "whyTitle": "Lesquelles choisir ?",
+      "why": "Les langues standard servent souvent ; les langues rares sont précieuses dans certaines campagnes. Demandez à votre MJ où se passe l'aventure."
+    },
+    "lore": {
+      "nav": "Histoire",
+      "title": "D'où vient votre personnage ?",
+      "lead": "Facultatif : quelques lignes suffisent pour donner de la matière au MJ.",
+      "whyTitle": "Par où commencer ?",
+      "why": "Pensez à ce qui relie votre passé de {{background}} à l'aventure : un lien, une dette, un secret, un but.",
+      "fallback": "héros"
+    },
+    "method": {
+      "nav": "Méthode",
+      "title": "Comment déterminez-vous vos valeurs ?",
+      "lead": "Les quatre méthodes donnent six valeurs ; elles diffèrent par le hasard et la liberté qu'elles laissent.",
+      "whyTitle": "Quelle méthode choisir ?",
+      "why": "Le tableau standard est le plus simple et le plus équilibré. L'achat de points laisse doser finement. Les dés donnent des personnages plus inégaux. Demandez à votre MJ ce qu'il préfère."
+    },
+    "values": {
+      "nav": "Valeurs",
+      "title": "Placez vos six valeurs",
+      "lead": "Mettez vos meilleures valeurs en {{abilities}} : c'est ce dont votre classe a le plus besoin.",
+      "whyTitle": "Où placer les meilleures valeurs ?",
+      "why": "Mettez les plus hautes dans la caractéristique principale de votre classe : c'est elle qui fixe vos attaques ou vos sorts. « Conseillé » propose une répartition type, que rien ne vous oblige à suivre.",
+      "and": " et "
+    },
+    "bonus": {
+      "nav": "Bonus d'historique",
+      "title": "Où vont les bonus de votre historique ?",
+      "lead": "{{background}} : +2 et +1, ou +1 à trois caractéristiques, parmi {{abilities}}.",
+      "whyTitle": "Où placer les bonus ?",
+      "why": "En 2024, c'est l'historique et non l'espèce qui donne les bonus de caractéristiques. Renforcer votre caractéristique principale est presque toujours payant."
+    },
+    "recap": {
+      "nav": "Profil chiffré",
+      "title": "Votre profil chiffré",
+      "lead": "Tout ce qui découle de vos valeurs, de votre classe et de votre espèce.",
+      "whyTitle": "Et si je change d'avis ?",
+      "why": "Vous pouvez revenir à n'importe quelle sous-étape depuis le panneau de gauche : tout se recalcule."
+    },
+    "kit": {
+      "nav": "Paquetage",
+      "title": "Ce que vous emportez déjà",
+      "lead": "Vos paquetages de classe et d'historique, et l'or qu'il vous reste.",
+      "whyTitle": "Et si je n'ai pris que de l'or ?",
+      "why": "Si vous avez pris l'or plutôt qu'un paquetage, tout se passe à la sous-étape suivante. Vous pouvez encore changer de paquetage depuis les étapes Classe et Historique."
+    },
+    "shop": {
+      "nav": "Boutique",
+      "title": "Complétez votre sac",
+      "lead": "Seul le matériel d'aventurier est en vente : armes et armures viennent du paquetage de classe.",
+      "whyTitle": "Que faut-il acheter ?",
+      "why": "Corde, torches, rations, potion de soins : les classiques qui sauvent une première partie. Dépasser la bourse est permis, votre MJ tranchera."
+    },
+    "review": {
+      "nav": "Relecture",
+      "title": "Votre personnage est presque prêt",
+      "lead": "Voici sa fiche telle qu'elle sera enregistrée. Chaque bloc a son bouton pour revenir à la bonne sous-étape."
+    },
+    "wildShape": {
+      "nav": "Formes sauvages",
+      "title": "En quelles bêtes pouvez-vous vous changer ?",
+      "lead": "Cochez les formes que votre druide connaît.",
+      "whyTitle": "Pourquoi choisir maintenant ?",
+      "why": "La Forme sauvage n'utilise que des formes connues : leur nombre et leur FP maximal grandissent aux niveaux 4 et 8, et le vol arrive au niveau 8. En jeu, vous pourrez remplacer une forme après un repos long, depuis la fiche."
+    },
+    "skill-swap": {
+      "nav": "Compétence en double",
+      "title": "Une compétence en double",
+      "whyTitle": "Pourquoi cet écran ?",
+      "why": "Quand deux sources donnent la même compétence, la seconde ne servirait à rien : la règle vous laisse en choisir une autre, parmi celles que vous ne maîtrisez pas encore."
+    }
+  },
+  "issues": {
+    "pick": "Choisissez {{noun}} pour continuer.",
+    "name": "Donnez un nom à votre personnage.",
+    "alignment": "Choisissez un alignement.",
+    "languages": "Choisissez {{count}} langues ({{picked}} / {{count}}).",
+    "values": "Renseignez les 6 caractéristiques.",
+    "cantrips": "Sorts mineurs : {{picked}} sur {{cap}}.",
+    "spells": "Sorts préparés : {{picked}} sur {{cap}}.",
+    "masteriesMax": "Bottes d'armes : {{picked}} sur {{slots}} au plus.",
+    "masteries": "Bottes d'armes : {{picked}} sur {{needed}}.",
+    "expertise": "Expertise : {{picked}} sur {{count}}.",
+    "expertiseProficient": "L'expertise ne porte que sur une compétence que vous maîtrisez.",
+    "wildShape": "Formes sauvages : {{picked}} sur {{count}}.",
+    "hitPoints_one": "Choisissez comment gagner vos points de vie.",
+    "hitPoints_other": "Choisissez les points de vie de {{count}} niveaux."
+  },
+  "rail": {
+    "cantrips_one": "{{count}} mineur",
+    "cantrips_other": "{{count}} mineurs",
+    "prepared_one": "{{count}} préparé",
+    "prepared_other": "{{count}} préparés",
+    "weapons_one": "{{count}} arme",
+    "weapons_other": "{{count}} armes",
+    "skills_one": "{{count}} compétence",
+    "skills_other": "{{count}} compétences",
+    "languages": "{{count}} choisies",
+    "lore": "Rédigée",
+    "items_one": "{{count}} objet",
+    "items_other": "{{count}} objets",
+    "heading": "Création de personnage",
+    "guestSave": "Créer un compte pour enregistrer",
+    "saveDraft": "Enregistrer comme brouillon",
+    "guestNote": "Sans compte, la création reste sur cet appareil",
+    "savedAt": "Brouillon enregistré à {{time}}",
+    "autosave": "Sauvegarde automatique sur cet appareil",
+    "cancel": "Annuler la création",
+    "hitDice": "Dés de vie",
+    "proficiency": "Bonus de maîtrise",
+    "speed": "Vitesse",
+    "darkvision": "Vision dans le noir",
+    "passivePerception": "Perception passive",
+    "saves": "Sauvegardes",
+    "summary": "Résumé",
+    "untitled": "Sans nom",
+    "maxHp": "PV max",
+    "ac": "CA",
+    "initiative": "Init.",
+    "skills": "Compétences",
+    "noSkills": "Aucune pour l'instant",
+    "feats": "Dons",
+    "languagesLabel": "Langues",
+    "forms_one": "{{count}} forme",
+    "forms_other": "{{count}} formes",
+    "hitPointsSettled": "Choisis"
+  },
+  "steps": {
+    "class": {
+      "label": "Classe",
+      "title": "Étape 1 : Classe",
+      "description": "Votre classe décide de vos points de vie, de vos maîtrises et de ce que vous savez faire en combat."
+    },
+    "species": {
+      "label": "Espèce",
+      "title": "Étape 2 : Espèce",
+      "description": "Votre espèce fixe votre taille, votre vitesse et vos traits. Elle ne donne aucun bonus de caractéristique en 2024."
+    },
+    "background": {
+      "label": "Historique",
+      "title": "Étape 3 : Historique",
+      "description": "Votre historique apporte deux compétences, une maîtrise d'outil, un don d'origine et vos bonus de caractéristiques."
+    },
+    "abilities": {
+      "label": "Caractéristiques",
+      "title": "Étape 4 : Valeurs de caractéristiques",
+      "description": "Répartissez vos six valeurs, puis ajoutez les bonus de votre historique. PV, maîtrise et dé de vie en découlent."
+    },
+    "shop": {
+      "label": "Équipement",
+      "title": "Étape 5 : Équipement",
+      "description": "Faites le point sur votre paquetage, complétez-le en boutique, puis relisez la fiche."
+    }
+  },
+  "facts": {
+    "armor": {
+      "light": "Légères",
+      "medium": "Intermédiaires",
+      "heavy": "Lourdes",
+      "shield": "Boucliers"
+    },
+    "noArmor": "Aucune",
+    "weapons": {
+      "all": "Courantes et de guerre",
+      "light": "Courantes, de guerre légères",
+      "finesseOrLight": "Courantes, de guerre finesse ou légères",
+      "simple": "Courantes"
+    }
+  },
+  "impact": {
+    "trait": "Trait · {{species}}",
+    "speciesTrait": "Trait d'espèce",
+    "feature": "Aptitude · {{class}}",
+    "feat": "Don",
+    "skill": "Compétence maîtrisée",
+    "spell": "Sort",
+    "language": "Langue acquise",
+    "class": "Classe",
+    "species": "Espèce",
+    "background": "Historique",
+    "level": "Niveau",
+    "scores": "Valeurs de caractéristiques",
+    "equipment": "Équipement et bourse",
+    "identity": "Nom, alignement, histoire",
+    "maxHp": "PV max",
+    "ac": "Classe d'armure",
+    "speed": "Vitesse",
+    "darkvision": "Vision dans le noir",
+    "none": "aucune",
+    "passivePerception": "Perception passive",
+    "spellDc": "DD des sorts"
+  },
+  "shell": {
+    "pointBuyRange": "Achat de points : chaque valeur doit rester entre 8 et 15.",
+    "pointBuyOver": "Achat de points : {{total}} / 27, budget dépassé.",
+    "pickBackgroundFirst": "Choisissez d'abord un historique.",
+    "invalidBonuses": "Répartition d'historique invalide.",
+    "guestHandOff": "Créez un compte ou connectez-vous : votre personnage vous attend ici.",
+    "draftSaved": "Brouillon enregistré.",
+    "saveFailed": "Enregistrement impossible. Réessayez.",
+    "choiceLeft": "Il reste un choix à faire avant de valider.",
+    "sheetUpdated": "Fiche mise à jour.",
+    "created": "Personnage créé.",
+    "classLevel": "{{name}} · niv. {{level}}",
+    "purse": "Bourse : {{amount}}",
+    "nextStep": "Étape {{number}} · {{label}}",
+    "backToReview": "Retour à la relecture",
+    "rebuildHeadings": {
+      "class": "Changer de classe",
+      "species": "Changer d'espèce",
+      "background": "Changer d'historique"
+    },
+    "quit": "Quitter sans enregistrer",
+    "eyebrow": "Étape {{number}} · {{step}} — {{current}} sur {{total}}",
+    "classLabel": "Classe",
+    "change": "Changer",
+    "previous": "Précédent",
+    "cancel": "Annuler",
+    "guestSave": "Créer un compte pour enregistrer",
+    "saveDraft": "Enregistrer comme brouillon",
+    "saving": "Enregistrement…",
+    "apply": "Enregistrer",
+    "validate": "Valider la création",
+    "skip": "Passer",
+    "next": "Suivant",
+    "confirmTitle": "Appliquer les changements à {{name}} ?",
+    "theSheet": "la fiche",
+    "confirmText": "Voici la fiche avant et après. Les éléments retirés disparaissent à l'enregistrement.",
+    "back": "Revenir",
+    "applyShort": "Enregistrer"
+  },
+  "screen": {
+    "why": "Pourquoi ce choix ?"
+  },
+  "shop": {
+    "search": "Rechercher un objet…",
+    "item": "Objet",
+    "weight": "Poids",
+    "price": "Prix",
+    "noMatch": "Aucun objet ne correspond.",
+    "loading": "Chargement du catalogue…",
+    "buy": "Acheter {{name}}",
+    "purse": "Bourse",
+    "overspent": "Vous dépassez votre bourse de {{amount}}. Vous pouvez continuer — à votre MJ de trancher.",
+    "noGold": "Votre paquetage de départ ne laisse pas d'or. Reprenez l'option « or » aux étapes 1 ou 3 pour acheter vous-même.",
+    "backpack": "Inventaire du sac à dos",
+    "fromPacks": "Fourni par vos paquetages",
+    "bought": "Acheté en boutique",
+    "nothing": "Rien pour l'instant.",
+    "remove": "Retirer {{name}}"
+  },
+  "impactStep": {
+    "lost": "Retiré de la fiche",
+    "lostEmpty": "Rien n'est retiré.",
+    "gained": "Ajouté d'office",
+    "gainedEmpty": "Rien n'est ajouté d'office.",
+    "upcoming": "À choisir ensuite",
+    "kept": "Ne bouge pas",
+    "before": "Avant",
+    "after": "Après",
+    "ack_one": "J'ai compris : cet élément sera retiré quand j'appliquerai les changements. Rien ne bouge avant.",
+    "ack_other": "J'ai compris : ces {{count}} éléments seront retirés quand j'appliquerai les changements. Rien ne bouge avant.",
+    "ackNone": "J'ai compris : la fiche changera quand j'appliquerai les changements. Rien ne bouge avant."
+  },
+  "choice": {
+    "search": "Rechercher…",
+    "noResult": "Aucun résultat.",
+    "groups": {
+      "skills": "Compétences",
+      "artisan": "Outils d'artisan",
+      "instrument": "Instruments de musique",
+      "gaming": "Boîtes de jeux",
+      "otherTools": "Autres outils"
+    }
+  },
+  "spells": {
+    "loading": "Chargement des sorts…",
+    "cantrips": "Sorts mineurs",
+    "preparedUpTo": "Sorts préparés, jusqu'au niveau {{level}}",
+    "prepared": "Sorts préparés",
+    "always": "Toujours préparés",
+    "alwaysHint": "Accordés par une aptitude, l'espèce ou une manifestation : ils ne comptent pas dans vos mains.",
+    "invocations": "Manifestations occultes",
+    "grantedBy": "Accordé par {{sources}} : toujours préparé, hors quota, et impossible à retirer."
+  },
+  "fixed": {
+    "tiers": {
+      "local": "Héros locaux",
+      "realm": "Héros du royaume",
+      "masters": "Maîtres du royaume",
+      "world": "Maîtres du monde"
+    },
+    "unlockSubclass": "{{label}} (niv. {{level}})",
+    "unlockAsi": "Amélioration ou don (niv. {{level}})",
+    "unlockEpic": "Faveur épique (niv. {{level}})",
+    "name": "Nom du personnage",
+    "namePlaceholder": "Ysolde Ventebrume",
+    "nameHint": ". Un nom, un surnom, un titre : vous pourrez le changer plus tard.",
+    "nameRequired": "Nom requis.",
+    "startLevel": "Niveau de départ",
+    "level": "Niveau {{level}}",
+    "legendSubclass": "{{subclass}}",
+    "legendAsi": "amélioration de caractéristique ou don",
+    "legendEpic": "faveur épique",
+    "levelOne": "Niveau 1 : aucun choix supplémentaire, le plus simple pour débuter.",
+    "upcoming": "À venir",
+    "proficiencies": "Maîtrises",
+    "armor": "Armures",
+    "weapons": "Armes",
+    "size": "Taille",
+    "speed": "Vitesse",
+    "darkvision": "Vision dans le noir",
+    "resistances": "Résistances",
+    "profile": "Profil",
+    "ethics": {
+      "L": "Loyal",
+      "N": "Neutre",
+      "C": "Chaotique"
+    },
+    "morals": {
+      "G": "Bon",
+      "N": "Neutre",
+      "E": "Mauvais"
+    },
+    "known": "Acquise · {{source}}",
+    "standardLanguages": "Langues standard",
+    "toPick": "{{picked}} / {{count}} à choisir",
+    "rareLanguages": "Langues rares",
+    "lorePlaceholder": "D'où vient-il, qu'est-ce qui le motive…",
+    "loreMarkdownHint": "Mise en forme Markdown : # titres, **gras**, *italique*, - listes, > citations.",
+    "loreLater": "Rien ne presse : vous pourrez écrire ou retoucher cette histoire plus tard, depuis la fiche du personnage.",
+    "featureChoice": "{{feature}} : {{choice}}"
+  },
+  "kit": {
+    "weapons": "Armes",
+    "armors": "Armures",
+    "tools": "Outils",
+    "gear": "Matériel",
+    "purse": "Bourse",
+    "noPack": "Aucun paquetage choisi pour l'instant.",
+    "goldOnly": "De l'or seulement : tout s'achète à la sous-étape suivante."
+  },
+  "review": {
+    "edit": "Modifier",
+    "featureSource": "{{class}} · niv. {{level}}",
+    "levelSource": "Niv. {{level}}",
+    "untitled": "Sans nom",
+    "level": " niveau {{level}}",
+    "todo_one": "{{count}} point à compléter",
+    "todo_other": "{{count}} points à compléter",
+    "ready": "Prêt pour l'aventure",
+    "readyHint": "Tout est rempli. Relisez, puis validez.",
+    "nameLevel": "Nom et niveau",
+    "hp": "Points de vie",
+    "ac": "Classe d'armure",
+    "equipped": "équipée",
+    "noArmor": "sans armure",
+    "initiative": "Initiative",
+    "dexterity": "Dextérité",
+    "speed": "Vitesse",
+    "speedUnit": "mètres",
+    "proficiency": "Maîtrise",
+    "levelNote": "niveau {{level}}",
+    "passivePerception": "Perception passive",
+    "vision": "vision {{range}}",
+    "save": "Sauvegarde {{value}}",
+    "skills": "Compétences",
+    "features": "Aptitudes, traits et dons",
+    "classLink": "Classe",
+    "spells": "Sorts",
+    "cantrip": "Sort mineur",
+    "spellLevel": "Niveau {{level}}",
+    "equipment": "Équipement",
+    "shopLink": "Boutique",
+    "purse": "Bourse",
+    "proficiencies": "Maîtrises",
+    "armor": "Armures",
+    "weapons": "Armes",
+    "tools": "Outils",
+    "resistances": "Résistances",
+    "lore": "Histoire",
+    "write": "Écrire",
+    "noLore": "Pas encore écrite : facultatif, mais votre MJ appréciera.",
+    "alwaysPrepared": "Toujours préparé",
+    "almost": "Presque prêt",
+    "noPreview": "La fiche s'affichera ici une fois les six caractéristiques renseignées."
+  },
+  "abilities": {
+    "hints": {
+      "standardArray": "15, 14, 13, 12, 10 et 8 à placer. Équilibré, sans surprise.",
+      "pointBuy": "{{budget}} points à répartir entre 8 et 15. Le plus de contrôle.",
+      "roll": "4d6 six fois, on garde les trois meilleurs dés. Du hasard, des surprises.",
+      "manual": "Vous recopiez des valeurs obtenues ailleurs : à la table, sur une fiche papier."
+    },
+    "trayDone": "Tous les jetons sont placés. Cliquez une caractéristique pour reprendre le sien.",
+    "traySelected": "Cliquez maintenant une caractéristique.",
+    "trayIdle": "Cliquez un jeton puis une caractéristique, ou glissez-le.",
+    "primary": "principale",
+    "rollLabel": "Valeur {{index}} / 6",
+    "rollDetail": "4d6 {{rolls}} — on écarte {{dropped}}",
+    "roll": "Lancer 4d6",
+    "rerollAll": "Tout relancer",
+    "points": "{{total}} / {{budget}} points",
+    "cost": "Coût :",
+    "suggested": "Conseillé : {{value}}",
+    "mod": "Mod.",
+    "lower": "Baisser {{ability}}",
+    "raise": "Monter {{ability}}",
+    "useSuggested": "Reprendre les valeurs conseillées ({{class}})",
+    "total": "Total",
+    "notOffered": "Non proposé par {{background}}",
+    "theBackground": "l'historique",
+    "fillFirst": "Renseignez d'abord vos six valeurs.",
+    "maxHp": "PV max",
+    "ac": "CA",
+    "proficiency": "Maîtrise",
+    "initiative": "Initiative",
+    "passivePerception": "Perception passive",
+    "hitDice": "Dés de vie",
+    "proficientSkills": "Compétences maîtrisées"
+  },
+  "cards": {
+    "filters": {
+      "style": "Style de jeu",
+      "martial": "Combattants",
+      "caster": "Lanceurs de sorts",
+      "hybrid": "Lame et magie",
+      "handling": "Prise en main",
+      "low": "Simples à jouer",
+      "average": "Intermédiaires",
+      "high": "Exigeantes",
+      "all": "Toutes les classes",
+      "label": "Filtrer les classes"
+    },
+    "previous": "Carte précédente",
+    "next": "Carte suivante",
+    "keep": "Garder ce choix",
+    "choose": "Choisir : {{name}}",
+    "chosen": "Choisi",
+    "details": "Détails",
+    "pack": "Pack · {{name}}",
+    "back": "Retour",
+    "roles": {
+      "martial": "Combattant",
+      "caster": "Lanceur de sorts",
+      "hybrid": "Lame et magie"
+    },
+    "hitDie": "Dé de vie",
+    "primary": "Carac. principale",
+    "style": "Style de jeu",
+    "handling": "Prise en main",
+    "atLevel1": "Au niveau 1",
+    "saves": "Sauvegardes",
+    "armor": "Armures",
+    "weapons": "Armes",
+    "skills": "Compétences",
+    "skillsCount": "{{count}} au choix",
+    "skillsOffered": "Compétences proposées",
+    "subclassAt": "{{label}} · niveau 3",
+    "size": "Taille",
+    "or": " ou ",
+    "speed": "Vitesse",
+    "darkvision": "Vision dans le noir",
+    "resistances": "Résistances",
+    "language": "Langue",
+    "traits": "Traits",
+    "abilities": "Caractéristiques",
+    "yourChoice": "Au choix",
+    "twoOfChoice": "2 au choix",
+    "originFeat": "Don d'origine",
+    "oneOfChoice": "1 au choix",
+    "tool": "Outil",
+    "startingEquipment": "Équipement de départ"
+  },
+  "visual": {
+    "kinds": {
+      "armor": "Armure",
+      "weapon": "Armes",
+      "tool": "Outils",
+      "gear": "Matériel",
+      "pack": "Paquetage"
+    },
+    "toChooseBelow": "{{label}} : à choisir ci-dessous",
+    "toolAbove": "L'outil choisi plus haut",
+    "acLine": "CA {{value}}",
+    "or": "ou",
+    "buyAll": "Tout acheter soi-même",
+    "gold": "{{count}} po",
+    "plusGold": "+ {{count}} po",
+    "shopLater": "Vous ferez vos courses à l'étape Équipement.",
+    "chosen": "Choisi",
+    "cantrip": "Sort mineur",
+    "spellLevel": "Niveau {{level}}",
+    "castingTime": "Incantation",
+    "range": "Portée",
+    "components": "Composantes",
+    "none": "aucune",
+    "duration": "Durée",
+    "concentration": "Concentration",
+    "ritual": "Rituel",
+    "loading": "Chargement des sorts…",
+    "hand": "Votre main · {{picked}} / {{count}}",
+    "putBack": "Remettre dans le paquet",
+    "removeTag": " · retirer",
+    "spell": "Sort",
+    "searchSpells": "Chercher un sort parmi {{count}}…",
+    "scoreMod": " {{score}} · mod. {{mod}}",
+    "tokens": "Jetons à placer :",
+    "removePoint": "Retirer un point de {{ability}}",
+    "addPoint": "Ajouter un point en {{ability}}",
+    "max20": "20 max",
+    "sizes": {
+      "small": "Environ 60 cm à 1,20 m",
+      "medium": "Environ 1,20 m à 2,10 m"
+    },
+    "recommended": "Conseillée",
+    "alreadyClass": "C'est déjà celle de vos sorts {{ofClass}} : une seule valeur à faire monter.",
+    "yourScore": "Votre valeur : {{score}} ({{mod}})",
+    "suggested": "Valeur conseillée pour votre classe : {{value}}",
+    "grantedTag": "Toujours préparé"
+  },
+  "shell2": {
+    "confirmChange": "Cochez la case pour confirmer ce changement."
+  },
+  "levelUp": {
+    "gains": {
+      "nav": "Ce que vous gagnez",
+      "title": "Au niveau {{level}}, {{name}} gagne…",
+      "yourCharacter": "votre personnage",
+      "lead": "Rien à choisir ici : ce qui se choisit vient aux écrans suivants.",
+      "whyTitle": "Et ces aptitudes ?",
+      "why": "Les aptitudes listées s'ajoutent à la fiche telles quelles. Les points de vie se règlent à l'écran suivant."
+    },
+    "hitPointsTitle": "Combien de points de vie gagnez-vous au niveau {{level}} ?",
+    "expertise": {
+      "nav": "Expertise",
+      "title": "Dans quelles compétences excellez-vous ?",
+      "lead": "Votre bonus de maîtrise compte double pour ces compétences.",
+      "whyTitle": "Quelles compétences choisir ?",
+      "why": "Prenez les compétences que vous utilisez le plus : celles qui font votre réputation dans le groupe."
+    },
+    "masteries": {
+      "nav": "Bottes d'armes",
+      "title": "Quelle botte d'arme apprenez-vous ?",
+      "lead": "Vous exploitez la botte d'une arme de plus.",
+      "whyTitle": "À quoi sert une botte d'arme ?",
+      "why": "La botte ajoute un effet à chaque attaque réussie avec l'arme : renverser, ralentir, repousser… Prenez celle que vous portez le plus souvent."
+    },
+    "spells": {
+      "title": "Quels sorts préparez-vous désormais ?",
+      "lead": "Complétez vos mains si le niveau en donne plus. C'est aussi le moment d'en échanger.",
+      "whyTitle": "Quels sorts changer ?",
+      "why": "Montez un sort qui vous a manqué en partie, ou remplacez celui que vous ne lancez jamais. Les sorts toujours préparés ne comptent pas."
+    },
+    "review": {
+      "nav": "Récapitulatif",
+      "title": "Votre personnage au niveau {{level}}",
+      "lead": "Avant et après, recalculés par le moteur de règles.",
+      "whyTitle": "Et après ?",
+      "why": "Après validation, la fiche passe au nouveau niveau. Vous pourrez encore corriger un choix depuis la fiche."
+    },
+    "expertiseIssue": "Expertise : {{picked}} sur {{count}}.",
+    "choiceLeft": "Il reste un choix à faire avant de valider.",
+    "done": "{{name}} passe au niveau {{level}}.",
+    "yourCharacterCap": "Votre personnage",
+    "saveFailed": "Enregistrement impossible. Réessayez.",
+    "railSpells": "{{cantrips}} mineurs, {{spells}} préparés",
+    "railSkills": "{{count}} compétences",
+    "railRoll": "Jet : {{roll}}",
+    "railAverage": "Moyenne",
+    "step": "Niveau {{from}} → {{to}}",
+    "heading": "Montée de niveau",
+    "quit": "Quitter sans enregistrer",
+    "eyebrow": "Niveau {{level}} — {{current}} sur {{total}}",
+    "previous": "Précédent",
+    "cancel": "Annuler",
+    "saving": "Enregistrement…",
+    "validate": "Valider le niveau {{level}}",
+    "next": "Suivant",
+    "slotsPact": "{{count}} (niv. {{level}})",
+    "maxHpPending": "PV max (selon votre dé)",
+    "slotsLevel": "Emplacements de sort de niv. {{level}}",
+    "slotsPactLabel": "Emplacements de sort de pacte",
+    "cantrips": "Sorts mineurs",
+    "prepared": "Sorts préparés",
+    "invocations": "Manifestations",
+    "masteriesCount": "Bottes d'armes",
+    "expertiseCount": "Expertise",
+    "maxHp": "PV max",
+    "proficiency": "Bonus de maîtrise",
+    "hitDice": "Dés de vie",
+    "newFeatures": "Nouvelles aptitudes",
+    "noFeature": "Pas d'aptitude nouvelle à ce niveau.",
+    "increases": "Ce qui augmente",
+    "upcoming": "À choisir ensuite",
+    "level": "Niveau",
+    "ac": "Classe d'armure",
+    "passivePerception": "Perception passive",
+    "spellDc": "DD des sorts",
+    "spellAttack": "Attaque de sort",
+    "slotsShort": "Emplacements",
+    "levelN": "Niveau {{level}}",
+    "choices": "Vos choix",
+    "spellsPanel": "Sorts",
+    "added": "Ajoutés",
+    "removed": "Retirés"
+  },
+  "flow": {
+    "eyebrow": "{{what}} — étape {{current}} sur {{total}}",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "cancel": "Annuler"
+  },
+  "import": {
+    "choose": "Choisir un fichier…",
+    "another": "Choisir un autre fichier…",
+    "pasteLabel": "Ou colle ici le JSON (la réponse de l'IA, telle quelle) :",
+    "pastePlaceholder": "{ \"format\": … }",
+    "readPasted": "Lire le JSON collé",
+    "pastedName": "JSON collé",
+    "errors": "Ce fichier ne peut pas être importé :",
+    "moreErrors": "… et {{count}} autre(s) erreur(s)."
+  }
+}

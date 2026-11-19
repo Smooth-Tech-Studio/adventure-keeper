@@ -1,0 +1,439 @@
+{
+  "acid-splash": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    },
+    "damage": "1d6 acid"
+  },
+  "poison-spray": {
+    "attackRoll": true,
+    "damage": "1d12 poison"
+  },
+  "chill-touch": {
+    "attackRoll": true,
+    "damage": "1d10 necrotic"
+  },
+  "eldritch-blast": {
+    "attackRoll": true,
+    "damage": "1d10 force"
+  },
+  "sorcerous-burst": {
+    "attackRoll": true
+  },
+  "sacred-flame": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    },
+    "damage": "1d8 radiant"
+  },
+  "produce-flame": {
+    "attackRoll": true,
+    "damage": "1d8 fire"
+  },
+  "vicious-mockery": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    },
+    "damage": "1d6 psychic"
+  },
+  "shocking-grasp": {
+    "attackRoll": true,
+    "damage": "1d8 lightning"
+  },
+  "starry-wisp": {
+    "attackRoll": true,
+    "damage": "1d8 radiant"
+  },
+  "ray-of-frost": {
+    "attackRoll": true,
+    "damage": "1d8 cold"
+  },
+  "fire-bolt": {
+    "attackRoll": true,
+    "damage": "1d10 fire"
+  },
+  "animal-friendship": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "inflict-wounds": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "half"
+    },
+    "damage": "2d10 necrotic"
+  },
+  "charm-person": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "searing-smite": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "color-spray": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "ice-knife": {
+    "attackRoll": true,
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  },
+  "entangle": {
+    "save": {
+      "ability": "str",
+      "onSuccess": "negates"
+    }
+  },
+  "tashas-hideous-laughter": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "ensnaring-strike": {
+    "save": {
+      "ability": "str",
+      "onSuccess": "negates"
+    }
+  },
+  "grease": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  },
+  "bane": {
+    "save": {
+      "ability": "cha",
+      "onSuccess": "negates"
+    }
+  },
+  "command": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "faerie-fire": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  },
+  "burning-hands": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "3d6 fire"
+  },
+  "healing-word": {
+    "damage": "2d4 heal"
+  },
+  "dissonant-whispers": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "half"
+    },
+    "damage": "3d6 psychic"
+  },
+  "chromatic-orb": {
+    "attackRoll": true
+  },
+  "ray-of-sickness": {
+    "attackRoll": true,
+    "damage": "2d8 poison"
+  },
+  "guiding-bolt": {
+    "attackRoll": true,
+    "damage": "4d6 radiant"
+  },
+  "hellish-rebuke": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "2d10 fire"
+  },
+  "sanctuary": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "cure-wounds": {
+    "damage": "2d8 heal"
+  },
+  "sleep": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "thunderwave": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "half"
+    },
+    "damage": "2d8 thunder"
+  },
+  "enlarge-reduce": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "calm-emotions": {
+    "save": {
+      "ability": "cha",
+      "onSuccess": "negates"
+    }
+  },
+  "spiritual-weapon": {
+    "attackRoll": true
+  },
+  "gust-of-wind": {
+    "save": {
+      "ability": "str",
+      "onSuccess": "negates"
+    }
+  },
+  "blindness-deafness": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "detect-thoughts": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "enthrall": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "mind-spike": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "half"
+    },
+    "damage": "3d8 psychic"
+  },
+  "melfs-acid-arrow": {
+    "attackRoll": true,
+    "damage": "4d4 acid"
+  },
+  "phantasmal-force": {
+    "save": {
+      "ability": "int",
+      "onSuccess": "negates"
+    }
+  },
+  "shatter": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "half"
+    },
+    "damage": "3d8 thunder"
+  },
+  "hold-person": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "flame-blade": {
+    "attackRoll": true
+  },
+  "levitate": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "animal-messenger": {
+    "save": {
+      "ability": "cha",
+      "onSuccess": "negates"
+    }
+  },
+  "heat-metal": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    },
+    "damage": "2d8 fire"
+  },
+  "prayer-of-healing": {
+    "damage": "2d8 heal"
+  },
+  "ray-of-enfeeblement": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "scorching-ray": {
+    "attackRoll": true,
+    "damage": "2d6 fire"
+  },
+  "moonbeam": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "half"
+    },
+    "damage": "2d10 radiant"
+  },
+  "dragons-breath": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    }
+  },
+  "flaming-sphere": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "2d6 fire"
+  },
+  "suggestion": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "web": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  },
+  "zone-of-truth": {
+    "save": {
+      "ability": "cha",
+      "onSuccess": "negates"
+    }
+  },
+  "call-lightning": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "3d10 lightning"
+  },
+  "fireball": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "8d6 fire"
+  },
+  "vampiric-touch": {
+    "attackRoll": true,
+    "damage": "3d6 necrotic"
+  },
+  "magic-circle": {
+    "save": {
+      "ability": "cha",
+      "onSuccess": "negates"
+    }
+  },
+  "counterspell": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "lightning-bolt": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    },
+    "damage": "8d6 lightning"
+  },
+  "spirit-guardians": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "half"
+    },
+    "damage": "3d8 radiant"
+  },
+  "glyph-of-warding": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "half"
+    }
+  },
+  "conjure-animals": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  },
+  "slow": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "bestow-curse": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "mass-healing-word": {
+    "damage": "2d4 heal"
+  },
+  "hypnotic-pattern": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "wind-wall": {
+    "save": {
+      "ability": "str",
+      "onSuccess": "half"
+    },
+    "damage": "4d8 bludgeoning"
+  },
+  "stinking-cloud": {
+    "save": {
+      "ability": "con",
+      "onSuccess": "negates"
+    }
+  },
+  "fear": {
+    "save": {
+      "ability": "wis",
+      "onSuccess": "negates"
+    }
+  },
+  "sleet-storm": {
+    "save": {
+      "ability": "dex",
+      "onSuccess": "negates"
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "entries": [
+    {
+      "id": "padded",
+      "name": "Armure matelassée",
+      "description": "Une épaisseur de tissu matelassé : la protection du pauvre, et elle bruisse à chaque pas.",
+      "category": "light",
+      "priceCp": 500,
+      "weightKg": 4,
+      "baseAc": 11,
+      "addsDex": true,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "leather",
+      "name": "Armure de cuir",
+      "description": "Un plastron de cuir bouilli durci, souple partout ailleurs.",
+      "category": "light",
+      "priceCp": 1000,
+      "weightKg": 5,
+      "baseAc": 11,
+      "addsDex": true,
+      "stealthDisadvantage": false
+    },
+    {
+      "id": "studded-leather",
+      "name": "Armure de cuir clouté",
+      "description": "Du cuir souple renforcé de rivets serrés, sans rien perdre en discrétion.",
+      "category": "light",
+      "priceCp": 4500,
+      "weightKg": 6.5,
+      "baseAc": 12,
+      "addsDex": true,
+      "stealthDisadvantage": false
+    },
+    {
+      "id": "hide",
+      "name": "Armure de peaux",
+      "description": "Des peaux brutes et des fourrures grossièrement assemblées, courantes chez les peuples nomades.",
+      "category": "medium",
+      "priceCp": 1000,
+      "weightKg": 6,
+      "baseAc": 12,
+      "addsDex": true,
+      "maxDex": 2,
+      "stealthDisadvantage": false
+    },
+    {
+      "id": "chain-shirt",
+      "name": "Chemise de mailles",
+      "description": "Une cotte de mailles courte, portée sous les vêtements pour rester discrète.",
+      "category": "medium",
+      "priceCp": 5000,
+      "weightKg": 10,
+      "baseAc": 13,
+      "addsDex": true,
+      "maxDex": 2,
+      "stealthDisadvantage": false
+    },
+    {
+      "id": "scale-mail",
+      "name": "Armure d'écailles",
+      "description": "Un manteau de cuir couvert d'écailles de métal qui se chevauchent, jusqu'aux jambières.",
+      "category": "medium",
+      "priceCp": 5000,
+      "weightKg": 22.5,
+      "baseAc": 14,
+      "addsDex": true,
+      "maxDex": 2,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "breastplate",
+      "name": "Cuirasse",
+      "description": "Un plastron d'acier ajusté qui protège les organes vitaux en laissant les bras libres.",
+      "category": "medium",
+      "priceCp": 40000,
+      "weightKg": 10,
+      "baseAc": 14,
+      "addsDex": true,
+      "maxDex": 2,
+      "stealthDisadvantage": false
+    },
+    {
+      "id": "half-plate",
+      "name": "Demi-plate",
+      "description": "Des plaques d'acier sur presque tout le corps, les jambes restant en mailles.",
+      "category": "medium",
+      "priceCp": 75000,
+      "weightKg": 20,
+      "baseAc": 15,
+      "addsDex": true,
+      "maxDex": 2,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "ring-mail",
+      "name": "Broigne",
+      "description": "Du cuir épais garni d'anneaux de métal : lourde, démodée, mais bon marché.",
+      "category": "heavy",
+      "priceCp": 3000,
+      "weightKg": 20,
+      "baseAc": 14,
+      "addsDex": false,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "chain-mail",
+      "name": "Cotte de mailles",
+      "description": "Un maillage d'anneaux d'acier sur un rembourrage, avec coiffe, gants et jambières.",
+      "category": "heavy",
+      "priceCp": 7500,
+      "weightKg": 27.5,
+      "baseAc": 16,
+      "addsDex": false,
+      "strengthMin": 13,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "splint",
+      "name": "Clibanion",
+      "description": "Des lames d'acier verticales rivetées sur un fond de cuir, articulées aux jointures.",
+      "category": "heavy",
+      "priceCp": 20000,
+      "weightKg": 30,
+      "baseAc": 17,
+      "addsDex": false,
+      "strengthMin": 15,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "plate",
+      "name": "Harnois",
+      "description": "L'armure complète : plaques ajustées, rembourrage et heaume, taillées sur mesure.",
+      "category": "heavy",
+      "priceCp": 150000,
+      "weightKg": 32.5,
+      "baseAc": 18,
+      "addsDex": false,
+      "strengthMin": 15,
+      "stealthDisadvantage": true
+    },
+    {
+      "id": "shield",
+      "name": "Bouclier",
+      "description": "Une plaque de bois ou de métal portée au bras — une main entière y passe.",
+      "category": "shield",
+      "priceCp": 1000,
+      "weightKg": 3,
+      "acBonus": 2,
+      "addsDex": false,
+      "stealthDisadvantage": false
+    }
+  ],
+  "translations": {
+    "en": {
+      "padded": {
+        "name": "Padded Armor",
+        "description": "A thickness of quilted cloth: the poor man's protection, and it rustles at every step."
+      },
+      "leather": {
+        "name": "Leather Armor",
+        "description": "A breastplate of boiled, hardened leather, supple everywhere else."
+      },
+      "studded-leather": {
+        "name": "Studded Leather Armor",
+        "description": "Supple leather reinforced with close-set rivets, losing nothing in stealth."
+      },
+      "hide": {
+        "name": "Hide Armor",
+        "description": "Raw hides and furs roughly stitched together, common among nomadic peoples."
+      },
+      "chain-shirt": {
+        "name": "Chain Shirt",
+        "description": "A short shirt of mail, worn under clothes to stay discreet."
+      },
+      "scale-mail": {
+        "name": "Scale Mail",
+        "description": "A leather coat covered in overlapping metal scales, down to the leggings."
+      },
+      "breastplate": {
+        "name": "Breastplate",
+        "description": "A fitted steel chest plate that protects the vital organs while leaving the arms free."
+      },
+      "half-plate": {
+        "name": "Half Plate Armor",
+        "description": "Steel plates over most of the body, the legs staying in mail."
+      },
+      "ring-mail": {
+        "name": "Ring Mail",
+        "description": "Thick leather set with metal rings: heavy, old-fashioned, but cheap."
+      },
+      "chain-mail": {
+        "name": "Chain Mail",
+        "description": "A mesh of steel rings over padding, with coif, gauntlets and leggings."
+      },
+      "splint": {
+        "name": "Splint Armor",
+        "description": "Vertical steel strips riveted onto a leather backing, jointed at the joints."
+      },
+      "plate": {
+        "name": "Plate Armor",
+        "description": "The full suit: fitted plates, padding and helm, made to measure."
+      },
+      "shield": {
+        "name": "Shield",
+        "description": "A plate of wood or metal worn on the arm — it takes a whole hand."
+      }
+    }
+  }
+}

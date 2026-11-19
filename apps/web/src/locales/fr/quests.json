@@ -1,0 +1,57 @@
+{
+  "title": "Quêtes",
+  "intro": "Les rumeurs entendues, les quêtes du groupe, et les vôtres : ajoutez un but personnel, gardé pour vous et le MJ ou partagé avec le groupe.",
+  "introGm": "Rumeurs, quêtes en cours, accomplies ou échouées. Les joueurs ne voient que les quêtes révélées ; ils peuvent aussi écrire les leurs, que vous voyez toujours.",
+  "new": "Nouvelle quête",
+  "empty": "Aucune quête pour l'instant.",
+  "emptyGm": "Aucune quête. Notez une rumeur, une mission, un serment…",
+  "hidden": "Cachée",
+  "statuses": {
+    "rumor": "Rumeur",
+    "active": "En cours",
+    "done": "Accomplie",
+    "failed": "Échouée"
+  },
+  "statusesPlural": {
+    "rumor": "Rumeurs",
+    "active": "En cours",
+    "done": "Accomplies",
+    "failed": "Échouées"
+  },
+  "statusOf": "Statut de « {{title}} »",
+  "revealWhat": "Révéler « {{title}} »",
+  "hideWhat": "Cacher « {{title}} »",
+  "deleteTitle": "Supprimer « {{title}} » ?",
+  "deleteText": "La quête sera supprimée.",
+  "sessionSummary_one": "{{count}} ouverte",
+  "sessionSummary_other": "{{count}} ouvertes",
+  "form": {
+    "newTitle": "Nouvelle quête",
+    "editTitle": "Modifier la quête",
+    "title": "Titre",
+    "titleRequired": "Le titre est requis.",
+    "summary": "Ce que le groupe sait",
+    "summaryPlaceholder": "On dit qu'un dragon dort sous [[Ashmoor]]…",
+    "status": "Statut",
+    "revealed": "Visible des joueurs",
+    "shared": "Partager avec le groupe",
+    "sharedHint": "Personnelle, elle n'est visible que de vous et du MJ. Partagée, tout le groupe la voit."
+  },
+  "milestones": {
+    "revealed": "Révélée",
+    "rumor": "Redevenue rumeur",
+    "active": "Acceptée",
+    "done": "Accomplie",
+    "failed": "Échouée",
+    "inSession": "en séance {{number}}",
+    "inASession": "pendant une séance",
+    "line": "{{title}} : {{kinds}}"
+  },
+  "ownedBy": "Quête de {{name}}",
+  "personal": "Personnelle",
+  "shared": "Partagée",
+  "editWhat": "Modifier « {{title}} »",
+  "deleteWhat": "Supprimer « {{title}} »",
+  "openCount_one": "{{count}} en cours",
+  "openCount_other": "{{count}} en cours"
+}

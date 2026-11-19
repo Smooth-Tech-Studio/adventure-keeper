@@ -1,0 +1,840 @@
+{
+  "entries": [
+    {
+      "id": "acid",
+      "name": "Acide (flacon)",
+      "priceCp": 2500,
+      "weightKg": 0.5,
+      "description": "Flacon à lancer sur une créature ou un objet proche : le liquide corrosif inflige des dégâts d'acide."
+    },
+    {
+      "id": "antitoxin",
+      "name": "Antidote (flacon)",
+      "priceCp": 5000,
+      "description": "À boire pour mieux résister aux poisons pendant un temps."
+    },
+    {
+      "id": "fine-clothes",
+      "name": "Beaux habits",
+      "priceCp": 1500,
+      "weightKg": 3,
+      "description": "Vêtements de belle facture, pour se fondre dans la haute société ou faire bonne impression."
+    },
+    {
+      "id": "battering-ram",
+      "name": "Bélier portable",
+      "priceCp": 400,
+      "weightKg": 17.5,
+      "description": "Bélier transportable pour enfoncer portes et herses ; un allié peut prêter main-forte."
+    },
+    {
+      "id": "ball-bearings",
+      "name": "Billes (sac de 1000)",
+      "priceCp": 100,
+      "weightKg": 1,
+      "description": "Billes à répandre au sol : ceux qui traversent la zone risquent de tomber."
+    },
+    {
+      "id": "tinderbox",
+      "name": "Boîte à amadou",
+      "priceCp": 50,
+      "weightKg": 0.5,
+      "description": "Silex, acier et amadou pour allumer un feu, une torche ou une bougie."
+    },
+    {
+      "id": "candle",
+      "name": "Bougie",
+      "priceCp": 1,
+      "group": "light",
+      "description": "Éclaire faiblement, sur un petit rayon, pendant environ une heure."
+    },
+    {
+      "id": "glass-bottle",
+      "name": "Bouteille en verre",
+      "priceCp": 200,
+      "weightKg": 1,
+      "description": "Récipient en verre pour un liquide ; se brise si on la lâche."
+    },
+    {
+      "id": "padlock",
+      "name": "Cadenas",
+      "priceCp": 1000,
+      "weightKg": 0.5,
+      "description": "Cadenas à clé pour verrouiller un coffre, une porte ou des menottes ; se crochète avec des outils de voleur."
+    },
+    {
+      "id": "quiver",
+      "name": "Carquois",
+      "priceCp": 100,
+      "weightKg": 0.5,
+      "group": "container",
+      "description": "Contient une vingtaine de flèches, à portée de main."
+    },
+    {
+      "id": "map",
+      "name": "Carte",
+      "priceCp": 100,
+      "description": "Carte d'une région ou d'un lieu, pour s'orienter ou préparer un trajet."
+    },
+    {
+      "id": "chain",
+      "name": "Chaîne (3 m)",
+      "priceCp": 500,
+      "weightKg": 5,
+      "description": "Trois mètres de chaîne solide pour attacher, bloquer ou ligoter ; difficile à briser."
+    },
+    {
+      "id": "caltrops",
+      "name": "Chausse-trappes (sac de 20)",
+      "priceCp": 100,
+      "weightKg": 1,
+      "description": "Pointes à disperser au sol pour blesser et ralentir les créatures qui traversent la zone."
+    },
+    {
+      "id": "bell",
+      "name": "Cloche",
+      "priceCp": 100,
+      "description": "Cloche pour alerter, signaler sa position ou improviser une alarme."
+    },
+    {
+      "id": "chest",
+      "name": "Coffre",
+      "priceCp": 500,
+      "weightKg": 12.5,
+      "group": "container",
+      "description": "Grand coffre de rangement, que l'on peut fermer à clé ou avec un cadenas."
+    },
+    {
+      "id": "rope",
+      "name": "Corde (15 m)",
+      "priceCp": 100,
+      "weightKg": 2.5,
+      "description": "Quinze mètres de corde pour escalader, descendre, attacher ou haler ; elle peut céder sur un test de Force réussi."
+    },
+    {
+      "id": "costume",
+      "name": "Costume",
+      "priceCp": 500,
+      "weightKg": 2,
+      "description": "Tenue de scène ou de déguisement pour incarner un personnage ou passer inaperçu."
+    },
+    {
+      "id": "blanket",
+      "name": "Couverture",
+      "priceCp": 50,
+      "weightKg": 1.5,
+      "description": "Couverture chaude pour dormir ou se protéger du froid."
+    },
+    {
+      "id": "jug",
+      "name": "Cruche",
+      "priceCp": 2,
+      "weightKg": 2,
+      "description": "Cruche pouvant contenir environ quatre litres de liquide."
+    },
+    {
+      "id": "holy-water",
+      "name": "Eau bénite (flacon)",
+      "priceCp": 2500,
+      "weightKg": 0.5,
+      "description": "Flacon d'eau bénie à jeter sur un mort-vivant ou un fiélon pour lui infliger des dégâts radiants."
+    },
+    {
+      "id": "ladder",
+      "name": "Échelle (3 m)",
+      "priceCp": 10,
+      "weightKg": 12.5,
+      "description": "Échelle de trois mètres pour franchir un dénivelé ou atteindre un point en hauteur."
+    },
+    {
+      "id": "ink",
+      "name": "Encre (fiole)",
+      "priceCp": 1000,
+      "description": "Fiole d'encre pour écrire ou dessiner, à utiliser avec un porte-plume et du papier."
+    },
+    {
+      "id": "map-case",
+      "name": "Étui à cartes ou à parchemins",
+      "priceCp": 100,
+      "weightKg": 0.5,
+      "group": "container",
+      "description": "Étui protecteur pour ranger cartes et parchemins à l'abri de l'humidité."
+    },
+    {
+      "id": "bolt-case",
+      "name": "Étui à carreaux d'arbalète",
+      "priceCp": 100,
+      "weightKg": 0.5,
+      "group": "container",
+      "description": "Étui contenant une vingtaine de carreaux d'arbalète."
+    },
+    {
+      "id": "alchemists-fire",
+      "name": "Feu grégeois (flacon)",
+      "priceCp": 5000,
+      "weightKg": 0.5,
+      "description": "Flacon à lancer : le liquide s'enflamme au contact de l'air et brûle la cible."
+    },
+    {
+      "id": "string",
+      "name": "Ficelle (3 m)",
+      "priceCp": 10,
+      "description": "Trois mètres de ficelle pour nouer, attacher ou baliser un chemin."
+    },
+    {
+      "id": "net",
+      "name": "Filet",
+      "priceCp": 100,
+      "weightKg": 1.5,
+      "description": "Filet à lancer sur une cible pour l'entraver ; on s'en libère en le coupant ou en forçant."
+    },
+    {
+      "id": "vial",
+      "name": "Fiole",
+      "priceCp": 100,
+      "description": "Petite fiole en verre pour transporter un peu de liquide (potion, poison, encre…)."
+    },
+    {
+      "id": "flask",
+      "name": "Flasque",
+      "priceCp": 2,
+      "weightKg": 0.5,
+      "description": "Flasque pour transporter un demi-litre de liquide."
+    },
+    {
+      "id": "grappling-hook",
+      "name": "Grappin",
+      "priceCp": 200,
+      "weightKg": 2,
+      "description": "Crochet à fixer au bout d'une corde pour s'accrocher en hauteur et grimper."
+    },
+    {
+      "id": "spellbook",
+      "name": "Grimoire",
+      "priceCp": 5000,
+      "weightKg": 1.5,
+      "description": "Registre relié où un magicien consigne les sorts qu'il a appris ; indispensable pour les préparer."
+    },
+    {
+      "id": "oil",
+      "name": "Huile (flacon)",
+      "priceCp": 10,
+      "weightKg": 0.5,
+      "description": "Flacon d'huile : alimente une lampe, ou se répand sur une surface ou une créature pour y mettre le feu."
+    },
+    {
+      "id": "lamp",
+      "name": "Lampe",
+      "priceCp": 50,
+      "weightKg": 0.5,
+      "group": "light",
+      "description": "Lampe à huile qui éclaire un rayon modéré ; un flacon d'huile dure environ six heures."
+    },
+    {
+      "id": "hooded-lantern",
+      "name": "Lanterne à capote",
+      "priceCp": 500,
+      "weightKg": 1,
+      "group": "light",
+      "description": "Lanterne à huile dont la capote se rabat pour ne laisser qu'une faible lueur."
+    },
+    {
+      "id": "bullseye-lantern",
+      "name": "Lanterne sourde",
+      "priceCp": 1000,
+      "weightKg": 1,
+      "group": "light",
+      "description": "Lanterne à huile qui projette un cône de lumière concentré et portant plus loin."
+    },
+    {
+      "id": "book",
+      "name": "Livre",
+      "priceCp": 2500,
+      "weightKg": 2.5,
+      "description": "Livre : savoir, récits, recherches, prières… son contenu dépend de l'ouvrage."
+    },
+    {
+      "id": "spyglass",
+      "name": "Longue-vue",
+      "priceCp": 100000,
+      "weightKg": 0.5,
+      "description": "Longue-vue qui rapproche les objets et créatures lointains."
+    },
+    {
+      "id": "magnifying-glass",
+      "name": "Loupe",
+      "priceCp": 10000,
+      "description": "Loupe pour examiner les détails de près, ou allumer un feu au soleil."
+    },
+    {
+      "id": "climbers-kit",
+      "name": "Matériel d'escalade",
+      "priceCp": 2500,
+      "weightKg": 6,
+      "description": "Pitons, harnais et crampons pour escalader et s'ancrer solidement à une paroi."
+    },
+    {
+      "id": "manacles",
+      "name": "Menottes",
+      "priceCp": 200,
+      "weightKg": 3,
+      "description": "Menottes pour entraver un prisonnier ; s'ouvrent avec la clé ou des outils de voleur."
+    },
+    {
+      "id": "mirror",
+      "name": "Miroir",
+      "priceCp": 500,
+      "weightKg": 0.25,
+      "description": "Petit miroir de métal poli : se regarder, guetter un angle sans s'exposer, ou renvoyer la lumière."
+    },
+    {
+      "id": "waterskin",
+      "name": "Outre",
+      "priceCp": 20,
+      "weightKg": 2.5,
+      "description": "Outre qui contient environ deux litres d'eau."
+    },
+    {
+      "id": "block-and-tackle",
+      "name": "Palan",
+      "priceCp": 100,
+      "weightKg": 2.5,
+      "description": "Système de poulies pour hisser des charges lourdes avec bien moins d'effort."
+    },
+    {
+      "id": "basket",
+      "name": "Panier",
+      "priceCp": 40,
+      "weightKg": 1,
+      "group": "container",
+      "description": "Panier tressé pour porter de petites charges."
+    },
+    {
+      "id": "paper",
+      "name": "Papier (feuille)",
+      "priceCp": 20,
+      "description": "Feuille de papier pour écrire ou dessiner."
+    },
+    {
+      "id": "parchment",
+      "name": "Parchemin (feuille)",
+      "priceCp": 10,
+      "description": "Feuille de parchemin pour écrire, plus durable que le papier."
+    },
+    {
+      "id": "perfume",
+      "name": "Parfum (fiole)",
+      "priceCp": 500,
+      "description": "Fiole de parfum pour séduire ou masquer une odeur."
+    },
+    {
+      "id": "shovel",
+      "name": "Pelle",
+      "priceCp": 200,
+      "weightKg": 2.5,
+      "description": "Pelle pour creuser la terre, le sable ou la neige."
+    },
+    {
+      "id": "pole",
+      "name": "Perche (3 m)",
+      "priceCp": 5,
+      "weightKg": 3.5,
+      "description": "Perche de trois mètres pour sonder le sol, pousser un objet ou franchir un obstacle."
+    },
+    {
+      "id": "crowbar",
+      "name": "Pied-de-biche",
+      "priceCp": 200,
+      "weightKg": 2.5,
+      "description": "Levier qui aide à forcer une porte, un couvercle ou une grille (avantage aux tests de Force concernés)."
+    },
+    {
+      "id": "hunting-trap",
+      "name": "Piège à mâchoires",
+      "priceCp": 500,
+      "weightKg": 12.5,
+      "description": "Piège à mâchoires posé au sol : blesse et immobilise celui qui marche dessus."
+    },
+    {
+      "id": "iron-spikes",
+      "name": "Pointes en fer (10)",
+      "priceCp": 100,
+      "weightKg": 2.5,
+      "description": "Pointes de fer pour caler une porte ou servir de pitons d'escalade."
+    },
+    {
+      "id": "basic-poison",
+      "name": "Poison standard (fiole)",
+      "priceCp": 10000,
+      "description": "Fiole de poison à appliquer sur une arme ou une munition pour infliger des dégâts de poison."
+    },
+    {
+      "id": "quill",
+      "name": "Porte-plume",
+      "priceCp": 2,
+      "description": "Porte-plume pour écrire à l'encre."
+    },
+    {
+      "id": "iron-pot",
+      "name": "Pot en fer",
+      "priceCp": 200,
+      "weightKg": 5,
+      "description": "Pot en fer pour cuisiner ou faire bouillir de l'eau."
+    },
+    {
+      "id": "healing-potion",
+      "name": "Potion de guérison",
+      "priceCp": 5000,
+      "weightKg": 0.25,
+      "group": "potion",
+      "description": "Potion à boire pour récupérer des points de vie."
+    },
+    {
+      "id": "rations",
+      "name": "Rations (1 jour)",
+      "priceCp": 50,
+      "weightKg": 1,
+      "description": "Nourriture séchée pour une journée de voyage."
+    },
+    {
+      "id": "robe",
+      "name": "Robe",
+      "priceCp": 100,
+      "weightKg": 2,
+      "description": "Longue robe, tenue de lettré ou de religieux."
+    },
+    {
+      "id": "sack",
+      "name": "Sac",
+      "priceCp": 1,
+      "weightKg": 0.25,
+      "group": "container",
+      "description": "Sac simple pour ranger un peu d'équipement."
+    },
+    {
+      "id": "backpack",
+      "name": "Sac à dos",
+      "priceCp": 200,
+      "weightKg": 2.5,
+      "group": "container",
+      "description": "Sac à dos pour ranger et transporter l'équipement d'aventurier."
+    },
+    {
+      "id": "bedroll",
+      "name": "Sac de couchage",
+      "priceCp": 100,
+      "weightKg": 3.5,
+      "description": "Couchage roulé pour dormir à la belle étoile."
+    },
+    {
+      "id": "pouch",
+      "name": "Sacoche",
+      "priceCp": 50,
+      "weightKg": 0.5,
+      "group": "container",
+      "description": "Petite sacoche à la ceinture pour quelques objets ou pièces."
+    },
+    {
+      "id": "component-pouch",
+      "name": "Sacoche à composantes",
+      "priceCp": 2500,
+      "weightKg": 1,
+      "group": "container",
+      "description": "Sacoche contenant les petits ingrédients qui servent de composantes matérielles pour lancer des sorts."
+    },
+    {
+      "id": "bucket",
+      "name": "Seau",
+      "priceCp": 5,
+      "weightKg": 1,
+      "description": "Seau pour transporter ou verser de l'eau."
+    },
+    {
+      "id": "whistle",
+      "name": "Sifflet",
+      "priceCp": 5,
+      "description": "Sifflet pour signaler ou alerter à distance."
+    },
+    {
+      "id": "tent",
+      "name": "Tente (2 personnes)",
+      "priceCp": 200,
+      "weightKg": 10,
+      "description": "Tente pour deux personnes, à l'abri du vent et de la pluie."
+    },
+    {
+      "id": "travelers-clothes",
+      "name": "Tenue de voyage",
+      "priceCp": 200,
+      "weightKg": 2,
+      "description": "Tenue robuste et pratique pour la route."
+    },
+    {
+      "id": "barrel",
+      "name": "Tonneau",
+      "priceCp": 200,
+      "weightKg": 35,
+      "group": "container",
+      "description": "Tonneau pour stocker liquides ou denrées en grande quantité."
+    },
+    {
+      "id": "torch",
+      "name": "Torche",
+      "priceCp": 1,
+      "weightKg": 0.5,
+      "group": "light",
+      "description": "Éclaire et peut enflammer ce qui s'y prête ; brûle environ une heure."
+    },
+    {
+      "id": "healers-kit",
+      "name": "Trousse de soins",
+      "priceCp": 500,
+      "weightKg": 1.5,
+      "description": "Bandages et onguents pour stabiliser un allié mourant, sans test de Médecine ; nombre d'usages limité."
+    },
+    {
+      "id": "arrows",
+      "name": "Flèches (20)",
+      "priceCp": 100,
+      "weightKg": 0.5,
+      "group": "ammunition",
+      "description": "Munitions pour un arc : vingt flèches."
+    },
+    {
+      "id": "crossbow-bolts",
+      "name": "Carreaux (20)",
+      "priceCp": 100,
+      "weightKg": 0.75,
+      "group": "ammunition",
+      "description": "Munitions pour une arbalète : vingt carreaux."
+    },
+    {
+      "id": "sling-bullets",
+      "name": "Billes de fronde (20)",
+      "priceCp": 4,
+      "weightKg": 0.75,
+      "group": "ammunition",
+      "description": "Munitions pour une fronde : vingt billes."
+    },
+    {
+      "id": "blowgun-needles",
+      "name": "Dards (50)",
+      "priceCp": 100,
+      "weightKg": 0.5,
+      "group": "ammunition",
+      "description": "Munitions pour une sarbacane : cinquante aiguilles."
+    },
+    {
+      "id": "firearm-bullets",
+      "name": "Balles d'arme à feu (10)",
+      "priceCp": 300,
+      "weightKg": 1,
+      "group": "ammunition",
+      "description": "Munitions pour une arme à feu : dix balles."
+    }
+  ],
+  "translations": {
+    "en": {
+      "acid": {
+        "name": "Acid (vial)",
+        "description": "A vial to throw at a nearby creature or object: the corrosive liquid deals acid damage."
+      },
+      "antitoxin": {
+        "name": "Antitoxin (vial)",
+        "description": "Drink it to resist poisons better for a while."
+      },
+      "fine-clothes": {
+        "name": "Fine Clothes",
+        "description": "Well-made clothes, to blend into high society or make a good impression."
+      },
+      "battering-ram": {
+        "name": "Portable Ram",
+        "description": "A portable ram to break down doors and portcullises; an ally can lend a hand."
+      },
+      "ball-bearings": {
+        "name": "Ball Bearings (bag of 1,000)",
+        "description": "Bearings to scatter on the ground: anyone crossing the area may fall."
+      },
+      "tinderbox": {
+        "name": "Tinderbox",
+        "description": "Flint, steel and tinder to light a fire, a torch or a candle."
+      },
+      "candle": {
+        "name": "Candle",
+        "description": "Sheds dim light over a small radius for about an hour."
+      },
+      "glass-bottle": {
+        "name": "Glass Bottle",
+        "description": "A glass container for a liquid; breaks if dropped."
+      },
+      "padlock": {
+        "name": "Lock",
+        "description": "A key lock for a chest, a door or manacles; can be picked with thieves' tools."
+      },
+      "quiver": {
+        "name": "Quiver",
+        "description": "Holds about twenty arrows, close at hand."
+      },
+      "map": {
+        "name": "Map",
+        "description": "A map of a region or a place, to find your way or plan a journey."
+      },
+      "chain": {
+        "name": "Chain (10 feet)",
+        "description": "Ten feet of strong chain to tie, block or bind; hard to break."
+      },
+      "caltrops": {
+        "name": "Caltrops (bag of 20)",
+        "description": "Spikes to scatter on the ground to hurt and slow creatures crossing the area."
+      },
+      "bell": {
+        "name": "Bell",
+        "description": "A bell to warn, signal your position or rig an alarm."
+      },
+      "chest": {
+        "name": "Chest",
+        "description": "A large storage chest, which can be locked with a key or a padlock."
+      },
+      "rope": {
+        "name": "Rope (50 feet)",
+        "description": "Fifty feet of rope to climb, descend, tie or haul; it can snap on a successful Strength check."
+      },
+      "costume": {
+        "name": "Costume",
+        "description": "A stage or disguise outfit to play a character or go unnoticed."
+      },
+      "blanket": {
+        "name": "Blanket",
+        "description": "A warm blanket to sleep under or keep out the cold."
+      },
+      "jug": {
+        "name": "Jug",
+        "description": "A jug that holds about a gallon of liquid."
+      },
+      "holy-water": {
+        "name": "Holy Water (flask)",
+        "description": "A flask of blessed water to throw at an undead or a fiend to deal radiant damage."
+      },
+      "ladder": {
+        "name": "Ladder (10 feet)",
+        "description": "A ten-foot ladder to cross a drop or reach a high spot."
+      },
+      "ink": {
+        "name": "Ink (bottle)",
+        "description": "A bottle of ink to write or draw, used with a quill and paper."
+      },
+      "map-case": {
+        "name": "Map or Scroll Case",
+        "description": "A protective case to keep maps and scrolls safe from damp."
+      },
+      "bolt-case": {
+        "name": "Crossbow Bolt Case",
+        "description": "A case holding about twenty crossbow bolts."
+      },
+      "alchemists-fire": {
+        "name": "Alchemist's Fire (flask)",
+        "description": "A flask to throw: the liquid ignites on contact with air and burns the target."
+      },
+      "string": {
+        "name": "String (10 feet)",
+        "description": "Ten feet of string to tie, fasten or mark a path."
+      },
+      "net": {
+        "name": "Net",
+        "description": "A net to throw over a target to restrain it; you get free by cutting it or forcing your way out."
+      },
+      "vial": {
+        "name": "Vial",
+        "description": "A small glass vial to carry a little liquid (potion, poison, ink…)."
+      },
+      "flask": {
+        "name": "Flask",
+        "description": "A flask to carry a pint of liquid."
+      },
+      "grappling-hook": {
+        "name": "Grappling Hook",
+        "description": "A hook tied to the end of a rope to catch on high and climb."
+      },
+      "spellbook": {
+        "name": "Spellbook",
+        "description": "A bound book in which a wizard records the spells they have learned; essential to prepare them."
+      },
+      "oil": {
+        "name": "Oil (flask)",
+        "description": "A flask of oil: fuels a lamp, or spreads over a surface or a creature to set it alight."
+      },
+      "lamp": {
+        "name": "Lamp",
+        "description": "An oil lamp that lights a moderate radius; a flask of oil lasts about six hours."
+      },
+      "hooded-lantern": {
+        "name": "Hooded Lantern",
+        "description": "An oil lantern whose hood lowers to leave only a faint glow."
+      },
+      "bullseye-lantern": {
+        "name": "Bullseye Lantern",
+        "description": "An oil lantern that casts a focused cone of light that reaches farther."
+      },
+      "book": {
+        "name": "Book",
+        "description": "A book: knowledge, tales, research, prayers… its content depends on the work."
+      },
+      "spyglass": {
+        "name": "Spyglass",
+        "description": "A spyglass that brings distant objects and creatures closer."
+      },
+      "magnifying-glass": {
+        "name": "Magnifying Glass",
+        "description": "A lens to examine details up close, or start a fire in the sun."
+      },
+      "climbers-kit": {
+        "name": "Climber's Kit",
+        "description": "Pitons, harness and crampons to climb and anchor yourself to a wall."
+      },
+      "manacles": {
+        "name": "Manacles",
+        "description": "Manacles to bind a prisoner; open with the key or thieves' tools."
+      },
+      "mirror": {
+        "name": "Mirror",
+        "description": "A small polished metal mirror: look at yourself, peek round a corner unseen, or reflect light."
+      },
+      "waterskin": {
+        "name": "Waterskin",
+        "description": "A waterskin that holds about half a gallon of water."
+      },
+      "block-and-tackle": {
+        "name": "Block and Tackle",
+        "description": "A set of pulleys to hoist heavy loads with far less effort."
+      },
+      "basket": {
+        "name": "Basket",
+        "description": "A woven basket to carry small loads."
+      },
+      "paper": {
+        "name": "Paper (sheet)",
+        "description": "A sheet of paper to write or draw on."
+      },
+      "parchment": {
+        "name": "Parchment (sheet)",
+        "description": "A sheet of parchment to write on, more durable than paper."
+      },
+      "perfume": {
+        "name": "Perfume (vial)",
+        "description": "A vial of perfume to charm or mask a smell."
+      },
+      "shovel": {
+        "name": "Shovel",
+        "description": "A shovel to dig earth, sand or snow."
+      },
+      "pole": {
+        "name": "Pole (10 feet)",
+        "description": "A ten-foot pole to probe the ground, push an object or cross an obstacle."
+      },
+      "crowbar": {
+        "name": "Crowbar",
+        "description": "A lever that helps force a door, a lid or a grate (advantage on the related Strength checks)."
+      },
+      "hunting-trap": {
+        "name": "Hunting Trap",
+        "description": "A jaw trap set on the ground: wounds and holds whoever steps on it."
+      },
+      "iron-spikes": {
+        "name": "Iron Spikes (10)",
+        "description": "Iron spikes to wedge a door or use as climbing pitons."
+      },
+      "basic-poison": {
+        "name": "Basic Poison (vial)",
+        "description": "A vial of poison to apply to a weapon or ammunition to deal poison damage."
+      },
+      "quill": {
+        "name": "Ink Pen",
+        "description": "A quill to write in ink."
+      },
+      "iron-pot": {
+        "name": "Iron Pot",
+        "description": "An iron pot to cook or boil water."
+      },
+      "healing-potion": {
+        "name": "Potion of Healing",
+        "description": "A potion to drink to regain hit points."
+      },
+      "rations": {
+        "name": "Rations (1 day)",
+        "description": "Dried food for one day of travel."
+      },
+      "robe": {
+        "name": "Robe",
+        "description": "A long robe, the dress of scholars and clerics."
+      },
+      "sack": {
+        "name": "Sack",
+        "description": "A plain sack to stow a little gear."
+      },
+      "backpack": {
+        "name": "Backpack",
+        "description": "A backpack to stow and carry adventuring gear."
+      },
+      "bedroll": {
+        "name": "Bedroll",
+        "description": "A rolled-up bed to sleep under the stars."
+      },
+      "pouch": {
+        "name": "Pouch",
+        "description": "A small belt pouch for a few items or coins."
+      },
+      "component-pouch": {
+        "name": "Component Pouch",
+        "description": "A pouch holding the small ingredients used as material components for spells."
+      },
+      "bucket": {
+        "name": "Bucket",
+        "description": "A bucket to carry or pour water."
+      },
+      "whistle": {
+        "name": "Signal Whistle",
+        "description": "A whistle to signal or warn from afar."
+      },
+      "tent": {
+        "name": "Tent (2 people)",
+        "description": "A two-person tent, sheltered from wind and rain."
+      },
+      "travelers-clothes": {
+        "name": "Traveler's Clothes",
+        "description": "Sturdy, practical clothes for the road."
+      },
+      "barrel": {
+        "name": "Barrel",
+        "description": "A barrel to store liquids or goods in bulk."
+      },
+      "torch": {
+        "name": "Torch",
+        "description": "Sheds light and can set fire to what will burn; burns for about an hour."
+      },
+      "healers-kit": {
+        "name": "Healer's Kit",
+        "description": "Bandages and salves to stabilise a dying ally without a Medicine check; limited uses."
+      },
+      "arrows": {
+        "name": "Arrows (20)",
+        "description": "Ammunition for a bow: twenty arrows."
+      },
+      "crossbow-bolts": {
+        "name": "Bolts (20)",
+        "description": "Ammunition for a crossbow: twenty bolts."
+      },
+      "sling-bullets": {
+        "name": "Sling Bullets (20)",
+        "description": "Ammunition for a sling: twenty bullets."
+      },
+      "blowgun-needles": {
+        "name": "Needles (50)",
+        "description": "Ammunition for a blowgun: fifty needles."
+      },
+      "firearm-bullets": {
+        "name": "Firearm Bullets (10)",
+        "description": "Ammunition for a firearm: ten bullets."
+      }
+    }
+  }
+}

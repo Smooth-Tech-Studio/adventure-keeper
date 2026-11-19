@@ -1,0 +1,17 @@
+{
+  "name": "@adventure-keeper/realtime-desktop",
+  "version": "0.1.4",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "private": true,
+  "description": "Adventure Keeper Serveur: the realtime server on the GM's own computer, in a small window (Tauri), reachable by players through a Cloudflare quick tunnel.",
+  "type": "module",
+  "scripts": {
+    "sidecars": "node scripts/prepare-sidecars.mjs",
+    "tauri": "tauri",
+    "desktop:dev": "pnpm sidecars && tauri dev",
+    "desktop:build": "pnpm sidecars && tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4"
+  }
+}

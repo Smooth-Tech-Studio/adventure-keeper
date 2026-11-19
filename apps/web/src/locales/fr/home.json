@@ -1,0 +1,36 @@
+{
+  "badge": "Plateforme collaborative pour le jeu de rôle",
+  "title": "Gardez la mémoire de vos aventures",
+  "pitch": "Adventure Keeper réunit campagnes, personnages, comptes rendus de session, notes et ressources partagées de votre groupe — au même endroit, accessibles à toute la table.",
+  "myCampaigns": "Mes campagnes",
+  "myCharacters": "Mes personnages",
+  "signUp": "Créer un compte",
+  "signIn": "Se connecter",
+  "tryCreation": "Essayer la création de personnage",
+  "features": {
+    "campaigns": {
+      "title": "Campagnes",
+      "description": "Rassemblez votre table autour d'une campagne : système de jeu, membres, résumé et statut en un coup d'œil."
+    },
+    "characters": {
+      "title": "Personnages",
+      "description": "Fiches de personnages et PNJ : caractéristiques, points de vie, notes et ce qui reste caché aux joueurs."
+    },
+    "sessions": {
+      "title": "Sessions",
+      "description": "Planifiez les prochaines séances et gardez le compte rendu de chaque session au même endroit."
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "Notes de lore, d'intrigue ou de règles, avec une visibilité privée, MJ ou partagée à toute la campagne."
+    },
+    "resources": {
+      "title": "Ressources",
+      "description": "Cartes, aides de jeu, liens et fichiers partagés : votre bibliothèque de campagne, accessible à tous."
+    },
+    "houseRules": {
+      "title": "Règles maison",
+      "description": "Documentez vos adaptations de règles pour que tout le monde joue avec les mêmes cartes en main."
+    }
+  }
+}

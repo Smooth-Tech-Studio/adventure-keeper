@@ -1,0 +1,34 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Dependencies allowed to run install/postinstall scripts (pnpm blocks them by
+# default). `onlyBuiltDependencies` is the standard pnpm field; `allowBuilds`
+# is kept for pnpm builds that expect the map form.
+onlyBuiltDependencies:
+  - "@firebase/util"
+  - esbuild
+  - protobufjs
+allowBuilds:
+  "@firebase/util": true
+  esbuild: true
+  protobufjs: true
+  # Optional native regex engine of the Firebase CLI: it falls back on
+  # JavaScript's own, and has no prebuilt binary for every Node version.
+  re2: false
+
+# Patched versions of transitive dependencies (`pnpm audit`, deprecations):
+# grpc-js under the web SDK (unused in the browser), the rest under the
+# Firebase CLI and Admin SDK, both dev tools.
+overrides:
+  "@grpc/grpc-js@<1.13.6": "^1.14.5"
+  "uuid@<11.1.1": "^11.1.1"
+  "@google-cloud/pubsub@5": "^6.3.1"
+  "glob@10": "^13.0.0"
+  # eslint-plugin-react-hooks takes zod 3 or 4: one zod, patched, for everyone.
+  "zod@<4.6.6": "^4.6.7"
+
+# Deprecated with no successor, deep in the Firebase CLI: known, not reported.
+allowedDeprecatedVersions:
+  json-ptr: "3.1.1"
+  node-domexception: "1.0.0"

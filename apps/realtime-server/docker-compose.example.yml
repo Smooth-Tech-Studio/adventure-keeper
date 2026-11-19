@@ -1,0 +1,26 @@
+# Adventure Keeper realtime server behind Caddy (automatic HTTPS).
+# Copy next to a Caddyfile (see docs/REALTIME_SERVER.md), set the domain and
+# the Firebase project, then: docker compose up -d
+services:
+  realtime:
+    build:
+      context: ../..
+      dockerfile: apps/realtime-server/Dockerfile
+    environment:
+      FIREBASE_PROJECT_ID: mon-projet-firebase
+      ALLOWED_ORIGINS: https://mon-projet-firebase.web.app
+    volumes:
+      - rooms:/data
+    restart: unless-stopped
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    restart: unless-stopped
+volumes:
+  rooms:
+  caddy-data:

@@ -1,0 +1,383 @@
+{
+  "entries": [
+    {
+      "id": "armor-of-shadows",
+      "name": "Armure d'ombres",
+      "minLevel": 0,
+      "summary": "Vous pouvez lancer Armure du mage sur vous-même à volonté, sans emplacement.",
+      "unarmoredAc": 13,
+      "spells": [
+        {
+          "spellId": "mage-armor",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "ascendant-step",
+      "name": "Pas aérien",
+      "minLevel": 5,
+      "summary": "Vous pouvez lancer Lévitation sur vous-même à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "levitate",
+          "spellLevel": 2
+        }
+      ]
+    },
+    {
+      "id": "devils-sight",
+      "name": "Vision du diable",
+      "minLevel": 2,
+      "summary": "Vous voyez normalement dans les ténèbres, magiques ou non, jusqu'à 36 m (vision dans le noir comprise).",
+      "darkvision": 120
+    },
+    {
+      "id": "devouring-blade",
+      "name": "Lame dévorante",
+      "minLevel": 12,
+      "requires": "thirsting-blade",
+      "summary": "Améliore la Lame assoiffée : trois attaques avec l'arme de pacte au lieu de deux."
+    },
+    {
+      "id": "eldritch-mind",
+      "name": "Esprit occulte",
+      "minLevel": 0,
+      "summary": "Avantage aux jets de sauvegarde de Constitution pour maintenir votre concentration."
+    },
+    {
+      "id": "eldritch-smite",
+      "name": "Frappe occulte",
+      "minLevel": 5,
+      "requires": "pact-of-the-blade",
+      "summary": "Une fois par tour, sur un coup de votre arme de pacte, dépensez un emplacement de pacte : dégâts de force supplémentaires et cible jetée à terre."
+    },
+    {
+      "id": "eldritch-spear",
+      "name": "Lance occulte",
+      "minLevel": 2,
+      "condition": "Un sort mineur d'occultiste infligeant des dégâts",
+      "summary": "Choisissez un sort mineur d'occultiste infligeant des dégâts : sa portée augmente de 9 m par niveau d'occultiste.",
+      "repeatable": true,
+      "cantrip": "damage"
+    },
+    {
+      "id": "fiendish-vigor",
+      "name": "Vigueur fiélonne",
+      "minLevel": 2,
+      "summary": "Vous pouvez lancer Simulacre de vie sur vous-même à volonté, sans emplacement (PV temporaires maximum au premier lancement).",
+      "spells": [
+        {
+          "spellId": "false-life",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "gaze-of-two-minds",
+      "name": "Perception transférée",
+      "minLevel": 5,
+      "summary": "Action : touchez une créature consentante pour percevoir par ses sens tant que vous vous concentrez."
+    },
+    {
+      "id": "gift-of-the-depths",
+      "name": "Présent des profondeurs",
+      "minLevel": 5,
+      "summary": "Vous respirez sous l'eau et nagez à votre vitesse de marche ; Respiration aquatique une fois par repos long, sans emplacement.",
+      "swimSpeed": true,
+      "spells": [
+        {
+          "spellId": "water-breathing",
+          "spellLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "gift-of-the-protectors",
+      "name": "Présent des sauveurs",
+      "minLevel": 9,
+      "requires": "pact-of-the-tome",
+      "summary": "Une fois par repos long, une créature inscrite dans votre grimoire qui tomberait à 0 PV reste à 1 PV."
+    },
+    {
+      "id": "investment-of-the-chain-master",
+      "name": "Engagement du maître des chaînes",
+      "minLevel": 5,
+      "requires": "pact-of-the-chain",
+      "summary": "Améliore votre familier de pacte : vol ou nage, attaque sur ordre en action bonus, défenses renforcées."
+    },
+    {
+      "id": "lessons-of-the-first-ones",
+      "name": "Enseignement des Premiers-Nés",
+      "minLevel": 2,
+      "summary": "Vous gagnez un don d'origine au choix.",
+      "repeatable": true
+    },
+    {
+      "id": "lifedrinker",
+      "name": "Buveuse de vie",
+      "minLevel": 9,
+      "requires": "pact-of-the-blade",
+      "summary": "Vos coups d'arme de pacte infligent 1d6 dégâts supplémentaires (nécrotiques, psychiques ou radiants) ; vous pouvez dépenser un dé de vie pour récupérer des PV."
+    },
+    {
+      "id": "mask-of-many-faces",
+      "name": "Mille visages",
+      "minLevel": 2,
+      "summary": "Vous pouvez lancer Déguisement sur vous-même à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "disguise-self",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "master-of-myriad-forms",
+      "name": "Maître des formes",
+      "minLevel": 5,
+      "summary": "Vous pouvez lancer Modification d'apparence sur vous-même à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "alter-self",
+          "spellLevel": 2
+        }
+      ]
+    },
+    {
+      "id": "misty-visions",
+      "name": "Visions embrumées",
+      "minLevel": 2,
+      "summary": "Vous pouvez lancer Image silencieuse à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "silent-image",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "one-with-shadows",
+      "name": "Maître des ombres",
+      "minLevel": 5,
+      "summary": "Dans une zone de lumière faible ou de ténèbres, vous pouvez lancer Invisibilité sur vous-même sans emplacement.",
+      "spells": [
+        {
+          "spellId": "invisibility",
+          "spellLevel": 2
+        }
+      ]
+    },
+    {
+      "id": "otherworldly-leap",
+      "name": "Saut d'outre-monde",
+      "minLevel": 2,
+      "summary": "Vous pouvez lancer Saut sur vous-même à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "jump",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "pact-of-the-blade",
+      "name": "Pacte de la lame",
+      "minLevel": 0,
+      "summary": "Action bonus : conjurez une arme de corps à corps (ou liez une arme magique) que vous maîtrisez ; vous attaquez avec votre Charisme, et infligez des dégâts nécrotiques, psychiques ou radiants au choix."
+    },
+    {
+      "id": "pact-of-the-chain",
+      "name": "Pacte de la chaîne",
+      "minLevel": 0,
+      "summary": "Vous apprenez Appel de familier ; votre familier prend une forme spéciale et peut attaquer à votre place.",
+      "spells": [
+        {
+          "spellId": "find-familiar",
+          "spellLevel": 1
+        }
+      ]
+    },
+    {
+      "id": "pact-of-the-tome",
+      "name": "Pacte du grimoire",
+      "minLevel": 0,
+      "summary": "Un grimoire d'ombres vous donne 3 sorts mineurs et 2 sorts de niveau 1 rituels, de n'importe quelle liste."
+    },
+    {
+      "id": "agonizing-blast",
+      "name": "Décharge déchirante",
+      "minLevel": 2,
+      "condition": "Un sort mineur d'occultiste infligeant des dégâts",
+      "summary": "Choisissez un sort mineur d'occultiste infligeant des dégâts : il gagne votre modificateur de Charisme en dégâts.",
+      "repeatable": true,
+      "cantrip": "damage"
+    },
+    {
+      "id": "repelling-blast",
+      "name": "Décharge répulsive",
+      "minLevel": 2,
+      "condition": "Un sort mineur d'occultiste à jet d'attaque",
+      "summary": "Choisissez un sort mineur d'occultiste à jet d'attaque : sur un coup, la cible (Grande taille ou moins) est repoussée jusqu'à 3 m.",
+      "repeatable": true,
+      "cantrip": "attack"
+    },
+    {
+      "id": "thirsting-blade",
+      "name": "Lame assoiffée",
+      "minLevel": 5,
+      "requires": "pact-of-the-blade",
+      "summary": "Quand vous faites l'action Attaquer, vous attaquez deux fois avec votre arme de pacte au lieu d'une."
+    },
+    {
+      "id": "visions-of-distant-realms",
+      "name": "Royaumes lointains",
+      "minLevel": 9,
+      "summary": "Vous pouvez lancer Œil du mage à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "arcane-eye",
+          "spellLevel": 4
+        }
+      ]
+    },
+    {
+      "id": "whispers-of-the-grave",
+      "name": "Murmures de la tombe",
+      "minLevel": 7,
+      "summary": "Vous pouvez lancer Communication avec les morts à volonté, sans emplacement.",
+      "spells": [
+        {
+          "spellId": "speak-with-dead",
+          "spellLevel": 3
+        }
+      ]
+    },
+    {
+      "id": "witch-sight",
+      "name": "Vision sorcière",
+      "minLevel": 15,
+      "summary": "Vous bénéficiez de la vision véritable sur un rayon de 9 m.",
+      "truesight": 30
+    }
+  ],
+  "translations": {
+    "en": {
+      "armor-of-shadows": {
+        "name": "Armor of Shadows",
+        "summary": "You can cast Mage Armor on yourself at will, without a slot."
+      },
+      "ascendant-step": {
+        "name": "Ascendant Step",
+        "summary": "You can cast Levitate on yourself at will, without a slot."
+      },
+      "devils-sight": {
+        "name": "Devil's Sight",
+        "summary": "You see normally in darkness, magical or not, out to 120 feet (darkvision included)."
+      },
+      "devouring-blade": {
+        "name": "Devouring Blade",
+        "summary": "Improves Thirsting Blade: three attacks with the pact weapon instead of two."
+      },
+      "eldritch-mind": {
+        "name": "Eldritch Mind",
+        "summary": "Advantage on Constitution saving throws to maintain your concentration."
+      },
+      "eldritch-smite": {
+        "name": "Eldritch Smite",
+        "summary": "Once per turn, when you hit with your pact weapon, spend a pact slot: extra force damage and the target is knocked prone."
+      },
+      "eldritch-spear": {
+        "name": "Eldritch Spear",
+        "condition": "A warlock cantrip that deals damage",
+        "summary": "Choose a warlock cantrip that deals damage: its range increases by 30 feet per warlock level."
+      },
+      "fiendish-vigor": {
+        "name": "Fiendish Vigor",
+        "summary": "You can cast False Life on yourself at will, without a slot (maximum temporary HP on the first cast)."
+      },
+      "gaze-of-two-minds": {
+        "name": "Gaze of Two Minds",
+        "summary": "Action: touch a willing creature to perceive through its senses while you concentrate."
+      },
+      "gift-of-the-depths": {
+        "name": "Gift of the Depths",
+        "summary": "You breathe underwater and swim at your walking speed; Water Breathing once per long rest, without a slot."
+      },
+      "gift-of-the-protectors": {
+        "name": "Gift of the Protectors",
+        "summary": "Once per long rest, a creature written in your Book of Shadows that would drop to 0 HP stays at 1 HP."
+      },
+      "investment-of-the-chain-master": {
+        "name": "Investment of the Chain Master",
+        "summary": "Improves your pact familiar: flying or swimming, attacks on command as a bonus action, stronger defenses."
+      },
+      "lessons-of-the-first-ones": {
+        "name": "Lessons of the First Ones",
+        "summary": "You gain an origin feat of your choice."
+      },
+      "lifedrinker": {
+        "name": "Lifedrinker",
+        "summary": "Your pact weapon hits deal an extra 1d6 damage (necrotic, psychic or radiant); you can spend a Hit Die to regain HP."
+      },
+      "mask-of-many-faces": {
+        "name": "Mask of Many Faces",
+        "summary": "You can cast Disguise Self on yourself at will, without a slot."
+      },
+      "master-of-myriad-forms": {
+        "name": "Master of Myriad Forms",
+        "summary": "You can cast Alter Self on yourself at will, without a slot."
+      },
+      "misty-visions": {
+        "name": "Misty Visions",
+        "summary": "You can cast Silent Image at will, without a slot."
+      },
+      "one-with-shadows": {
+        "name": "One with Shadows",
+        "summary": "In dim light or darkness, you can cast Invisibility on yourself without a slot."
+      },
+      "otherworldly-leap": {
+        "name": "Otherworldly Leap",
+        "summary": "You can cast Jump on yourself at will, without a slot."
+      },
+      "pact-of-the-blade": {
+        "name": "Pact of the Blade",
+        "summary": "Bonus action: conjure a melee weapon (or bond with a magic weapon) you are proficient with; you attack with your Charisma, and deal necrotic, psychic or radiant damage as you choose."
+      },
+      "pact-of-the-chain": {
+        "name": "Pact of the Chain",
+        "summary": "You learn Find Familiar; your familiar takes a special form and can attack in your place."
+      },
+      "pact-of-the-tome": {
+        "name": "Pact of the Tome",
+        "summary": "A Book of Shadows gives you 3 cantrips and 2 level 1 ritual spells, from any list."
+      },
+      "agonizing-blast": {
+        "name": "Agonizing Blast",
+        "condition": "A warlock cantrip that deals damage",
+        "summary": "Choose a warlock cantrip that deals damage: it adds your Charisma modifier to its damage."
+      },
+      "repelling-blast": {
+        "name": "Repelling Blast",
+        "condition": "A warlock cantrip with an attack roll",
+        "summary": "Choose a warlock cantrip with an attack roll: on a hit, the target (Large or smaller) is pushed up to 10 feet."
+      },
+      "thirsting-blade": {
+        "name": "Thirsting Blade",
+        "summary": "When you take the Attack action, you attack twice with your pact weapon instead of once."
+      },
+      "visions-of-distant-realms": {
+        "name": "Visions of Distant Realms",
+        "summary": "You can cast Arcane Eye at will, without a slot."
+      },
+      "whispers-of-the-grave": {
+        "name": "Whispers of the Grave",
+        "summary": "You can cast Speak with Dead at will, without a slot."
+      },
+      "witch-sight": {
+        "name": "Witch Sight",
+        "summary": "You have Truesight out to 30 feet."
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+/* The web app's theme (apps/web/src/index.css): same tokens, light and dark. */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --ok: oklch(0.596 0.145 163.225); /* emerald-600, as the app's « Tester » */
+  --busy: oklch(0.769 0.188 70.08);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --ok: oklch(0.765 0.177 163.223); /* emerald-400 */
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+h1,
+h2,
+p,
+ol {
+  margin: 0;
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  flex: none;
+}
+.logo rect {
+  fill: var(--primary);
+}
+.logo g {
+  stroke: var(--primary-foreground);
+}
+.logo .needle {
+  fill: var(--primary-foreground);
+}
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.muted {
+  color: var(--muted-foreground);
+}
+.small {
+  font-size: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 1px 2px oklch(0 0 0 / 5%);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex: none;
+  background: var(--busy);
+}
+.dot[data-tone="busy"] {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+.dot[data-tone="ok"] {
+  background: var(--ok);
+}
+.dot[data-tone="error"] {
+  background: var(--destructive);
+}
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+#status-detail[data-tone="error"] {
+  color: var(--destructive);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+}
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--input);
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: var(--foreground);
+  font:
+    13px ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+  user-select: text;
+  outline: none;
+}
+.input:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+.button {
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 1px 2px oklch(0 0 0 / 5%);
+}
+.button:hover:not(:disabled) {
+  background: color-mix(in oklch, var(--primary) 90%, transparent);
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.button.outline {
+  background: var(--background);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+.button.outline:hover {
+  background: var(--accent);
+}
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+.steps ol {
+  padding-left: 20px;
+  color: var(--muted-foreground);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

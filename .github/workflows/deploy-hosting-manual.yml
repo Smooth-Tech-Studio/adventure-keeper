@@ -1,0 +1,12 @@
+name: Deploy Firebase Hosting (manual)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    uses: ./.github/workflows/deploy-hosting-reusable.yml
+    with:
+      environment: production
+    secrets: inherit

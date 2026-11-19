@@ -1,0 +1,221 @@
+{
+  "appName": "Adventure Keeper",
+  "nav": {
+    "campaigns": "Campagnes",
+    "characters": "Personnages",
+    "packs": "Packs",
+    "accountMenu": "Menu du compte",
+    "myAccount": "Mon compte",
+    "myProfile": "Mon profil",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "breadcrumbs": "Fil d'Ariane"
+  },
+  "settings": {
+    "label": "Paramètres"
+  },
+  "theme": {
+    "label": "Thème",
+    "light": "Clair",
+    "dark": "Sombre"
+  },
+  "language": {
+    "label": "Langue",
+    "saveFailed": "Langue appliquée ici, mais pas enregistrée dans votre profil."
+  },
+  "footer": {
+    "tagline": "Adventure Keeper — journal collaboratif pour vos parties de jeu de rôle.",
+    "credits": "Crédits et licences",
+    "server": "Serveur de session"
+  },
+  "licence": {
+    "srd521": "Contenu 5E : inclut du matériel du SRD 5.2.1 sous licence CC-BY-4.0"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "titleWithCount": "Notifications ({{count}})",
+    "empty": "Rien de nouveau pour l'instant.",
+    "invite": "<strong>{{gm}}</strong> vous invite à rejoindre <strong>« {{campaign}} »</strong>.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "declined": "Invitation à « {{campaign}} » refusée.",
+    "declineFailed": "Impossible de refuser l'invitation.",
+    "pickCharacter": "Choisissez votre personnage pour <strong>« {{campaign}} »</strong>.",
+    "newRecap": "Nouveau résumé dans <strong>« {{adventure}} »</strong> ({{campaign}})."
+  },
+  "errorBoundary": {
+    "title": "Une erreur est survenue",
+    "body": "Cette page n'a pas pu s'afficher. Vous pouvez réessayer ou recharger l'application.",
+    "retry": "Réessayer",
+    "reload": "Recharger"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Cette page s'est perdue dans un donjon. Revenons à la lumière.",
+    "home": "Retour à l'accueil"
+  },
+  "credits": {
+    "title": "Crédits et licences",
+    "intro": "Les contenus de jeu proposés par Adventure Keeper, système par système, et les licences sous lesquelles ils sont utilisés.",
+    "dnd2024": "5E (2024)",
+    "dnd2024Intro": "Adventure Keeper est compatible avec la cinquième édition et inclut du matériel issu du document de référence suivant :",
+    "srdStatement": "Cette œuvre inclut du matériel issu du System Reference Document 5.2.1 (« SRD 5.2.1 ») de Wizards of the Coast LLC, disponible à l’adresse <srd>https://www.dndbeyond.com/srd</srd>. Le SRD 5.2.1 est régi par la Licence Creative Commons Attribution 4.0 International, disponible à l’adresse <cc>https://creativecommons.org/licenses/by/4.0/legalcode</cc>.",
+    "ownWords": "Les résumés d’aptitudes, de sorts et d’objets sont rédigés avec nos propres mots."
+  },
+  "validation": {
+    "emailRequired": "E-mail requis",
+    "emailInvalid": "Adresse e-mail invalide",
+    "passwordRequired": "Mot de passe requis",
+    "min2": "Au moins 2 caractères",
+    "max80": "80 caractères maximum",
+    "min8": "Au moins 8 caractères",
+    "max500": "500 caractères maximum",
+    "confirmRequired": "Confirmation requise",
+    "passwordsMismatch": "Les mots de passe ne correspondent pas"
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "add": "Ajouter",
+    "create": "Créer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "remove": "Retirer",
+    "rename": "Renommer",
+    "copy": "Copier",
+    "copied": "Copié",
+    "retry": "Réessayer",
+    "loading": "Chargement…",
+    "none": "Aucun"
+  },
+  "emailPlaceholder": "vous@exemple.com",
+  "imageField": {
+    "import": "Importer depuis l'appareil",
+    "importing": "Envoi…",
+    "importHint": "Envoyée sur votre Dropbox, le lien se remplit tout seul.",
+    "imported": "Image importée.",
+    "importFailed": "L'image n'a pas pu être envoyée sur Dropbox.",
+    "notImage": "Ce fichier n'est pas une image.",
+    "tooBig": "Image trop lourde (20 Mo au plus).",
+    "connectStorage": "Ou reliez votre Dropbox pour importer vos images.",
+    "label": "Image (lien)",
+    "placeholder": "https://exemple.com/mon-image.png",
+    "helpTitle": "Héberger une image ailleurs",
+    "helpDrive": "<strong>Google Drive</strong> : clic droit sur le fichier → Partager → « Accessible à toute personne disposant du lien » → Copier le lien, puis collez-le ici.",
+    "helpDropbox": "<strong>Dropbox</strong> : bouton « Partager » → Copier le lien, puis collez-le ici.",
+    "helpConverted": "Les deux formats sont convertis automatiquement en image affichable.",
+    "helpLabel": "Comment héberger une image ?",
+    "hint": "Collez le lien d'une image hébergée ailleurs (les liens de partage Dropbox et Google Drive sont convertis automatiquement). Aucun envoi de fichier.",
+    "cropZone": "Zone de l'icône — glisser pour déplacer",
+    "broken": "Impossible de charger l'image. Le lien doit pointer vers l'image elle-même, pas vers une page d'aperçu.",
+    "iconPreview": "Aperçu de l'icône",
+    "zoneSize": "Taille de la zone",
+    "remove": "Retirer l'image"
+  },
+  "stats": {
+    "hp": "{{value}} PV",
+    "ac": "CA {{value}}",
+    "cr": "FP {{value}}",
+    "attacks_one": "{{count}} atq",
+    "attacks_other": "{{count}} atqs",
+    "hpShort": "PV",
+    "acShort": "CA",
+    "crShort": "FP",
+    "speedMetres": "Vitesse (m)",
+    "speedFeet": "Vitesse (pi)"
+  },
+  "untitled": "(sans nom)",
+  "saveFailed": "Enregistrement impossible.",
+  "deleteFailed": "Suppression impossible.",
+  "entityRow": {
+    "confirmTitle": "Supprimer {{what}} ?",
+    "confirmText": "Cette action est définitive."
+  },
+  "dangerZone": {
+    "title": "Zone de danger",
+    "confirm": "Supprimer définitivement"
+  },
+  "hexCode": "Code hexadécimal",
+  "gm": "Maître du jeu",
+  "age": {
+    "now": "à l'instant",
+    "minutes": "il y a {{count}} min",
+    "hours": "il y a {{count}} h",
+    "days": "il y a {{count}} j"
+  },
+  "noEmail": "Ce compte n'a pas d'adresse e-mail.",
+  "noItems": "Aucun élément.",
+  "invite": {
+    "noAccount": "Aucun compte avec cette adresse. Envoyez-lui plutôt le lien d'invitation.",
+    "member": "{{name}} fait déjà partie de la campagne.",
+    "pending": "{{name}} a déjà une invitation en attente."
+  },
+  "choices": {
+    "yourTool": "votre outil (choisi plus haut)",
+    "tools": "Outils",
+    "skills": "Compétences"
+  },
+  "gear": {
+    "ammunition": "Munitions",
+    "container": "Contenants",
+    "light": "Éclairage",
+    "potion": "Potions",
+    "other": "Matériel"
+  },
+  "badges": {
+    "focus": "Focaliseur — sert à lancer les sorts, pas d'attaque",
+    "mastery": "Botte : {{name}}",
+    "notTrained": "Non maîtrisée par la classe",
+    "ac": "CA {{formula}}",
+    "strength": "Force {{min}}",
+    "stealth": "Discrétion : désavantage",
+    "equipped": "équipée",
+    "masteryTerm": "Botte — {{name}}",
+    "strengthHint": "Sans une Force de {{min}}, votre vitesse baisse de 3 m.",
+    "stealthHint": "Désavantage aux jets de Dextérité (Discrétion) tant qu'elle est portée."
+  },
+  "uses": {
+    "times_one": "{{count}} fois",
+    "times_other": "{{count}} fois",
+    "withProficiency": " (votre bonus de maîtrise)",
+    "perLevel": " ({{per}} × votre niveau)",
+    "ability": "Modificateur de {{ability}} (min. {{min}})",
+    "short": "par repos court",
+    "long": "par repos long",
+    "shortFrom": ", court dès le niv. {{level}}",
+    "step": "{{value}} au niv. {{level}}",
+    "then": "puis {{steps}}"
+  },
+  "serverApp": {
+    "title": "Adventure Keeper Serveur",
+    "intro": "Le serveur de session en direct, sur l'ordinateur du MJ. Les jetons, les PV et le combat bougent en continu chez tout le monde ; les joueurs n'ont rien à installer.",
+    "download": "Télécharger",
+    "forYou": "La version pour cet ordinateur.",
+    "onComputer": "À installer sur l'ordinateur du MJ, celui qui lance la séance.",
+    "otherSystems": "Autres systèmes",
+    "allVersions": "Toutes les versions",
+    "platform": {
+      "windows": "Windows",
+      "macos-arm64": "macOS (Apple Silicon)",
+      "macos-x64": "macOS (Intel)",
+      "linux-appimage": "Linux (AppImage)",
+      "linux-deb": "Linux (.deb)"
+    },
+    "firstLaunch": "Première ouverture",
+    "unsigned": "L'application n'est pas encore signée : le système demande une confirmation la première fois.",
+    "launchWindows": "Windows : « Informations complémentaires », puis « Exécuter quand même ».",
+    "launchMac": "macOS : ouvrez l'application une fois, puis Réglages Système → Confidentialité et sécurité → « Ouvrir quand même ».",
+    "launchLinux": "Linux : rendez l'AppImage exécutable (clic droit → Propriétés, ou chmod +x), ou installez le .deb.",
+    "during": "Pendant la séance",
+    "step1": "Lancez Adventure Keeper Serveur : il affiche « Serveur prêt » et une adresse en https.",
+    "step2": "Sur la page de l'aventure, ouvrez le bouton serveur à côté de « Démarrer la session » : l'adresse est détectée toute seule.",
+    "step3": "Démarrez la session. L'adresse change à chaque lancement de l'application : rien à retenir.",
+    "keepOpen": "Gardez la fenêtre ouverte et l'ordinateur connecté à Internet jusqu'à la fin de la séance : la fermer arrête le serveur. Rien n'est perdu, la table attend qu'il revienne."
+  }
+}

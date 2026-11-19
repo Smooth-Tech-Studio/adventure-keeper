@@ -1,0 +1,7 @@
+**/node_modules
+**/dist
+**/dist-e2e
+apps/realtime-server/data
+test-results
+playwright-report
+.git

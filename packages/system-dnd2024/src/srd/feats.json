@@ -1,0 +1,438 @@
+{
+  "entries": [
+    {
+      "id": "alert",
+      "name": "Vigilant",
+      "category": "origin",
+      "summary": "Vous ajoutez votre bonus de maîtrise à vos jets d'initiative, et vous pouvez échanger votre résultat d'initiative avec celui d'un allié consentant.",
+      "mechanics": [
+        {
+          "type": "initiative",
+          "bonus": "prof"
+        }
+      ]
+    },
+    {
+      "id": "savage-attacker",
+      "name": "Sauvagerie martiale",
+      "category": "origin",
+      "summary": "Une fois par tour, quand vous touchez une cible avec une arme, vous lancez deux fois ses dés de dégâts et retenez le total de votre choix.",
+      "combatNote": "Sauvagerie martiale : une fois par tour, lancez deux fois les dés de dégâts d'une attaque avec une arme et retenez le total de votre choix."
+    },
+    {
+      "id": "skilled",
+      "name": "Doué",
+      "category": "origin",
+      "summary": "Vous gagnez 3 maîtrises au choix, en combinant librement compétences et outils.",
+      "repeatable": true,
+      "choices": [
+        {
+          "id": "proficiencies",
+          "kind": "proficiency",
+          "label": "Maîtrises",
+          "count": 3,
+          "pool": {
+            "kind": "any"
+          },
+          "hint": "Trois compétences ou outils, dans la combinaison que vous voulez."
+        }
+      ]
+    },
+    {
+      "id": "magic-initiate-cleric",
+      "name": "Initié à la magie (clerc)",
+      "category": "origin",
+      "summary": "Vous apprenez 2 sorts mineurs et 1 sort de niveau 1 de la liste du clerc. Le sort de niveau 1 se lance une fois par repos long sans dépenser d'emplacement, ou normalement si vous avez des emplacements. Vous choisissez la caractéristique d'incantation (Intelligence, Sagesse ou Charisme) et pouvez échanger un sort à chaque niveau gagné.",
+      "prerequisite": "Une liste de sorts différente à chaque fois",
+      "choices": [
+        {
+          "id": "cantrips",
+          "kind": "spell",
+          "label": "Sorts mineurs (clerc)",
+          "count": 2,
+          "pool": {
+            "kind": "group",
+            "group": "cleric:0"
+          },
+          "hint": "Deux sorts mineurs de cette liste."
+        },
+        {
+          "id": "spell",
+          "kind": "spell",
+          "label": "Sort de niveau 1 (clerc)",
+          "count": 1,
+          "pool": {
+            "kind": "group",
+            "group": "cleric:1"
+          },
+          "hint": "Lançable une fois par repos long sans emplacement."
+        },
+        {
+          "id": "ability",
+          "kind": "ability",
+          "label": "Caractéristique d'incantation",
+          "count": 1,
+          "pool": {
+            "kind": "list",
+            "values": ["int", "wis", "cha"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "magic-initiate-druid",
+      "name": "Initié à la magie (druide)",
+      "category": "origin",
+      "summary": "Vous apprenez 2 sorts mineurs et 1 sort de niveau 1 de la liste du druide. Le sort de niveau 1 se lance une fois par repos long sans dépenser d'emplacement, ou normalement si vous avez des emplacements. Vous choisissez la caractéristique d'incantation (Intelligence, Sagesse ou Charisme) et pouvez échanger un sort à chaque niveau gagné.",
+      "prerequisite": "Une liste de sorts différente à chaque fois",
+      "choices": [
+        {
+          "id": "cantrips",
+          "kind": "spell",
+          "label": "Sorts mineurs (druide)",
+          "count": 2,
+          "pool": {
+            "kind": "group",
+            "group": "druid:0"
+          },
+          "hint": "Deux sorts mineurs de cette liste."
+        },
+        {
+          "id": "spell",
+          "kind": "spell",
+          "label": "Sort de niveau 1 (druide)",
+          "count": 1,
+          "pool": {
+            "kind": "group",
+            "group": "druid:1"
+          },
+          "hint": "Lançable une fois par repos long sans emplacement."
+        },
+        {
+          "id": "ability",
+          "kind": "ability",
+          "label": "Caractéristique d'incantation",
+          "count": 1,
+          "pool": {
+            "kind": "list",
+            "values": ["int", "wis", "cha"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "magic-initiate-wizard",
+      "name": "Initié à la magie (magicien)",
+      "category": "origin",
+      "summary": "Vous apprenez 2 sorts mineurs et 1 sort de niveau 1 de la liste du magicien. Le sort de niveau 1 se lance une fois par repos long sans dépenser d'emplacement, ou normalement si vous avez des emplacements. Vous choisissez la caractéristique d'incantation (Intelligence, Sagesse ou Charisme) et pouvez échanger un sort à chaque niveau gagné.",
+      "prerequisite": "Une liste de sorts différente à chaque fois",
+      "choices": [
+        {
+          "id": "cantrips",
+          "kind": "spell",
+          "label": "Sorts mineurs (magicien)",
+          "count": 2,
+          "pool": {
+            "kind": "group",
+            "group": "wizard:0"
+          },
+          "hint": "Deux sorts mineurs de cette liste."
+        },
+        {
+          "id": "spell",
+          "kind": "spell",
+          "label": "Sort de niveau 1 (magicien)",
+          "count": 1,
+          "pool": {
+            "kind": "group",
+            "group": "wizard:1"
+          },
+          "hint": "Lançable une fois par repos long sans emplacement."
+        },
+        {
+          "id": "ability",
+          "kind": "ability",
+          "label": "Caractéristique d'incantation",
+          "count": 1,
+          "pool": {
+            "kind": "list",
+            "values": ["int", "wis", "cha"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "archery",
+      "name": "Archerie",
+      "category": "fightingStyle",
+      "summary": "+2 aux jets d'attaque effectués avec des armes à distance.",
+      "effects": {
+        "rangedAttackBonus": 2
+      }
+    },
+    {
+      "id": "defense",
+      "name": "Défense",
+      "category": "fightingStyle",
+      "summary": "+1 à la classe d'armure tant que vous portez une armure légère, intermédiaire ou lourde.",
+      "effects": {
+        "armoredAcBonus": 1
+      }
+    },
+    {
+      "id": "great-weapon-fighting",
+      "name": "Armes à deux mains",
+      "category": "fightingStyle",
+      "summary": "Avec une arme de corps à corps tenue à deux mains (propriété Deux mains ou Polyvalente), tous les 1 et les 2 obtenus aux dés de dégâts comptent comme des 3.",
+      "combatNote": "Armes à deux mains : tous les 1 et les 2 obtenus aux dés de dégâts comptent comme des 3."
+    },
+    {
+      "id": "two-weapon-fighting",
+      "name": "Combat à deux armes",
+      "category": "fightingStyle",
+      "summary": "Vous ajoutez votre modificateur de caractéristique aux dégâts de l'attaque supplémentaire faite avec une arme Légère, si vous ne l'ajoutiez pas déjà.",
+      "combatNote": "Combat à deux armes : ajoutez votre modificateur de caractéristique aux dégâts de la seconde arme."
+    },
+    {
+      "id": "ability-score-improvement",
+      "name": "Amélioration de caractéristique",
+      "category": "general",
+      "minLevel": 4,
+      "blurb": "Le choix par défaut : montez vos valeurs plutôt que d'apprendre un tour.",
+      "summary": "Augmentez une caractéristique de 2, ou deux caractéristiques de 1, sans dépasser 20.",
+      "repeatable": true
+    },
+    {
+      "id": "grappler",
+      "name": "Empoigneur",
+      "category": "general",
+      "minLevel": 4,
+      "blurb": "Vous attrapez et vous frappez dans le même geste.",
+      "summary": "+1 en Force ou en Dextérité. Une fois par tour, un coup à mains nues peut infliger ses Dégâts et imposer la Lutte en même temps. Avantage aux attaques contre une créature que vous maintenez Agrippée, et la déplacer avec vous ne coûte rien si elle n'est pas plus grande que vous.",
+      "prerequisite": "Force ou Dextérité 13 ou plus",
+      "abilityIncrease": {
+        "options": ["str", "dex"]
+      }
+    },
+    {
+      "id": "boon-of-combat-prowess",
+      "name": "Faveur de prouesse martiale",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Une attaque ratée devient un coup au but, à volonté ou presque.",
+      "summary": "+1 dans une caractéristique au choix (maximum 30). Visée infaillible : quand vous ratez un jet d'attaque, vous décidez qu'elle touche. Pas de nouvel usage avant le début de votre tour suivant.",
+      "abilityIncrease": {
+        "options": "any"
+      }
+    },
+    {
+      "id": "boon-of-dimensional-travel",
+      "name": "Faveur de déplacement dimensionnel",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Vous vous téléportez dans la foulée de chaque action.",
+      "summary": "+1 dans une caractéristique au choix (maximum 30). Aussitôt après l'action Attaque ou Magie, vous vous téléportez jusqu'à 9 m dans un espace inoccupé que vous voyez.",
+      "abilityIncrease": {
+        "options": "any"
+      }
+    },
+    {
+      "id": "boon-of-fate",
+      "name": "Faveur du destin",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Vous pesez sur les jets, les vôtres comme ceux des autres.",
+      "summary": "+1 dans une caractéristique au choix (maximum 30). Quand vous ou une créature à 18 m réussissez ou ratez un Test d20, lancez 2d4 et appliquez le total en bonus ou en malus. Récupéré en jouant l'Initiative ou après un repos.",
+      "abilityIncrease": {
+        "options": "any"
+      }
+    },
+    {
+      "id": "boon-of-irresistible-offense",
+      "name": "Faveur d'attaque irrésistible",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Plus aucune résistance physique ne vous arrête.",
+      "summary": "+1 en Force ou en Dextérité (maximum 30). Les dégâts contondants, perforants et tranchants que vous infligez ignorent la Résistance, et un 20 au d20 ajoute à l'attaque autant de dégâts que la valeur augmentée par ce don.",
+      "abilityIncrease": {
+        "options": ["str", "dex"]
+      }
+    },
+    {
+      "id": "boon-of-spell-recall",
+      "name": "Faveur de mémoire magique",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Vos sorts de bas niveau ne coûtent plus toujours un emplacement.",
+      "summary": "+1 en Intelligence, Sagesse ou Charisme (maximum 30). À chaque sort lancé avec un emplacement du 1er au 4e niveau, lancez 1d4 : si le résultat égale le niveau de l'emplacement, celui-ci n'est pas dépensé.",
+      "abilityIncrease": {
+        "options": ["int", "wis", "cha"]
+      },
+      "prerequisite": "Aptitude Sorts"
+    },
+    {
+      "id": "boon-of-the-night-spirit",
+      "name": "Faveur de l'esprit nocturne",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Dans l'ombre, invisible et presque invulnérable.",
+      "summary": "+1 dans une caractéristique au choix (maximum 30). En Lumière faible ou dans les Ténèbres, une action Bonus vous rend Invisible jusqu'à votre prochaine action, et vous avez la Résistance à tous les dégâts hormis psychiques et radiants.",
+      "abilityIncrease": {
+        "options": "any"
+      }
+    },
+    {
+      "id": "boon-of-truesight",
+      "name": "Faveur de vision lucide",
+      "category": "epic",
+      "minLevel": 19,
+      "blurb": "Plus aucune illusion ni invisibilité ne vous trompe.",
+      "summary": "+1 dans une caractéristique au choix (maximum 30). Vous disposez de la Vision lucide sur 18 mètres.",
+      "abilityIncrease": {
+        "options": "any"
+      }
+    }
+  ],
+  "translations": {
+    "en": {
+      "alert": {
+        "name": "Alert",
+        "summary": "You add your proficiency bonus to your initiative rolls, and you can swap your initiative result with a willing ally's."
+      },
+      "savage-attacker": {
+        "name": "Savage Attacker",
+        "summary": "Once per turn, when you hit a target with a weapon, you roll its damage dice twice and use the total of your choice.",
+        "combatNote": "Savage Attacker: once per turn, roll a weapon attack's damage dice twice and use either total."
+      },
+      "skilled": {
+        "name": "Skilled",
+        "summary": "You gain 3 proficiencies of your choice, mixing skills and tools freely.",
+        "choices": [
+          {
+            "label": "Proficiencies",
+            "hint": "Three skills or tools, in any combination you like."
+          }
+        ]
+      },
+      "magic-initiate-cleric": {
+        "name": "Magic Initiate (Cleric)",
+        "summary": "You learn 2 cantrips and 1 level 1 spell from the cleric list. The level 1 spell can be cast once per long rest without spending a slot, or normally if you have slots. You choose the spellcasting ability (Intelligence, Wisdom or Charisma) and can swap a spell each time you gain a level.",
+        "prerequisite": "A different spell list each time",
+        "choices": [
+          {
+            "label": "Cantrips (cleric)",
+            "hint": "Two cantrips from this list."
+          },
+          {
+            "label": "Level 1 spell (cleric)",
+            "hint": "Castable once per long rest without a slot."
+          },
+          {
+            "label": "Spellcasting ability"
+          }
+        ]
+      },
+      "magic-initiate-druid": {
+        "name": "Magic Initiate (Druid)",
+        "summary": "You learn 2 cantrips and 1 level 1 spell from the druid list. The level 1 spell can be cast once per long rest without spending a slot, or normally if you have slots. You choose the spellcasting ability (Intelligence, Wisdom or Charisma) and can swap a spell each time you gain a level.",
+        "prerequisite": "A different spell list each time",
+        "choices": [
+          {
+            "label": "Cantrips (druid)",
+            "hint": "Two cantrips from this list."
+          },
+          {
+            "label": "Level 1 spell (druid)",
+            "hint": "Castable once per long rest without a slot."
+          },
+          {
+            "label": "Spellcasting ability"
+          }
+        ]
+      },
+      "magic-initiate-wizard": {
+        "name": "Magic Initiate (Wizard)",
+        "summary": "You learn 2 cantrips and 1 level 1 spell from the wizard list. The level 1 spell can be cast once per long rest without spending a slot, or normally if you have slots. You choose the spellcasting ability (Intelligence, Wisdom or Charisma) and can swap a spell each time you gain a level.",
+        "prerequisite": "A different spell list each time",
+        "choices": [
+          {
+            "label": "Cantrips (wizard)",
+            "hint": "Two cantrips from this list."
+          },
+          {
+            "label": "Level 1 spell (wizard)",
+            "hint": "Castable once per long rest without a slot."
+          },
+          {
+            "label": "Spellcasting ability"
+          }
+        ]
+      },
+      "archery": {
+        "name": "Archery",
+        "summary": "+2 to attack rolls you make with ranged weapons."
+      },
+      "defense": {
+        "name": "Defense",
+        "summary": "+1 to Armor Class while you wear light, medium or heavy armor."
+      },
+      "great-weapon-fighting": {
+        "name": "Great Weapon Fighting",
+        "summary": "With a melee weapon held in two hands (Two-Handed or Versatile property), every 1 or 2 rolled on the damage dice counts as a 3.",
+        "combatNote": "Great Weapon Fighting: every 1 or 2 rolled on the damage dice counts as a 3."
+      },
+      "two-weapon-fighting": {
+        "name": "Two-Weapon Fighting",
+        "summary": "You add your ability modifier to the damage of the extra attack made with a Light weapon, if you weren't already adding it.",
+        "combatNote": "Two-Weapon Fighting: add your ability modifier to the damage of the second weapon."
+      },
+      "ability-score-improvement": {
+        "name": "Ability Score Improvement",
+        "blurb": "The default choice: raise your scores rather than learn a new trick.",
+        "summary": "Increase one ability score by 2, or two ability scores by 1, to a maximum of 20."
+      },
+      "grappler": {
+        "name": "Grappler",
+        "blurb": "You grab and strike in the same move.",
+        "summary": "+1 to Strength or Dexterity. Once per turn, an unarmed strike can deal its Damage and impose a Grapple at the same time. Advantage on attacks against a creature you have Grappled, and moving it with you costs nothing if it is no larger than you.",
+        "prerequisite": "Strength or Dexterity 13 or higher"
+      },
+      "boon-of-combat-prowess": {
+        "name": "Boon of Combat Prowess",
+        "blurb": "A missed attack becomes a hit, nearly at will.",
+        "summary": "+1 to an ability score of your choice (maximum 30). Peerless Aim: when you miss with an attack roll, you can make it hit instead. Not again before the start of your next turn."
+      },
+      "boon-of-dimensional-travel": {
+        "name": "Boon of Dimensional Travel",
+        "blurb": "You teleport in the wake of every action.",
+        "summary": "+1 to an ability score of your choice (maximum 30). Right after the Attack or Magic action, you teleport up to 30 feet to an unoccupied space you can see."
+      },
+      "boon-of-fate": {
+        "name": "Boon of Fate",
+        "blurb": "You weigh on rolls, yours and everyone else's.",
+        "summary": "+1 to an ability score of your choice (maximum 30). When you or a creature within 60 feet succeeds or fails a D20 Test, roll 2d4 and apply the total as a bonus or a penalty. Regained when you roll Initiative or after a rest."
+      },
+      "boon-of-irresistible-offense": {
+        "name": "Boon of Irresistible Offense",
+        "blurb": "No physical resistance stops you any more.",
+        "summary": "+1 to Strength or Dexterity (maximum 30). The bludgeoning, piercing and slashing damage you deal ignores Resistance, and a 20 on the d20 adds damage equal to the score this feat raised."
+      },
+      "boon-of-spell-recall": {
+        "name": "Boon of Spell Recall",
+        "blurb": "Your low-level spells don't always cost a slot any more.",
+        "summary": "+1 to Intelligence, Wisdom or Charisma (maximum 30). Each time you cast a spell with a level 1–4 slot, roll 1d4: if the result equals the slot's level, the slot isn't spent.",
+        "prerequisite": "Spellcasting feature"
+      },
+      "boon-of-the-night-spirit": {
+        "name": "Boon of the Night Spirit",
+        "blurb": "In the shadows, invisible and nearly invulnerable.",
+        "summary": "+1 to an ability score of your choice (maximum 30). In Dim Light or Darkness, a Bonus Action makes you Invisible until your next action, and you have Resistance to all damage except psychic and radiant."
+      },
+      "boon-of-truesight": {
+        "name": "Boon of Truesight",
+        "blurb": "No illusion or invisibility fools you any more.",
+        "summary": "+1 to an ability score of your choice (maximum 30). You have Truesight out to 60 feet."
+      }
+    }
+  }
+}

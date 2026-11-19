@@ -1,0 +1,865 @@
+{
+  "entries": [
+    {
+      "id": "quarterstaff",
+      "name": "Bâton de combat",
+      "category": "simple-melee",
+      "priceCp": 20,
+      "weightKg": 2,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["versatile"],
+      "mastery": "topple",
+      "versatileDice": {
+        "count": 1,
+        "die": "d8"
+      }
+    },
+    {
+      "id": "dagger",
+      "name": "Dague",
+      "category": "simple-melee",
+      "priceCp": 200,
+      "weightKg": 0.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "piercing",
+      "properties": ["finesse", "light", "thrown"],
+      "mastery": "nick",
+      "range": {
+        "normal": 6,
+        "max": 18
+      }
+    },
+    {
+      "id": "club",
+      "name": "Gourdin",
+      "category": "simple-melee",
+      "priceCp": 10,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["light"],
+      "mastery": "slow"
+    },
+    {
+      "id": "handaxe",
+      "name": "Hachette",
+      "category": "simple-melee",
+      "priceCp": 500,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "slashing",
+      "properties": ["light", "thrown"],
+      "mastery": "vex",
+      "range": {
+        "normal": 6,
+        "max": 18
+      }
+    },
+    {
+      "id": "javelin",
+      "name": "Javeline",
+      "category": "simple-melee",
+      "priceCp": 50,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "piercing",
+      "properties": ["thrown"],
+      "mastery": "slow",
+      "range": {
+        "normal": 9,
+        "max": 36
+      }
+    },
+    {
+      "id": "spear",
+      "name": "Lance",
+      "category": "simple-melee",
+      "priceCp": 100,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "piercing",
+      "properties": ["thrown", "versatile"],
+      "mastery": "sap",
+      "range": {
+        "normal": 6,
+        "max": 18
+      },
+      "versatileDice": {
+        "count": 1,
+        "die": "d8"
+      }
+    },
+    {
+      "id": "light-hammer",
+      "name": "Marteau léger",
+      "category": "simple-melee",
+      "priceCp": 200,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["light", "thrown"],
+      "mastery": "nick",
+      "range": {
+        "normal": 6,
+        "max": 18
+      }
+    },
+    {
+      "id": "mace",
+      "name": "Masse d'armes",
+      "category": "simple-melee",
+      "priceCp": 500,
+      "weightKg": 2,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "bludgeoning",
+      "properties": [],
+      "mastery": "sap"
+    },
+    {
+      "id": "greatclub",
+      "name": "Massue",
+      "category": "simple-melee",
+      "priceCp": 20,
+      "weightKg": 5,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["two-handed"],
+      "mastery": "push"
+    },
+    {
+      "id": "sickle",
+      "name": "Serpe",
+      "category": "simple-melee",
+      "priceCp": 100,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "slashing",
+      "properties": ["light"],
+      "mastery": "nick"
+    },
+    {
+      "id": "light-crossbow",
+      "name": "Arbalète légère",
+      "category": "simple-ranged",
+      "priceCp": 2500,
+      "weightKg": 2.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "two-handed", "ammunition"],
+      "mastery": "slow",
+      "range": {
+        "normal": 24,
+        "max": 96
+      }
+    },
+    {
+      "id": "shortbow",
+      "name": "Arc court",
+      "category": "simple-ranged",
+      "priceCp": 2500,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "piercing",
+      "properties": ["two-handed", "ammunition"],
+      "mastery": "vex",
+      "range": {
+        "normal": 24,
+        "max": 96
+      }
+    },
+    {
+      "id": "dart",
+      "name": "Fléchette",
+      "category": "simple-ranged",
+      "priceCp": 5,
+      "weightKg": 0.125,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "piercing",
+      "properties": ["finesse", "thrown"],
+      "mastery": "vex",
+      "range": {
+        "normal": 6,
+        "max": 18
+      }
+    },
+    {
+      "id": "sling",
+      "name": "Fronde",
+      "category": "simple-ranged",
+      "priceCp": 10,
+      "weightKg": 0,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["ammunition"],
+      "mastery": "slow",
+      "range": {
+        "normal": 9,
+        "max": 36
+      }
+    },
+    {
+      "id": "scimitar",
+      "name": "Cimeterre",
+      "category": "martial-melee",
+      "priceCp": 2500,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "slashing",
+      "properties": ["finesse", "light"],
+      "mastery": "nick"
+    },
+    {
+      "id": "glaive",
+      "name": "Coutille",
+      "category": "martial-melee",
+      "priceCp": 2000,
+      "weightKg": 3,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "slashing",
+      "properties": ["reach", "two-handed", "heavy"],
+      "mastery": "graze"
+    },
+    {
+      "id": "greatsword",
+      "name": "Épée à deux mains",
+      "category": "martial-melee",
+      "priceCp": 5000,
+      "weightKg": 3,
+      "damageDice": {
+        "count": 2,
+        "die": "d6"
+      },
+      "damageType": "slashing",
+      "properties": ["two-handed", "heavy"],
+      "mastery": "graze"
+    },
+    {
+      "id": "shortsword",
+      "name": "Épée courte",
+      "category": "martial-melee",
+      "priceCp": 1000,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "piercing",
+      "properties": ["finesse", "light"],
+      "mastery": "vex"
+    },
+    {
+      "id": "longsword",
+      "name": "Épée longue",
+      "category": "martial-melee",
+      "priceCp": 1500,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "mastery": "sap",
+      "versatileDice": {
+        "count": 1,
+        "die": "d10"
+      }
+    },
+    {
+      "id": "flail",
+      "name": "Fléau d'armes",
+      "category": "martial-melee",
+      "priceCp": 1000,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "bludgeoning",
+      "properties": [],
+      "mastery": "sap"
+    },
+    {
+      "id": "whip",
+      "name": "Fouet",
+      "category": "martial-melee",
+      "priceCp": 200,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d4"
+      },
+      "damageType": "slashing",
+      "properties": ["reach", "finesse"],
+      "mastery": "slow"
+    },
+    {
+      "id": "greataxe",
+      "name": "Hache à deux mains",
+      "category": "martial-melee",
+      "priceCp": 3000,
+      "weightKg": 3.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d12"
+      },
+      "damageType": "slashing",
+      "properties": ["two-handed", "heavy"],
+      "mastery": "cleave"
+    },
+    {
+      "id": "battleaxe",
+      "name": "Hache d'armes",
+      "category": "martial-melee",
+      "priceCp": 1000,
+      "weightKg": 2,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "slashing",
+      "properties": ["versatile"],
+      "mastery": "topple",
+      "versatileDice": {
+        "count": 1,
+        "die": "d10"
+      }
+    },
+    {
+      "id": "halberd",
+      "name": "Hallebarde",
+      "category": "martial-melee",
+      "priceCp": 2000,
+      "weightKg": 3,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "slashing",
+      "properties": ["reach", "two-handed", "heavy"],
+      "mastery": "cleave"
+    },
+    {
+      "id": "lance",
+      "name": "Lance d'arçon",
+      "category": "martial-melee",
+      "priceCp": 1000,
+      "weightKg": 3,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "piercing",
+      "properties": ["reach", "two-handed", "heavy"],
+      "mastery": "topple"
+    },
+    {
+      "id": "maul",
+      "name": "Maillet d'armes",
+      "category": "martial-melee",
+      "priceCp": 1000,
+      "weightKg": 5,
+      "damageDice": {
+        "count": 2,
+        "die": "d6"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["two-handed", "heavy"],
+      "mastery": "topple"
+    },
+    {
+      "id": "warhammer",
+      "name": "Marteau de guerre",
+      "category": "martial-melee",
+      "priceCp": 1500,
+      "weightKg": 2.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "bludgeoning",
+      "properties": ["versatile"],
+      "mastery": "push",
+      "versatileDice": {
+        "count": 1,
+        "die": "d10"
+      }
+    },
+    {
+      "id": "morningstar",
+      "name": "Morgenstern",
+      "category": "martial-melee",
+      "priceCp": 1500,
+      "weightKg": 2,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": [],
+      "mastery": "sap"
+    },
+    {
+      "id": "war-pick",
+      "name": "Pic de guerre",
+      "category": "martial-melee",
+      "priceCp": 500,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": ["versatile"],
+      "mastery": "sap",
+      "versatileDice": {
+        "count": 1,
+        "die": "d10"
+      }
+    },
+    {
+      "id": "pike",
+      "name": "Pique",
+      "category": "martial-melee",
+      "priceCp": 500,
+      "weightKg": 9,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "piercing",
+      "properties": ["reach", "two-handed", "heavy"],
+      "mastery": "push"
+    },
+    {
+      "id": "rapier",
+      "name": "Rapière",
+      "category": "martial-melee",
+      "priceCp": 2500,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": ["finesse"],
+      "mastery": "vex"
+    },
+    {
+      "id": "trident",
+      "name": "Trident",
+      "category": "martial-melee",
+      "priceCp": 500,
+      "weightKg": 2,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": ["thrown", "versatile"],
+      "mastery": "topple",
+      "range": {
+        "normal": 6,
+        "max": 18
+      },
+      "versatileDice": {
+        "count": 1,
+        "die": "d10"
+      }
+    },
+    {
+      "id": "hand-crossbow",
+      "name": "Arbalète de poing",
+      "category": "martial-ranged",
+      "priceCp": 7500,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d6"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "light", "ammunition"],
+      "mastery": "vex",
+      "range": {
+        "normal": 9,
+        "max": 36
+      }
+    },
+    {
+      "id": "heavy-crossbow",
+      "name": "Arbalète lourde",
+      "category": "martial-ranged",
+      "priceCp": 5000,
+      "weightKg": 9,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "two-handed", "heavy", "ammunition"],
+      "mastery": "push",
+      "range": {
+        "normal": 30,
+        "max": 120
+      }
+    },
+    {
+      "id": "longbow",
+      "name": "Arc long",
+      "category": "martial-ranged",
+      "priceCp": 5000,
+      "weightKg": 1,
+      "damageDice": {
+        "count": 1,
+        "die": "d8"
+      },
+      "damageType": "piercing",
+      "properties": ["two-handed", "heavy", "ammunition"],
+      "mastery": "slow",
+      "range": {
+        "normal": 45,
+        "max": 180
+      }
+    },
+    {
+      "id": "musket",
+      "name": "Mousquet",
+      "category": "martial-ranged",
+      "priceCp": 50000,
+      "weightKg": 5,
+      "damageDice": {
+        "count": 1,
+        "die": "d12"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "two-handed", "ammunition"],
+      "mastery": "slow",
+      "range": {
+        "normal": 12,
+        "max": 36
+      }
+    },
+    {
+      "id": "pistol",
+      "name": "Pistolet",
+      "category": "martial-ranged",
+      "priceCp": 25000,
+      "weightKg": 1.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d10"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "ammunition"],
+      "mastery": "vex",
+      "range": {
+        "normal": 9,
+        "max": 27
+      }
+    },
+    {
+      "id": "blowgun",
+      "name": "Sarbacane",
+      "category": "martial-ranged",
+      "priceCp": 1000,
+      "weightKg": 0.5,
+      "damageDice": {
+        "count": 1,
+        "die": "d1"
+      },
+      "damageType": "piercing",
+      "properties": ["loading", "ammunition"],
+      "mastery": "vex",
+      "range": {
+        "normal": 7.5,
+        "max": 30
+      }
+    },
+    {
+      "id": "arcane-focus-crystal",
+      "name": "Focaliseur arcanique (cristal)",
+      "category": "focus",
+      "priceCp": 1000,
+      "weightKg": 0.5,
+      "properties": []
+    },
+    {
+      "id": "arcane-focus-orb",
+      "name": "Focaliseur arcanique (orbe)",
+      "category": "focus",
+      "priceCp": 2000,
+      "weightKg": 1.5,
+      "properties": []
+    },
+    {
+      "id": "arcane-focus-rod",
+      "name": "Focaliseur arcanique (sceptre)",
+      "category": "focus",
+      "priceCp": 1000,
+      "weightKg": 1,
+      "properties": []
+    },
+    {
+      "id": "arcane-focus-staff",
+      "name": "Focaliseur arcanique (bâton)",
+      "category": "focus",
+      "priceCp": 500,
+      "weightKg": 2,
+      "properties": []
+    },
+    {
+      "id": "arcane-focus-wand",
+      "name": "Focaliseur arcanique (baguette)",
+      "category": "focus",
+      "priceCp": 1000,
+      "weightKg": 0.5,
+      "properties": []
+    },
+    {
+      "id": "druidic-focus-sprig",
+      "name": "Focaliseur druidique (branche de houx)",
+      "category": "focus",
+      "priceCp": 100,
+      "properties": []
+    },
+    {
+      "id": "druidic-focus-staff",
+      "name": "Focaliseur druidique (bâton en bois)",
+      "category": "focus",
+      "priceCp": 500,
+      "weightKg": 2,
+      "properties": []
+    },
+    {
+      "id": "druidic-focus-yew-wand",
+      "name": "Focaliseur druidique (baguette d'if)",
+      "category": "focus",
+      "priceCp": 1000,
+      "weightKg": 0.5,
+      "properties": []
+    },
+    {
+      "id": "holy-symbol-amulet",
+      "name": "Symbole sacré (amulette)",
+      "category": "focus",
+      "priceCp": 500,
+      "weightKg": 0.5,
+      "properties": []
+    },
+    {
+      "id": "holy-symbol-emblem",
+      "name": "Symbole sacré (emblème)",
+      "category": "focus",
+      "priceCp": 500,
+      "properties": []
+    },
+    {
+      "id": "holy-symbol-reliquary",
+      "name": "Symbole sacré (reliquaire)",
+      "category": "focus",
+      "priceCp": 500,
+      "weightKg": 1,
+      "properties": []
+    }
+  ],
+  "translations": {
+    "en": {
+      "quarterstaff": {
+        "name": "Quarterstaff"
+      },
+      "dagger": {
+        "name": "Dagger"
+      },
+      "club": {
+        "name": "Club"
+      },
+      "handaxe": {
+        "name": "Handaxe"
+      },
+      "javelin": {
+        "name": "Javelin"
+      },
+      "spear": {
+        "name": "Spear"
+      },
+      "light-hammer": {
+        "name": "Light Hammer"
+      },
+      "mace": {
+        "name": "Mace"
+      },
+      "greatclub": {
+        "name": "Greatclub"
+      },
+      "sickle": {
+        "name": "Sickle"
+      },
+      "light-crossbow": {
+        "name": "Light Crossbow"
+      },
+      "shortbow": {
+        "name": "Shortbow"
+      },
+      "dart": {
+        "name": "Dart"
+      },
+      "sling": {
+        "name": "Sling"
+      },
+      "scimitar": {
+        "name": "Scimitar"
+      },
+      "glaive": {
+        "name": "Glaive"
+      },
+      "greatsword": {
+        "name": "Greatsword"
+      },
+      "shortsword": {
+        "name": "Shortsword"
+      },
+      "longsword": {
+        "name": "Longsword"
+      },
+      "flail": {
+        "name": "Flail"
+      },
+      "whip": {
+        "name": "Whip"
+      },
+      "greataxe": {
+        "name": "Greataxe"
+      },
+      "battleaxe": {
+        "name": "Battleaxe"
+      },
+      "halberd": {
+        "name": "Halberd"
+      },
+      "lance": {
+        "name": "Lance"
+      },
+      "maul": {
+        "name": "Maul"
+      },
+      "warhammer": {
+        "name": "Warhammer"
+      },
+      "morningstar": {
+        "name": "Morningstar"
+      },
+      "war-pick": {
+        "name": "War Pick"
+      },
+      "pike": {
+        "name": "Pike"
+      },
+      "rapier": {
+        "name": "Rapier"
+      },
+      "trident": {
+        "name": "Trident"
+      },
+      "hand-crossbow": {
+        "name": "Hand Crossbow"
+      },
+      "heavy-crossbow": {
+        "name": "Heavy Crossbow"
+      },
+      "longbow": {
+        "name": "Longbow"
+      },
+      "musket": {
+        "name": "Musket"
+      },
+      "pistol": {
+        "name": "Pistol"
+      },
+      "blowgun": {
+        "name": "Blowgun"
+      },
+      "arcane-focus-crystal": {
+        "name": "Arcane Focus (crystal)"
+      },
+      "arcane-focus-orb": {
+        "name": "Arcane Focus (orb)"
+      },
+      "arcane-focus-rod": {
+        "name": "Arcane Focus (rod)"
+      },
+      "arcane-focus-staff": {
+        "name": "Arcane Focus (staff)"
+      },
+      "arcane-focus-wand": {
+        "name": "Arcane Focus (wand)"
+      },
+      "druidic-focus-sprig": {
+        "name": "Druidic Focus (sprig of mistletoe)"
+      },
+      "druidic-focus-staff": {
+        "name": "Druidic Focus (wooden staff)"
+      },
+      "druidic-focus-yew-wand": {
+        "name": "Druidic Focus (yew wand)"
+      },
+      "holy-symbol-amulet": {
+        "name": "Holy Symbol (amulet)"
+      },
+      "holy-symbol-emblem": {
+        "name": "Holy Symbol (emblem)"
+      },
+      "holy-symbol-reliquary": {
+        "name": "Holy Symbol (reliquary)"
+      }
+    }
+  }
+}

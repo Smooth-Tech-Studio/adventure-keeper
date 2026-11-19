@@ -1,0 +1,13 @@
+name: Deploy Firestore rules and indexes (manual)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    # Production rules come from main only, as for the manual Hosting deploy.
+    if: ${{ github.ref == 'refs/heads/main' }}
+    uses: ./.github/workflows/deploy-firestore-reusable.yml
+    with:
+      environment: production
+    secrets: inherit

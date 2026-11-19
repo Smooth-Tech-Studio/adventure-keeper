@@ -1,0 +1,782 @@
+{
+  "substeps": {
+    "feat": {
+      "nav": "Feat: {{name}}",
+      "title": "Your {{name}} feat asks for a few choices",
+      "whyTitle": "Where do these choices come from?",
+      "why": "These choices come from a feat you gained: they are part of the same package, but filling them in is up to you."
+    },
+    "level": {
+      "nav": "Level {{level}}",
+      "epicWhyTitle": "What is an epic boon?",
+      "epicWhy": "At level 19, an epic boon crowns your progression.",
+      "asiWhyTitle": "Improvement or new feat?",
+      "asiWhy": "At this level, you can raise your ability scores or take a feat. The improvement is the safe choice; a feat brings a new ability."
+    },
+    "skills": {
+      "nav": "Skills",
+      "title_one": "Which skill are you proficient in?",
+      "title_other": "Which {{count}} skills are you proficient in?",
+      "whyTitle": "What is a skill for?",
+      "why": "A proficient skill adds your proficiency bonus to every check it covers. Take the ones that fit how you play: talking, searching, surviving, sneaking…"
+    },
+    "tool": {
+      "nav": "Tool",
+      "title_one": "Which tool can you handle?",
+      "title_other": "Which {{count}} tools can you handle?",
+      "whyTitle": "What is a tool for?",
+      "why": "Proficiency with a tool adds your proficiency bonus when you use it: playing an instrument, forging, picking a lock…"
+    },
+    "fighting-style": {
+      "nav": "Fighting style",
+      "title": "What is your fighting style?",
+      "whyTitle": "Which style for which weapon?",
+      "why": "A permanent bonus that shapes the way you fight. Archery for the bow, Defense to take hits, Dueling or Great Weapon Fighting depending on the weapon you plan to carry."
+    },
+    "subclass": {
+      "title": "{{label}}: your choice",
+      "whyTitle": "What does a subclass bring?",
+      "why": "At level 3, your class specialises. The subclass adds its own features at the following levels."
+    },
+    "equipment": {
+      "nav": "Equipment",
+      "title": "What equipment do you set out with?",
+      "whyTitle": "Pack or gold pieces?",
+      "why": "The pack equips you right away and leaves a little gold. Gold alone lets you buy everything yourself at the Equipment step: more freedom, more time."
+    },
+    "lineage": {
+      "title": "{{label}}: your choice",
+      "whyTitle": "What does it change?",
+      "why": "This choice specifies what your species gives you: spells, resistance, speed or vision depending on the option."
+    },
+    "size": {
+      "nav": "Size",
+      "title": "What is your size?",
+      "whyTitle": "Small or Medium, what's the difference?",
+      "why": "Mostly a matter of looks: the rules treat a Small and a Medium creature almost the same way."
+    },
+    "skill": {
+      "title": "Which extra skill?",
+      "whyTitle": "Where does this skill come from?",
+      "why": "A trait of your species makes you proficient in an extra skill."
+    },
+    "spell-ability": {
+      "nav": "Spellcasting",
+      "title": "Which ability do you cast your species spells with?",
+      "whyTitle": "Which one to pick?",
+      "why": "It sets the attack bonus and the DC of those spells. Take your best mental ability, usually your class's."
+    },
+    "origin-feat": {
+      "nav": "Origin feat",
+      "title": "Which origin feat do you take?",
+      "whyTitle": "What is an origin feat?",
+      "why": "An origin feat is a small starting talent. If it asks for choices (skills, spells…), they come at the next sub-step."
+    },
+    "spells": {
+      "nav": "Spells",
+      "title": "Which spells do you take along?",
+      "lead": "Fill both hands: cantrips first, then prepared spells.",
+      "whyTitle": "Cantrips or prepared spells?",
+      "why": "Cantrips are cast at will. Prepared spells use up a slot: take enough to heal, protect or strike depending on your role in the group. You can change them later from the sheet."
+    },
+    "masteries": {
+      "nav": "Weapon masteries",
+      "title": "Which weapons have you truly mastered?",
+      "lead": "You use the mastery property of these weapons on every attack.",
+      "whyTitle": "What is a weapon mastery for?",
+      "why": "A mastery adds an effect to every hit with the weapon: topple, slow, push… Take the ones you plan to carry: the weapons in your pack head the list. You can change them from the sheet."
+    },
+    "expertise": {
+      "nav": "Expertise",
+      "title": "Which skills do you excel at?",
+      "lead": "Your proficiency bonus counts double for these skills.",
+      "whyTitle": "Which skills to choose?",
+      "why": "Only the skills you are already proficient in are offered: your class's, then your species' and background's once chosen. Take the ones that make your name in the group: sneaking, convincing, spotting…"
+    },
+    "hit-points": {
+      "nav": "Hit points",
+      "title": "How many hit points do you gain each level?",
+      "lead": "Beyond level 1, each level adds a hit die: take the average, or roll it.",
+      "whyTitle": "Average or roll?",
+      "why": "The average is safe. The roll may do better… or worse. Your GM may have a preference: some tables require one or the other."
+    },
+    "impact": {
+      "nav": "What changes",
+      "title": "What this change removes and brings",
+      "lead": "Nothing changes on the sheet until you apply the changes.",
+      "whyTitle": "What happens to my old choices?",
+      "why": "A new origin or a new class takes its traits, its features and what it had you choose with it. The next screens only ask the new questions."
+    },
+    "pick": {
+      "class": {
+        "title": "Which class do you want to play?",
+        "noun": "the class"
+      },
+      "species": {
+        "title": "What species are you?",
+        "noun": "the species"
+      },
+      "background": {
+        "title": "What life did you lead before adventuring?",
+        "noun": "the background"
+      },
+      "pending": "Options for {{noun}}"
+    },
+    "identity": {
+      "nav": "Name and level",
+      "title": "What is your character called?",
+      "lead": "The starting level decides the features and choices that follow.",
+      "whyTitle": "What level to start at?",
+      "why": "Most campaigns start at level 1. Beyond that, the subclass (level 3) and level feats (4, 8…) are added to the sub-steps."
+    },
+    "features": {
+      "nav": "Your features",
+      "title": "What your {{class}} can do",
+      "lead": "Nothing to choose here: these are the features gained up to level {{level}}.",
+      "whyTitle": "Where to find them later?",
+      "why": "These features will appear on the sheet, with their uses per rest.",
+      "fallback": "character"
+    },
+    "traits": {
+      "nav": "Your traits",
+      "title": "What your species gives you",
+      "lead": "Nothing to choose here: your traits apply as they are.",
+      "whyTitle": "Do these traits change?",
+      "why": "Species traits don't depend on level, except lineage spells, which arrive at levels 3 and 5."
+    },
+    "alignment": {
+      "nav": "Alignment",
+      "title": "What is your moral compass?",
+      "lead": "Alignment sums up in two words how your character usually acts.",
+      "whyTitle": "What is alignment for?",
+      "why": "It has no effect in play: it's a landmark for you and your GM. A character can change over a campaign."
+    },
+    "languages": {
+      "nav": "Languages",
+      "title": "Which languages do you speak?",
+      "lead": "You already speak the languages you gained; add {{count}} more.",
+      "whyTitle": "Which ones to pick?",
+      "why": "Standard languages come up often; rare languages are precious in some campaigns. Ask your GM where the adventure takes place."
+    },
+    "lore": {
+      "nav": "Backstory",
+      "title": "Where does your character come from?",
+      "lead": "Optional: a few lines are enough to give the GM something to work with.",
+      "whyTitle": "Where to start?",
+      "why": "Think about what links your past as a {{background}} to the adventure: a bond, a debt, a secret, a goal.",
+      "fallback": "hero"
+    },
+    "method": {
+      "nav": "Method",
+      "title": "How do you determine your scores?",
+      "lead": "The four methods give six scores; they differ in how much chance and freedom they leave.",
+      "whyTitle": "Which method to choose?",
+      "why": "The standard array is the simplest and most balanced. Point buy lets you fine-tune. Dice give more uneven characters. Ask your GM what they prefer."
+    },
+    "values": {
+      "nav": "Scores",
+      "title": "Place your six scores",
+      "lead": "Put your best scores in {{abilities}}: that's what your class needs most.",
+      "whyTitle": "Where to put the best scores?",
+      "why": "Put the highest in your class's primary ability: it sets your attacks or your spells. “Suggested” proposes a typical spread, which you don't have to follow.",
+      "and": " and "
+    },
+    "bonus": {
+      "nav": "Background bonuses",
+      "title": "Where do your background's bonuses go?",
+      "lead": "{{background}}: +2 and +1, or +1 to three abilities, among {{abilities}}.",
+      "whyTitle": "Where to put the bonuses?",
+      "why": "In 2024, the background, not the species, gives the ability score bonuses. Boosting your primary ability almost always pays off."
+    },
+    "recap": {
+      "nav": "Numbers",
+      "title": "Your character by the numbers",
+      "lead": "Everything that follows from your scores, your class and your species.",
+      "whyTitle": "What if I change my mind?",
+      "why": "You can go back to any sub-step from the left panel: everything is recalculated."
+    },
+    "kit": {
+      "nav": "Pack",
+      "title": "What you already carry",
+      "lead": "Your class and background packs, and the gold you have left.",
+      "whyTitle": "What if I only took gold?",
+      "why": "If you took gold rather than a pack, it all happens at the next sub-step. You can still change pack from the Class and Background steps."
+    },
+    "shop": {
+      "nav": "Shop",
+      "title": "Fill up your bag",
+      "lead": "Only adventuring gear is for sale: weapons and armor come from the class pack.",
+      "whyTitle": "What should I buy?",
+      "why": "Rope, torches, rations, a healing potion: the classics that save a first session. Going over your purse is allowed, your GM will decide."
+    },
+    "review": {
+      "nav": "Review",
+      "title": "Your character is almost ready",
+      "lead": "Here is the sheet as it will be saved. Each block has a button to go back to the right sub-step."
+    },
+    "wildShape": {
+      "nav": "Wild Shape forms",
+      "title": "Which beasts can you turn into?",
+      "lead": "Tick the forms your druid knows.",
+      "whyTitle": "Why pick them now?",
+      "why": "Wild Shape only uses known forms: their number and highest CR grow at levels 4 and 8, and flight comes at level 8. In play, you can swap a form after a long rest, from the sheet."
+    },
+    "skill-swap": {
+      "nav": "Skill taken twice",
+      "title": "A skill taken twice",
+      "whyTitle": "Why this screen?",
+      "why": "When two sources give the same skill, the second would be wasted: the rules let you pick another one, among those you are not proficient in yet."
+    }
+  },
+  "issues": {
+    "pick": "Choose {{noun}} to continue.",
+    "name": "Give your character a name.",
+    "alignment": "Choose an alignment.",
+    "languages": "Choose {{count}} languages ({{picked}} / {{count}}).",
+    "values": "Fill in the 6 ability scores.",
+    "cantrips": "Cantrips: {{picked}} of {{cap}}.",
+    "spells": "Prepared spells: {{picked}} of {{cap}}.",
+    "masteriesMax": "Weapon masteries: {{picked}} of {{slots}} at most.",
+    "masteries": "Weapon masteries: {{picked}} of {{needed}}.",
+    "expertise": "Expertise: {{picked}} of {{count}}.",
+    "expertiseProficient": "Expertise only applies to a skill you are proficient in.",
+    "wildShape": "Wild Shape forms: {{picked}} of {{count}}.",
+    "hitPoints_one": "Choose how you gain your hit points.",
+    "hitPoints_other": "Choose the hit points of {{count}} levels."
+  },
+  "rail": {
+    "cantrips_one": "{{count}} cantrip",
+    "cantrips_other": "{{count}} cantrips",
+    "prepared_one": "{{count}} prepared",
+    "prepared_other": "{{count}} prepared",
+    "weapons_one": "{{count}} weapon",
+    "weapons_other": "{{count}} weapons",
+    "skills_one": "{{count}} skill",
+    "skills_other": "{{count}} skills",
+    "languages": "{{count}} chosen",
+    "lore": "Written",
+    "items_one": "{{count}} item",
+    "items_other": "{{count}} items",
+    "heading": "Character creation",
+    "guestSave": "Create an account to save",
+    "saveDraft": "Save as draft",
+    "guestNote": "Without an account, the creation stays on this device",
+    "savedAt": "Draft saved at {{time}}",
+    "autosave": "Saved automatically on this device",
+    "cancel": "Cancel the creation",
+    "hitDice": "Hit dice",
+    "proficiency": "Proficiency bonus",
+    "speed": "Speed",
+    "darkvision": "Darkvision",
+    "passivePerception": "Passive perception",
+    "saves": "Saving throws",
+    "summary": "Summary",
+    "untitled": "Unnamed",
+    "maxHp": "Max HP",
+    "ac": "AC",
+    "initiative": "Init.",
+    "skills": "Skills",
+    "noSkills": "None yet",
+    "feats": "Feats",
+    "languagesLabel": "Languages",
+    "forms_one": "{{count}} form",
+    "forms_other": "{{count}} forms",
+    "hitPointsSettled": "Settled"
+  },
+  "steps": {
+    "class": {
+      "label": "Class",
+      "title": "Step 1: Class",
+      "description": "Your class decides your hit points, your proficiencies and what you can do in combat."
+    },
+    "species": {
+      "label": "Species",
+      "title": "Step 2: Species",
+      "description": "Your species sets your size, your speed and your traits. It gives no ability score bonus in 2024."
+    },
+    "background": {
+      "label": "Background",
+      "title": "Step 3: Background",
+      "description": "Your background brings two skills, a tool proficiency, an origin feat and your ability score bonuses."
+    },
+    "abilities": {
+      "label": "Ability scores",
+      "title": "Step 4: Ability scores",
+      "description": "Spread your six scores, then add your background's bonuses. HP, proficiency and hit die follow from them."
+    },
+    "shop": {
+      "label": "Equipment",
+      "title": "Step 5: Equipment",
+      "description": "Take stock of your pack, top it up at the shop, then review the sheet."
+    }
+  },
+  "facts": {
+    "armor": {
+      "light": "Light",
+      "medium": "Medium",
+      "heavy": "Heavy",
+      "shield": "Shields"
+    },
+    "noArmor": "None",
+    "weapons": {
+      "all": "Simple and martial",
+      "light": "Simple, light martial",
+      "finesseOrLight": "Simple, finesse or light martial",
+      "simple": "Simple"
+    }
+  },
+  "impact": {
+    "trait": "Trait · {{species}}",
+    "speciesTrait": "Species trait",
+    "feature": "Feature · {{class}}",
+    "feat": "Feat",
+    "skill": "Proficient skill",
+    "spell": "Spell",
+    "language": "Language known",
+    "class": "Class",
+    "species": "Species",
+    "background": "Background",
+    "level": "Level",
+    "scores": "Ability scores",
+    "equipment": "Equipment and purse",
+    "identity": "Name, alignment, backstory",
+    "maxHp": "Max HP",
+    "ac": "Armor class",
+    "speed": "Speed",
+    "darkvision": "Darkvision",
+    "none": "none",
+    "passivePerception": "Passive perception",
+    "spellDc": "Spell save DC"
+  },
+  "shell": {
+    "pointBuyRange": "Point buy: each score must stay between 8 and 15.",
+    "pointBuyOver": "Point buy: {{total}} / 27, over budget.",
+    "pickBackgroundFirst": "Choose a background first.",
+    "invalidBonuses": "Invalid background spread.",
+    "guestHandOff": "Create an account or sign in: your character is waiting for you here.",
+    "draftSaved": "Draft saved.",
+    "saveFailed": "Could not save. Try again.",
+    "choiceLeft": "One choice is still to be made before confirming.",
+    "sheetUpdated": "Sheet updated.",
+    "created": "Character created.",
+    "classLevel": "{{name}} · lvl {{level}}",
+    "purse": "Purse: {{amount}}",
+    "nextStep": "Step {{number}} · {{label}}",
+    "backToReview": "Back to the review",
+    "rebuildHeadings": {
+      "class": "Change class",
+      "species": "Change species",
+      "background": "Change background"
+    },
+    "quit": "Leave without saving",
+    "eyebrow": "Step {{number}} · {{step}} — {{current}} of {{total}}",
+    "classLabel": "Class",
+    "change": "Change",
+    "previous": "Previous",
+    "cancel": "Cancel",
+    "guestSave": "Create an account to save",
+    "saveDraft": "Save as draft",
+    "saving": "Saving…",
+    "apply": "Save",
+    "validate": "Confirm the creation",
+    "skip": "Skip",
+    "next": "Next",
+    "confirmTitle": "Apply the changes to {{name}}?",
+    "theSheet": "the sheet",
+    "confirmText": "Here is the sheet before and after. Removed items disappear when you save.",
+    "back": "Go back",
+    "applyShort": "Save"
+  },
+  "screen": {
+    "why": "Why this choice?"
+  },
+  "shop": {
+    "search": "Search for an item…",
+    "item": "Item",
+    "weight": "Weight",
+    "price": "Price",
+    "noMatch": "No item matches.",
+    "loading": "Loading the catalogue…",
+    "buy": "Buy {{name}}",
+    "purse": "Purse",
+    "overspent": "You are over your purse by {{amount}}. You can carry on — your GM will decide.",
+    "noGold": "Your starting pack leaves no gold. Take the “gold” option again at steps 1 or 3 to buy things yourself.",
+    "backpack": "Backpack contents",
+    "fromPacks": "From your packs",
+    "bought": "Bought at the shop",
+    "nothing": "Nothing yet.",
+    "remove": "Remove {{name}}"
+  },
+  "impactStep": {
+    "lost": "Removed from the sheet",
+    "lostEmpty": "Nothing is removed.",
+    "gained": "Added automatically",
+    "gainedEmpty": "Nothing is added automatically.",
+    "upcoming": "To choose next",
+    "kept": "Stays the same",
+    "before": "Before",
+    "after": "After",
+    "ack_one": "Understood: this item will be removed when I apply the changes. Nothing moves before that.",
+    "ack_other": "Understood: these {{count}} items will be removed when I apply the changes. Nothing moves before that.",
+    "ackNone": "Understood: the sheet will change when I apply the changes. Nothing moves before that."
+  },
+  "choice": {
+    "search": "Search…",
+    "noResult": "No results.",
+    "groups": {
+      "skills": "Skills",
+      "artisan": "Artisan's tools",
+      "instrument": "Musical instruments",
+      "gaming": "Gaming sets",
+      "otherTools": "Other tools"
+    }
+  },
+  "spells": {
+    "loading": "Loading spells…",
+    "cantrips": "Cantrips",
+    "preparedUpTo": "Prepared spells, up to level {{level}}",
+    "prepared": "Prepared spells",
+    "always": "Always prepared",
+    "alwaysHint": "Granted by a feature, the species or an invocation: they don't count towards your hands.",
+    "invocations": "Eldritch invocations",
+    "grantedBy": "Granted by {{sources}}: always prepared, outside the count, and cannot be removed."
+  },
+  "fixed": {
+    "tiers": {
+      "local": "Local heroes",
+      "realm": "Heroes of the realm",
+      "masters": "Masters of the realm",
+      "world": "Masters of the world"
+    },
+    "unlockSubclass": "{{label}} (lvl {{level}})",
+    "unlockAsi": "Improvement or feat (lvl {{level}})",
+    "unlockEpic": "Epic boon (lvl {{level}})",
+    "name": "Character name",
+    "namePlaceholder": "Ysolde Mistwind",
+    "nameHint": ". A name, a nickname, a title: you can change it later.",
+    "nameRequired": "Name required.",
+    "startLevel": "Starting level",
+    "level": "Level {{level}}",
+    "legendSubclass": "{{subclass}}",
+    "legendAsi": "ability score improvement or feat",
+    "legendEpic": "epic boon",
+    "levelOne": "Level 1: no extra choices, the simplest way to start.",
+    "upcoming": "Coming up",
+    "proficiencies": "Proficiencies",
+    "armor": "Armor",
+    "weapons": "Weapons",
+    "size": "Size",
+    "speed": "Speed",
+    "darkvision": "Darkvision",
+    "resistances": "Resistances",
+    "profile": "Profile",
+    "ethics": {
+      "L": "Lawful",
+      "N": "Neutral",
+      "C": "Chaotic"
+    },
+    "morals": {
+      "G": "Good",
+      "N": "Neutral",
+      "E": "Evil"
+    },
+    "known": "Known · {{source}}",
+    "standardLanguages": "Standard languages",
+    "toPick": "{{picked}} / {{count}} to choose",
+    "rareLanguages": "Rare languages",
+    "lorePlaceholder": "Where do they come from, what drives them…",
+    "loreMarkdownHint": "Markdown formatting: # headings, **bold**, *italic*, - lists, > quotes.",
+    "loreLater": "No rush: you can write or rework this story later, from the character sheet.",
+    "featureChoice": "{{feature}}: {{choice}}"
+  },
+  "kit": {
+    "weapons": "Weapons",
+    "armors": "Armor",
+    "tools": "Tools",
+    "gear": "Gear",
+    "purse": "Purse",
+    "noPack": "No pack chosen yet.",
+    "goldOnly": "Gold only: everything is bought at the next sub-step."
+  },
+  "review": {
+    "edit": "Edit",
+    "featureSource": "{{class}} · lvl {{level}}",
+    "levelSource": "Lvl {{level}}",
+    "untitled": "Unnamed",
+    "level": " level {{level}}",
+    "todo_one": "{{count}} item to complete",
+    "todo_other": "{{count}} items to complete",
+    "ready": "Ready for adventure",
+    "readyHint": "Everything is filled in. Review, then confirm.",
+    "nameLevel": "Name and level",
+    "hp": "Hit points",
+    "ac": "Armor class",
+    "equipped": "equipped",
+    "noArmor": "unarmored",
+    "initiative": "Initiative",
+    "dexterity": "Dexterity",
+    "speed": "Speed",
+    "speedUnit": "feet",
+    "proficiency": "Proficiency",
+    "levelNote": "level {{level}}",
+    "passivePerception": "Passive perception",
+    "vision": "vision {{range}}",
+    "save": "Save {{value}}",
+    "skills": "Skills",
+    "features": "Features, traits and feats",
+    "classLink": "Class",
+    "spells": "Spells",
+    "cantrip": "Cantrip",
+    "spellLevel": "Level {{level}}",
+    "equipment": "Equipment",
+    "shopLink": "Shop",
+    "purse": "Purse",
+    "proficiencies": "Proficiencies",
+    "armor": "Armor",
+    "weapons": "Weapons",
+    "tools": "Tools",
+    "resistances": "Resistances",
+    "lore": "Backstory",
+    "write": "Write",
+    "noLore": "Not written yet: optional, but your GM will appreciate it.",
+    "alwaysPrepared": "Always prepared",
+    "almost": "Almost ready",
+    "noPreview": "The sheet shows here once the six ability scores are set."
+  },
+  "abilities": {
+    "hints": {
+      "standardArray": "15, 14, 13, 12, 10 and 8 to place. Balanced, no surprises.",
+      "pointBuy": "{{budget}} points to spread between 8 and 15. The most control.",
+      "roll": "4d6 six times, keep the three best dice. Chance and surprises.",
+      "manual": "You copy scores obtained elsewhere: at the table, on a paper sheet."
+    },
+    "trayDone": "All the tokens are placed. Click an ability to take its token back.",
+    "traySelected": "Now click an ability.",
+    "trayIdle": "Click a token then an ability, or drag it.",
+    "primary": "primary",
+    "rollLabel": "Score {{index}} / 6",
+    "rollDetail": "4d6 {{rolls}} — dropping {{dropped}}",
+    "roll": "Roll 4d6",
+    "rerollAll": "Reroll all",
+    "points": "{{total}} / {{budget}} points",
+    "cost": "Cost:",
+    "suggested": "Suggested: {{value}}",
+    "mod": "Mod.",
+    "lower": "Lower {{ability}}",
+    "raise": "Raise {{ability}}",
+    "useSuggested": "Use the suggested scores ({{class}})",
+    "total": "Total",
+    "notOffered": "Not offered by {{background}}",
+    "theBackground": "the background",
+    "fillFirst": "Fill in your six scores first.",
+    "maxHp": "Max HP",
+    "ac": "AC",
+    "proficiency": "Proficiency",
+    "initiative": "Initiative",
+    "passivePerception": "Passive perception",
+    "hitDice": "Hit dice",
+    "proficientSkills": "Proficient skills"
+  },
+  "cards": {
+    "filters": {
+      "style": "Play style",
+      "martial": "Fighters",
+      "caster": "Spellcasters",
+      "hybrid": "Blade and magic",
+      "handling": "Ease of play",
+      "low": "Simple to play",
+      "average": "Intermediate",
+      "high": "Demanding",
+      "all": "All classes",
+      "label": "Filter the classes"
+    },
+    "previous": "Previous card",
+    "next": "Next card",
+    "keep": "Keep this choice",
+    "choose": "Choose: {{name}}",
+    "chosen": "Chosen",
+    "details": "Details",
+    "pack": "Pack · {{name}}",
+    "back": "Back",
+    "roles": {
+      "martial": "Fighter",
+      "caster": "Spellcaster",
+      "hybrid": "Blade and magic"
+    },
+    "hitDie": "Hit die",
+    "primary": "Primary ability",
+    "style": "Play style",
+    "handling": "Ease of play",
+    "atLevel1": "At level 1",
+    "saves": "Saving throws",
+    "armor": "Armor",
+    "weapons": "Weapons",
+    "skills": "Skills",
+    "skillsCount": "{{count}} of your choice",
+    "skillsOffered": "Skills offered",
+    "subclassAt": "{{label}} · level 3",
+    "size": "Size",
+    "or": " or ",
+    "speed": "Speed",
+    "darkvision": "Darkvision",
+    "resistances": "Resistances",
+    "language": "Language",
+    "traits": "Traits",
+    "abilities": "Ability scores",
+    "yourChoice": "Your choice",
+    "twoOfChoice": "2 of your choice",
+    "originFeat": "Origin feat",
+    "oneOfChoice": "1 of your choice",
+    "tool": "Tool",
+    "startingEquipment": "Starting equipment"
+  },
+  "visual": {
+    "kinds": {
+      "armor": "Armor",
+      "weapon": "Weapons",
+      "tool": "Tools",
+      "gear": "Gear",
+      "pack": "Pack"
+    },
+    "toChooseBelow": "{{label}}: to choose below",
+    "toolAbove": "The tool chosen above",
+    "acLine": "AC {{value}}",
+    "or": "or",
+    "buyAll": "Buy everything yourself",
+    "gold": "{{count}} gp",
+    "plusGold": "+ {{count}} gp",
+    "shopLater": "You will go shopping at the Equipment step.",
+    "chosen": "Chosen",
+    "cantrip": "Cantrip",
+    "spellLevel": "Level {{level}}",
+    "castingTime": "Casting time",
+    "range": "Range",
+    "components": "Components",
+    "none": "none",
+    "duration": "Duration",
+    "concentration": "Concentration",
+    "ritual": "Ritual",
+    "loading": "Loading spells…",
+    "hand": "Your hand · {{picked}} / {{count}}",
+    "putBack": "Put back in the deck",
+    "removeTag": " · remove",
+    "spell": "Spell",
+    "searchSpells": "Search among {{count}} spells…",
+    "scoreMod": " {{score}} · mod. {{mod}}",
+    "tokens": "Tokens to place:",
+    "removePoint": "Remove a point from {{ability}}",
+    "addPoint": "Add a point to {{ability}}",
+    "max20": "20 max",
+    "sizes": {
+      "small": "About 2 to 4 feet tall",
+      "medium": "About 4 to 7 feet tall"
+    },
+    "recommended": "Recommended",
+    "alreadyClass": "This is already your {{ofClass}} spellcasting ability: only one score to raise.",
+    "yourScore": "Your score: {{score}} ({{mod}})",
+    "suggested": "Suggested score for your class: {{value}}",
+    "grantedTag": "Always prepared"
+  },
+  "shell2": {
+    "confirmChange": "Tick the box to confirm this change."
+  },
+  "levelUp": {
+    "gains": {
+      "nav": "What you gain",
+      "title": "At level {{level}}, {{name}} gains…",
+      "yourCharacter": "your character",
+      "lead": "Nothing to choose here: what is chosen comes on the next screens.",
+      "whyTitle": "What about these features?",
+      "why": "The listed features are added to the sheet as they are. Hit points are settled on the next screen."
+    },
+    "hitPointsTitle": "How many hit points do you gain at level {{level}}?",
+    "expertise": {
+      "nav": "Expertise",
+      "title": "Which skills do you excel at?",
+      "lead": "Your proficiency bonus counts double for these skills.",
+      "whyTitle": "Which skills to choose?",
+      "why": "Take the skills you use most: the ones that make your name in the group."
+    },
+    "masteries": {
+      "nav": "Weapon masteries",
+      "title": "Which extra weapon do you master?",
+      "lead": "You use the mastery property of one more weapon.",
+      "whyTitle": "What is a weapon mastery for?",
+      "why": "A mastery adds an effect to every hit with the weapon: topple, slow, push… Take the one you carry most often."
+    },
+    "spells": {
+      "title": "Which spells do you prepare now?",
+      "lead": "Fill up your hands if the level gives more. It's also the time to swap some.",
+      "whyTitle": "Which spells to change?",
+      "why": "Upcast a spell you missed, or replace the one you never cast. Always-prepared spells don't count."
+    },
+    "review": {
+      "nav": "Summary",
+      "title": "Your character at level {{level}}",
+      "lead": "Before and after, recalculated by the rules engine.",
+      "whyTitle": "And then?",
+      "why": "Once confirmed, the sheet moves to the new level. You can still correct a choice from the sheet."
+    },
+    "expertiseIssue": "Expertise: {{picked}} of {{count}}.",
+    "choiceLeft": "One choice is still to be made before confirming.",
+    "done": "{{name}} reaches level {{level}}.",
+    "yourCharacterCap": "Your character",
+    "saveFailed": "Could not save. Try again.",
+    "railSpells": "{{cantrips}} cantrips, {{spells}} prepared",
+    "railSkills": "{{count}} skills",
+    "railRoll": "Roll: {{roll}}",
+    "railAverage": "Average",
+    "step": "Level {{from}} → {{to}}",
+    "heading": "Level up",
+    "quit": "Leave without saving",
+    "eyebrow": "Level {{level}} — {{current}} of {{total}}",
+    "previous": "Previous",
+    "cancel": "Cancel",
+    "saving": "Saving…",
+    "validate": "Confirm level {{level}}",
+    "next": "Next",
+    "slotsPact": "{{count}} (lvl {{level}})",
+    "maxHpPending": "Max HP (depends on your die)",
+    "slotsLevel": "Level {{level}} spell slots",
+    "slotsPactLabel": "Pact Magic spell slots",
+    "cantrips": "Cantrips",
+    "prepared": "Prepared spells",
+    "invocations": "Invocations",
+    "masteriesCount": "Weapon masteries",
+    "expertiseCount": "Expertise",
+    "maxHp": "Max HP",
+    "proficiency": "Proficiency bonus",
+    "hitDice": "Hit dice",
+    "newFeatures": "New features",
+    "noFeature": "No new feature at this level.",
+    "increases": "What goes up",
+    "upcoming": "To choose next",
+    "level": "Level",
+    "ac": "Armor class",
+    "passivePerception": "Passive perception",
+    "spellDc": "Spell save DC",
+    "spellAttack": "Spell attack",
+    "slotsShort": "Slots",
+    "levelN": "Level {{level}}",
+    "choices": "Your choices",
+    "spellsPanel": "Spells",
+    "added": "Added",
+    "removed": "Removed"
+  },
+  "flow": {
+    "eyebrow": "{{what}} — step {{current}} of {{total}}",
+    "previous": "Previous",
+    "next": "Next",
+    "cancel": "Cancel"
+  },
+  "import": {
+    "choose": "Choose a file…",
+    "another": "Choose another file…",
+    "pasteLabel": "Or paste the JSON here (the AI's answer, as is):",
+    "pastePlaceholder": "{ \"format\": … }",
+    "readPasted": "Read the pasted JSON",
+    "pastedName": "Pasted JSON",
+    "errors": "This file cannot be imported:",
+    "moreErrors": "… and {{count}} more error(s)."
+  }
+}

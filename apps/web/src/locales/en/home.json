@@ -1,0 +1,36 @@
+{
+  "badge": "A collaborative platform for roleplaying games",
+  "title": "Keep the memory of your adventures",
+  "pitch": "Adventure Keeper brings your group's campaigns, characters, session recaps, notes and shared resources together — in one place, open to the whole table.",
+  "myCampaigns": "My campaigns",
+  "myCharacters": "My characters",
+  "signUp": "Create an account",
+  "signIn": "Sign in",
+  "tryCreation": "Try character creation",
+  "features": {
+    "campaigns": {
+      "title": "Campaigns",
+      "description": "Gather your table around a campaign: game system, members, summary and status at a glance."
+    },
+    "characters": {
+      "title": "Characters",
+      "description": "Character and NPC sheets: ability scores, hit points, notes and what stays hidden from the players."
+    },
+    "sessions": {
+      "title": "Sessions",
+      "description": "Plan the next sessions and keep every session's recap in one place."
+    },
+    "notes": {
+      "title": "Notes",
+      "description": "Lore, plot or rules notes, visible to you, to the GM or to the whole campaign."
+    },
+    "resources": {
+      "title": "Resources",
+      "description": "Maps, handouts, links and shared files: your campaign library, open to everyone."
+    },
+    "houseRules": {
+      "title": "House rules",
+      "description": "Write down your rule tweaks so everyone plays with the same cards in hand."
+    }
+  }
+}

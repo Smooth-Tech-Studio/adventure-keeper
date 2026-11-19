@@ -1,0 +1,221 @@
+{
+  "appName": "Adventure Keeper",
+  "nav": {
+    "campaigns": "Campaigns",
+    "characters": "Characters",
+    "packs": "Packs",
+    "accountMenu": "Account menu",
+    "myAccount": "My account",
+    "myProfile": "My profile",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "breadcrumbs": "Breadcrumbs"
+  },
+  "settings": {
+    "label": "Settings"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "label": "Language",
+    "saveFailed": "Language applied here, but not saved to your profile."
+  },
+  "footer": {
+    "tagline": "Adventure Keeper — a shared journal for your roleplaying games.",
+    "credits": "Credits and licences",
+    "server": "Session server"
+  },
+  "licence": {
+    "srd521": "5E content: includes material from the SRD 5.2.1 under the CC-BY-4.0 licence"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "titleWithCount": "Notifications ({{count}})",
+    "empty": "Nothing new for now.",
+    "invite": "<strong>{{gm}}</strong> invites you to join <strong>“{{campaign}}”</strong>.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "declined": "Invitation to “{{campaign}}” declined.",
+    "declineFailed": "Could not decline the invitation.",
+    "pickCharacter": "Pick your character for <strong>“{{campaign}}”</strong>.",
+    "newRecap": "New recap in <strong>“{{adventure}}”</strong> ({{campaign}})."
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "body": "This page could not be displayed. You can try again or reload the app.",
+    "retry": "Try again",
+    "reload": "Reload"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page got lost in a dungeon. Let's head back to the light.",
+    "home": "Back to home"
+  },
+  "credits": {
+    "title": "Credits and licences",
+    "intro": "The game content Adventure Keeper offers, system by system, and the licences it is used under.",
+    "dnd2024": "5E (2024)",
+    "dnd2024Intro": "Adventure Keeper is compatible with fifth edition and includes material from the following reference document:",
+    "srdStatement": "This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at <srd>https://www.dndbeyond.com/srd</srd>. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at <cc>https://creativecommons.org/licenses/by/4.0/legalcode</cc>.",
+    "ownWords": "Summaries of features, spells and items are written in our own words."
+  },
+  "validation": {
+    "emailRequired": "Email required",
+    "emailInvalid": "Invalid email address",
+    "passwordRequired": "Password required",
+    "min2": "At least 2 characters",
+    "max80": "80 characters at most",
+    "min8": "At least 8 characters",
+    "max500": "500 characters at most",
+    "confirmRequired": "Confirmation required",
+    "passwordsMismatch": "Passwords do not match"
+  },
+  "actions": {
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "add": "Add",
+    "create": "Create",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "remove": "Remove",
+    "rename": "Rename",
+    "copy": "Copy",
+    "copied": "Copied",
+    "retry": "Try again",
+    "loading": "Loading…",
+    "none": "None"
+  },
+  "emailPlaceholder": "you@example.com",
+  "imageField": {
+    "import": "Import from device",
+    "importing": "Uploading…",
+    "importHint": "Sent to your Dropbox; the link fills in by itself.",
+    "imported": "Image imported.",
+    "importFailed": "The image could not be sent to Dropbox.",
+    "notImage": "This file is not an image.",
+    "tooBig": "Image too heavy (20 MB at most).",
+    "connectStorage": "Or link your Dropbox to import your images.",
+    "label": "Image (link)",
+    "placeholder": "https://example.com/my-image.png",
+    "helpTitle": "Hosting an image elsewhere",
+    "helpDrive": "<strong>Google Drive</strong>: right-click the file → Share → “Anyone with the link” → Copy link, then paste it here.",
+    "helpDropbox": "<strong>Dropbox</strong>: “Share” button → Copy link, then paste it here.",
+    "helpConverted": "Both formats are converted automatically into a displayable image.",
+    "helpLabel": "How do I host an image?",
+    "hint": "Paste the link to an image hosted elsewhere (Dropbox and Google Drive share links are converted automatically). No file upload.",
+    "cropZone": "Icon area — drag to move",
+    "broken": "Could not load the image. The link must point to the image itself, not to a preview page.",
+    "iconPreview": "Icon preview",
+    "zoneSize": "Area size",
+    "remove": "Remove image"
+  },
+  "stats": {
+    "hp": "{{value}} HP",
+    "ac": "AC {{value}}",
+    "cr": "CR {{value}}",
+    "attacks_one": "{{count}} atk",
+    "attacks_other": "{{count}} atks",
+    "hpShort": "HP",
+    "acShort": "AC",
+    "crShort": "CR",
+    "speedMetres": "Speed (m)",
+    "speedFeet": "Speed (ft)"
+  },
+  "untitled": "(unnamed)",
+  "saveFailed": "Could not save.",
+  "deleteFailed": "Could not delete.",
+  "entityRow": {
+    "confirmTitle": "Delete {{what}}?",
+    "confirmText": "This cannot be undone."
+  },
+  "dangerZone": {
+    "title": "Danger zone",
+    "confirm": "Delete permanently"
+  },
+  "hexCode": "Hex code",
+  "gm": "Game Master",
+  "age": {
+    "now": "just now",
+    "minutes": "{{count}} min ago",
+    "hours": "{{count}} h ago",
+    "days": "{{count}} d ago"
+  },
+  "noEmail": "This account has no email address.",
+  "noItems": "No items.",
+  "invite": {
+    "noAccount": "No account with this address. Send them the invite link instead.",
+    "member": "{{name}} is already in the campaign.",
+    "pending": "{{name}} already has a pending invite."
+  },
+  "choices": {
+    "yourTool": "your tool (chosen above)",
+    "tools": "Tools",
+    "skills": "Skills"
+  },
+  "gear": {
+    "ammunition": "Ammunition",
+    "container": "Containers",
+    "light": "Light",
+    "potion": "Potions",
+    "other": "Gear"
+  },
+  "badges": {
+    "focus": "Focus — used to cast spells, not to attack",
+    "mastery": "Mastery: {{name}}",
+    "notTrained": "Not proficient for the class",
+    "ac": "AC {{formula}}",
+    "strength": "Strength {{min}}",
+    "stealth": "Stealth: disadvantage",
+    "equipped": "equipped",
+    "masteryTerm": "Mastery — {{name}}",
+    "strengthHint": "Without a Strength of {{min}}, your speed drops by 10 feet.",
+    "stealthHint": "Disadvantage on Dexterity (Stealth) checks while you wear it."
+  },
+  "uses": {
+    "times_one": "{{count}} time",
+    "times_other": "{{count}} times",
+    "withProficiency": " (your proficiency bonus)",
+    "perLevel": " ({{per}} × your level)",
+    "ability": "{{ability}} modifier (min. {{min}})",
+    "short": "per short rest",
+    "long": "per long rest",
+    "shortFrom": ", short from level {{level}}",
+    "step": "{{value}} at level {{level}}",
+    "then": "then {{steps}}"
+  },
+  "serverApp": {
+    "title": "Adventure Keeper Serveur",
+    "intro": "The live session server, on the GM's computer. Tokens, HP and the fight move continuously for everyone; players have nothing to install.",
+    "download": "Download",
+    "forYou": "The version for this computer.",
+    "onComputer": "To install on the GM's computer, the one that starts the session.",
+    "otherSystems": "Other systems",
+    "allVersions": "All versions",
+    "platform": {
+      "windows": "Windows",
+      "macos-arm64": "macOS (Apple Silicon)",
+      "macos-x64": "macOS (Intel)",
+      "linux-appimage": "Linux (AppImage)",
+      "linux-deb": "Linux (.deb)"
+    },
+    "firstLaunch": "First launch",
+    "unsigned": "The app is not signed yet: the system asks for a confirmation the first time.",
+    "launchWindows": "Windows: “More info”, then “Run anyway”.",
+    "launchMac": "macOS: open the app once, then System Settings → Privacy & Security → “Open Anyway”.",
+    "launchLinux": "Linux: make the AppImage executable (right click → Properties, or chmod +x), or install the .deb.",
+    "during": "During the session",
+    "step1": "Launch Adventure Keeper Serveur: it shows “Server ready” and an https address.",
+    "step2": "On the adventure's page, open the server button next to “Start session”: the address is found on its own.",
+    "step3": "Start the session. The address changes each time the app starts: nothing to remember.",
+    "keepOpen": "Keep the window open and the computer online until the session ends: closing it stops the server. Nothing is lost, the table waits for it to come back."
+  }
+}

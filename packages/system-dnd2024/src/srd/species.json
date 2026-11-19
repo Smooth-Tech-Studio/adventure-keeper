@@ -1,0 +1,876 @@
+{
+  "entries": [
+    {
+      "id": "dragonborn",
+      "name": "Drakéide",
+      "blurb": "Descendant des dragons, vous soufflez une énergie destructrice et résistez à celle de vos ancêtres.",
+      "size": "medium",
+      "speed": 30,
+      "darkvision": 60,
+      "breathWeapon": {
+        "name": "Souffle draconique",
+        "save": "dex",
+        "onSuccess": "half",
+        "baseDice": {
+          "count": 1,
+          "die": "d10"
+        },
+        "shapes": "cône de 4,50 m, ou ligne de 9 m sur 1,50 m"
+      },
+      "choice": {
+        "label": "Ascendance draconique",
+        "options": [
+          "Airain",
+          "Argent",
+          "Bronze",
+          "Cuivre",
+          "Or",
+          "Blanc",
+          "Bleu",
+          "Noir",
+          "Rouge",
+          "Vert"
+        ]
+      },
+      "lineages": {
+        "Airain": {
+          "summary": "Votre Souffle inflige des dégâts de feu, et vous résistez au feu.",
+          "resistances": ["fire"],
+          "breathDamage": "fire"
+        },
+        "Argent": {
+          "summary": "Votre Souffle inflige des dégâts de froid, et vous résistez au froid.",
+          "resistances": ["cold"],
+          "breathDamage": "cold"
+        },
+        "Bronze": {
+          "summary": "Votre Souffle inflige des dégâts de foudre, et vous résistez à la foudre.",
+          "resistances": ["lightning"],
+          "breathDamage": "lightning"
+        },
+        "Cuivre": {
+          "summary": "Votre Souffle inflige des dégâts d'acide, et vous résistez à l'acide.",
+          "resistances": ["acid"],
+          "breathDamage": "acid"
+        },
+        "Or": {
+          "summary": "Votre Souffle inflige des dégâts de feu, et vous résistez au feu.",
+          "resistances": ["fire"],
+          "breathDamage": "fire"
+        },
+        "Blanc": {
+          "summary": "Votre Souffle inflige des dégâts de froid, et vous résistez au froid.",
+          "resistances": ["cold"],
+          "breathDamage": "cold"
+        },
+        "Bleu": {
+          "summary": "Votre Souffle inflige des dégâts de foudre, et vous résistez à la foudre.",
+          "resistances": ["lightning"],
+          "breathDamage": "lightning"
+        },
+        "Noir": {
+          "summary": "Votre Souffle inflige des dégâts d'acide, et vous résistez à l'acide.",
+          "resistances": ["acid"],
+          "breathDamage": "acid"
+        },
+        "Rouge": {
+          "summary": "Votre Souffle inflige des dégâts de feu, et vous résistez au feu.",
+          "resistances": ["fire"],
+          "breathDamage": "fire"
+        },
+        "Vert": {
+          "summary": "Votre Souffle inflige des dégâts de poison, et vous résistez au poison.",
+          "resistances": ["poison"],
+          "breathDamage": "poison"
+        }
+      },
+      "languages": ["draconic"],
+      "lineageTrait": "Ascendance draconique",
+      "traits": [
+        {
+          "name": "Ascendance draconique",
+          "summary": "Vous descendez d'un dragon dont le type fixe vos dégâts de Souffle et votre résistance."
+        },
+        {
+          "name": "Souffle",
+          "summary": "Dans l'action Attaque, remplacez une attaque par un cône de 4,50 m ou une ligne de 9 m : 1d10 dégâts de votre type (2d10 au niv 5, 3d10 au niv 11, 4d10 au niv 17), sauvegarde de Dextérité pour la moitié. Utilisations égales au bonus de maîtrise, récupérées sur un repos long."
+        },
+        {
+          "name": "Résistance aux dégâts",
+          "summary": "Résistance au type de dégâts de votre ascendance draconique."
+        },
+        {
+          "name": "Vol draconique",
+          "summary": "À partir du niveau 5, action bonus : ailes spectrales et vitesse de vol égale à votre vitesse pendant 10 min (une fois par repos long).",
+          "uses": {
+            "max": 1,
+            "recharge": "long"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dwarf",
+      "name": "Nain",
+      "blurb": "Solide comme la roche, vous résistez au poison et tenez debout plus longtemps que les autres.",
+      "size": "medium",
+      "speed": 30,
+      "darkvision": 120,
+      "resistances": ["poison"],
+      "hitPointsPerLevel": 1,
+      "languages": ["dwarvish"],
+      "traits": [
+        {
+          "name": "Connaissance de la pierre",
+          "summary": "Action bonus : perception des vibrations sur 18 m pendant 10 minutes, tant que vous touchez la pierre. Utilisations égales au bonus de maîtrise, récupérées sur un repos long.",
+          "uses": {
+            "max": "prof",
+            "recharge": "long"
+          }
+        },
+        {
+          "name": "Résistance naine",
+          "summary": "Résistance aux dégâts de poison, et avantage aux jets de sauvegarde contre l'état empoisonné.",
+          "mechanics": [
+            {
+              "type": "advantage",
+              "on": "save",
+              "condition": "contre l'état Empoisonné"
+            }
+          ]
+        },
+        {
+          "name": "Ténacité naine",
+          "summary": "Votre maximum de PV augmente de 1, et de 1 de plus à chaque niveau gagné."
+        }
+      ]
+    },
+    {
+      "id": "elf",
+      "name": "Elfe",
+      "blurb": "Issu d'un peuple féerique, vous avez les sens aiguisés, une magie innée et ne dormez jamais vraiment.",
+      "size": "medium",
+      "speed": 30,
+      "darkvision": 60,
+      "spellsUseChosenAbility": true,
+      "spellsTrait": "Lignage elfique",
+      "skillGrant": {
+        "trait": "Sens aiguisés",
+        "count": 1,
+        "from": ["insight", "perception", "survival"]
+      },
+      "choice": {
+        "label": "Lignage elfique",
+        "options": ["Drow", "Haut-elfe", "Elfe sylvestre"]
+      },
+      "lineages": {
+        "Drow": {
+          "darkvision": 120,
+          "spells": [
+            {
+              "spellId": "dancing-lights",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "faerie-fire",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "darkness",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Vision dans le noir portée à 36 m. Sort mineur Lumières dansantes ; Lueurs féeriques au niv 3 et Ténèbres au niv 5, chacun lançable une fois par repos long sans emplacement."
+        },
+        "Haut-elfe": {
+          "spells": [
+            {
+              "spellId": "prestidigitation",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "detect-magic",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "misty-step",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Sort mineur Prestidigitation (remplaçable à chaque repos long par un sort mineur de magicien) ; Détection de la magie au niv 3 et Foulée brumeuse au niv 5, chacun lançable une fois par repos long sans emplacement."
+        },
+        "Elfe sylvestre": {
+          "speed": 35,
+          "spells": [
+            {
+              "spellId": "druidcraft",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "longstrider",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "pass-without-trace",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Vitesse portée à 10,50 m. Sort mineur Druidisme ; Grande foulée au niv 3 et Passage sans trace au niv 5, chacun lançable une fois par repos long sans emplacement."
+        }
+      },
+      "languages": ["elvish"],
+      "lineageTrait": "Lignage elfique",
+      "traits": [
+        {
+          "name": "Ascendance féerique",
+          "summary": "Avantage aux jets de sauvegarde contre l'état charmé.",
+          "mechanics": [
+            {
+              "type": "advantage",
+              "on": "save",
+              "condition": "contre l'état Charmé"
+            }
+          ]
+        },
+        {
+          "name": "Lignage elfique",
+          "summary": "Selon votre lignage (drow, haut-elfe ou elfe sylvestre) : un sort mineur au niv 1, puis un sort au niv 3 et un au niv 5, toujours préparés, chacun lançable une fois par repos long sans emplacement. Caractéristique d'incantation au choix : Intelligence, Sagesse ou Charisme."
+        },
+        {
+          "name": "Sens aiguisés",
+          "summary": "Maîtrise d'une compétence parmi Intuition, Perception et Survie."
+        },
+        {
+          "name": "Transe",
+          "summary": "Vous ne dormez pas et la magie ne peut pas vous endormir : 4 h de transe méditative valent un repos long."
+        }
+      ]
+    },
+    {
+      "id": "gnome",
+      "name": "Gnome",
+      "blurb": "Petit, curieux et ingénieux, votre esprit résiste aux sortilèges qui cherchent à le troubler.",
+      "size": "small",
+      "speed": 30,
+      "darkvision": 60,
+      "spellsUseChosenAbility": true,
+      "spellsTrait": "Lignage gnome",
+      "choice": {
+        "label": "Lignage gnome",
+        "options": ["Gnome des forêts", "Gnome des roches"]
+      },
+      "lineages": {
+        "Gnome des forêts": {
+          "spells": [
+            {
+              "spellId": "minor-illusion",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "speak-with-animals",
+              "minLevel": 1,
+              "spellLevel": 1
+            }
+          ],
+          "summary": "Sort mineur Illusion mineure, et Communication avec les animaux toujours préparé, lançable sans emplacement autant de fois que votre bonus de maîtrise par repos long."
+        },
+        "Gnome des roches": {
+          "spells": [
+            {
+              "spellId": "mending",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "prestidigitation",
+              "minLevel": 1,
+              "spellLevel": 0
+            }
+          ],
+          "summary": "Sorts mineurs Prestidigitation et Réparation. En lançant Prestidigitation pendant 10 minutes, vous fabriquez un petit appareil mécanique qui en reproduit un effet ; trois au plus, pendant 8 heures."
+        }
+      },
+      "languages": ["gnomish"],
+      "lineageTrait": "Lignage gnome",
+      "traits": [
+        {
+          "name": "Lignage gnome",
+          "summary": "Gnome des forêts : le sort mineur Illusion mineure, et Communication avec les animaux toujours préparé, lançable sans emplacement autant de fois que votre bonus de maîtrise. Gnome des roches : les sorts mineurs Prestidigitation et Réparation, et la fabrication de petits appareils mécaniques. Caractéristique d'incantation au choix : Intelligence, Sagesse ou Charisme."
+        },
+        {
+          "name": "Ruse gnome",
+          "summary": "Avantage aux jets de sauvegarde d'Intelligence, de Sagesse et de Charisme.",
+          "mechanics": [
+            {
+              "type": "advantage",
+              "on": "save",
+              "abilities": ["int", "wis", "cha"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "goliath",
+      "name": "Goliath",
+      "blurb": "Descendant des géants, vous êtes grand, robuste et capable de grandir encore en plein combat.",
+      "size": "medium",
+      "speed": 35,
+      "darkvision": 0,
+      "choice": {
+        "label": "Ascendance gigante",
+        "options": ["Colline", "Feu", "Givre", "Nuage", "Pierre", "Tempête"]
+      },
+      "lineages": {
+        "Colline": {
+          "summary": "Quand vous touchez une créature de taille G ou moins, vous pouvez la jeter à terre. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        },
+        "Feu": {
+          "summary": "Quand vous touchez une créature, vous pouvez lui infliger 1d10 dégâts de feu en plus. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        },
+        "Givre": {
+          "summary": "Quand vous touchez une créature, vous pouvez lui infliger 1d6 dégâts de froid en plus et réduire sa vitesse de 3 m jusqu'à votre prochain tour. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        },
+        "Nuage": {
+          "summary": "Action bonus : vous vous téléportez jusqu'à 9 m, dans un espace libre que vous voyez. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        },
+        "Pierre": {
+          "summary": "En réaction quand vous subissez des dégâts, vous les réduisez de 1d12 + votre modificateur de Constitution. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        },
+        "Tempête": {
+          "summary": "En réaction quand une créature à 18 m ou moins vous inflige des dégâts, vous lui infligez 1d8 dégâts de tonnerre. Autant de fois que votre bonus de maîtrise, récupéré sur un repos long."
+        }
+      },
+      "languages": ["giant"],
+      "powerfulBuild": true,
+      "lineageTrait": "Ascendance gigante",
+      "traits": [
+        {
+          "name": "Ascendance gigante",
+          "summary": "Selon vos ancêtres, un bénéfice surnaturel : dégâts supplémentaires de feu ou de froid, réduction de dégâts en réaction, mise à terre, téléportation de 9 m ou riposte tonnante. Utilisations égales au bonus de maîtrise, récupérées sur un repos long.",
+          "uses": {
+            "max": "prof",
+            "recharge": "long"
+          }
+        },
+        {
+          "name": "Forme de géant",
+          "summary": "À partir du niveau 5, action bonus : vous passez à la taille G pendant 10 min, avec l'avantage aux tests de Force et +3 m de vitesse. Une fois par repos long.",
+          "uses": {
+            "max": 1,
+            "recharge": "long"
+          }
+        },
+        {
+          "name": "Forte carrure",
+          "summary": "Avantage aux tests de caractéristique pour mettre fin à l'état agrippé, et vous comptez comme une taille au-dessus pour votre capacité de charge."
+        }
+      ]
+    },
+    {
+      "id": "halfling",
+      "name": "Halfelin",
+      "blurb": "Petit, courageux et chanceux, vous vous faufilez partout et rattrapez les coups du sort.",
+      "size": "small",
+      "speed": 30,
+      "darkvision": 0,
+      "languages": ["halfling"],
+      "traits": [
+        {
+          "name": "Agilité halfeline",
+          "summary": "Vous traversez l'espace de toute créature plus grande que vous, sans pouvoir vous y arrêter."
+        },
+        {
+          "name": "Brave",
+          "summary": "Avantage aux jets de sauvegarde contre l'état effrayé.",
+          "mechanics": [
+            {
+              "type": "advantage",
+              "on": "save",
+              "condition": "contre l'état Effrayé"
+            }
+          ]
+        },
+        {
+          "name": "Chance",
+          "summary": "Quand vous obtenez un 1 au d20 d'un test, relancez le dé et utilisez le nouveau résultat."
+        },
+        {
+          "name": "Discrétion naturelle",
+          "summary": "Il vous suffit d'être dans l'ombre d'une créature d'au moins une taille au-dessus pour entreprendre l'action Furtivité."
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "name": "Humain",
+      "blurb": "Polyvalent et ambitieux, vous commencez avec un don et une compétence de plus, à votre choix.",
+      "size": ["small", "medium"],
+      "speed": 30,
+      "darkvision": 0,
+      "skillGrant": {
+        "trait": "Compétent",
+        "count": 1,
+        "from": "any"
+      },
+      "originFeatGrant": {
+        "trait": "Polyvalent"
+      },
+      "traits": [
+        {
+          "name": "Ingénieux",
+          "summary": "Vous recevez l'inspiration héroïque à chaque fois que vous terminez un repos long."
+        },
+        {
+          "name": "Compétent",
+          "summary": "Vous recevez la maîtrise d'une compétence de votre choix."
+        },
+        {
+          "name": "Polyvalent",
+          "summary": "Vous recevez le don d'origine de votre choix."
+        }
+      ]
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "blurb": "Endurant et tenace, vous foncez dans la mêlée et restez debout quand les autres tombent.",
+      "size": "medium",
+      "speed": 30,
+      "darkvision": 120,
+      "languages": ["orc"],
+      "traits": [
+        {
+          "name": "Acharnement",
+          "summary": "Quand vous tombez à 0 PV sans mourir sur le coup, vous pouvez rester à 1 PV à la place. Une fois par repos long.",
+          "uses": {
+            "max": 1,
+            "recharge": "long"
+          }
+        },
+        {
+          "name": "Poussée d'adrénaline",
+          "summary": "Action bonus : entreprenez l'action Pointe et gagnez des PV temporaires égaux à votre bonus de maîtrise. Utilisations égales au bonus de maîtrise, récupérées sur un repos court ou long.",
+          "uses": {
+            "max": "prof",
+            "recharge": "short"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tiefling",
+      "name": "Tieffelin",
+      "blurb": "Marqué par un héritage infernal, vous maîtrisez une magie sombre et résistez à certaines énergies.",
+      "size": ["small", "medium"],
+      "speed": 30,
+      "darkvision": 60,
+      "spellsUseChosenAbility": true,
+      "spellsTrait": "Héritage fiélon",
+      "spells": [
+        {
+          "spellId": "thaumaturgy",
+          "minLevel": 1,
+          "spellLevel": 0
+        }
+      ],
+      "choice": {
+        "label": "Héritage fiélon",
+        "options": ["Abyssal", "Chtonien", "Infernal"]
+      },
+      "lineages": {
+        "Abyssal": {
+          "resistances": ["poison"],
+          "spells": [
+            {
+              "spellId": "poison-spray",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "ray-of-sickness",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "hold-person",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Résistance au poison. Sort mineur Bouffée de poison ; Rayon empoisonné au niv 3 et Immobilisation de personne au niv 5, chacun lançable une fois par repos long sans emplacement."
+        },
+        "Chtonien": {
+          "resistances": ["necrotic"],
+          "spells": [
+            {
+              "spellId": "chill-touch",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "false-life",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "ray-of-enfeeblement",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Résistance aux dégâts nécrotiques. Sort mineur Contact glacial ; Simulacre de vie au niv 3 et Rayon affaiblissant au niv 5, chacun lançable une fois par repos long sans emplacement."
+        },
+        "Infernal": {
+          "resistances": ["fire"],
+          "spells": [
+            {
+              "spellId": "fire-bolt",
+              "minLevel": 1,
+              "spellLevel": 0
+            },
+            {
+              "spellId": "hellish-rebuke",
+              "minLevel": 3,
+              "spellLevel": 1
+            },
+            {
+              "spellId": "darkness",
+              "minLevel": 5,
+              "spellLevel": 2
+            }
+          ],
+          "summary": "Résistance au feu. Sort mineur Trait de feu ; Représailles infernales au niv 3 et Ténèbres au niv 5, chacun lançable une fois par repos long sans emplacement."
+        }
+      },
+      "languages": ["infernal"],
+      "lineageTrait": "Héritage fiélon",
+      "traits": [
+        {
+          "name": "Héritage fiélon",
+          "summary": "Selon votre héritage (abyssal, chthonien ou infernal) : un sort mineur au niv 1, puis un sort au niv 3 et un au niv 5, toujours préparés, chacun lançable une fois par repos long sans emplacement. Caractéristique d'incantation au choix : Intelligence, Sagesse ou Charisme."
+        },
+        {
+          "name": "Présence d'outre-monde",
+          "summary": "Vous connaissez le sort mineur Thaumaturgie, lancé avec la caractéristique de votre Héritage fiélon."
+        }
+      ]
+    }
+  ],
+  "translations": {
+    "en": {
+      "dragonborn": {
+        "name": "Dragonborn",
+        "blurb": "Descended from dragons, you exhale destructive energy and resist that of your ancestors.",
+        "breathWeapon": {
+          "name": "Breath Weapon",
+          "shapes": "15-foot cone, or 30-foot line 5 feet wide"
+        },
+        "choice": {
+          "label": "Draconic ancestry",
+          "options": [
+            "Brass",
+            "Silver",
+            "Bronze",
+            "Copper",
+            "Gold",
+            "White",
+            "Blue",
+            "Black",
+            "Red",
+            "Green"
+          ]
+        },
+        "lineages": {
+          "Airain": {
+            "summary": "Your Breath Weapon deals fire damage, and you have resistance to fire damage."
+          },
+          "Argent": {
+            "summary": "Your Breath Weapon deals cold damage, and you have resistance to cold damage."
+          },
+          "Bronze": {
+            "summary": "Your Breath Weapon deals lightning damage, and you have resistance to lightning damage."
+          },
+          "Cuivre": {
+            "summary": "Your Breath Weapon deals acid damage, and you have resistance to acid damage."
+          },
+          "Or": {
+            "summary": "Your Breath Weapon deals fire damage, and you have resistance to fire damage."
+          },
+          "Blanc": {
+            "summary": "Your Breath Weapon deals cold damage, and you have resistance to cold damage."
+          },
+          "Bleu": {
+            "summary": "Your Breath Weapon deals lightning damage, and you have resistance to lightning damage."
+          },
+          "Noir": {
+            "summary": "Your Breath Weapon deals acid damage, and you have resistance to acid damage."
+          },
+          "Rouge": {
+            "summary": "Your Breath Weapon deals fire damage, and you have resistance to fire damage."
+          },
+          "Vert": {
+            "summary": "Your Breath Weapon deals poison damage, and you have resistance to poison damage."
+          }
+        },
+        "traits": [
+          {
+            "name": "Draconic Ancestry",
+            "summary": "You descend from a dragon whose kind sets your Breath Weapon damage and your resistance."
+          },
+          {
+            "name": "Breath Weapon",
+            "summary": "As part of the Attack action, replace an attack with a 15-foot cone or a 30-foot line: 1d10 damage of your type (2d10 at level 5, 3d10 at level 11, 4d10 at level 17), Dexterity save for half. Uses equal to your proficiency bonus, regained on a long rest."
+          },
+          {
+            "name": "Damage Resistance",
+            "summary": "Resistance to the damage type of your draconic ancestry."
+          },
+          {
+            "name": "Draconic Flight",
+            "summary": "From level 5, bonus action: spectral wings and a fly speed equal to your speed for 10 min (once per long rest)."
+          }
+        ]
+      },
+      "dwarf": {
+        "name": "Dwarf",
+        "blurb": "Solid as rock, you resist poison and stay on your feet longer than anyone else.",
+        "traits": [
+          {
+            "name": "Stonecunning",
+            "summary": "Bonus action: tremorsense out to 60 feet for 10 minutes, while you touch stone. Uses equal to your proficiency bonus, regained on a long rest."
+          },
+          {
+            "name": "Dwarven Resilience",
+            "summary": "Resistance to poison damage, and advantage on saving throws against the poisoned condition.",
+            "mechanics": [
+              {
+                "condition": "against the Poisoned condition"
+              }
+            ]
+          },
+          {
+            "name": "Dwarven Toughness",
+            "summary": "Your hit point maximum increases by 1, and by 1 more each level you gain."
+          }
+        ]
+      },
+      "elf": {
+        "name": "Elf",
+        "blurb": "Born of a fey people, you have keen senses, innate magic, and never truly sleep.",
+        "spellsTrait": "Elven Lineage",
+        "skillGrant": {
+          "trait": "Keen Senses"
+        },
+        "choice": {
+          "label": "Elven lineage",
+          "options": ["Drow", "High Elf", "Wood Elf"]
+        },
+        "lineages": {
+          "Drow": {
+            "summary": "Darkvision extended to 120 feet. Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each castable once per long rest without a slot."
+          },
+          "Haut-elfe": {
+            "summary": "Prestidigitation cantrip (swappable for another wizard cantrip on each long rest); Detect Magic at level 3 and Misty Step at level 5, each castable once per long rest without a slot."
+          },
+          "Elfe sylvestre": {
+            "summary": "Speed increased to 35 feet. Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each castable once per long rest without a slot."
+          }
+        },
+        "traits": [
+          {
+            "name": "Fey Ancestry",
+            "summary": "Advantage on saving throws against the charmed condition.",
+            "mechanics": [
+              {
+                "condition": "against the Charmed condition"
+              }
+            ]
+          },
+          {
+            "name": "Elven Lineage",
+            "summary": "Depending on your lineage (drow, high elf or wood elf): a cantrip at level 1, then a spell at level 3 and one at level 5, always prepared, each castable once per long rest without a slot. Spellcasting ability of your choice: Intelligence, Wisdom or Charisma."
+          },
+          {
+            "name": "Keen Senses",
+            "summary": "Proficiency in one skill among Insight, Perception and Survival."
+          },
+          {
+            "name": "Trance",
+            "summary": "You don't sleep and magic can't put you to sleep: 4 hours of meditative trance count as a long rest."
+          }
+        ]
+      },
+      "gnome": {
+        "blurb": "Small, curious and inventive, your mind resists the spells that try to cloud it.",
+        "spellsTrait": "Gnomish Lineage",
+        "choice": {
+          "label": "Gnomish lineage",
+          "options": ["Forest Gnome", "Rock Gnome"]
+        },
+        "lineages": {
+          "Gnome des forêts": {
+            "summary": "Minor Illusion cantrip, and Speak with Animals always prepared, castable without a slot a number of times equal to your proficiency bonus per long rest."
+          },
+          "Gnome des roches": {
+            "summary": "Mending and Prestidigitation cantrips. Casting Prestidigitation for 10 minutes, you build a small clockwork device that reproduces one of its effects; three at most, for 8 hours."
+          }
+        },
+        "traits": [
+          {
+            "name": "Gnomish Lineage",
+            "summary": "Forest gnome: the Minor Illusion cantrip, and Speak with Animals always prepared, castable without a slot a number of times equal to your proficiency bonus. Rock gnome: the Mending and Prestidigitation cantrips, and building small clockwork devices. Spellcasting ability of your choice: Intelligence, Wisdom or Charisma."
+          },
+          {
+            "name": "Gnomish Cunning",
+            "summary": "Advantage on Intelligence, Wisdom and Charisma saving throws."
+          }
+        ]
+      },
+      "goliath": {
+        "blurb": "Descended from giants, you are tall, sturdy and able to grow even larger mid-fight.",
+        "choice": {
+          "label": "Giant ancestry",
+          "options": ["Hill", "Fire", "Frost", "Cloud", "Stone", "Storm"]
+        },
+        "lineages": {
+          "Colline": {
+            "summary": "When you hit a Large or smaller creature, you can knock it prone. A number of times equal to your proficiency bonus, regained on a long rest."
+          },
+          "Feu": {
+            "summary": "When you hit a creature, you can deal an extra 1d10 fire damage. A number of times equal to your proficiency bonus, regained on a long rest."
+          },
+          "Givre": {
+            "summary": "When you hit a creature, you can deal an extra 1d6 cold damage and reduce its speed by 10 feet until your next turn. A number of times equal to your proficiency bonus, regained on a long rest."
+          },
+          "Nuage": {
+            "summary": "Bonus action: you teleport up to 30 feet to an unoccupied space you can see. A number of times equal to your proficiency bonus, regained on a long rest."
+          },
+          "Pierre": {
+            "summary": "As a reaction when you take damage, you reduce it by 1d12 + your Constitution modifier. A number of times equal to your proficiency bonus, regained on a long rest."
+          },
+          "Tempête": {
+            "summary": "As a reaction when a creature within 60 feet deals you damage, you deal it 1d8 thunder damage. A number of times equal to your proficiency bonus, regained on a long rest."
+          }
+        },
+        "traits": [
+          {
+            "name": "Giant Ancestry",
+            "summary": "Depending on your ancestors, a supernatural benefit: extra fire or cold damage, damage reduction as a reaction, knocking prone, a 30-foot teleport or a thunderous retort. Uses equal to your proficiency bonus, regained on a long rest."
+          },
+          {
+            "name": "Large Form",
+            "summary": "From level 5, bonus action: you become Large for 10 min, with advantage on Strength checks and +10 feet of speed. Once per long rest."
+          },
+          {
+            "name": "Powerful Build",
+            "summary": "Advantage on ability checks to end the grappled condition, and you count as one size larger for your carrying capacity."
+          }
+        ]
+      },
+      "halfling": {
+        "name": "Halfling",
+        "blurb": "Small, brave and lucky, you slip through anywhere and shrug off bad luck.",
+        "traits": [
+          {
+            "name": "Halfling Nimbleness",
+            "summary": "You can move through the space of any creature larger than you, but can't stop there."
+          },
+          {
+            "summary": "Advantage on saving throws against the frightened condition.",
+            "mechanics": [
+              {
+                "condition": "against the Frightened condition"
+              }
+            ]
+          },
+          {
+            "name": "Luck",
+            "summary": "When you roll a 1 on the d20 of a test, reroll the die and use the new result."
+          },
+          {
+            "name": "Naturally Stealthy",
+            "summary": "You only need to be in the shadow of a creature at least one size larger to take the Hide action."
+          }
+        ]
+      },
+      "human": {
+        "name": "Human",
+        "blurb": "Versatile and ambitious, you start with an extra feat and an extra skill of your choice.",
+        "skillGrant": {
+          "trait": "Skillful"
+        },
+        "originFeatGrant": {
+          "trait": "Versatile"
+        },
+        "traits": [
+          {
+            "name": "Resourceful",
+            "summary": "You gain Heroic Inspiration whenever you finish a long rest."
+          },
+          {
+            "name": "Skillful",
+            "summary": "You gain proficiency in one skill of your choice."
+          },
+          {
+            "name": "Versatile",
+            "summary": "You gain an origin feat of your choice."
+          }
+        ]
+      },
+      "orc": {
+        "blurb": "Tough and relentless, you charge into the fray and stay standing when others fall.",
+        "traits": [
+          {
+            "name": "Relentless Endurance",
+            "summary": "When you drop to 0 HP without dying outright, you can stay at 1 HP instead. Once per long rest."
+          },
+          {
+            "name": "Adrenaline Rush",
+            "summary": "Bonus action: take the Dash action and gain temporary HP equal to your proficiency bonus. Uses equal to your proficiency bonus, regained on a short or long rest."
+          }
+        ]
+      },
+      "tiefling": {
+        "name": "Tiefling",
+        "blurb": "Marked by a fiendish heritage, you wield dark magic and resist certain energies.",
+        "spellsTrait": "Fiendish Legacy",
+        "choice": {
+          "label": "Fiendish legacy",
+          "options": ["Abyssal", "Chthonic", "Infernal"]
+        },
+        "lineages": {
+          "Abyssal": {
+            "summary": "Resistance to poison. Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, each castable once per long rest without a slot."
+          },
+          "Chtonien": {
+            "summary": "Resistance to necrotic damage. Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, each castable once per long rest without a slot."
+          },
+          "Infernal": {
+            "summary": "Resistance to fire. Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, each castable once per long rest without a slot."
+          }
+        },
+        "traits": [
+          {
+            "name": "Fiendish Legacy",
+            "summary": "Depending on your legacy (abyssal, chthonic or infernal): a cantrip at level 1, then a spell at level 3 and one at level 5, always prepared, each castable once per long rest without a slot. Spellcasting ability of your choice: Intelligence, Wisdom or Charisma."
+          },
+          {
+            "name": "Otherworldly Presence",
+            "summary": "You know the Thaumaturgy cantrip, cast with your Fiendish Legacy's ability."
+          }
+        ]
+      }
+    }
+  }
+}

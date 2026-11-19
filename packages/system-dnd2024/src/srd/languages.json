@@ -1,0 +1,194 @@
+{
+  "entries": [
+    {
+      "id": "common",
+      "name": "Commun",
+      "kind": "standard",
+      "summary": "La langue des échanges : comprise dans presque toutes les cités et sur toutes les routes."
+    },
+    {
+      "id": "commonSign",
+      "name": "Langue des signes",
+      "kind": "standard",
+      "summary": "Le commun en gestes — on se parle à travers une pièce bruyante, ou sans un bruit."
+    },
+    {
+      "id": "draconic",
+      "name": "Draconique",
+      "kind": "standard",
+      "summary": "La langue des dragons, gravée sur bien des ruines et des grimoires anciens."
+    },
+    {
+      "id": "dwarvish",
+      "name": "Nain",
+      "kind": "standard",
+      "summary": "Le parler des forteresses naines, tout en consonnes dures et en runes taillées."
+    },
+    {
+      "id": "elvish",
+      "name": "Elfique",
+      "kind": "standard",
+      "summary": "La langue des elfes, portée par une tradition de poèmes et de chants très longs."
+    },
+    {
+      "id": "giant",
+      "name": "Gigant",
+      "kind": "standard",
+      "summary": "Le parler des géants et de leurs cousins, des montagnes jusqu'aux collines."
+    },
+    {
+      "id": "gnomish",
+      "name": "Gnome",
+      "kind": "standard",
+      "summary": "La langue des gnomes, pleine de termes d'artisanat et de bricolage savant."
+    },
+    {
+      "id": "goblin",
+      "name": "Gobelin",
+      "kind": "standard",
+      "summary": "L'argot rude des gobelinoïdes : gobelins, hobgobelins, worgs et leurs bandes."
+    },
+    {
+      "id": "halfling",
+      "name": "Halfelin",
+      "kind": "standard",
+      "summary": "Le parler des halfelins, rarement écrit, transmis de table en table."
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "kind": "standard",
+      "summary": "La langue des orcs, directe et martiale, courante dans bien des tribus."
+    },
+    {
+      "id": "abyssal",
+      "name": "Abyssal",
+      "kind": "rare",
+      "summary": "La langue des démons, hurlée dans les Abysses — l'entendre n'augure rien de bon."
+    },
+    {
+      "id": "celestial",
+      "name": "Céleste",
+      "kind": "rare",
+      "summary": "Le parler des célestes, des anges et de bon nombre de textes sacrés."
+    },
+    {
+      "id": "deepSpeech",
+      "name": "Profond",
+      "kind": "rare",
+      "summary": "Le langage des aberrations des profondeurs : difficile à prononcer, pire à entendre."
+    },
+    {
+      "id": "druidic",
+      "name": "Druidique",
+      "kind": "rare",
+      "summary": "Le code secret des druides, signes et mots : les non-initiés n'y comprennent rien."
+    },
+    {
+      "id": "infernal",
+      "name": "Infernal",
+      "kind": "rare",
+      "summary": "La langue des diables, celle des contrats des Neuf Enfers — chaque mot y compte."
+    },
+    {
+      "id": "primordial",
+      "name": "Primordial",
+      "kind": "rare",
+      "summary": "Le parler des élémentaires, décliné en dialectes de l'air, de la terre, du feu et de l'eau."
+    },
+    {
+      "id": "sylvan",
+      "name": "Sylvestre",
+      "kind": "rare",
+      "summary": "La langue des créatures féeriques, des dryades aux satyres, et du Pays des Fées."
+    },
+    {
+      "id": "thievesCant",
+      "name": "Argot des voleurs",
+      "kind": "rare",
+      "summary": "Le jargon de la pègre : expressions codées et signes discrets, pour parler devant témoin."
+    },
+    {
+      "id": "undercommon",
+      "name": "Commun des profondeurs",
+      "kind": "rare",
+      "summary": "Le commun du monde souterrain, langue d'échange des cités sous la roche."
+    }
+  ],
+  "translations": {
+    "en": {
+      "common": {
+        "name": "Common",
+        "summary": "The language of trade: understood in nearly every city and on every road."
+      },
+      "commonSign": {
+        "name": "Common Sign Language",
+        "summary": "Common in gestures — talk across a noisy room, or without a sound."
+      },
+      "draconic": {
+        "name": "Draconic",
+        "summary": "The language of dragons, carved on many ruins and ancient spellbooks."
+      },
+      "dwarvish": {
+        "name": "Dwarvish",
+        "summary": "The speech of dwarven strongholds, all hard consonants and carved runes."
+      },
+      "elvish": {
+        "name": "Elvish",
+        "summary": "The language of elves, carried by a tradition of very long poems and songs."
+      },
+      "giant": {
+        "name": "Giant",
+        "summary": "The speech of giants and their kin, from the mountains to the hills."
+      },
+      "gnomish": {
+        "name": "Gnomish",
+        "summary": "The language of gnomes, full of craft words and clever tinkering."
+      },
+      "goblin": {
+        "name": "Goblin",
+        "summary": "The rough slang of goblinoids: goblins, hobgoblins, worgs and their gangs."
+      },
+      "halfling": {
+        "name": "Halfling",
+        "summary": "The speech of halflings, seldom written, passed on from table to table."
+      },
+      "orc": {
+        "summary": "The language of orcs, blunt and martial, common in many tribes."
+      },
+      "abyssal": {
+        "summary": "The language of demons, howled in the Abyss — hearing it bodes no good."
+      },
+      "celestial": {
+        "name": "Celestial",
+        "summary": "The speech of celestials, angels and a good many sacred texts."
+      },
+      "deepSpeech": {
+        "name": "Deep Speech",
+        "summary": "The tongue of aberrations from the depths: hard to pronounce, worse to hear."
+      },
+      "druidic": {
+        "name": "Druidic",
+        "summary": "The druids' secret code of signs and words: outsiders make nothing of it."
+      },
+      "infernal": {
+        "summary": "The language of devils, the one of the Nine Hells' contracts — every word counts."
+      },
+      "primordial": {
+        "summary": "The speech of elementals, in dialects of air, earth, fire and water."
+      },
+      "sylvan": {
+        "name": "Sylvan",
+        "summary": "The language of fey creatures, from dryads to satyrs, and of the Feywild."
+      },
+      "thievesCant": {
+        "name": "Thieves' Cant",
+        "summary": "The underworld's jargon: coded phrases and discreet signs, to talk in front of witnesses."
+      },
+      "undercommon": {
+        "name": "Undercommon",
+        "summary": "The common tongue of the Underdark, the trade language of cities beneath the rock."
+      }
+    }
+  }
+}

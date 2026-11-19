@@ -1,0 +1,294 @@
+name: Release Serveur (desktop app)
+
+# Builds the desktop app (apps/realtime-desktop) for Windows, macOS and Linux.
+# Called by the pipelines, once their gates have passed and only when the push
+# touches the app, the server or the schemas:
+# - `main.yml` (channel `production`): publishes the installers as this
+#   repository's release `serveur-vX.Y.Z`, tagged on the published commit,
+#   under stable names (the site links to `releases/latest/download/<name>`).
+# - `staging.yml` (channel `staging`): builds the STAGING variant (pointed
+#   at the staging Firebase project, installable next to the production one)
+#   and publishes it to the pre-release `serveur-staging`, replacing its
+#   installers: the staging site links to it. (Not `staging`: a tag of that
+#   name would clash with the branch.)
+# Run by hand, it builds only (choose the channel); the installers are this
+# run's artifacts.
+#
+# The version is computed by the `channel` job, so that every push on `main`
+# publishes a new release without touching a file: `version` in
+# tauri.conf.json is a floor, and the release is the greater of that floor and
+# the latest published release plus one patch. Raising the floor (0.1.x to
+# 0.2.0, say) starts a new series at the next push. The caller serialises its
+# runs (a `concurrency` group without cancellation), so two pushes close
+# together never compute the same version.
+#
+# Publishing uses the run's own token: the repository is public and the
+# installers live in its releases. The caller passes its secrets
+# (`secrets: inherit`) and grants `contents: write` (the releases and their
+# tags) and `actions: read` (the artifacts).
+#
+# The build runs in the GitHub environment of its channel (staging or
+# production); the staging variant reads the staging Firebase project's ID
+# from that environment's VITE_FIREBASE_PROJECT_ID, as the site's deployment.
+
+on:
+  workflow_call:
+    inputs:
+      channel:
+        description: Which variant to build and publish (production or staging)
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Which variant to build (no publication)
+        type: choice
+        options: [production, staging]
+        default: production
+
+jobs:
+  channel:
+    name: Channel
+    runs-on: ubuntu-latest
+    outputs:
+      channel: ${{ steps.pick.outputs.channel }}
+      # Whether this run publishes its installers: only when called by a
+      # pipeline, never from the Actions tab.
+      publish: ${{ steps.pick.outputs.publish }}
+      # The version the installers carry (and the release's tag, less
+      # `serveur-v`).
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - id: pick
+        env:
+          CHANNEL: ${{ inputs.channel }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          case "$CHANNEL" in
+            production | staging) ;;
+            *) echo "::error::Unknown channel '$CHANNEL'"; exit 1 ;;
+          esac
+          publish=true
+          [ "$EVENT" = workflow_dispatch ] && publish=false
+          echo "channel=$CHANNEL" >> "$GITHUB_OUTPUT"
+          echo "publish=$publish" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: apps/realtime-desktop/src-tauri/tauri.conf.json
+          sparse-checkout-cone-mode: false
+
+      # The floor is `version` in tauri.conf.json; the latest release of this
+      # repository (production releases only, `serveur-vX.Y.Z`) is read with
+      # the run's own token.
+      - name: Compute the version
+        id: version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          floor=$(jq -r .version apps/realtime-desktop/src-tauri/tauri.conf.json)
+          latest=$(gh release list --repo "$GITHUB_REPOSITORY" \
+            --exclude-pre-releases --exclude-drafts --limit 100 \
+            --json tagName --jq '
+              [ .[].tagName
+                | select(test("^serveur-v[0-9]+\\.[0-9]+\\.[0-9]+$"))
+                | ltrimstr("serveur-v") ]
+              | sort_by(split(".") | map(tonumber)) | last // ""')
+          highest=$(printf '%s\n%s\n' "$floor" "${latest:-0.0.0}" | sort -V | tail -1)
+          if [ -z "$latest" ] || { [ "$highest" = "$floor" ] && [ "$floor" != "$latest" ]; }; then
+            version="$floor"
+          else
+            IFS=. read -r major minor patch <<< "$latest"
+            version="$major.$minor.$((patch + 1))"
+          fi
+          echo "Floor $floor, latest release ${latest:-none}: building $version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build (${{ matrix.name }})
+    needs: channel
+    environment: ${{ needs.channel.outputs.channel }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            os: windows-latest
+            bundles: nsis
+          - name: macos-arm64
+            os: macos-latest
+            bundles: dmg
+          - name: macos-x64
+            os: macos-15-intel
+            bundles: dmg
+          - name: linux-x64
+            os: ubuntu-22.04
+            bundles: appimage,deb
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Linux system libraries (WebKitGTK)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libxdo-dev
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11.17.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: apps/realtime-desktop/src-tauri
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # The staging variant serves the staging Firebase project (read by
+      # main.rs at compile time) and has its own name and identifier.
+      - name: Staging settings
+        if: ${{ needs.channel.outputs.channel == 'staging' }}
+        env:
+          PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+        run: |
+          if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "adv-keeper" ]; then
+            echo "::error::The staging environment has no VITE_FIREBASE_PROJECT_ID of its own (or it is the production project)"
+            exit 1
+          fi
+          echo "AK_FIREBASE_PROJECT_ID=$PROJECT_ID" >> "$GITHUB_ENV"
+          echo "TAURI_CONFIG_ARGS=--config src-tauri/tauri.staging.conf.json" >> "$GITHUB_ENV"
+
+      - name: Build the server's dependencies
+        run: pnpm turbo run build --filter=@adventure-keeper/realtime-server
+
+      - name: Sidecars (server executable, cloudflared)
+        run: pnpm --filter @adventure-keeper/realtime-desktop sidecars
+
+      # The computed version overrides tauri.conf.json's (Tauri merges the
+      # inline JSON last): it is what the installers and the app report.
+      - name: Build the app
+        env:
+          VERSION: ${{ needs.channel.outputs.version }}
+        run: |
+          pnpm --filter @adventure-keeper/realtime-desktop tauri build \
+            --bundles ${{ matrix.bundles }} ${TAURI_CONFIG_ARGS:-} \
+            --config "{\"version\":\"${VERSION}\"}"
+
+      - name: Name the installers
+        run: |
+          bundle=apps/realtime-desktop/src-tauri/target/release/bundle
+          mkdir -p out
+          name=Adventure-Keeper-Serveur-${{ matrix.name }}
+          case "${{ matrix.name }}" in
+            windows-*) cp "$bundle"/nsis/*.exe "out/$name-setup.exe" ;;
+            macos-*) cp "$bundle"/dmg/*.dmg "out/$name.dmg" ;;
+            linux-*)
+              cp "$bundle"/appimage/*.AppImage "out/$name.AppImage"
+              cp "$bundle"/deb/*.deb "out/$name.deb"
+              ;;
+          esac
+          ls -la out
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: installer-${{ matrix.name }}
+          path: out/*
+          if-no-files-found: error
+
+  release:
+    name: Publish the release
+    needs: [channel, build]
+    # Publishes what was built even when a build failed (a macOS runner that
+    # is never provisioned, say). On staging the missing installer stays the
+    # previous one, since only the uploaded files are replaced. A production
+    # release checks below that the installers it cannot do without are there.
+    # The run stays red either way.
+    if: ${{ !cancelled() && needs.channel.outputs.publish == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      # `contents: write` for the releases and their tags; `actions: read`
+      # for the run's artifacts.
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: installer-*
+          merge-multiple: true
+          path: out
+
+      # The macOS Apple Silicon installer may be missing (its runners are
+      # often saturated); the others may not.
+      - name: Check the production installers
+        if: ${{ needs.channel.outputs.channel == 'production' }}
+        run: |
+          missing=0
+          for name in \
+            Adventure-Keeper-Serveur-windows-x64-setup.exe \
+            Adventure-Keeper-Serveur-macos-x64.dmg \
+            Adventure-Keeper-Serveur-linux-x64.AppImage \
+            Adventure-Keeper-Serveur-linux-x64.deb; do
+            if [ ! -f "out/$name" ]; then
+              echo "::error::Missing installer: $name"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      # The release creates its tag on the published commit. The run's token
+      # can only point a new ref at a commit that is still the tip of a
+      # branch, or whose workflow files are those of main: when a later push
+      # on main changes a workflow during the build, the tag is refused (403,
+      # "Resource not accessible by integration"). The release then tags the
+      # branch's tip instead, and its notes name the built commit.
+      - name: Create the release
+        if: ${{ needs.channel.outputs.channel == 'production' }}
+        env:
+          VERSION: ${{ needs.channel.outputs.version }}
+        run: |
+          (cd out && sha256sum * > SHA256SUMS.txt)
+          tag="serveur-v${VERSION}"
+          notes="Le serveur de session en direct d'Adventure Keeper, sur l'ordinateur du MJ. Téléchargement et première ouverture : https://adv-keeper.web.app/serveur"
+          notes="$notes"$'\n\n'"Construit depuis ${GITHUB_SHA::7}."
+          publish() {
+            gh release create "$tag" out/* --target "$1" \
+              --title "Adventure Keeper Serveur ${VERSION}" \
+              --notes "$notes" \
+              --latest
+          }
+          if ! publish "$GITHUB_SHA"; then
+            echo "::warning title=Tag ${tag} not on ${GITHUB_SHA::7}::The run's token cannot tag the built commit, most likely because a later push on ${GITHUB_REF_NAME} changed a workflow file. The tag goes on the branch's tip; the release notes name the built commit."
+            # The failed attempt may leave a draft (assets are uploaded first).
+            gh release delete "$tag" --yes 2> /dev/null || true
+            publish "$GITHUB_REF_NAME"
+          fi
+
+      # One pre-release, `serveur-staging`, kept up to date: its installers
+      # are replaced at each run, and "latest" (production) never points at it.
+      - name: Update the staging pre-release
+        if: ${{ needs.channel.outputs.channel == 'staging' }}
+        run: |
+          (cd out && sha256sum * > SHA256SUMS.txt)
+          gh release view serveur-staging > /dev/null 2>&1 \
+            || gh release create serveur-staging --target "$GITHUB_REF_NAME" --prerelease \
+              --title "Adventure Keeper Serveur (staging)" \
+              --notes "Version de test, branchée sur le projet Firebase de staging. Ne pas utiliser en production."
+          gh release upload serveur-staging out/* --clobber

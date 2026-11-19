@@ -1,0 +1,5034 @@
+{
+  "entries": [
+    {
+      "id": "acid-splash",
+      "name": "Aspersion acide",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Projette une bulle d'acide sur une ou deux créatures proches ; jet de Dextérité pour éviter les dégâts d'acide.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d6"
+        },
+        "kind": "acid",
+        "scaling": "cantrip"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "guidance",
+      "name": "Assistance",
+      "level": 0,
+      "school": "divination",
+      "classes": ["cleric", "druid"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "La créature touchée ajoute 1d4 à un jet de caractéristique de son choix dans la minute."
+    },
+    {
+      "id": "poison-spray",
+      "name": "Bouffée de poison",
+      "level": 0,
+      "school": "necromancy",
+      "classes": ["druid", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Bouffée de gaz toxique sur une créature proche ; jet de Constitution contre des dégâts de poison.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d12"
+        },
+        "kind": "poison",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "chill-touch",
+      "name": "Contact glacial",
+      "level": 0,
+      "school": "necromancy",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Attaque de sort qui inflige des dégâts nécrotiques et empêche la cible de récupérer des points de vie jusqu'à votre prochain tour.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d10"
+        },
+        "kind": "necrotic",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "true-strike",
+      "name": "Coup au but",
+      "level": 0,
+      "school": "divination",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Porte une attaque d'arme en utilisant votre caractéristique d'incantation ; ajoute des dégâts radiants aux niveaux supérieurs.",
+      "attackRoll": true
+    },
+    {
+      "id": "shillelagh",
+      "name": "Crosse des druides",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["druid"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Transforme un bâton ou une massue en arme magique qui utilise votre caractéristique d'incantation, avec un dé de dégâts amélioré."
+    },
+    {
+      "id": "eldritch-blast",
+      "name": "Décharge occulte",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["warlock"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Un ou plusieurs traits d'énergie à distance (attaques de sort) infligeant des dégâts de force ; le nombre de traits augmente avec le niveau.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d10"
+        },
+        "kind": "force",
+        "scaling": "cantrip",
+        "note": "la montée ajoute des traits (1d10 chacun), pas des dés au trait"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "druidcraft",
+      "name": "Druidisme",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["druid"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Petits effets naturels : prévoir la météo locale, faire éclore une fleur, produire un son ou une odeur, allumer ou éteindre une flammèche."
+    },
+    {
+      "id": "elementalism",
+      "name": "Élémentalisme",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Effet élémentaire mineur au choix : flammèche, jet d'eau, bourrasque, poignée de terre, brume, etc."
+    },
+    {
+      "id": "sorcerous-burst",
+      "name": "Éruption ensorcelée",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["sorcerer"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Trait d'énergie à distance d'un type de dégât au choix ; peut se propager quand le dé de dégâts fait son maximum.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "force",
+        "scaling": "cantrip",
+        "note": "type de dégât au choix"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "sacred-flame",
+      "name": "Flamme sacrée",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Colonne de lumière divine sur une créature ; jet de Dextérité (l'abri n'aide pas) contre des dégâts radiants.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "radiant",
+        "scaling": "cantrip"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "produce-flame",
+      "name": "Flammes",
+      "level": 0,
+      "school": "conjuration",
+      "classes": ["druid"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Flamme dans la main qui éclaire et peut être lancée sur une créature (attaque de sort à distance, dégâts de feu).",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "fire",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "minor-illusion",
+      "name": "Illusion mineure",
+      "level": 0,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée un son OU une image immobile de petite taille ; un examen (jet d'Intelligence) la démasque."
+    },
+    {
+      "id": "light",
+      "name": "Lumière",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["bard", "cleric", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Un objet touché émet de la lumière vive sur un large rayon ; jet de Dextérité pour une cible non consentante."
+    },
+    {
+      "id": "dancing-lights",
+      "name": "Lumières dansantes",
+      "level": 0,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Jusqu'à quatre lumières flottantes (ou une silhouette lumineuse) que vous déplacez par la pensée."
+    },
+    {
+      "id": "mage-hand",
+      "name": "Main du mage",
+      "level": 0,
+      "school": "conjuration",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Main spectrale qui manipule, porte ou lance des objets légers à distance."
+    },
+    {
+      "id": "message",
+      "name": "Message",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["bard", "druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 round",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Chuchote un message à une créature que vous voyez ; elle peut répondre discrètement."
+    },
+    {
+      "id": "vicious-mockery",
+      "name": "Moquerie cruelle",
+      "level": 0,
+      "school": "enchantment",
+      "classes": ["bard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Raillerie magique ; jet de Sagesse contre des dégâts psychiques et un désavantage à sa prochaine attaque.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d6"
+        },
+        "kind": "psychic",
+        "scaling": "cantrip"
+      },
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "shocking-grasp",
+      "name": "Poigne électrique",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Attaque de sort de corps à corps électrique (avantage si la cible porte du métal) qui la prive de réactions jusqu'à son prochain tour.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "lightning",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "starry-wisp",
+      "name": "Poussière d'étoile",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["bard", "druid"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Attaque de sort à distance de lumière ; en cas de coup, la cible se met à luire et ne peut pas bénéficier de l'invisibilité.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "radiant",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "prestidigitation",
+      "name": "Prestidigitation",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Jusqu'à 1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Menus tours : nettoyer ou salir, refroidir ou réchauffer, parfumer, créer une babiole ou une marque, une flammèche, etc."
+    },
+    {
+      "id": "ray-of-frost",
+      "name": "Rayon de givre",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Attaque de sort à distance de froid qui inflige des dégâts et réduit la Vitesse de la cible.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "cold",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "mending",
+      "name": "Réparation",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["bard", "cleric", "druid", "sorcerer", "wizard"],
+      "castingTime": "1 minute",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Répare une déchirure ou une cassure sur un objet ; ne restaure pas les propriétés magiques."
+    },
+    {
+      "id": "resistance",
+      "name": "Résistance",
+      "level": 0,
+      "school": "abjuration",
+      "classes": ["cleric", "druid"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "La créature touchée ajoute 1d4 à un jet de sauvegarde de son choix dans la minute."
+    },
+    {
+      "id": "spare-the-dying",
+      "name": "Stabilisation",
+      "level": 0,
+      "school": "necromancy",
+      "classes": ["cleric", "druid"],
+      "castingTime": "action",
+      "range": "4,50 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Stabilise à distance une créature agonisante (0 point de vie)."
+    },
+    {
+      "id": "thaumaturgy",
+      "name": "Thaumaturgie",
+      "level": 0,
+      "school": "transmutation",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Jusqu'à 1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Manifestations divines mineures : voix amplifiée, flammes vacillantes, mini-séisme, porte qui claque, etc."
+    },
+    {
+      "id": "fire-bolt",
+      "name": "Trait de feu",
+      "level": 0,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Attaque de sort à distance de feu ; peut enflammer un objet non porté.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d10"
+        },
+        "kind": "fire",
+        "scaling": "cantrip"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "alarm",
+      "name": "Alarme",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["ranger", "wizard"],
+      "castingTime": "1 minute",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Pose une alarme mentale ou sonore qui se déclenche si une créature non autorisée entre dans la zone protégée."
+    },
+    {
+      "id": "animal-friendship",
+      "name": "Amitié avec les animaux",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "24 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Convainc une bête inoffensive que vous ne lui voulez pas de mal ; jet de Sagesse pour résister.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "find-familiar",
+      "name": "Appel de familier",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["wizard"],
+      "castingTime": "1 heure",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Invoque un esprit servile en forme de petit animal, lié à vous (perception partagée, sorts au contact délivrés par lui)."
+    },
+    {
+      "id": "mage-armor",
+      "name": "Armure du mage",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Enveloppe une cible non armurée d'une force protectrice : sa CA devient 13 + modificateur de Dextérité."
+    },
+    {
+      "id": "goodberry",
+      "name": "Baies nourricières",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "24 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée des baies rendant chacune 1 point de vie et nourrissant une créature pour la journée."
+    },
+    {
+      "id": "bless",
+      "name": "Bénédiction",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Jusqu'à trois créatures ajoutent 1d4 à leurs jets d'attaque et de sauvegarde pendant la durée."
+    },
+    {
+      "id": "inflict-wounds",
+      "name": "Blessure",
+      "level": 1,
+      "school": "necromancy",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vague de nécrose sur une créature ; inflige de lourds dégâts nécrotiques.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d10"
+        },
+        "kind": "necrotic",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "con",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "shield",
+      "name": "Bouclier",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "reaction",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 round",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Réaction : +5 à la CA jusqu'à votre prochain tour et immunité au projectile magique."
+    },
+    {
+      "id": "shield-of-faith",
+      "name": "Bouclier de la foi",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "bonus",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature à distance gagne +2 de CA pendant la durée (concentration)."
+    },
+    {
+      "id": "charm-person",
+      "name": "Charme-personne",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "druid", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Charme un humanoïde qui vous voit ; jet de Sagesse pour résister, avantage s'il est en plein combat.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "searing-smite",
+      "name": "Châtiment de fournaise",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["paladin"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Votre prochaine attaque d'arme enflamme la cible : dégâts de feu immédiats puis à chaque tour.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "divine-smite",
+      "name": "Châtiment divin",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["paladin"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Votre prochaine attaque d'arme touchée inflige de gros dégâts radiants, encore plus contre les morts-vivants et les fiélons."
+    },
+    {
+      "id": "speak-with-animals",
+      "name": "Communication avec les animaux",
+      "level": 1,
+      "school": "divination",
+      "classes": ["bard", "druid", "ranger", "warlock"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Vous comprenez les bêtes et pouvez leur parler pendant la durée."
+    },
+    {
+      "id": "comprehend-languages",
+      "name": "Compréhension des langues",
+      "level": 1,
+      "school": "divination",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Vous comprenez toute langue parlée entendue et tout texte écrit touché."
+    },
+    {
+      "id": "color-spray",
+      "name": "Couleurs dansantes",
+      "level": 1,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Éventail de lumières aveuglantes ; les créatures d'une zone proche peuvent devenir aveugles brièvement.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "ice-knife",
+      "name": "Couteau de glace",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Lame de glace lancée (attaque de sort) qui explose ensuite : jet de Dextérité pour les créatures autour contre des dégâts de froid.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d6"
+        },
+        "kind": "cold",
+        "scaling": "slot",
+        "note": "+1d10 perforant sur la cible touchée"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "create-or-destroy-water",
+      "name": "Création ou destruction d'eau",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["cleric", "druid"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée ou détruit une petite quantité d'eau (ou de brouillard / pluie) dans une zone."
+    },
+    {
+      "id": "disguise-self",
+      "name": "Déguisement",
+      "level": 1,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Modifie votre apparence et vos vêtements de façon illusoire ; un contact ou un examen révèle la supercherie."
+    },
+    {
+      "id": "detect-magic",
+      "name": "Détection de la magie",
+      "level": 1,
+      "school": "divination",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": true,
+      "summary": "Vous percevez la magie autour de vous et pouvez identifier l'école d'un effet magique visible."
+    },
+    {
+      "id": "detect-evil-and-good",
+      "name": "Détection du mal et du bien",
+      "level": 1,
+      "school": "divination",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous détectez la présence de célestes, fiélons, morts-vivants, fées, élémentaires et de zones consacrées ou souillées."
+    },
+    {
+      "id": "detect-poison-and-disease",
+      "name": "Détection du poison et des maladies",
+      "level": 1,
+      "school": "divination",
+      "classes": ["cleric", "druid", "paladin", "ranger"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": true,
+      "summary": "Vous détectez et localisez poisons, créatures empoisonnées et maladies à proximité."
+    },
+    {
+      "id": "tensers-floating-disk",
+      "name": "Disque flottant",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Crée un disque de force flottant qui vous suit et porte une lourde charge."
+    },
+    {
+      "id": "entangle",
+      "name": "Enchevêtrement",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Des herbes agrippantes couvrent une zone au sol ; jet de Force pour ne pas être entravé.",
+      "save": {
+        "ability": "str",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "divine-favor",
+      "name": "Faveur divine",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["paladin"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vos attaques d'arme infligent des dégâts radiants supplémentaires pendant la durée."
+    },
+    {
+      "id": "feather-fall",
+      "name": "Feuille morte",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "reaction",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Jusqu'à cinq créatures en chute ralentissent et se posent sans subir de dégâts de chute."
+    },
+    {
+      "id": "tashas-hideous-laughter",
+      "name": "Fou rire",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature s'écroule de rire (à terre, neutralisée) ; jet de Sagesse, nouvelle tentative si elle subit des dégâts.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "ensnaring-strike",
+      "name": "Frappe piégeuse",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["ranger"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Votre prochaine attaque d'arme touchée fait jaillir des ronces qui entravent la cible et lui infligent des dégâts perforants à chaque tour.",
+      "save": {
+        "ability": "str",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "grease",
+      "name": "Graisse",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Une zone au sol devient glissante : jet de Dextérité pour ne pas tomber à terre.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "longstrider",
+      "name": "Grande foulée",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["bard", "druid", "ranger", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "La créature touchée gagne +3 m de Vitesse pendant la durée."
+    },
+    {
+      "id": "heroism",
+      "name": "Héroïsme",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "paladin"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature est immunisée à l'état effrayé et gagne des points de vie temporaires au début de chacun de ses tours."
+    },
+    {
+      "id": "identify",
+      "name": "Identification",
+      "level": 1,
+      "school": "divination",
+      "classes": ["bard", "wizard"],
+      "castingTime": "1 minute",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Révèle les propriétés et les sorts d'un objet magique touché (rituel)."
+    },
+    {
+      "id": "silent-image",
+      "name": "Image silencieuse",
+      "level": 1,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une image visuelle mouvante de taille moyenne que vous dirigez ; purement visuelle, un examen la démasque."
+    },
+    {
+      "id": "bane",
+      "name": "Imprécation",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "cleric", "warlock"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Jusqu'à trois créatures retirent 1d4 à leurs jets d'attaque et de sauvegarde ; jet de Charisme pour résister.",
+      "save": {
+        "ability": "cha",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "command",
+      "name": "Injonction",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "cleric", "paladin"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Donne un ordre d'un mot à une créature qui vous comprend ; jet de Sagesse pour résister.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "faerie-fire",
+      "name": "Lueurs féeriques",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["bard", "druid"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Les objets et créatures d'une zone sont cernés de lumière : ils ne peuvent pas être invisibles et sont attaqués avec avantage.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "burning-hands",
+      "name": "Mains brûlantes",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Cône de flammes depuis vos mains ; jet de Dextérité pour réduire de moitié les dégâts de feu.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d6"
+        },
+        "kind": "fire",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "hex",
+      "name": "Maléfice",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["warlock"],
+      "castingTime": "bonus",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Malédiction sur une créature : dégâts nécrotiques supplémentaires quand vous la touchez, et désavantage à une caractéristique choisie."
+    },
+    {
+      "id": "hunters-mark",
+      "name": "Marque du chasseur",
+      "level": 1,
+      "school": "divination",
+      "classes": ["ranger"],
+      "castingTime": "bonus",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Marque une créature : dégâts supplémentaires quand vous la touchez et avantage pour la pister et la repérer."
+    },
+    {
+      "id": "healing-word",
+      "name": "Mot de guérison",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "druid"],
+      "castingTime": "bonus",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Rend des points de vie à une créature à distance, en une action bonus.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d4"
+        },
+        "kind": "heal",
+        "scaling": "slot"
+      }
+    },
+    {
+      "id": "dissonant-whispers",
+      "name": "Murmures dissonants",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Murmure discordant ; jet de Sagesse contre des dégâts psychiques et une fuite immédiate loin de vous.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d6"
+        },
+        "kind": "psychic",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "wis",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "fog-cloud",
+      "name": "Nappe de brouillard",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une sphère de brouillard qui bloque la vision."
+    },
+    {
+      "id": "chromatic-orb",
+      "name": "Orbe chromatique",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Orbe lancé (attaque de sort) d'un type de dégât élémentaire au choix ; peut rebondir sur une autre cible aux niveaux supérieurs.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d8"
+        },
+        "kind": "fire",
+        "scaling": "slot",
+        "note": "type élémentaire au choix"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "magic-missile",
+      "name": "Projectile magique",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Trois dards de force qui touchent automatiquement les cibles que vous voyez.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d4"
+        },
+        "kind": "force",
+        "scaling": "slot",
+        "step": {
+          "count": 1,
+          "die": "d4"
+        },
+        "note": "+1 par dard ; ajoute +3 dans « Ajustement »"
+      }
+    },
+    {
+      "id": "protection-from-evil-and-good",
+      "name": "Protection contre le mal et le bien",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["cleric", "druid", "paladin", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature est protégée de certains types de monstres : ils l'attaquent avec désavantage et ne peuvent ni la charmer, ni l'effrayer, ni la posséder."
+    },
+    {
+      "id": "purify-food-and-drink",
+      "name": "Purification de la nourriture et de l'eau",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["cleric", "druid", "paladin"],
+      "castingTime": "action",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Purifie la nourriture et les boissons d'une zone de tout poison et de toute corruption."
+    },
+    {
+      "id": "ray-of-sickness",
+      "name": "Rayon empoisonné",
+      "level": 1,
+      "school": "necromancy",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Rayon nauséeux (attaque de sort) : dégâts de poison et cible potentiellement empoisonnée.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d8"
+        },
+        "kind": "poison",
+        "scaling": "slot"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "guiding-bolt",
+      "name": "Rayon traçant",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 round",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Éclair de lumière (attaque de sort à distance) : dégâts radiants et la prochaine attaque contre la cible a l'avantage.",
+      "damage": {
+        "pool": {
+          "count": 4,
+          "die": "d6"
+        },
+        "kind": "radiant",
+        "scaling": "slot"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "expeditious-retreat",
+      "name": "Repli expéditif",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous permet de faire l'action Se précipiter en action bonus à chaque tour."
+    },
+    {
+      "id": "hellish-rebuke",
+      "name": "Représailles infernales",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["warlock"],
+      "castingTime": "reaction",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Réaction contre une créature qui vous a blessé : flammes infernales, jet de Dextérité pour la moitié des dégâts de feu.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d10"
+        },
+        "kind": "fire",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "sanctuary",
+      "name": "Sanctuaire",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["cleric"],
+      "castingTime": "bonus",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Une créature est protégée : quiconque veut l'attaquer ou la cibler doit réussir un jet de Sagesse, sinon il change de cible.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "jump",
+      "name": "Saut",
+      "level": 1,
+      "school": "transmutation",
+      "classes": ["druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "bonus",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "La distance de saut de la créature touchée est triplée."
+    },
+    {
+      "id": "unseen-servant",
+      "name": "Serviteur invisible",
+      "level": 1,
+      "school": "conjuration",
+      "classes": ["bard", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Crée une force invisible sans esprit qui accomplit des tâches simples sur votre ordre."
+    },
+    {
+      "id": "false-life",
+      "name": "Simulacre de vie",
+      "level": 1,
+      "school": "necromancy",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vous gagnez des points de vie temporaires."
+    },
+    {
+      "id": "cure-wounds",
+      "name": "Soins",
+      "level": 1,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Rend des points de vie à une créature touchée.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d8"
+        },
+        "kind": "heal",
+        "scaling": "slot"
+      }
+    },
+    {
+      "id": "sleep",
+      "name": "Sommeil",
+      "level": 1,
+      "school": "enchantment",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Endort des créatures dans une zone (jet de Sagesse) ; l'effet se termine si elles subissent des dégâts ou sont secouées.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "illusory-script",
+      "name": "Texte illusoire",
+      "level": 1,
+      "school": "illusion",
+      "classes": ["bard", "warlock", "wizard"],
+      "castingTime": "1 minute",
+      "range": "Contact",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 jours",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Un texte n'est lisible que par les personnes que vous désignez ; les autres voient un message anodin."
+    },
+    {
+      "id": "thunderwave",
+      "name": "Vague tonnante",
+      "level": 1,
+      "school": "evocation",
+      "classes": ["bard", "druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Onde de choc sonore en cône devant vous ; jet de Constitution pour la moitié des dégâts, les cibles ratées sont repoussées.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d8"
+        },
+        "kind": "thunder",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "con",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "enlarge-reduce",
+      "name": "Agrandissement/rapetissement",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["bard", "druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Agrandit ou rapetisse une créature ou un objet d'une catégorie de taille, avec bonus/malus aux dégâts et aux jets de Force.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "aid",
+      "name": "Aide",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Augmente les points de vie maximum et actuels de jusqu'à trois créatures pendant une heure."
+    },
+    {
+      "id": "enhance-ability",
+      "name": "Amélioration de caractéristique",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["bard", "cleric", "druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Confère un avantage aux jets d'une caractéristique choisie (parfois un bonus supplémentaire) pendant une heure."
+    },
+    {
+      "id": "calm-emotions",
+      "name": "Apaisement des émotions",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "cleric"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Apaise les créatures d'une zone : supprime peur et frénésie, ou rend indifférent envers certaines créatures ; jet de Charisme.",
+      "save": {
+        "ability": "cha",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "find-steed",
+      "name": "Appel de destrier",
+      "level": 2,
+      "school": "conjuration",
+      "classes": ["paladin"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Invoque une monture céleste, fée ou fiélon intelligente et liée à vous."
+    },
+    {
+      "id": "magic-weapon",
+      "name": "Arme magique",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["paladin", "ranger", "sorcerer", "wizard"],
+      "castingTime": "bonus",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Une arme non magique devient magique avec un bonus d'attaque et de dégâts pendant la durée."
+    },
+    {
+      "id": "spiritual-weapon",
+      "name": "Arme spirituelle",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["cleric"],
+      "castingTime": "bonus",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une arme spectrale flottante qui attaque sur votre ordre (dégâts de force) et que vous déplacez en action bonus.",
+      "damage": {
+        "pool": {
+          "count": 1,
+          "die": "d8"
+        },
+        "kind": "force",
+        "scaling": "slot",
+        "step": {
+          "count": 1,
+          "die": "d8"
+        },
+        "note": "+1d8 tous les 2 niveaux d'emplacement"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "augury",
+      "name": "Augure",
+      "level": 2,
+      "school": "divination",
+      "classes": ["cleric", "druid", "wizard"],
+      "castingTime": "1 minute",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Un présage bref (bon, mauvais, les deux ou neutre) sur les conséquences d'un plan d'action dans la demi-heure (rituel)."
+    },
+    {
+      "id": "nystuls-magic-aura",
+      "name": "Aura magique de l'arcaniste",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "24 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Masque ou falsifie ce que révèle la détection de la magie sur une créature ou un objet."
+    },
+    {
+      "id": "magic-mouth",
+      "name": "Bouche magique",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["bard", "wizard"],
+      "castingTime": "1 minute",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Jusqu'à dissipation",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Enchante un objet pour qu'il prononce un message déclenché par une condition précise."
+    },
+    {
+      "id": "gust-of-wind",
+      "name": "Bourrasque",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Rafale de vent en ligne : repousse les créatures (jet de Force), disperse gaz et petites flammes.",
+      "save": {
+        "ability": "str",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "blindness-deafness",
+      "name": "Cécité/surdité",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["bard", "cleric", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Rend une créature aveugle ou sourde ; jet de Constitution à la lancée et à chaque tour.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "shining-smite",
+      "name": "Châtiment de révélation",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["paladin"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Votre prochaine attaque d'arme touchée fait luire la cible : dégâts radiants supplémentaires et elle est attaquée avec avantage."
+    },
+    {
+      "id": "rope-trick",
+      "name": "Corde enchantée",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Une corde monte vers un espace extradimensionnel où huit créatures peuvent se réfugier."
+    },
+    {
+      "id": "spike-growth",
+      "name": "Croissance d'épines",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "45 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Le sol d'une zone se hérisse de pointes : terrain difficile et dégâts perforants à chaque 1,50 m parcouru."
+    },
+    {
+      "id": "knock",
+      "name": "Déblocage",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Ouvre une serrure, un verrou ou des chaînes visés (bruyamment)."
+    },
+    {
+      "id": "see-invisibility",
+      "name": "Détection de l'invisibilité",
+      "level": 2,
+      "school": "divination",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vous voyez les créatures et objets invisibles et percevez le plan Éthéré pendant une heure."
+    },
+    {
+      "id": "detect-thoughts",
+      "name": "Détection des pensées",
+      "level": 2,
+      "school": "divination",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous percevez les pensées superficielles des créatures proches et pouvez sonder plus profond ; jet de Sagesse.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "find-traps",
+      "name": "Détection des pièges",
+      "level": 2,
+      "school": "divination",
+      "classes": ["cleric", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vous révèle la présence d'un piège dans votre champ de vision, sans en préciser la nature exacte."
+    },
+    {
+      "id": "enthrall",
+      "name": "Discours captivant",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "warlock"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Un discours captive les créatures choisies : désavantage aux tests de Perception pour remarquer autre chose que vous ; jet de Sagesse.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "gentle-repose",
+      "name": "Doux repos",
+      "level": 2,
+      "school": "necromancy",
+      "classes": ["cleric", "paladin", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 jours",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Protège un cadavre de la décomposition et empêche qu'il ne soit transformé en mort-vivant (rituel)."
+    },
+    {
+      "id": "mind-spike",
+      "name": "Épine mentale",
+      "level": 2,
+      "school": "divination",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Éclat de force mentale (jet d'Intelligence, dégâts psychiques) qui vous révèle en permanence la position de la cible.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d8"
+        },
+        "kind": "psychic",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "wis",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "continual-flame",
+      "name": "Flamme éternelle",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["cleric", "druid", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Jusqu'à dissipation",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée une flamme permanente sans chaleur ni carburant sur un objet."
+    },
+    {
+      "id": "melfs-acid-arrow",
+      "name": "Flèche acide",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["wizard"],
+      "castingTime": "action",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Flèche d'acide (attaque de sort à distance) : dégâts d'acide immédiats puis à la fin du tour suivant, même en cas d'échec partiel.",
+      "damage": {
+        "pool": {
+          "count": 4,
+          "die": "d4"
+        },
+        "kind": "acid",
+        "scaling": "slot",
+        "note": "+2d4 acide à la fin du tour suivant"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "blur",
+      "name": "Flou",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Votre silhouette se brouille : les créatures vous attaquent avec désavantage (sauf sens spéciaux)."
+    },
+    {
+      "id": "phantasmal-force",
+      "name": "Force fantasmagorique",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une illusion (visuelle, sonore, etc.) dans l'esprit d'une créature, qui la croit réelle et peut en subir des dégâts psychiques ; jet d'Intelligence.",
+      "save": {
+        "ability": "int",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "misty-step",
+      "name": "Foulée brumeuse",
+      "level": 2,
+      "school": "conjuration",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Téléportation en action bonus vers un endroit libre visible à courte portée."
+    },
+    {
+      "id": "shatter",
+      "name": "Fracassement",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Explosion sonore dans une zone ; jet de Constitution pour la moitié des dégâts de tonnerre, désavantage pour les créatures d'inorganique.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d8"
+        },
+        "kind": "thunder",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "con",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "mirror-image",
+      "name": "Image miroir",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Trois doublons illusoires bougent avec vous et interceptent des attaques à votre place."
+    },
+    {
+      "id": "hold-person",
+      "name": "Immobilisation de personne",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Paralyse un humanoïde ; jet de Sagesse à la lancée et à la fin de chacun de ses tours.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "invisibility",
+      "name": "Invisibilité",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature touchée (et ce qu'elle porte) devient invisible jusqu'à ce qu'elle attaque ou lance un sort."
+    },
+    {
+      "id": "flame-blade",
+      "name": "Lame de feu",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["druid", "sorcerer"],
+      "castingTime": "bonus",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une lame de feu que vous maniez comme une arme (attaque de sort de corps à corps, dégâts de feu) et qui éclaire.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d6"
+        },
+        "kind": "fire",
+        "scaling": "slot",
+        "step": {
+          "count": 1,
+          "die": "d6"
+        },
+        "note": "+1d6 tous les 2 niveaux d'emplacement"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Fait flotter verticalement une créature ou un objet ; la cible non consentante fait un jet de Constitution.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "warding-bond",
+      "name": "Lien de protection",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Lie une créature à vous : elle gagne +1 en CA et aux jets de sauvegarde, la résistance aux dégâts, mais vous partagez ses dégâts."
+    },
+    {
+      "id": "locate-animals-or-plants",
+      "name": "Localisation d'animaux ou de plantes",
+      "level": 2,
+      "school": "divination",
+      "classes": ["bard", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Vous révèle la direction et la distance de la bête ou de la plante la plus proche du type nommé (rituel)."
+    },
+    {
+      "id": "locate-object",
+      "name": "Localisation d'objet",
+      "level": 2,
+      "school": "divination",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous percevez la direction d'un objet précis ou d'un type d'objet connu, tant qu'il est à portée."
+    },
+    {
+      "id": "animal-messenger",
+      "name": "Messager animal",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "24 heures",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Une petite bête porte un message court jusqu'à un lieu que vous décrivez (rituel).",
+      "save": {
+        "ability": "cha",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "heat-metal",
+      "name": "Métal brûlant",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["bard", "druid"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Chauffe à blanc un objet métallique : dégâts de feu et lâcher-prise possible ; désavantage si la créature le tient encore.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d8"
+        },
+        "kind": "fire",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "con",
+        "onSuccess": "partial"
+      }
+    },
+    {
+      "id": "alter-self",
+      "name": "Modification d'apparence",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous vous transformez : adaptation aquatique, apparence modifiée ou armes naturelles."
+    },
+    {
+      "id": "pass-without-trace",
+      "name": "Passage sans trace",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Vous et vos alliés proches gagnez +10 aux tests de Discrétion et ne laissez aucune trace pistable."
+    },
+    {
+      "id": "spider-climb",
+      "name": "Pattes d'araignée",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "La créature touchée peut grimper aux murs et aux plafonds mains libres pendant la durée."
+    },
+    {
+      "id": "barkskin",
+      "name": "Peau d'écorce",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["druid", "ranger"],
+      "castingTime": "bonus",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "La CA de la créature touchée ne peut pas descendre en dessous de 16."
+    },
+    {
+      "id": "prayer-of-healing",
+      "name": "Prière de guérison",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "10 minutes",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Après un rituel de 10 minutes, rend des points de vie à jusqu'à six créatures.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d8"
+        },
+        "kind": "heal",
+        "scaling": "slot"
+      }
+    },
+    {
+      "id": "protection-from-poison",
+      "name": "Protection contre le poison",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["cleric", "druid", "paladin", "ranger"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Neutralise un poison qui affecte la cible et lui donne avantage aux jets contre le poison + la résistance aux dégâts de poison."
+    },
+    {
+      "id": "ray-of-enfeeblement",
+      "name": "Rayon affaiblissant",
+      "level": 2,
+      "school": "necromancy",
+      "classes": ["warlock", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Rayon d'ombre (attaque de sort) : la cible n'inflige que la moitié des dégâts avec ses attaques d'arme basées sur la Force.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "scorching-ray",
+      "name": "Rayon ardent",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Trois rayons de feu (attaques de sort à distance) répartis entre une ou plusieurs cibles.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d6"
+        },
+        "kind": "fire",
+        "scaling": "slot",
+        "step": {
+          "count": 2,
+          "die": "d6"
+        },
+        "note": "par rayon ; 3 rayons de base, +1 rayon par niveau"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "moonbeam",
+      "name": "Rayon de lune",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["druid"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Colonne de lumière argentée mobile ; jet de Constitution pour la moitié des dégâts radiants, gêne les métamorphes.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d10"
+        },
+        "kind": "radiant",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "con",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "lesser-restoration",
+      "name": "Restauration partielle",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger"],
+      "castingTime": "bonus",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Met fin à un état : aveuglé, assourdi, empoisonné ou paralysé, ou à une maladie."
+    },
+    {
+      "id": "silence",
+      "name": "Silence",
+      "level": 2,
+      "school": "illusion",
+      "classes": ["bard", "cleric", "ranger"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": true,
+      "summary": "Aucun son ne peut naître ni pénétrer dans une sphère : immunité au tonnerre, incantation à composante verbale impossible."
+    },
+    {
+      "id": "dragons-breath",
+      "name": "Souffle du dragon",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "bonus",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature consentante peut cracher un souffle élémentaire en cône ; jet de Dextérité pour la moitié des dégâts.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "partial"
+      }
+    },
+    {
+      "id": "flaming-sphere",
+      "name": "Sphère de feu",
+      "level": 2,
+      "school": "conjuration",
+      "classes": ["druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Sphère de feu que vous déplacez : brûle qui la touche (jet de Dextérité) et éclaire.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d6"
+        },
+        "kind": "fire",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "suggestion",
+      "name": "Suggestion",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Suggère une action raisonnable à une créature qui vous comprend ; jet de Sagesse pour résister.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "darkness",
+      "name": "Ténèbres",
+      "level": 2,
+      "school": "evocation",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée une zone d'obscurité magique que la vision dans le noir ordinaire ne perce pas."
+    },
+    {
+      "id": "web",
+      "name": "Toile d'araignée",
+      "level": 2,
+      "school": "conjuration",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Remplit une zone de toiles collantes : terrain difficile, jet de Dextérité pour ne pas être entravé.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "arcane-lock",
+      "name": "Verrou magique",
+      "level": 2,
+      "school": "abjuration",
+      "classes": ["wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Jusqu'à dissipation",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Verrouille magiquement une porte, une fenêtre ou un coffre ; seul vous (et ceux que vous désignez) l'ouvrez normalement."
+    },
+    {
+      "id": "darkvision",
+      "name": "Vision dans le noir",
+      "level": 2,
+      "school": "transmutation",
+      "classes": ["druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Confère à une créature touchée la vision dans le noir sur 18 m pendant 8 heures."
+    },
+    {
+      "id": "zone-of-truth",
+      "name": "Zone de vérité",
+      "level": 2,
+      "school": "enchantment",
+      "classes": ["bard", "cleric", "paladin"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Dans une zone, les créatures ne peuvent pas mentir sciemment ; jet de Charisme pour ne pas être affecté (mais elles le savent).",
+      "save": {
+        "ability": "cha",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "animate-dead",
+      "name": "Animation des morts",
+      "level": 3,
+      "school": "necromancy",
+      "classes": ["cleric", "wizard"],
+      "castingTime": "1 minute",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Anime un squelette ou un zombie à partir d'ossements ou d'un cadavre ; vous le commandez et devez renouveler le contrôle."
+    },
+    {
+      "id": "nondetection",
+      "name": "Antidétection",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["bard", "ranger", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Protège une créature, un objet ou un lieu de la divination et de la détection magique pendant 8 heures."
+    },
+    {
+      "id": "call-lightning",
+      "name": "Appel de la foudre",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["druid"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Invoque un nuage d'orage : appelez un éclair sur une zone à chaque tour (jet de Dextérité pour la moitié des dégâts de foudre).",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d10"
+        },
+        "kind": "lightning",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "fireball",
+      "name": "Boule de feu",
+      "level": 3,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "45 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Explosion de feu à distance dans une large sphère ; jet de Dextérité pour la moitié des dégâts.",
+      "damage": {
+        "pool": {
+          "count": 8,
+          "die": "d6"
+        },
+        "kind": "fire",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "vampiric-touch",
+      "name": "Caresse du vampire",
+      "level": 3,
+      "school": "necromancy",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Attaque de sort de corps à corps nécrotique ; vous récupérez la moitié des dégâts en points de vie, réutilisable chaque tour.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d6"
+        },
+        "kind": "necrotic",
+        "scaling": "slot",
+        "note": "vous récupérez la moitié en PV"
+      },
+      "attackRoll": true
+    },
+    {
+      "id": "magic-circle",
+      "name": "Cercle magique",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["cleric", "paladin", "warlock", "wizard"],
+      "castingTime": "1 minute",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Cylindre qui empêche certains types de créatures (fiélons, morts-vivants…) d'entrer, de charmer et de posséder (ou les enferme).",
+      "save": {
+        "ability": "cha",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "clairvoyance",
+      "name": "Clairvoyance",
+      "level": 3,
+      "school": "divination",
+      "classes": ["bard", "cleric", "sorcerer", "wizard"],
+      "castingTime": "10 minutes",
+      "range": "1,5 kilomètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Crée un capteur invisible (vue ou ouïe) dans un lieu connu ou visible, à longue distance."
+    },
+    {
+      "id": "blink",
+      "name": "Clignotement",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": false,
+      "ritual": false,
+      "summary": "À la fin de chaque tour, 50 % de chances de disparaître sur le plan Éthéré et de revenir au début de votre tour suivant."
+    },
+    {
+      "id": "sending",
+      "name": "Communication à distance",
+      "level": 3,
+      "school": "divination",
+      "classes": ["bard", "cleric", "wizard"],
+      "castingTime": "action",
+      "range": "Illimitée",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Envoie un message court à une créature connue, où qu'elle soit ; elle peut répondre aussitôt."
+    },
+    {
+      "id": "speak-with-dead",
+      "name": "Communication avec les morts",
+      "level": 3,
+      "school": "necromancy",
+      "classes": ["bard", "cleric", "wizard"],
+      "castingTime": "action",
+      "range": "3 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Pose jusqu'à cinq questions à un cadavre pourvu d'une bouche ; il répond brièvement et évasivement."
+    },
+    {
+      "id": "speak-with-plants",
+      "name": "Communication avec les plantes",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["bard", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Vous parlez aux plantes des environs et pouvez leur demander des informations ou de dégager le passage."
+    },
+    {
+      "id": "counterspell",
+      "name": "Contresort",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "reaction",
+      "range": "18 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Réaction : tente d'interrompre un sort lancé par une créature proche ; réussite automatique jusqu'au niveau 3, sinon jet de caractéristique.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "create-food-and-water",
+      "name": "Création de nourriture et d'eau",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["cleric", "paladin"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée de quoi nourrir et abreuver jusqu'à une douzaine d'humanoïdes pour la journée."
+    },
+    {
+      "id": "plant-growth",
+      "name": "Croissance végétale",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["bard", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "45 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Fait proliférer la végétation d'une zone (terrain difficile) ou enrichit durablement des terres cultivées."
+    },
+    {
+      "id": "remove-curse",
+      "name": "Délivrance des malédictions",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["cleric", "paladin", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Met fin à toutes les malédictions affectant une créature ou brise le lien d'un objet maudit."
+    },
+    {
+      "id": "dispel-magic",
+      "name": "Dissipation de la magie",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Met fin à un effet magique visible ; réussite automatique jusqu'au niveau 3, sinon jet de caractéristique."
+    },
+    {
+      "id": "tongues",
+      "name": "Don des langues",
+      "level": 3,
+      "school": "divination",
+      "classes": ["bard", "cleric", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "La créature touchée comprend toute langue parlée et est comprise de qui parle une langue."
+    },
+    {
+      "id": "lightning-bolt",
+      "name": "Éclair",
+      "level": 3,
+      "school": "evocation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Trait de foudre en ligne devant vous ; jet de Dextérité pour la moitié des dégâts.",
+      "damage": {
+        "pool": {
+          "count": 8,
+          "die": "d6"
+        },
+        "kind": "lightning",
+        "scaling": "slot"
+      },
+      "save": {
+        "ability": "dex",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "spirit-guardians",
+      "name": "Esprits gardiens",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Des esprits protecteurs vous entourent : les ennemis y ralentissent et subissent des dégâts (radiants ou nécrotiques), jet de Sagesse pour moitié.",
+      "damage": {
+        "pool": {
+          "count": 3,
+          "die": "d8"
+        },
+        "kind": "radiant",
+        "scaling": "slot",
+        "note": "radiant ou nécrotique au choix"
+      },
+      "save": {
+        "ability": "wis",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "gaseous-form",
+      "name": "Forme gazeuse",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Transforme une créature consentante en nuage de brume : vol lent, passe par les interstices, résistance aux dégâts non magiques."
+    },
+    {
+      "id": "meld-into-stone",
+      "name": "Fusion dans la pierre",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["cleric", "druid", "ranger"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Vous fondez dans un bloc de pierre assez grand et pouvez y rester caché."
+    },
+    {
+      "id": "glyph-of-warding",
+      "name": "Glyphe de garde",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["bard", "cleric", "wizard"],
+      "castingTime": "1 heure",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Jusqu'à dissipation ou déclenchement",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Inscrit un glyphe piégé qui déclenche une explosion ou un sort mémorisé selon une condition définie.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "partial"
+      }
+    },
+    {
+      "id": "haste",
+      "name": "Hâte",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature gagne +2 en CA, avantage aux jets de Dextérité, double Vitesse et une action limitée supplémentaire ; contrecoup à la fin."
+    },
+    {
+      "id": "major-image",
+      "name": "Image majeure",
+      "level": 3,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Illusion mobile de la taille d'une pièce, avec sons, odeurs et température ; un examen (jet d'Intelligence) la démasque."
+    },
+    {
+      "id": "conjure-animals",
+      "name": "Invocation d'animaux",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Invoque des esprits de la nature bestiaux qui combattent à vos côtés.",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "slow",
+      "name": "Lenteur",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Jusqu'à six créatures d'une zone sont ralenties : Vitesse et CA réduites, une seule action, incantation parfois retardée ; jet de Sagesse.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "beacon-of-hope",
+      "name": "Lueur d'espoir",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["cleric"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Jusqu'à six créatures : avantage aux jets de sauvegarde de Sagesse et de mort, et soins reçus au maximum."
+    },
+    {
+      "id": "daylight",
+      "name": "Lumière du jour",
+      "level": 3,
+      "school": "evocation",
+      "classes": ["cleric", "druid", "paladin", "ranger", "sorcerer"],
+      "castingTime": "action",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Crée une sphère de lumière vive équivalente au plein jour, qui dissipe l'obscurité magique de niveau inférieur."
+    },
+    {
+      "id": "bestow-curse",
+      "name": "Malédiction",
+      "level": 3,
+      "school": "necromancy",
+      "classes": ["bard", "cleric", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Maudit une créature touchée : désavantage à une caractéristique, dégâts nécrotiques supplémentaires reçus, ou perte d'action ; jet de Sagesse.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "water-walk",
+      "name": "Marche sur l'onde",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["cleric", "druid", "ranger", "sorcerer"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Jusqu'à dix créatures peuvent marcher sur les liquides comme sur un sol solide."
+    },
+    {
+      "id": "phantom-steed",
+      "name": "Monture fantôme",
+      "level": 3,
+      "school": "illusion",
+      "classes": ["wizard"],
+      "castingTime": "1 minute",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Crée une monture quasi-réelle rapide et infatigable pour une heure."
+    },
+    {
+      "id": "mass-healing-word",
+      "name": "Mot de guérison de groupe",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["bard", "cleric"],
+      "castingTime": "bonus",
+      "range": "18 mètres",
+      "components": {
+        "v": true,
+        "s": false,
+        "m": false
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Rend des points de vie à jusqu'à six créatures à distance, en action bonus.",
+      "damage": {
+        "pool": {
+          "count": 2,
+          "die": "d4"
+        },
+        "kind": "heal",
+        "scaling": "slot"
+      }
+    },
+    {
+      "id": "hypnotic-pattern",
+      "name": "Motif hypnotique",
+      "level": 3,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": false,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Motif hypnotique dans une zone : les créatures deviennent charmées et neutralisées ; jet de Sagesse, l'effet cesse si elles sont secouées ou blessées.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "wind-wall",
+      "name": "Mur de vent",
+      "level": 3,
+      "school": "evocation",
+      "classes": ["druid", "ranger"],
+      "castingTime": "action",
+      "range": "36 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Dresse un mur de vent qui dévie les petites créatures, les projectiles et disperse les gaz.",
+      "damage": {
+        "pool": {
+          "count": 4,
+          "die": "d8"
+        },
+        "kind": "bludgeoning"
+      },
+      "save": {
+        "ability": "str",
+        "onSuccess": "half"
+      }
+    },
+    {
+      "id": "stinking-cloud",
+      "name": "Nuage nauséabond",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["bard", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "27 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Nuage de gaz nauséabond : les créatures dedans perdent leur action ; jet de Constitution.",
+      "save": {
+        "ability": "con",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "leomunds-tiny-hut",
+      "name": "Petite hutte",
+      "level": 3,
+      "school": "evocation",
+      "classes": ["bard", "wizard"],
+      "castingTime": "1 minute",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "8 heures",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Crée un dôme de force immobile abritant jusqu'à neuf créatures des intempéries et des regards (rituel)."
+    },
+    {
+      "id": "fear",
+      "name": "Terreur",
+      "level": 3,
+      "school": "illusion",
+      "classes": ["bard", "sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Personnelle",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Cône de terreur : les créatures lâchent ce qu'elles tiennent et fuient loin de vous ; jet de Sagesse.",
+      "save": {
+        "ability": "wis",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "protection-from-energy",
+      "name": "Protection contre l'énergie",
+      "level": 3,
+      "school": "abjuration",
+      "classes": ["cleric", "druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": false
+      },
+      "duration": "1 heure",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Une créature gagne la résistance à un type de dégât élémentaire (feu, froid, foudre, acide ou tonnerre)."
+    },
+    {
+      "id": "water-breathing",
+      "name": "Respiration aquatique",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["druid", "ranger", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "9 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "24 heures",
+      "concentration": false,
+      "ritual": true,
+      "summary": "Jusqu'à dix créatures peuvent respirer sous l'eau pendant 24 heures (rituel)."
+    },
+    {
+      "id": "revivify",
+      "name": "Retour à la vie",
+      "level": 3,
+      "school": "necromancy",
+      "classes": ["cleric", "druid", "paladin", "ranger"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "Instantanée",
+      "concentration": false,
+      "ritual": false,
+      "summary": "Ramène à la vie avec 1 point de vie une créature morte depuis moins d'une minute (composante coûteuse)."
+    },
+    {
+      "id": "sleet-storm",
+      "name": "Tempête de neige",
+      "level": 3,
+      "school": "conjuration",
+      "classes": ["druid", "sorcerer", "wizard"],
+      "castingTime": "action",
+      "range": "45 mètres",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "1 minute",
+      "concentration": true,
+      "ritual": false,
+      "summary": "Zone de grésil : terrain glissant, vision bloquée, concentration menacée et créatures qui tombent (jet de Dextérité).",
+      "save": {
+        "ability": "dex",
+        "onSuccess": "negates"
+      }
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "level": 3,
+      "school": "transmutation",
+      "classes": ["sorcerer", "warlock", "wizard"],
+      "castingTime": "action",
+      "range": "Contact",
+      "components": {
+        "v": true,
+        "s": true,
+        "m": true
+      },
+      "duration": "10 minutes",
+      "concentration": true,
+      "ritual": false,
+      "summary": "La créature touchée gagne une Vitesse de vol de 18 m pendant la durée."
+    }
+  ],
+  "translations": {
+    "en": {
+      "acid-splash": {
+        "name": "Acid Splash",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Hurls a bubble of acid at one or two nearby creatures; Dexterity save to avoid the acid damage."
+      },
+      "guidance": {
+        "name": "Guidance",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "The creature touched adds 1d4 to one ability check of its choice within the minute."
+      },
+      "poison-spray": {
+        "name": "Poison Spray",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "A puff of toxic gas at a nearby creature; Constitution save against poison damage."
+      },
+      "chill-touch": {
+        "name": "Chill Touch",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "A spell attack that deals necrotic damage and stops the target from regaining hit points until your next turn."
+      },
+      "true-strike": {
+        "name": "True Strike",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "Make a weapon attack using your spellcasting ability; adds radiant damage at higher levels."
+      },
+      "shillelagh": {
+        "name": "Shillelagh",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Turns a club or quarterstaff into a magic weapon that uses your spellcasting ability, with a bigger damage die."
+      },
+      "eldritch-blast": {
+        "name": "Eldritch Blast",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "One or more ranged beams of energy (spell attacks) dealing force damage; the number of beams grows with level.",
+        "damage": {
+          "note": "scaling adds beams (1d10 each), not dice to a beam"
+        }
+      },
+      "druidcraft": {
+        "name": "Druidcraft",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "Small natural effects: predict the local weather, make a flower bloom, create a sound or a smell, light or snuff out a small flame."
+      },
+      "elementalism": {
+        "name": "Elementalism",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "A minor elemental effect of your choice: a small flame, a spray of water, a gust of wind, a handful of earth, mist, etc."
+      },
+      "sorcerous-burst": {
+        "name": "Sorcerous Burst",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "A ranged bolt of energy of the damage type you choose; it can spread when the damage die rolls its maximum.",
+        "damage": {
+          "note": "damage type of your choice"
+        }
+      },
+      "sacred-flame": {
+        "name": "Sacred Flame",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A column of divine light on a creature; Dexterity save (cover doesn't help) against radiant damage."
+      },
+      "produce-flame": {
+        "name": "Produce Flame",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "A flame in your hand that sheds light and can be hurled at a creature (ranged spell attack, fire damage)."
+      },
+      "minor-illusion": {
+        "name": "Minor Illusion",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "Creates a sound OR a small still image; a close look (Intelligence check) gives it away."
+      },
+      "light": {
+        "name": "Light",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "An object you touch sheds bright light over a wide radius; Dexterity save for an unwilling target."
+      },
+      "dancing-lights": {
+        "name": "Dancing Lights",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "Up to four floating lights (or one glowing figure) that you move by thought."
+      },
+      "mage-hand": {
+        "name": "Mage Hand",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "A spectral hand that handles, carries or throws light objects at a distance."
+      },
+      "message": {
+        "name": "Message",
+        "range": "120 feet",
+        "duration": "1 round",
+        "summary": "Whisper a message to a creature you can see; it can reply discreetly."
+      },
+      "vicious-mockery": {
+        "name": "Vicious Mockery",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Magical insults; Wisdom save against psychic damage and disadvantage on its next attack."
+      },
+      "shocking-grasp": {
+        "name": "Shocking Grasp",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "An electric melee spell attack (advantage if the target wears metal) that denies it reactions until its next turn."
+      },
+      "starry-wisp": {
+        "name": "Starry Wisp",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A ranged spell attack of light; on a hit, the target glows and can't benefit from invisibility."
+      },
+      "prestidigitation": {
+        "name": "Prestidigitation",
+        "range": "10 feet",
+        "duration": "Up to 1 hour",
+        "summary": "Small tricks: clean or soil, chill or warm, flavour, create a trinket or a mark, a small flame, etc."
+      },
+      "ray-of-frost": {
+        "name": "Ray of Frost",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A ranged spell attack of cold that deals damage and reduces the target's Speed."
+      },
+      "mending": {
+        "name": "Mending",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Repairs a tear or a break in an object; doesn't restore magical properties."
+      },
+      "resistance": {
+        "name": "Resistance",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "The creature touched adds 1d4 to one saving throw of its choice within the minute."
+      },
+      "spare-the-dying": {
+        "name": "Spare the Dying",
+        "range": "15 feet",
+        "duration": "Instantaneous",
+        "summary": "Stabilises a dying creature (0 hit points) at a distance."
+      },
+      "thaumaturgy": {
+        "name": "Thaumaturgy",
+        "range": "30 feet",
+        "duration": "Up to 1 minute",
+        "summary": "Minor divine wonders: a booming voice, flickering flames, tiny tremors, a door slamming, etc."
+      },
+      "fire-bolt": {
+        "name": "Fire Bolt",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "A ranged spell attack of fire; can ignite an object that isn't being worn or carried."
+      },
+      "alarm": {
+        "name": "Alarm",
+        "range": "30 feet",
+        "duration": "8 hours",
+        "summary": "Sets a mental or audible alarm that goes off if an unauthorised creature enters the warded area."
+      },
+      "animal-friendship": {
+        "name": "Animal Friendship",
+        "range": "30 feet",
+        "duration": "24 hours",
+        "summary": "Convinces a harmless beast that you mean it no harm; Wisdom save to resist."
+      },
+      "find-familiar": {
+        "name": "Find Familiar",
+        "range": "10 feet",
+        "duration": "Instantaneous",
+        "summary": "Summons a servant spirit in the form of a small animal, bound to you (shared senses, touch spells delivered through it)."
+      },
+      "mage-armor": {
+        "name": "Mage Armor",
+        "range": "Touch",
+        "duration": "8 hours",
+        "summary": "Wraps an unarmored target in protective force: its AC becomes 13 + Dexterity modifier."
+      },
+      "goodberry": {
+        "name": "Goodberry",
+        "range": "Self",
+        "duration": "24 hours",
+        "summary": "Creates berries that each restore 1 hit point and nourish a creature for the day."
+      },
+      "bless": {
+        "name": "Bless",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "Up to three creatures add 1d4 to their attack rolls and saving throws for the duration."
+      },
+      "inflict-wounds": {
+        "name": "Inflict Wounds",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "A wave of necrosis on a creature; deals heavy necrotic damage."
+      },
+      "shield": {
+        "name": "Shield",
+        "range": "Self",
+        "duration": "1 round",
+        "summary": "Reaction: +5 to AC until your next turn and immunity to Magic Missile."
+      },
+      "shield-of-faith": {
+        "name": "Shield of Faith",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "A creature at range gains +2 AC for the duration (concentration)."
+      },
+      "charm-person": {
+        "name": "Charm Person",
+        "range": "30 feet",
+        "duration": "1 hour",
+        "summary": "Charms a humanoid that can see you; Wisdom save to resist, with advantage if it is fighting."
+      },
+      "searing-smite": {
+        "name": "Searing Smite",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Your next weapon attack sets the target ablaze: fire damage at once, then every turn."
+      },
+      "divine-smite": {
+        "name": "Divine Smite",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "Your next weapon hit deals heavy radiant damage, even more against undead and fiends."
+      },
+      "speak-with-animals": {
+        "name": "Speak with Animals",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You understand beasts and can talk to them for the duration."
+      },
+      "comprehend-languages": {
+        "name": "Comprehend Languages",
+        "range": "Self",
+        "duration": "1 hour",
+        "summary": "You understand any spoken language you hear and any written text you touch."
+      },
+      "color-spray": {
+        "name": "Color Spray",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A fan of blinding lights; creatures in a nearby area may be briefly blinded."
+      },
+      "ice-knife": {
+        "name": "Ice Knife",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A thrown blade of ice (spell attack) that then explodes: Dexterity save for the creatures around against cold damage.",
+        "damage": {
+          "note": "+1d10 piercing on the target hit"
+        }
+      },
+      "create-or-destroy-water": {
+        "name": "Create or Destroy Water",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "Creates or destroys a small amount of water (or fog / rain) in an area."
+      },
+      "disguise-self": {
+        "name": "Disguise Self",
+        "range": "Self",
+        "duration": "1 hour",
+        "summary": "Changes your appearance and clothes with an illusion; touch or a close look reveals the trick."
+      },
+      "detect-magic": {
+        "name": "Detect Magic",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You sense magic around you and can identify the school of a visible magical effect."
+      },
+      "detect-evil-and-good": {
+        "name": "Detect Evil and Good",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You detect the presence of celestials, fiends, undead, fey, elementals and of hallowed or desecrated places."
+      },
+      "detect-poison-and-disease": {
+        "name": "Detect Poison and Disease",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You detect and locate poisons, poisoned creatures and diseases nearby."
+      },
+      "tensers-floating-disk": {
+        "name": "Floating Disk",
+        "range": "30 feet",
+        "duration": "1 hour",
+        "summary": "Creates a floating disk of force that follows you and carries a heavy load."
+      },
+      "entangle": {
+        "name": "Entangle",
+        "range": "90 feet",
+        "duration": "1 minute",
+        "summary": "Grasping weeds cover an area of ground; Strength save to avoid being restrained."
+      },
+      "divine-favor": {
+        "name": "Divine Favor",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Your weapon attacks deal extra radiant damage for the duration."
+      },
+      "feather-fall": {
+        "name": "Feather Fall",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Up to five falling creatures slow down and land without taking falling damage."
+      },
+      "tashas-hideous-laughter": {
+        "name": "Hideous Laughter",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "A creature collapses with laughter (prone, incapacitated); Wisdom save, with a new try if it takes damage."
+      },
+      "ensnaring-strike": {
+        "name": "Ensnaring Strike",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Your next weapon hit makes thorny vines burst out, restraining the target and dealing piercing damage each turn."
+      },
+      "grease": {
+        "name": "Grease",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "An area of ground turns slippery: Dexterity save to avoid falling prone."
+      },
+      "longstrider": {
+        "name": "Longstrider",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "The creature touched gains +10 feet of Speed for the duration."
+      },
+      "heroism": {
+        "name": "Heroism",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "A creature is immune to the frightened condition and gains temporary hit points at the start of each of its turns."
+      },
+      "identify": {
+        "name": "Identify",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Reveals the properties and spells of a magic item you touch (ritual)."
+      },
+      "silent-image": {
+        "name": "Silent Image",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "Creates a moving visual image of medium size that you direct; purely visual, a close look gives it away."
+      },
+      "bane": {
+        "name": "Bane",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "Up to three creatures subtract 1d4 from their attack rolls and saving throws; Charisma save to resist."
+      },
+      "command": {
+        "name": "Command",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Give a one-word order to a creature that understands you; Wisdom save to resist."
+      },
+      "faerie-fire": {
+        "name": "Faerie Fire",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Objects and creatures in an area are outlined in light: they can't be invisible and are attacked with advantage."
+      },
+      "burning-hands": {
+        "name": "Burning Hands",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A cone of flame from your hands; Dexterity save to halve the fire damage."
+      },
+      "hex": {
+        "name": "Hex",
+        "range": "90 feet",
+        "duration": "1 hour",
+        "summary": "A curse on a creature: extra necrotic damage when you hit it, and disadvantage with a chosen ability."
+      },
+      "hunters-mark": {
+        "name": "Hunter's Mark",
+        "range": "90 feet",
+        "duration": "1 hour",
+        "summary": "Marks a creature: extra damage when you hit it and advantage to track and find it."
+      },
+      "healing-word": {
+        "name": "Healing Word",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Restores hit points to a creature at range, as a bonus action."
+      },
+      "dissonant-whispers": {
+        "name": "Dissonant Whispers",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A discordant whisper; Wisdom save against psychic damage and an immediate flight away from you."
+      },
+      "fog-cloud": {
+        "name": "Fog Cloud",
+        "range": "120 feet",
+        "duration": "1 hour",
+        "summary": "Creates a sphere of fog that blocks vision."
+      },
+      "chromatic-orb": {
+        "name": "Chromatic Orb",
+        "range": "90 feet",
+        "duration": "Instantaneous",
+        "summary": "A hurled orb (spell attack) of an elemental damage type of your choice; can bounce to another target at higher levels.",
+        "damage": {
+          "note": "elemental type of your choice"
+        }
+      },
+      "magic-missile": {
+        "name": "Magic Missile",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "Three darts of force that automatically hit targets you can see.",
+        "damage": {
+          "note": "+1 per dart; add +3 under “Adjustment”"
+        }
+      },
+      "protection-from-evil-and-good": {
+        "name": "Protection from Evil and Good",
+        "range": "Touch",
+        "duration": "10 minutes",
+        "summary": "A creature is protected from certain kinds of monsters: they attack it with disadvantage and can't charm, frighten or possess it."
+      },
+      "purify-food-and-drink": {
+        "name": "Purify Food and Drink",
+        "range": "10 feet",
+        "duration": "Instantaneous",
+        "summary": "Rids the food and drink in an area of all poison and rot."
+      },
+      "ray-of-sickness": {
+        "name": "Ray of Sickness",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A sickening ray (spell attack): poison damage and the target may be poisoned."
+      },
+      "guiding-bolt": {
+        "name": "Guiding Bolt",
+        "range": "120 feet",
+        "duration": "1 round",
+        "summary": "A flash of light (ranged spell attack): radiant damage and the next attack against the target has advantage."
+      },
+      "expeditious-retreat": {
+        "name": "Expeditious Retreat",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "Lets you take the Dash action as a bonus action each turn."
+      },
+      "hellish-rebuke": {
+        "name": "Hellish Rebuke",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A reaction against a creature that hurt you: hellfire, Dexterity save for half the fire damage."
+      },
+      "sanctuary": {
+        "name": "Sanctuary",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "A creature is warded: anyone who wants to attack or target it must succeed on a Wisdom save, or pick another target."
+      },
+      "jump": {
+        "name": "Jump",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "The creature touched has its jump distance tripled."
+      },
+      "unseen-servant": {
+        "name": "Unseen Servant",
+        "range": "60 feet",
+        "duration": "1 hour",
+        "summary": "Creates an invisible, mindless force that performs simple tasks on your command."
+      },
+      "false-life": {
+        "name": "False Life",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "You gain temporary hit points."
+      },
+      "cure-wounds": {
+        "name": "Cure Wounds",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Restores hit points to a creature you touch."
+      },
+      "sleep": {
+        "name": "Sleep",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Puts creatures in an area to sleep (Wisdom save); the effect ends if they take damage or are shaken awake."
+      },
+      "illusory-script": {
+        "name": "Illusory Script",
+        "range": "Touch",
+        "duration": "10 days",
+        "summary": "A text can only be read by the people you choose; others see a harmless message."
+      },
+      "thunderwave": {
+        "name": "Thunderwave",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A cone-shaped shock wave in front of you; Constitution save for half damage, targets that fail are pushed away."
+      },
+      "enlarge-reduce": {
+        "name": "Enlarge/Reduce",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "Enlarges or shrinks a creature or an object by one size category, with a bonus/penalty to damage and Strength rolls."
+      },
+      "aid": {
+        "name": "Aid",
+        "range": "30 feet",
+        "duration": "8 hours",
+        "summary": "Raises the maximum and current hit points of up to three creatures for an hour."
+      },
+      "enhance-ability": {
+        "name": "Enhance Ability",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "Grants advantage on rolls with a chosen ability (sometimes an extra bonus) for an hour."
+      },
+      "calm-emotions": {
+        "name": "Calm Emotions",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Calms the creatures in an area: suppresses fear and frenzy, or makes them indifferent towards certain creatures; Charisma save."
+      },
+      "find-steed": {
+        "name": "Find Steed",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "Summons an intelligent celestial, fey or fiendish mount bound to you."
+      },
+      "magic-weapon": {
+        "name": "Magic Weapon",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "A nonmagical weapon becomes magical with a bonus to attack and damage for the duration."
+      },
+      "spiritual-weapon": {
+        "name": "Spiritual Weapon",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Creates a floating spectral weapon that attacks on your command (force damage) and that you move as a bonus action.",
+        "damage": {
+          "note": "+1d8 every 2 slot levels"
+        }
+      },
+      "augury": {
+        "name": "Augury",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A brief omen (weal, woe, both or nothing) about the outcome of a course of action within the next half hour (ritual)."
+      },
+      "nystuls-magic-aura": {
+        "name": "Arcanist's Magic Aura",
+        "range": "Touch",
+        "duration": "24 hours",
+        "summary": "Hides or falsifies what Detect Magic reveals about a creature or an object."
+      },
+      "magic-mouth": {
+        "name": "Magic Mouth",
+        "range": "30 feet",
+        "duration": "Until dispelled",
+        "summary": "Enchants an object so that it speaks a message triggered by a specific condition."
+      },
+      "gust-of-wind": {
+        "name": "Gust of Wind",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "A line of strong wind: pushes creatures back (Strength save), disperses gas and small flames."
+      },
+      "blindness-deafness": {
+        "name": "Blindness/Deafness",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "Makes a creature blind or deaf; Constitution save when cast and each turn."
+      },
+      "shining-smite": {
+        "name": "Shining Smite",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Your next weapon hit makes the target glow: extra radiant damage and it is attacked with advantage."
+      },
+      "rope-trick": {
+        "name": "Rope Trick",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "A rope climbs to an extradimensional space where eight creatures can take shelter."
+      },
+      "spike-growth": {
+        "name": "Spike Growth",
+        "range": "150 feet",
+        "duration": "10 minutes",
+        "summary": "The ground in an area bristles with spikes: difficult terrain and piercing damage for every 5 feet moved."
+      },
+      "knock": {
+        "name": "Knock",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Opens a lock, a bolt or chains you target (loudly)."
+      },
+      "see-invisibility": {
+        "name": "See Invisibility",
+        "range": "Self",
+        "duration": "1 hour",
+        "summary": "You see invisible creatures and objects and perceive the Ethereal Plane for an hour."
+      },
+      "detect-thoughts": {
+        "name": "Detect Thoughts",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "You read the surface thoughts of nearby creatures and can probe deeper; Wisdom save."
+      },
+      "find-traps": {
+        "name": "Find Traps",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "Reveals the presence of a trap within your line of sight, without telling its exact nature."
+      },
+      "enthrall": {
+        "name": "Enthrall",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "A speech captivates the chosen creatures: disadvantage on Perception checks to notice anything but you; Wisdom save."
+      },
+      "gentle-repose": {
+        "name": "Gentle Repose",
+        "range": "Touch",
+        "duration": "10 days",
+        "summary": "Protects a corpse from decay and prevents it from becoming undead (ritual)."
+      },
+      "mind-spike": {
+        "name": "Mind Spike",
+        "range": "120 feet",
+        "duration": "1 hour",
+        "summary": "A shard of mental force (Intelligence save, psychic damage) that keeps revealing the target's location to you."
+      },
+      "continual-flame": {
+        "name": "Continual Flame",
+        "range": "Touch",
+        "duration": "Until dispelled",
+        "summary": "Creates a permanent flame without heat or fuel on an object."
+      },
+      "melfs-acid-arrow": {
+        "name": "Acid Arrow",
+        "range": "90 feet",
+        "duration": "Instantaneous",
+        "summary": "An arrow of acid (ranged spell attack): acid damage at once, then at the end of the next turn, even on a partial miss.",
+        "damage": {
+          "note": "+2d4 acid at the end of the next turn"
+        }
+      },
+      "blur": {
+        "name": "Blur",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Your outline blurs: creatures attack you with disadvantage (unless they have special senses)."
+      },
+      "phantasmal-force": {
+        "name": "Phantasmal Force",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Creates an illusion (visual, sound, etc.) in a creature's mind, which believes it real and can take psychic damage from it; Intelligence save."
+      },
+      "misty-step": {
+        "name": "Misty Step",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A bonus-action teleport to an unoccupied spot you can see at short range."
+      },
+      "shatter": {
+        "name": "Shatter",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "A burst of sound in an area; Constitution save for half the thunder damage, disadvantage for creatures made of inorganic matter."
+      },
+      "mirror-image": {
+        "name": "Mirror Image",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "Three illusory duplicates move with you and take attacks in your place."
+      },
+      "hold-person": {
+        "name": "Hold Person",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Paralyzes a humanoid; Wisdom save when cast and at the end of each of its turns."
+      },
+      "invisibility": {
+        "name": "Invisibility",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "A creature you touch (and what it carries) turns invisible until it attacks or casts a spell."
+      },
+      "flame-blade": {
+        "name": "Flame Blade",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "Creates a blade of fire you wield as a weapon (melee spell attack, fire damage) and that sheds light.",
+        "damage": {
+          "note": "+1d6 every 2 slot levels"
+        }
+      },
+      "levitate": {
+        "name": "Levitate",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "Makes a creature or an object float vertically; an unwilling target makes a Constitution save."
+      },
+      "warding-bond": {
+        "name": "Warding Bond",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "Binds a creature to you: it gains +1 to AC and saving throws and resistance to damage, but you share its damage."
+      },
+      "locate-animals-or-plants": {
+        "name": "Locate Animals or Plants",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "Reveals the direction and distance of the nearest beast or plant of the named kind (ritual)."
+      },
+      "locate-object": {
+        "name": "Locate Object",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You sense the direction of a specific object or a known kind of object, while it is within range."
+      },
+      "animal-messenger": {
+        "name": "Animal Messenger",
+        "range": "30 feet",
+        "duration": "24 hours",
+        "summary": "A small beast carries a short message to a place you describe (ritual)."
+      },
+      "heat-metal": {
+        "name": "Heat Metal",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "Makes a metal object red-hot: fire damage and the creature may drop it; disadvantage if it is still holding it."
+      },
+      "alter-self": {
+        "name": "Alter Self",
+        "range": "Self",
+        "duration": "1 hour",
+        "summary": "You transform: aquatic adaptation, changed appearance or natural weapons."
+      },
+      "pass-without-trace": {
+        "name": "Pass without Trace",
+        "range": "Self",
+        "duration": "1 hour",
+        "summary": "You and nearby allies gain +10 to Stealth checks and leave no trail to follow."
+      },
+      "spider-climb": {
+        "name": "Spider Climb",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "The creature touched can climb walls and ceilings hands-free for the duration."
+      },
+      "barkskin": {
+        "name": "Barkskin",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "The AC of the creature touched can't drop below 16."
+      },
+      "prayer-of-healing": {
+        "name": "Prayer of Healing",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "After a 10-minute ritual, restores hit points to up to six creatures."
+      },
+      "protection-from-poison": {
+        "name": "Protection from Poison",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "Neutralises a poison affecting the target and gives it advantage on saves against poison + resistance to poison damage."
+      },
+      "ray-of-enfeeblement": {
+        "name": "Ray of Enfeeblement",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "A ray of shadow (spell attack): the target deals only half damage with its Strength-based weapon attacks."
+      },
+      "scorching-ray": {
+        "name": "Scorching Ray",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "Three rays of fire (ranged spell attacks) split among one or more targets.",
+        "damage": {
+          "note": "per ray; 3 rays at base, +1 ray per level"
+        }
+      },
+      "moonbeam": {
+        "name": "Moonbeam",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "A movable column of silver light; Constitution save for half the radiant damage, troubles shapechangers."
+      },
+      "lesser-restoration": {
+        "name": "Lesser Restoration",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Ends one condition: blinded, deafened, poisoned or paralyzed, or a disease."
+      },
+      "silence": {
+        "name": "Silence",
+        "range": "120 feet",
+        "duration": "10 minutes",
+        "summary": "No sound can be made in or pass into a sphere: immunity to thunder, no casting with a verbal component."
+      },
+      "dragons-breath": {
+        "name": "Dragon's Breath",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "A willing creature can exhale an elemental breath in a cone; Dexterity save for half damage."
+      },
+      "flaming-sphere": {
+        "name": "Flaming Sphere",
+        "range": "60 feet",
+        "duration": "1 minute",
+        "summary": "A sphere of fire you move around: burns whoever it touches (Dexterity save) and sheds light."
+      },
+      "suggestion": {
+        "name": "Suggestion",
+        "range": "30 feet",
+        "duration": "8 hours",
+        "summary": "Suggests a reasonable course of action to a creature that understands you; Wisdom save to resist."
+      },
+      "darkness": {
+        "name": "Darkness",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "Creates an area of magical darkness that ordinary darkvision can't pierce."
+      },
+      "web": {
+        "name": "Web",
+        "range": "60 feet",
+        "duration": "1 hour",
+        "summary": "Fills an area with sticky webs: difficult terrain, Dexterity save to avoid being restrained."
+      },
+      "arcane-lock": {
+        "name": "Arcane Lock",
+        "range": "Touch",
+        "duration": "Until dispelled",
+        "summary": "Magically locks a door, a window or a chest; only you (and those you name) open it normally."
+      },
+      "darkvision": {
+        "name": "Darkvision",
+        "range": "Touch",
+        "duration": "8 hours",
+        "summary": "Gives a creature you touch darkvision out to 60 feet for 8 hours."
+      },
+      "zone-of-truth": {
+        "name": "Zone of Truth",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "In an area, creatures can't knowingly lie; Charisma save to be unaffected (but they know it)."
+      },
+      "animate-dead": {
+        "name": "Animate Dead",
+        "range": "10 feet",
+        "duration": "Instantaneous",
+        "summary": "Raises a skeleton or a zombie from bones or a corpse; you command it and must renew your control."
+      },
+      "nondetection": {
+        "name": "Nondetection",
+        "range": "Touch",
+        "duration": "8 hours",
+        "summary": "Shields a creature, an object or a place from divination and magical detection for 8 hours."
+      },
+      "call-lightning": {
+        "name": "Call Lightning",
+        "range": "120 feet",
+        "duration": "10 minutes",
+        "summary": "Summons a storm cloud: call down a bolt on an area each turn (Dexterity save for half the lightning damage)."
+      },
+      "fireball": {
+        "name": "Fireball",
+        "range": "150 feet",
+        "duration": "Instantaneous",
+        "summary": "A ranged explosion of fire in a wide sphere; Dexterity save for half damage."
+      },
+      "vampiric-touch": {
+        "name": "Vampiric Touch",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "A necrotic melee spell attack; you regain half the damage as hit points, reusable each turn.",
+        "damage": {
+          "note": "you regain half as HP"
+        }
+      },
+      "magic-circle": {
+        "name": "Magic Circle",
+        "range": "10 feet",
+        "duration": "1 hour",
+        "summary": "A cylinder that stops certain kinds of creatures (fiends, undead…) from entering, charming and possessing (or traps them inside)."
+      },
+      "clairvoyance": {
+        "name": "Clairvoyance",
+        "range": "1 mile",
+        "duration": "10 minutes",
+        "summary": "Creates an invisible sensor (sight or hearing) in a known or visible place, at long range."
+      },
+      "blink": {
+        "name": "Blink",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "At the end of each turn, a 50% chance to vanish into the Ethereal Plane and come back at the start of your next turn."
+      },
+      "sending": {
+        "name": "Sending",
+        "range": "Unlimited",
+        "duration": "Instantaneous",
+        "summary": "Sends a short message to a creature you know, wherever it is; it can reply at once."
+      },
+      "speak-with-dead": {
+        "name": "Speak with Dead",
+        "range": "10 feet",
+        "duration": "10 minutes",
+        "summary": "Ask up to five questions of a corpse that has a mouth; it answers briefly and cryptically."
+      },
+      "speak-with-plants": {
+        "name": "Speak with Plants",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "You talk to the plants around you and can ask them for information or to clear the way."
+      },
+      "counterspell": {
+        "name": "Counterspell",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Reaction: try to interrupt a spell a nearby creature is casting; automatic success up to level 3, otherwise an ability check."
+      },
+      "create-food-and-water": {
+        "name": "Create Food and Water",
+        "range": "30 feet",
+        "duration": "Instantaneous",
+        "summary": "Creates enough food and water for up to a dozen humanoids for the day."
+      },
+      "plant-growth": {
+        "name": "Plant Growth",
+        "range": "150 feet",
+        "duration": "Instantaneous",
+        "summary": "Makes the plants in an area overgrow (difficult terrain) or lastingly enriches farmland."
+      },
+      "remove-curse": {
+        "name": "Remove Curse",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Ends every curse affecting a creature or breaks the bond of a cursed object."
+      },
+      "dispel-magic": {
+        "name": "Dispel Magic",
+        "range": "120 feet",
+        "duration": "Instantaneous",
+        "summary": "Ends a visible magical effect; automatic success up to level 3, otherwise an ability check."
+      },
+      "tongues": {
+        "name": "Tongues",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "The creature touched understands any spoken language and is understood by anyone who speaks a language."
+      },
+      "lightning-bolt": {
+        "name": "Lightning Bolt",
+        "range": "Self",
+        "duration": "Instantaneous",
+        "summary": "A bolt of lightning in a line in front of you; Dexterity save for half damage."
+      },
+      "spirit-guardians": {
+        "name": "Spirit Guardians",
+        "range": "Self",
+        "duration": "10 minutes",
+        "summary": "Protective spirits surround you: enemies slow down in them and take damage (radiant or necrotic), Wisdom save for half.",
+        "damage": {
+          "note": "radiant or necrotic, your choice"
+        }
+      },
+      "gaseous-form": {
+        "name": "Gaseous Form",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "Turns a willing creature into a cloud of mist: slow flight, slips through cracks, resistance to nonmagical damage."
+      },
+      "meld-into-stone": {
+        "name": "Meld into Stone",
+        "range": "Touch",
+        "duration": "8 hours",
+        "summary": "You merge into a block of stone large enough and can stay hidden inside."
+      },
+      "glyph-of-warding": {
+        "name": "Glyph of Warding",
+        "range": "Touch",
+        "duration": "Until dispelled or triggered",
+        "summary": "Inscribes a trapped glyph that triggers an explosion or a stored spell on a set condition."
+      },
+      "haste": {
+        "name": "Haste",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "A creature gains +2 AC, advantage on Dexterity saves, double Speed and one extra limited action; a backlash at the end."
+      },
+      "major-image": {
+        "name": "Major Image",
+        "range": "120 feet",
+        "duration": "10 minutes",
+        "summary": "A moving illusion the size of a room, with sounds, smells and temperature; a close look (Intelligence check) gives it away."
+      },
+      "conjure-animals": {
+        "name": "Conjure Animals",
+        "range": "60 feet",
+        "duration": "10 minutes",
+        "summary": "Summons beastly nature spirits that fight at your side."
+      },
+      "slow": {
+        "name": "Slow",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "Up to six creatures in an area are slowed: reduced Speed and AC, a single action, spells sometimes delayed; Wisdom save."
+      },
+      "beacon-of-hope": {
+        "name": "Beacon of Hope",
+        "range": "30 feet",
+        "duration": "1 minute",
+        "summary": "Up to six creatures: advantage on Wisdom and death saving throws, and healing received is maximised."
+      },
+      "daylight": {
+        "name": "Daylight",
+        "range": "60 feet",
+        "duration": "1 hour",
+        "summary": "Creates a sphere of bright light equal to full daylight, which dispels magical darkness of a lower level."
+      },
+      "bestow-curse": {
+        "name": "Bestow Curse",
+        "range": "Touch",
+        "duration": "1 minute",
+        "summary": "Curses a creature you touch: disadvantage with an ability, extra necrotic damage taken, or a lost action; Wisdom save."
+      },
+      "water-walk": {
+        "name": "Water Walk",
+        "range": "30 feet",
+        "duration": "1 hour",
+        "summary": "Up to ten creatures can walk on liquids as if on solid ground."
+      },
+      "phantom-steed": {
+        "name": "Phantom Steed",
+        "range": "30 feet",
+        "duration": "1 hour",
+        "summary": "Creates a quasi-real, fast and tireless mount for an hour."
+      },
+      "mass-healing-word": {
+        "name": "Mass Healing Word",
+        "range": "60 feet",
+        "duration": "Instantaneous",
+        "summary": "Restores hit points to up to six creatures at range, as a bonus action."
+      },
+      "hypnotic-pattern": {
+        "name": "Hypnotic Pattern",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "A hypnotic pattern in an area: creatures become charmed and incapacitated; Wisdom save, the effect ends if they are shaken or hurt."
+      },
+      "wind-wall": {
+        "name": "Wind Wall",
+        "range": "120 feet",
+        "duration": "1 minute",
+        "summary": "Raises a wall of wind that deflects small creatures and missiles and disperses gases."
+      },
+      "stinking-cloud": {
+        "name": "Stinking Cloud",
+        "range": "90 feet",
+        "duration": "1 minute",
+        "summary": "A cloud of nauseating gas: creatures inside lose their action; Constitution save."
+      },
+      "leomunds-tiny-hut": {
+        "name": "Tiny Hut",
+        "range": "Self",
+        "duration": "8 hours",
+        "summary": "Creates an immobile dome of force sheltering up to nine creatures from the weather and from sight (ritual)."
+      },
+      "fear": {
+        "name": "Fear",
+        "range": "Self",
+        "duration": "1 minute",
+        "summary": "A cone of terror: creatures drop what they hold and flee from you; Wisdom save."
+      },
+      "protection-from-energy": {
+        "name": "Protection from Energy",
+        "range": "Touch",
+        "duration": "1 hour",
+        "summary": "A creature gains resistance to one elemental damage type (fire, cold, lightning, acid or thunder)."
+      },
+      "water-breathing": {
+        "name": "Water Breathing",
+        "range": "30 feet",
+        "duration": "24 hours",
+        "summary": "Up to ten creatures can breathe underwater for 24 hours (ritual)."
+      },
+      "revivify": {
+        "name": "Revivify",
+        "range": "Touch",
+        "duration": "Instantaneous",
+        "summary": "Brings back to life with 1 hit point a creature dead for less than a minute (costly component)."
+      },
+      "sleet-storm": {
+        "name": "Sleet Storm",
+        "range": "150 feet",
+        "duration": "1 minute",
+        "summary": "An area of sleet: slippery ground, blocked vision, threatened concentration and creatures falling (Dexterity save)."
+      },
+      "fly": {
+        "name": "Fly",
+        "range": "Touch",
+        "duration": "10 minutes",
+        "summary": "The creature touched gains a 60-foot fly speed for the duration."
+      }
+    }
+  }
+}

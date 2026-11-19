@@ -1,0 +1,116 @@
+{
+  "title": "Codex",
+  "intro": "Ce que votre groupe a appris du monde : personnages, lieux, factions, objets, documents.",
+  "introGm": "Le monde de votre campagne. Les joueurs ne voient que les fiches révélées — jamais vos secrets.",
+  "missing": "Campagne introuvable.",
+  "new": "Nouvelle fiche",
+  "search": "Rechercher",
+  "all": "Tout",
+  "empty": "Rien d'appris pour l'instant.",
+  "emptyGm": "Le codex est vide. Créez une fiche, ou montrez un lieu en séance : il s'ajoute tout seul.",
+  "noMatch": "Aucune fiche ne correspond.",
+  "revealed": "Révélée",
+  "hidden": "Cachée",
+  "revealWhat": "Révéler « {{name}} »",
+  "hideWhat": "Cacher « {{name}} »",
+  "back": "Retour à {{campaign}}",
+  "kinds": {
+    "npc": "Personnage",
+    "place": "Lieu",
+    "faction": "Faction",
+    "item": "Objet",
+    "deity": "Divinité",
+    "document": "Document",
+    "other": "Autre"
+  },
+  "kindsPlural": {
+    "npc": "Personnages",
+    "place": "Lieux",
+    "faction": "Factions",
+    "item": "Objets",
+    "deity": "Divinités",
+    "document": "Documents",
+    "other": "Autres"
+  },
+  "filters": {
+    "kinds": "Types de fiches",
+    "visibility": "Visibilité",
+    "shown": {
+      "all": "Toutes les fiches",
+      "revealed": "Révélées",
+      "hidden": "Cachées"
+    }
+  },
+  "entry": {
+    "noSummary": "Le groupe n'en sait encore rien de plus.",
+    "openDocument": "Ouvrir le document",
+    "secret": "Secret du MJ",
+    "noSecret": "Aucun secret.",
+    "appearances": "Apparitions",
+    "noAppearance": "Mentionné dans aucun résumé publié.",
+    "session": "Séance {{number}} · {{adventure}}",
+    "sessionTitled": "Séance {{number}} : {{title}} · {{adventure}}",
+    "mentionHint": "Écrivez [[{{name}}]] dans un résumé, un journal ou une fiche pour y faire un lien.",
+    "deleteTitle": "Supprimer « {{name}} » ?",
+    "deleteText": "La fiche et son secret seront supprimés."
+  },
+  "form": {
+    "newTitle": "Nouvelle fiche",
+    "editTitle": "Modifier la fiche",
+    "name": "Nom",
+    "kind": "Type",
+    "nameRequired": "Le nom est requis.",
+    "invalidUrl": "Lien invalide.",
+    "summary": "Ce que les joueurs savent",
+    "summaryPlaceholder": "Forgeron du village, bourru mais honnête…",
+    "summaryHint": "Visible des joueurs une fois la fiche révélée. Markdown et [[mentions]] acceptés.",
+    "imageUrl": "Image (lien)",
+    "url": "Document (lien)",
+    "secret": "Secret du MJ",
+    "secretPlaceholder": "Il travaille pour la Main noire…",
+    "secretHint": "Jamais montré aux joueurs, même fiche révélée."
+  },
+  "session": {
+    "title": "Codex",
+    "summary": "{{revealed}}/{{count}} révélées",
+    "reveal": "Révéler",
+    "hide": "Cacher",
+    "show": "Montrer",
+    "stopShowing": "Ne plus montrer",
+    "showing": "À l'écran : {{name}}",
+    "open": "Ouvrir le codex",
+    "failed": "Action impossible.",
+    "addNpc": "Ajouter au codex",
+    "npcAdded": "« {{name}} » ajouté au codex (caché).",
+    "npcExists": "« {{name}} » est déjà dans le codex."
+  },
+  "handout": {
+    "title": "Document remis",
+    "open": "Ouvrir le document",
+    "close": "Fermer",
+    "chronicle": "Documents remis",
+    "inCodex": "Voir dans le codex",
+    "foundAt": "Trouvé : {{place}}"
+  },
+  "card": {
+    "title": "Codex",
+    "intro": "Le monde tel que le groupe le connaît.",
+    "count_one": "{{count}} fiche",
+    "count_other": "{{count}} fiches",
+    "open": "Tout voir",
+    "recent": "Découverts récemment"
+  },
+  "reputation": {
+    "label": "Attitude envers le groupe",
+    "none": "Non renseignée",
+    "levels": {
+      "-3": "Hostile",
+      "-2": "Inamicale",
+      "-1": "Méfiante",
+      "0": "Neutre",
+      "1": "Bienveillante",
+      "2": "Amicale",
+      "3": "Dévouée"
+    }
+  }
+}
