@@ -132,5 +132,4 @@ disponible à l’adresse https://www.dndbeyond.com/srd. Le SRD 5.2.1 est régi
 par la Licence Creative Commons Attribution 4.0 International, disponible à
 l’adresse https://creativecommons.org/licenses/by/4.0/legalcode.
 
-La même mention est affichée dans l'application, page `/credits`. Adventure
-Keeper est un projet indépendant, sans lien avec Wizards of the Coast.
+La même mention est affichée dans l'application, page `/credits`.
