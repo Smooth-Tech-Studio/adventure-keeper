@@ -11,11 +11,14 @@ on:
 
 jobs:
   # Was this push a pull request already tested as it now stands on
-  # `staging`? Its last commit must have passed `ci / build` and `e2e / e2e`
-  # (the checks the `staging` ruleset requires), and its branch must have held
-  # the previous `staging` (up to date). Then nothing is run twice; otherwise
-  # — an admin merge that did not wait, a manual run — the CI and the
-  # end-to-end tests run here before anything is deployed.
+  # `staging`? Its last commit must have passed `ci / build` and `e2e / e2e` (the
+  # checks the `staging` ruleset requires), and `staging` must now hold exactly
+  # that commit's files (same tree): nothing came from `staging` that the tests
+  # did not see. Then nothing is run twice; otherwise — an admin merge that
+  # did not wait, a branch that was behind, a manual run — the CI and the
+  # end-to-end tests run here before anything is deployed. (Comparing the
+  # files rather than the commits accepts the merge commits that `main` gets
+  # from `staging` and `staging` never receives: they change no file.)
   tested:
     runs-on: ubuntu-latest
     permissions:
@@ -30,28 +33,29 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
-          BEFORE: ${{ github.event.before }}
+          EVENT: ${{ github.event_name }}
         shell: bash
         run: |
           set -euo pipefail
           verdict() { echo "ok=$1" >> "$GITHUB_OUTPUT"; echo "$2"; exit 0; }
 
-          # A manual run has no `before`: test it.
-          [ -n "$BEFORE" ] || verdict false "Manual run: testing here."
+          # A manual run tests what it runs on.
+          [ "$EVENT" = push ] || verdict false "Manual run: testing here."
 
           head=$(gh api "repos/$REPO/commits/$SHA/pulls" \
             --jq '[.[] | select(.merged_at != null and .base.ref == "staging")][0].head.sha // ""')
           [ -n "$head" ] || verdict false "No merged pull request for $SHA: testing here."
 
-          behind=$(gh api "repos/$REPO/compare/$BEFORE...$head" --jq '.behind_by')
-          [ "$behind" = 0 ] || verdict false "The branch was $behind commit(s) behind staging: testing here."
+          tree() { gh api "repos/$REPO/git/commits/$1" --jq '.tree.sha'; }
+          [ "$(tree "$SHA")" = "$(tree "$head")" ] \
+            || verdict false "staging now differs from the tested ${head::7} (it held changes the branch lacked): testing here."
 
           for name in "ci / build" "e2e / e2e"; do
             conclusion=$(gh api -X GET "repos/$REPO/commits/$head/check-runs" -f check_name="$name" \
               --jq '[.check_runs[]] | sort_by(.completed_at) | last | .conclusion // ""')
             [ "$conclusion" = success ] || verdict false "« $name » is « ${conclusion:-missing} » on ${head::7}: testing here."
           done
-          verdict true "Pull request tested on ${head::7}, up to date with staging: deploying without testing again."
+          verdict true "Pull request tested on ${head::7}, same files on staging: deploying without testing again."
 
   ci:
     needs: tested
